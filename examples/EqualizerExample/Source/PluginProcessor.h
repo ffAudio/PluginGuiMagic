@@ -1,9 +1,7 @@
 /*
   ==============================================================================
 
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
+    A simple equalizer using the JUCE dsp module
 
   ==============================================================================
 */
@@ -13,11 +11,25 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-/**
-*/
 class EqualizerExampleAudioProcessor  : public AudioProcessor
 {
 public:
+
+    enum FilterType
+    {
+        NoFilter = 0,
+        HighPass,
+        HighPass1st,
+        LowShelf,
+        BandPass,
+        Notch,
+        Peak,
+        HighShelf,
+        LowPass1st,
+        LowPass,
+        LastFilterID
+    };
+
     //==============================================================================
     EqualizerExampleAudioProcessor();
     ~EqualizerExampleAudioProcessor();
@@ -55,10 +67,16 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    static StringArray filterNames;
+
 private:
     //==============================================================================
 
     AudioProcessorValueTreeState treeState { *this, nullptr };
+
+    using FilterBand = dsp::ProcessorDuplicator<dsp::IIR::Filter<float>, dsp::IIR::Coefficients<float>>;
+    using Gain       = dsp::Gain<float>;
+    dsp::ProcessorChain<FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, Gain> filter;
 
     // define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
