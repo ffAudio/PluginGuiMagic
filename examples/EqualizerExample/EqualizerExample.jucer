@@ -9,6 +9,9 @@
       <FILE id="lCp7HL" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
     </GROUP>
+    <GROUP id="{94F8FAF6-DD61-C57A-C19E-EF0B17DC5C3C}" name="Resources">
+      <FILE id="heLriZ" name="magic.xml" compile="0" resource="1" file="Resources/magic.xml"/>
+    </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
