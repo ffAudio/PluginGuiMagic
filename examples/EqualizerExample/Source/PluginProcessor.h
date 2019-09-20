@@ -57,5 +57,11 @@ public:
 
 private:
     //==============================================================================
+
+    AudioProcessorValueTreeState treeState { *this, nullptr };
+
+    // define that as last member of your AudioProcessor
+    foleys::MagicProcessorState magicState { *this, treeState };
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EqualizerExampleAudioProcessor)
 };
