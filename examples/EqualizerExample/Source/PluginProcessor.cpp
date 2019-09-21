@@ -120,24 +120,22 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     std::vector<std::unique_ptr<AudioProcessorParameterGroup>> params;
 
-    {
-        auto param = std::make_unique<AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
-                                                            NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
-                                                            String(),
-                                                            AudioProcessorParameter::genericParameter,
-                                                            [](float value, int) {return String (Decibels::gainToDecibels(value), 1) + " dB";},
-                                                            [](String text) {return Decibels::decibelsToGain (text.getFloatValue());});
+    auto param = std::make_unique<AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
+                                                        NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
+                                                        String(),
+                                                        AudioProcessorParameter::genericParameter,
+                                                        [](float value, int) {return String (Decibels::gainToDecibels(value), 1) + " dB";},
+                                                        [](String text) {return Decibels::decibelsToGain (text.getFloatValue());});
 
-        auto group = std::make_unique<AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
-        params.push_back (std::move (group));
-    }
+    auto group = std::make_unique<AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
+    params.push_back (std::move (group));
 
-    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Lowest"),    EqualizerExampleAudioProcessor::HighPass,    40.0f, 0.707f, 0.0f, true));
-    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Low"),       EqualizerExampleAudioProcessor::HighPass,   250.0f, 0.707f, 0.0f, true));
-    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Low Mids"),  EqualizerExampleAudioProcessor::HighPass,   500.0f, 0.707f, 0.0f, true));
-    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("High Mids"), EqualizerExampleAudioProcessor::HighPass,  1000.0f, 0.707f, 0.0f, true));
-    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("High"),      EqualizerExampleAudioProcessor::HighPass,  5000.0f, 0.707f, 0.0f, true));
-    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Highest"),   EqualizerExampleAudioProcessor::HighPass, 12000.0f, 0.707f, 0.0f, true));
+    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Lowest"),    EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Low"),       EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Low Mids"),  EqualizerExampleAudioProcessor::Peak,        500.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("High Mids"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("High"),      EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Highest"),   EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.707f, 1.0f, true));
 
     return { params.begin(), params.end() };
 }
@@ -159,10 +157,12 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 #endif
     treeState (*this, nullptr, JucePlugin_Name, createParameterLayout())
 {
+    treeState.addParameterListener (IDs::paramGain, this);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
 {
+    treeState.removeParameterListener (IDs::paramGain, this);
 }
 
 //==============================================================================
@@ -175,10 +175,14 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
     spec.maximumBlockSize = uint32 (samplesPerBlock);
     spec.numChannels = uint32 (numChannels);
 
-    //    for (size_t i=0; i < bands.size(); ++i) {
-    //        updateBand (i);
-    //    }
     filter.get<6>().setGainLinear (*treeState.getRawParameterValue (IDs::paramOutput));
+
+    attachment1.setSampleRate (sampleRate);
+    attachment2.setSampleRate (sampleRate);
+    attachment3.setSampleRate (sampleRate);
+    attachment4.setSampleRate (sampleRate);
+    attachment5.setSampleRate (sampleRate);
+    attachment6.setSampleRate (sampleRate);
 
     filter.prepare (spec);
 }
@@ -212,9 +216,133 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 {
     ScopedNoDenormals noDenormals;
 
+    filter.setBypassed<0>(attachment1.isActive() == false);
+    filter.setBypassed<1>(attachment2.isActive() == false);
+    filter.setBypassed<2>(attachment3.isActive() == false);
+    filter.setBypassed<3>(attachment4.isActive() == false);
+    filter.setBypassed<4>(attachment5.isActive() == false);
+    filter.setBypassed<5>(attachment6.isActive() == false);
+
     dsp::AudioBlock<float>              ioBuffer (buffer);
     dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
+}
+
+void EqualizerExampleAudioProcessor::parameterChanged (const String& parameterID, float newValue)
+{
+    filter.get<6>().setGainLinear (newValue);
+}
+
+//==============================================================================
+
+EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcessorValueTreeState& stateToUse, FilterBand& filterToControl, const String& prefixToUse, const CriticalSection& lock)
+  : state               (stateToUse),
+    filter              (filterToControl),
+    prefix              (prefixToUse),
+    callbackLock        (lock),
+    frequencyAttachment (*this, frequency, prefix + IDs::paramFreq),
+    gainAttachment      (*this, gain,      prefix + IDs::paramGain),
+    qualityAttachment   (*this, quality,   prefix + IDs::paramQuality),
+    activeAttachment    (*this, active,    prefix + IDs::paramActive)
+{
+    state.addParameterListener (prefix + IDs::paramType, this);
+    updateFilter();
+}
+
+EqualizerExampleAudioProcessor::FilterAttachment::~FilterAttachment()
+{
+    state.removeParameterListener (prefix + IDs::paramType, this);
+}
+
+void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
+{
+    if (sampleRate < 20.0)
+        return;
+
+    dsp::IIR::Coefficients<float>::Ptr newCoefficients;
+    switch (type)
+    {
+        case NoFilter:
+            newCoefficients = new dsp::IIR::Coefficients<float> (1, 0, 1, 0);
+            break;
+        case LowPass:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality);
+            break;
+        case LowPass1st:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency);
+            break;
+        case LowShelf:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
+            break;
+        case BandPass:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality);
+            break;
+        case Notch:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality);
+            break;
+        case Peak:
+            newCoefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
+            break;
+        case HighShelf:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
+            break;
+        case HighPass1st:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency);
+            break;
+        case HighPass:
+            newCoefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality);
+            break;
+        default:
+            break;
+    }
+
+    if (newCoefficients)
+    {
+        ScopedLock processLock (callbackLock);
+        *filter.state = *newCoefficients;
+    }
+}
+
+void EqualizerExampleAudioProcessor::FilterAttachment::parameterChanged (const String& parameterID, float newValue)
+{
+    type = FilterType (roundToInt (newValue));
+    updateFilter();
+}
+
+void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sampleRateToUse)
+{
+    sampleRate = sampleRateToUse;
+    updateFilter();
+}
+
+template<typename ValueType>
+EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::AttachedValue (FilterAttachment& ownerToUse, ValueType& valueToUse, const String& paramToUse)
+  : owner (ownerToUse),
+    value (valueToUse),
+    paramID (paramToUse)
+{
+    value = *owner.state.getRawParameterValue (paramID);
+    owner.state.addParameterListener (paramID, this);
+}
+
+template<typename ValueType>
+EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::~AttachedValue()
+{
+    owner.state.removeParameterListener (paramID, this);
+}
+
+template<typename ValueType>
+void EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::parameterChanged (const String& parameterID, float newValue)
+{
+    value = newValue;
+    owner.updateFilter();
+}
+
+template<>
+void EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<bool>::parameterChanged (const String& parameterID, float newValue)
+{
+    value = (newValue > 0.5f);
+    owner.updateFilter();
 }
 
 //==============================================================================
