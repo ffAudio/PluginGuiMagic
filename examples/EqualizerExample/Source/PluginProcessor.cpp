@@ -44,25 +44,6 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
 {
     const float maxLevel = 24.0f;
 
-    juce::NormalisableRange<float> freqRange (20.0f, 20000.0f, [](float start, float end, float normalised)
-                                              {
-                                                  return start + (std::pow (2.0f, normalised * 10.0f) - 1.0f) * (end - start) / 1023.0f;
-                                              },
-                                              [](float start, float end, float value)
-                                              {
-                                                  return (std::log (((value - start) * 1023.0f / (end - start)) + 1.0f) / std::log ( 2.0f)) / 10.0f;
-                                              },
-                                              [](float start, float end, float value)
-                                              {
-                                                  if (value > 3000.0f)
-                                                      return jlimit (start, end, 100.0f * roundToInt (value / 100.0f));
-
-                                                  if (value > 1000.0f)
-                                                      return jlimit (start, end, 10.0f * roundToInt (value / 10.0f));
-
-                                                  return jlimit (start, end, float (roundToInt (value)));
-                                              });
-
     auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
                                                                  prefix + TRANS ("Filter Type"),
                                                                  filterNames,
@@ -70,7 +51,25 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
 
     auto freqParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramFreq,
                                                                 prefix + TRANS ("Frequency"),
-                                                                freqRange,
+                                                                juce::NormalisableRange<float> {20.0f, 20000.0f,
+                                                                    [](float start, float end, float normalised)
+                                                                    {
+                                                                        return start + (std::pow (2.0f, normalised * 10.0f) - 1.0f) * (end - start) / 1023.0f;
+                                                                    },
+                                                                    [](float start, float end, float value)
+                                                                    {
+                                                                        return (std::log (((value - start) * 1023.0f / (end - start)) + 1.0f) / std::log ( 2.0f)) / 10.0f;
+                                                                    },
+                                                                    [](float start, float end, float value)
+                                                                    {
+                                                                        if (value > 3000.0f)
+                                                                            return jlimit (start, end, 100.0f * roundToInt (value / 100.0f));
+
+                                                                        if (value > 1000.0f)
+                                                                            return jlimit (start, end, 10.0f * roundToInt (value / 10.0f));
+
+                                                                        return jlimit (start, end, float (roundToInt (value)));
+                                                                    }},
                                                                 frequency,
                                                                 String(),
                                                                 AudioProcessorParameter::genericParameter,
@@ -293,14 +292,11 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
             newCoefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality);
             break;
         default:
-            break;
+            return;
     }
 
-    if (newCoefficients)
-    {
-        ScopedLock processLock (callbackLock);
-        *filter.state = *newCoefficients;
-    }
+    ScopedLock processLock (callbackLock);
+    *filter.state = *newCoefficients;
 }
 
 void EqualizerExampleAudioProcessor::FilterAttachment::parameterChanged (const String& parameterID, float newValue)
