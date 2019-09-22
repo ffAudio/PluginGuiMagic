@@ -1,2 +1,14 @@
 <magic>
+    <Div>
+        <Div>
+            <Slider/>
+            <Slider/>
+            <Slider/>
+        </Div>
+        <Div>
+            <Slider/>
+            <Slider/>
+            <Slider/>
+        </Div>
+    </Div>
 </magic>
