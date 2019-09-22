@@ -350,7 +350,8 @@ bool EqualizerExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     auto* editor = new foleys::MagicPluginEditor (magicState);
-    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+//    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+    editor->createDefaultGUI();
     return editor;
 }
 
