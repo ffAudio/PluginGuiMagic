@@ -129,12 +129,12 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
     auto group = std::make_unique<AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
     params.push_back (std::move (group));
 
-    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Lowest"),    EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.707f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Low"),       EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.707f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Low Mids"),  EqualizerExampleAudioProcessor::Peak,        500.0f, 0.707f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("High Mids"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.707f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("High"),      EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.707f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Highest"),   EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.707f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Q3"), EqualizerExampleAudioProcessor::Peak,        500.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("Q4"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.0f, 1.0f, true));
 
     return { params.begin(), params.end() };
 }
@@ -351,7 +351,7 @@ AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     auto* editor = new foleys::MagicPluginEditor (magicState);
 //    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
-    editor->createDefaultGUI();
+    editor->createDefaultGUI (true);
     return editor;
 }
 
