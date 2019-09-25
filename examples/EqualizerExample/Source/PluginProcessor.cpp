@@ -119,6 +119,13 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     std::vector<std::unique_ptr<AudioProcessorParameterGroup>> params;
 
+    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Q3"), EqualizerExampleAudioProcessor::Peak,        500.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("Q4"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.0f, 1.0f, true));
+
     auto param = std::make_unique<AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
                                                         NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
                                                         String(),
@@ -128,13 +135,6 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
     auto group = std::make_unique<AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
     params.push_back (std::move (group));
-
-    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Q3"), EqualizerExampleAudioProcessor::Peak,        500.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("Q4"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.0f, 1.0f, true));
 
     return { params.begin(), params.end() };
 }
@@ -154,14 +154,13 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 #else
     :
 #endif
-    treeState (*this, nullptr, JucePlugin_Name, createParameterLayout())
+    treeState (*this, nullptr, JucePlugin_Name, createParameterLayout()),
+    gainAttachment (treeState, gain, IDs::paramOutput)
 {
-    treeState.addParameterListener (IDs::paramGain, this);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
 {
-    treeState.removeParameterListener (IDs::paramGain, this);
 }
 
 //==============================================================================
@@ -222,14 +221,11 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
     filter.setBypassed<4>(attachment5.isActive() == false);
     filter.setBypassed<5>(attachment6.isActive() == false);
 
+    filter.get<6>().setGainLinear (gain);
+
     dsp::AudioBlock<float>              ioBuffer (buffer);
     dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
-}
-
-void EqualizerExampleAudioProcessor::parameterChanged (const String& parameterID, float newValue)
-{
-    filter.get<6>().setGainLinear (newValue);
 }
 
 //==============================================================================
@@ -239,10 +235,10 @@ EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcess
     filter              (filterToControl),
     prefix              (prefixToUse),
     callbackLock        (lock),
-    frequencyAttachment (*this, frequency, prefix + IDs::paramFreq),
-    gainAttachment      (*this, gain,      prefix + IDs::paramGain),
-    qualityAttachment   (*this, quality,   prefix + IDs::paramQuality),
-    activeAttachment    (*this, active,    prefix + IDs::paramActive)
+    frequencyAttachment (state, frequency, prefix + IDs::paramFreq,     [&]{ updateFilter(); }),
+    gainAttachment      (state, gain,      prefix + IDs::paramGain,     [&]{ updateFilter(); }),
+    qualityAttachment   (state, quality,   prefix + IDs::paramQuality,  [&]{ updateFilter(); }),
+    activeAttachment    (state, active,    prefix + IDs::paramActive)
 {
     state.addParameterListener (prefix + IDs::paramType, this);
     updateFilter();
@@ -311,34 +307,42 @@ void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sam
     updateFilter();
 }
 
+//==============================================================================
+
 template<typename ValueType>
-EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::AttachedValue (FilterAttachment& ownerToUse, ValueType& valueToUse, const String& paramToUse)
-  : owner (ownerToUse),
+EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioProcessorValueTreeState& stateToUse, ValueType& valueToUse, const String& paramToUse, std::function<void()> changedLambda)
+  : state (stateToUse),
     value (valueToUse),
-    paramID (paramToUse)
+    paramID (paramToUse),
+    onParameterChanged (changedLambda)
 {
-    value = *owner.state.getRawParameterValue (paramID);
-    owner.state.addParameterListener (paramID, this);
+    // Oh uh, tried to attach to a non existing parameter
+    jassert (state.getParameter (paramID) != nullptr);
+
+    value = *state.getRawParameterValue (paramID);
+    state.addParameterListener (paramID, this);
 }
 
 template<typename ValueType>
-EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::~AttachedValue()
+EqualizerExampleAudioProcessor::AttachedValue<ValueType>::~AttachedValue()
 {
-    owner.state.removeParameterListener (paramID, this);
+    state.removeParameterListener (paramID, this);
 }
 
 template<typename ValueType>
-void EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<ValueType>::parameterChanged (const String& parameterID, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const String& parameterID, float newValue)
 {
     value = newValue;
-    owner.updateFilter();
+    if (onParameterChanged)
+        onParameterChanged();
 }
 
 template<>
-void EqualizerExampleAudioProcessor::FilterAttachment::AttachedValue<bool>::parameterChanged (const String& parameterID, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const String& parameterID, float newValue)
 {
     value = (newValue > 0.5f);
-    owner.updateFilter();
+    if (onParameterChanged)
+        onParameterChanged();
 }
 
 //==============================================================================
@@ -350,7 +354,7 @@ bool EqualizerExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     auto* editor = new foleys::MagicPluginEditor (magicState);
-//    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
     editor->createDefaultGUI (true);
     return editor;
 }

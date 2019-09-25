@@ -1,49 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Div>
-    <Div caption="Globals">
-        <Slider caption="Output" parameter="output"/>
+<magic>
+    <Div>
+        <Div caption="Q1Q1" class="group;blue">
+            <ComboBox caption="Q1Filter Type" parameter="Q1type"/>
+            <Slider caption="Q1Frequency" parameter="Q1freq"/>
+            <Slider caption="Q1Quality" parameter="Q1quality"/>
+            <Slider caption="Q1Gain" parameter="Q1gain"/>
+            <TextButton caption="Q1Active" parameter="Q1active"/>
+        </Div>
+        <Div caption="Q2Q2" class="group;brown">
+            <ComboBox caption="Q2Filter Type" parameter="Q2type"/>
+            <Slider caption="Q2Frequency" parameter="Q2freq"/>
+            <Slider caption="Q2Quality" parameter="Q2quality"/>
+            <Slider caption="Q2Gain" parameter="Q2gain"/>
+            <TextButton caption="Q2Active" parameter="Q2active"/>
+        </Div>
+        <Div caption="Q3Q3" class="group;green">
+            <ComboBox caption="Q3Filter Type" parameter="Q3type"/>
+            <Slider caption="Q3Frequency" parameter="Q3freq"/>
+            <Slider caption="Q3Quality" parameter="Q3quality"/>
+            <Slider caption="Q3Gain" parameter="Q3gain"/>
+            <TextButton caption="Q3Active" parameter="Q3active"/>
+        </Div>
+        <Div caption="Q4Q4" class="group;indigo">
+            <ComboBox caption="Q4Filter Type" parameter="Q4type"/>
+            <Slider caption="Q4Frequency" parameter="Q4freq"/>
+            <Slider caption="Q4Quality" parameter="Q4quality"/>
+            <Slider caption="Q4Gain" parameter="Q4gain"/>
+            <TextButton caption="Q4Active" parameter="Q4active"/>
+        </Div>
+        <Div caption="Q5Q5" class="group;orange">
+            <ComboBox caption="Q5Filter Type" parameter="Q5type"/>
+            <Slider caption="Q5Frequency" parameter="Q5freq"/>
+            <Slider caption="Q5Quality" parameter="Q5quality"/>
+            <Slider caption="Q5Gain" parameter="Q5gain"/>
+            <TextButton caption="Q5Active" parameter="Q5active"/>
+        </Div>
+        <Div caption="Q6Q6" class="group;darkred">
+            <ComboBox caption="Q6Filter Type" parameter="Q6type"/>
+            <Slider caption="Q6Frequency" parameter="Q6freq"/>
+            <Slider caption="Q6Quality" parameter="Q6quality"/>
+            <Slider caption="Q6Gain" parameter="Q6gain"/>
+            <TextButton caption="Q6Active" parameter="Q6active"/>
+        </Div>
+        <Div caption="Globals" class="group">
+            <Slider caption="Output" parameter="output"/>
+        </Div>
     </Div>
-    <Div caption="Q1Lowest">
-        <Slider caption="Q1Filter Type" parameter="Q1type"/>
-        <Slider caption="Q1Frequency" parameter="Q1freq"/>
-        <Slider caption="Q1Quality" parameter="Q1quality"/>
-        <Slider caption="Q1Gain" parameter="Q1gain"/>
-        <Slider caption="Q1Active" parameter="Q1active"/>
-    </Div>
-    <Div caption="Q2Low">
-        <Slider caption="Q2Filter Type" parameter="Q2type"/>
-        <Slider caption="Q2Frequency" parameter="Q2freq"/>
-        <Slider caption="Q2Quality" parameter="Q2quality"/>
-        <Slider caption="Q2Gain" parameter="Q2gain"/>
-        <Slider caption="Q2Active" parameter="Q2active"/>
-    </Div>
-    <Div caption="Q3Low Mids">
-        <Slider caption="Q3Filter Type" parameter="Q3type"/>
-        <Slider caption="Q3Frequency" parameter="Q3freq"/>
-        <Slider caption="Q3Quality" parameter="Q3quality"/>
-        <Slider caption="Q3Gain" parameter="Q3gain"/>
-        <Slider caption="Q3Active" parameter="Q3active"/>
-    </Div>
-    <Div caption="Q4High Mids">
-        <Slider caption="Q4Filter Type" parameter="Q4type"/>
-        <Slider caption="Q4Frequency" parameter="Q4freq"/>
-        <Slider caption="Q4Quality" parameter="Q4quality"/>
-        <Slider caption="Q4Gain" parameter="Q4gain"/>
-        <Slider caption="Q4Active" parameter="Q4active"/>
-    </Div>
-    <Div caption="Q5High">
-        <Slider caption="Q5Filter Type" parameter="Q5type"/>
-        <Slider caption="Q5Frequency" parameter="Q5freq"/>
-        <Slider caption="Q5Quality" parameter="Q5quality"/>
-        <Slider caption="Q5Gain" parameter="Q5gain"/>
-        <Slider caption="Q5Active" parameter="Q5active"/>
-    </Div>
-    <Div caption="Q6Highest">
-        <Slider caption="Q6Filter Type" parameter="Q6type"/>
-        <Slider caption="Q6Frequency" parameter="Q6freq"/>
-        <Slider caption="Q6Quality" parameter="Q6quality"/>
-        <Slider caption="Q6Gain" parameter="Q6gain"/>
-        <Slider caption="Q6Active" parameter="Q6active"/>
-    </Div>
-</Div>
+    <Styles>
+        <Style name="default">
+            <Nodes/>
+            <Classes>
+                <group border="2.0"/>
+                <red backgroundColour="ffff0000"/>
+                <blue backgroundColour="ff0000ff"/>
+                <green backgroundColour="ff00ff00"/>
+                <brown backgroundColour="ffa52a2a"/>
+                <indigo backgroundColour="ff4b0082"/>
+                <darkred backgroundColour="ff8b0000"/>
+                <orange backgroundColour="ffffa500"/>
+            </Classes>
+            <Types/>
+        </Style>
+    </Styles>
+</magic>

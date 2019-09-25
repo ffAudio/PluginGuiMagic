@@ -11,8 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-class EqualizerExampleAudioProcessor  : public AudioProcessor,
-                                        private AudioProcessorValueTreeState::Listener
+class EqualizerExampleAudioProcessor  : public AudioProcessor
 {
 public:
 
@@ -48,7 +47,22 @@ public:
 
     void processBlock (AudioBuffer<float>&, MidiBuffer&) override;
 
-    void parameterChanged (const String& parameterID, float newValue) override;
+    //==============================================================================
+
+    template<typename ValueType>
+    class AttachedValue : private AudioProcessorValueTreeState::Listener
+    {
+    public:
+        AttachedValue (AudioProcessorValueTreeState& state, ValueType& value, const String& paramID, std::function<void()> changedLambda=nullptr);
+        virtual ~AttachedValue();
+        void parameterChanged (const String& parameterID, float newValue) override;
+    private:
+        AudioProcessorValueTreeState& state;
+        ValueType& value;
+        String paramID;
+        std::function<void()> onParameterChanged;
+        JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
+    };
 
     //==============================================================================
 
@@ -60,20 +74,6 @@ public:
         void parameterChanged (const String& parameterID, float newValue) override;
         void setSampleRate (double sampleRate);
         bool isActive() const { return active; }
-
-        template<typename ValueType>
-        class AttachedValue : private AudioProcessorValueTreeState::Listener
-        {
-        public:
-            AttachedValue (FilterAttachment& owner, ValueType& value, const String& paramID);
-            virtual ~AttachedValue();
-            void parameterChanged (const String& parameterID, float newValue) override;
-        private:
-            FilterAttachment& owner;
-            ValueType& value;
-            String paramID;
-            JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
-        };
 
     private:
         void updateFilter();
@@ -130,6 +130,9 @@ private:
     AudioProcessorValueTreeState treeState { *this, nullptr };
 
     dsp::ProcessorChain<FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, Gain> filter;
+
+    float gain = 1.0f;
+    AttachedValue<float> gainAttachment;
 
     FilterAttachment attachment1 { treeState, filter.get<0>(), "Q1", getCallbackLock() };
     FilterAttachment attachment2 { treeState, filter.get<1>(), "Q2", getCallbackLock() };
