@@ -17,8 +17,9 @@
                 <orange backgroundColour="ffffa500"/>
             </Classes>
             <Types>
-                <ComboBox max-height="50"/>
-                <ToggleButton max-height="50"/>
+                <ComboBox border="0" max-height="50"/>
+                <ToggleButton border="0" max-height="50"/>
+                <Slider border="0" backgroundColour="ff808080"/>
             </Types>
         </Style>
     </Styles>
