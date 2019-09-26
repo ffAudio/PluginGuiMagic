@@ -45,12 +45,19 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
     const float maxLevel = 24.0f;
 
     auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
-                                                                 prefix + TRANS ("Filter Type"),
+                                                                 prefix + ": " + TRANS ("Filter Type"),
                                                                  filterNames,
                                                                  type);
 
+    auto actvParameter = std::make_unique<AudioParameterBool> (prefix + IDs::paramActive,
+                                                               prefix + ": " + TRANS ("Active"),
+                                                               active,
+                                                               String(),
+                                                               [](float value, int) {return value > 0.5f ? TRANS ("active") : TRANS ("bypassed");},
+                                                               [](String text) {return text == TRANS ("active");});
+
     auto freqParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramFreq,
-                                                                prefix + TRANS ("Frequency"),
+                                                                prefix + ": " + TRANS ("Frequency"),
                                                                 juce::NormalisableRange<float> {20.0f, 20000.0f,
                                                                     [](float start, float end, float normalised)
                                                                     {
@@ -81,7 +88,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                     text.getFloatValue(); });
 
     auto qltyParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramQuality,
-                                                                prefix + TRANS ("Quality"),
+                                                                prefix + ": " + TRANS ("Quality"),
                                                                 NormalisableRange<float> {0.1f, 10.0f, 0.1f, std::log (0.5f) / std::log (0.9f / 9.9f)},
                                                                 quality,
                                                                 String(),
@@ -90,7 +97,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                 [](const String& text) { return text.getFloatValue(); });
 
     auto gainParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramGain,
-                                                                prefix + TRANS ("Gain"),
+                                                                prefix + ": " + TRANS ("Gain"),
                                                                 NormalisableRange<float> {-maxLevel, maxLevel, 0.1f},
                                                                 gain,
                                                                 String(),
@@ -98,19 +105,12 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                 [](float value, int) {return String (value, 1) + " dB";},
                                                                 [](String text) {return text.getFloatValue();});
 
-    auto actvParameter = std::make_unique<AudioParameterBool> (prefix + IDs::paramActive,
-                                                               prefix + TRANS ("Active"),
-                                                               active,
-                                                               String(),
-                                                               [](float value, int) {return value > 0.5f ? TRANS ("active") : TRANS ("bypassed");},
-                                                               [](String text) {return text == TRANS ("active");});
-
-    auto group = std::make_unique<AudioProcessorParameterGroup> ("band" + prefix, prefix + name, "|",
+    auto group = std::make_unique<AudioProcessorParameterGroup> ("band" + prefix, prefix, "|",
                                                                  std::move (typeParameter),
+                                                                 std::move (actvParameter),
                                                                  std::move (freqParameter),
                                                                  std::move (qltyParameter),
-                                                                 std::move (gainParameter),
-                                                                 std::move (actvParameter));
+                                                                 std::move (gainParameter));
 
     return group;
 }
@@ -355,7 +355,6 @@ AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     auto* editor = new foleys::MagicPluginEditor (magicState);
     editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
-    editor->createDefaultGUI (true);
     return editor;
 }
 
