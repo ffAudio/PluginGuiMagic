@@ -10,6 +10,7 @@
             file="Source/PluginProcessor.h"/>
     </GROUP>
     <GROUP id="{94F8FAF6-DD61-C57A-C19E-EF0B17DC5C3C}" name="Resources">
+      <FILE id="KBWIDX" name="Logo.png" compile="0" resource="1" file="Resources/Logo.png"/>
       <FILE id="heLriZ" name="magic.xml" compile="0" resource="1" file="Resources/magic.xml"/>
     </GROUP>
   </MAINGROUP>
@@ -85,5 +86,6 @@
   <LIVE_SETTINGS>
     <OSX/>
   </LIVE_SETTINGS>
-  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"
+               FOLEYS_ENABLE_BINARY_DATA="1"/>
 </JUCERPROJECT>
