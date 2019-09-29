@@ -34,6 +34,8 @@ StringArray filterNames =
     NEEDS_TRANS ("Low pass")
 };
 
+static float maxLevel = 24.0f;
+
 std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const String& prefix,
                                                                          const String& name,
                                                                          EqualizerExampleAudioProcessor::FilterType type,
@@ -42,8 +44,6 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                          float quality,
                                                                          bool active)
 {
-    const float maxLevel = 24.0f;
-
     auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
                                                                  prefix + ": " + TRANS ("Filter Type"),
                                                                  filterNames,
@@ -167,17 +167,17 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>());
 
     attachment1.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot1"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
     attachment2.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot2"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
     attachment3.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot3"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
     attachment4.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot4"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
     attachment5.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot5"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
     attachment6.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot6"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
