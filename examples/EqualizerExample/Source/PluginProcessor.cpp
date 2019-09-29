@@ -157,6 +157,27 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     treeState (*this, nullptr, JucePlugin_Name, createParameterLayout()),
     gainAttachment (treeState, gain, IDs::paramOutput)
 {
+    // add plots to be displayed in the GUI
+    magicState.addPlotSource ("plot1", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plot2", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plot3", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plot4", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plot5", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plot6", std::make_unique<foleys::MagicFilterPlot>());
+    magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>());
+
+    attachment1.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot1"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    attachment2.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot2"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    attachment3.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot3"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    attachment4.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot4"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    attachment5.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot5"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
+    attachment6.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot6"))] (const FilterAttachment& a)
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, 24.0f); };
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -254,45 +275,28 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
     if (sampleRate < 20.0)
         return;
 
-    dsp::IIR::Coefficients<float>::Ptr newCoefficients;
     switch (type)
     {
-        case NoFilter:
-            newCoefficients = new dsp::IIR::Coefficients<float> (1, 0, 1, 0);
-            break;
-        case LowPass:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality);
-            break;
-        case LowPass1st:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency);
-            break;
-        case LowShelf:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
-            break;
-        case BandPass:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality);
-            break;
-        case Notch:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality);
-            break;
-        case Peak:
-            newCoefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
-            break;
-        case HighShelf:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain));
-            break;
-        case HighPass1st:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency);
-            break;
-        case HighPass:
-            newCoefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality);
-            break;
-        default:
-            return;
+        case NoFilter:    coefficients = new dsp::IIR::Coefficients<float> (1, 0, 1, 0); break;
+        case LowPass:     coefficients = dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality); break;
+        case LowPass1st:  coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency); break;
+        case LowShelf:    coefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
+        case BandPass:    coefficients = dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality); break;
+        case Notch:       coefficients = dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality); break;
+        case Peak:        coefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
+        case HighShelf:   coefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
+        case HighPass1st: coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency); break;
+        case HighPass:    coefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality); break;
+        default:          return;
     }
 
-    ScopedLock processLock (callbackLock);
-    *filter.state = *newCoefficients;
+    {
+        ScopedLock processLock (callbackLock);
+        *filter.state = *coefficients;
+    }
+
+    if (postFilterUpdate)
+        postFilterUpdate (*this);
 }
 
 void EqualizerExampleAudioProcessor::FilterAttachment::parameterChanged (const String& parameterID, float newValue)
@@ -354,7 +358,7 @@ bool EqualizerExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     auto* editor = new foleys::MagicPluginEditor (magicState);
-//    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
     return editor;
 }
 

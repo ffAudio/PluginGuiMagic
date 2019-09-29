@@ -75,6 +75,11 @@ public:
         void setSampleRate (double sampleRate);
         bool isActive() const { return active; }
 
+        std::function<void(const FilterAttachment&)> postFilterUpdate;
+
+        juce::dsp::IIR::Coefficients<float>::Ptr coefficients;
+        double                                   sampleRate = 0.0;
+
     private:
         void updateFilter();
 
@@ -88,7 +93,6 @@ public:
         float  gain       = 0.0f;
         float  quality    = 1.0f;
         bool   active     = true;
-        double sampleRate = 0.0;
 
         friend AttachedValue<float>;
         AttachedValue<float> frequencyAttachment;
