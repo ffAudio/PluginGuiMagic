@@ -261,6 +261,7 @@ EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcess
     qualityAttachment   (state, quality,   prefix + IDs::paramQuality,  [&]{ updateFilter(); }),
     activeAttachment    (state, active,    prefix + IDs::paramActive)
 {
+    type = FilterType (roundToInt (*state.getRawParameterValue (prefix + IDs::paramType)));
     state.addParameterListener (prefix + IDs::paramType, this);
     updateFilter();
 }
