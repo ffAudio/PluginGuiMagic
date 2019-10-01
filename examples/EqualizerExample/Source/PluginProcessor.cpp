@@ -40,9 +40,9 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                          const String& name,
                                                                          EqualizerExampleAudioProcessor::FilterType type,
                                                                          float frequency,
-                                                                         float gain,
-                                                                         float quality,
-                                                                         bool active)
+                                                                         float gain    = 0.0f,
+                                                                         float quality = 1.0f,
+                                                                         bool  active  = true)
 {
     auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
                                                                  prefix + ": " + TRANS ("Filter Type"),
@@ -119,12 +119,12 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     std::vector<std::unique_ptr<AudioProcessorParameterGroup>> params;
 
-    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Q3"), EqualizerExampleAudioProcessor::Peak,        500.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("Q4"), EqualizerExampleAudioProcessor::Peak,       1000.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f, 0.0f, 1.0f, true));
-    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f, 0.0f, 1.0f, true));
+    params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f));
+    params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f));
+    params.push_back (createParametersForFilter ("Q3", NEEDS_TRANS ("Q3"), EqualizerExampleAudioProcessor::Peak,        500.0f));
+    params.push_back (createParametersForFilter ("Q4", NEEDS_TRANS ("Q4"), EqualizerExampleAudioProcessor::Peak,       1000.0f));
+    params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f));
+    params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f));
 
     auto param = std::make_unique<AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
                                                         NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
@@ -256,19 +256,13 @@ EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcess
     filter              (filterToControl),
     prefix              (prefixToUse),
     callbackLock        (lock),
+    typeAttachment      (state, type,      prefix + IDs::paramType,     [&]{ updateFilter(); }),
     frequencyAttachment (state, frequency, prefix + IDs::paramFreq,     [&]{ updateFilter(); }),
     gainAttachment      (state, gain,      prefix + IDs::paramGain,     [&]{ updateFilter(); }),
     qualityAttachment   (state, quality,   prefix + IDs::paramQuality,  [&]{ updateFilter(); }),
     activeAttachment    (state, active,    prefix + IDs::paramActive)
 {
-    type = FilterType (roundToInt (*state.getRawParameterValue (prefix + IDs::paramType)));
-    state.addParameterListener (prefix + IDs::paramType, this);
     updateFilter();
-}
-
-EqualizerExampleAudioProcessor::FilterAttachment::~FilterAttachment()
-{
-    state.removeParameterListener (prefix + IDs::paramType, this);
 }
 
 void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
@@ -300,12 +294,6 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
         postFilterUpdate (*this);
 }
 
-void EqualizerExampleAudioProcessor::FilterAttachment::parameterChanged (const String& parameterID, float newValue)
-{
-    type = FilterType (roundToInt (newValue));
-    updateFilter();
-}
-
 void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sampleRateToUse)
 {
     sampleRate = sampleRateToUse;
@@ -324,7 +312,7 @@ EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioPr
     // Oh uh, tried to attach to a non existing parameter
     jassert (state.getParameter (paramID) != nullptr);
 
-    value = *state.getRawParameterValue (paramID);
+    value = ValueType (*state.getRawParameterValue (paramID));
     state.addParameterListener (paramID, this);
 }
 
@@ -346,6 +334,14 @@ template<>
 void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const String& parameterID, float newValue)
 {
     value = (newValue > 0.5f);
+    if (onParameterChanged)
+        onParameterChanged();
+}
+
+template<>
+void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const String& parameterID, float newValue)
+{
+    value = EqualizerExampleAudioProcessor::FilterType (roundToInt (newValue));
     if (onParameterChanged)
         onParameterChanged();
 }

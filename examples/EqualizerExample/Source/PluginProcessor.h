@@ -66,12 +66,11 @@ public:
 
     //==============================================================================
 
-    class FilterAttachment : private AudioProcessorValueTreeState::Listener
+    class FilterAttachment
     {
     public:
         FilterAttachment (AudioProcessorValueTreeState& state, FilterBand& filter, const String& prefix, const CriticalSection& lock);
-        virtual ~FilterAttachment();
-        void parameterChanged (const String& parameterID, float newValue) override;
+
         void setSampleRate (double sampleRate);
         bool isActive() const { return active; }
 
@@ -95,6 +94,7 @@ public:
         bool   active     = true;
 
         friend AttachedValue<float>;
+        AttachedValue<FilterType> typeAttachment;
         AttachedValue<float> frequencyAttachment;
         AttachedValue<float> gainAttachment;
         AttachedValue<float> qualityAttachment;
