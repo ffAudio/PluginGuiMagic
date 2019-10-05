@@ -157,7 +157,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     treeState (*this, nullptr, JucePlugin_Name, createParameterLayout()),
     gainAttachment (treeState, gain, IDs::paramOutput)
 {
-    // add plots to be displayed in the GUI
+    // GUI MAGIC: add plots to be displayed in the GUI
     magicState.addPlotSource ("plot1", std::make_unique<foleys::MagicFilterPlot>());
     magicState.addPlotSource ("plot2", std::make_unique<foleys::MagicFilterPlot>());
     magicState.addPlotSource ("plot3", std::make_unique<foleys::MagicFilterPlot>());
@@ -166,18 +166,25 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     magicState.addPlotSource ("plot6", std::make_unique<foleys::MagicFilterPlot>());
     magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>());
 
+    // GUI MAGIC: add analyser plots
+    magicState.addPlotSource ("input", std::make_unique<foleys::MagicAnalyser>());
+    magicState.addPlotSource ("output", std::make_unique<foleys::MagicAnalyser>());
+    inputAnalyser  = magicState.getPlotSource ("input");
+    outputAnalyser = magicState.getPlotSource ("output");
+
+    // GUI MAGIC: forward the updated coefficients to the plot visualisers
     attachment1.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot1"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
     attachment2.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot2"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
     attachment3.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot3"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
     attachment4.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot4"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
     attachment5.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot5"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
     attachment6.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot6"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, a.sampleRate, maxLevel); };
+    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -188,6 +195,9 @@ EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
 void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     const auto numChannels = getTotalNumOutputChannels();
+
+    // GUI MAGIC: call this to set up the visualisers
+    magicState.prepareToPlay (sampleRate, samplesPerBlock);
 
     dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;
@@ -208,8 +218,6 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
 
 void EqualizerExampleAudioProcessor::releaseResources()
 {
-    // When playback stops, you can use this as an opportunity to free up any
-    // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -244,9 +252,15 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 
     filter.get<6>().setGainLinear (gain);
 
+    // GUI MAGIC: measure before processing
+    inputAnalyser->pushSamples (buffer);
+
     dsp::AudioBlock<float>              ioBuffer (buffer);
     dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
+
+    // GUI MAGIC: measure after processing
+    outputAnalyser->pushSamples (buffer);
 }
 
 //==============================================================================

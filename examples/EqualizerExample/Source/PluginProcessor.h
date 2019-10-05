@@ -145,6 +145,9 @@ private:
     FilterAttachment attachment5 { treeState, filter.get<4>(), "Q5", getCallbackLock() };
     FilterAttachment attachment6 { treeState, filter.get<5>(), "Q6", getCallbackLock() };
 
+    foleys::MagicPlotSource* inputAnalyser  = nullptr;
+    foleys::MagicPlotSource* outputAnalyser = nullptr;
+
     // define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
 
