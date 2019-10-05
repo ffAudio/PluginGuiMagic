@@ -139,6 +139,17 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
     return { params.begin(), params.end() };
 }
 
+auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const String& plotID)
+{
+    return [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource (plotID))] (const EqualizerExampleAudioProcessor::FilterAttachment& a)
+    {
+        if (plot != nullptr)
+        {
+            plot->setIIRCoefficients (a.coefficients, maxLevel);
+            plot->setActive (a.isActive());
+        }
+    };
+}
 
 //==============================================================================
 EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
@@ -172,19 +183,13 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     inputAnalyser  = magicState.getPlotSource ("input");
     outputAnalyser = magicState.getPlotSource ("output");
 
-    // GUI MAGIC: forward the updated coefficients to the plot visualisers
-    attachment1.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot1"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
-    attachment2.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot2"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
-    attachment3.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot3"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
-    attachment4.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot4"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
-    attachment5.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot5"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
-    attachment6.postFilterUpdate = [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource ("plot6"))] (const FilterAttachment& a)
-    { if (plot != nullptr) plot->setIIRCoefficients (a.coefficients, maxLevel); };
+    // GUI MAGIC: forward the updated coefficients to the plot visualisers (magic lambda defined above for DRY)
+    attachment1.postFilterUpdate = createPostUpdateLambda (magicState, "plot1");
+    attachment2.postFilterUpdate = createPostUpdateLambda (magicState, "plot2");
+    attachment3.postFilterUpdate = createPostUpdateLambda (magicState, "plot3");
+    attachment4.postFilterUpdate = createPostUpdateLambda (magicState, "plot4");
+    attachment5.postFilterUpdate = createPostUpdateLambda (magicState, "plot5");
+    attachment6.postFilterUpdate = createPostUpdateLambda (magicState, "plot6");
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -274,7 +279,10 @@ EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcess
     frequencyAttachment (state, frequency, prefix + IDs::paramFreq,     [&]{ updateFilter(); }),
     gainAttachment      (state, gain,      prefix + IDs::paramGain,     [&]{ updateFilter(); }),
     qualityAttachment   (state, quality,   prefix + IDs::paramQuality,  [&]{ updateFilter(); }),
-    activeAttachment    (state, active,    prefix + IDs::paramActive)
+    activeAttachment    (state, active,    prefix + IDs::paramActive,   [&]
+    { if (postFilterUpdate)
+        postFilterUpdate (*this);
+    })
 {
     updateFilter();
 }
