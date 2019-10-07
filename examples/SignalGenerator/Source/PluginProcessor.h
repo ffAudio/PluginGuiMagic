@@ -86,7 +86,9 @@ private:
 
     AudioProcessorValueTreeState treeState;
 
+    // MAGIC GUI: add this docking station for the GUI
     foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicPlotSource*    oscilloscope = nullptr;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SignalGeneratorAudioProcessor)
 };

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="T33gqD" name="SignalGenerator" projectType="audioplug" jucerVersion="5.4.4">
+<JUCERPROJECT id="T33gqD" name="SignalGenerator" projectType="audioplug" jucerVersion="5.4.4"
+              pluginAUMainType="'augn'" pluginVST3Category="Generator" pluginRTASCategory="2048"
+              pluginAAXCategory="2048" pluginVSTCategory="kPlugCategGenerator"
+              projectLineFeed="&#10;">
   <MAINGROUP id="KtcAG2" name="SignalGenerator">
     <GROUP id="{C9FD3DD7-E1DA-CA2D-54CB-B4D603FF3A7D}" name="Source">
       <FILE id="GPUQn8" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="DEaCAP" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
+    </GROUP>
+    <GROUP id="{C27362CC-14CC-858C-78D2-E93C371A29FD}" name="Resources">
+      <FILE id="eLL4zv" name="magic.xml" compile="0" resource="1" file="Resources/magic.xml"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

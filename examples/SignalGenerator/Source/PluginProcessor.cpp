@@ -14,15 +14,17 @@
 
 namespace IDs
 {
-    static String mainType { "mainType" };
-    static String mainFreq { "mainfreq" };
+    static String mainType  { "mainType" };
+    static String mainFreq  { "mainfreq" };
     static String mainLevel { "mainlevel" };
-    static String lfoType { "lfoType" };
-    static String lfoFreq { "lfofreq" };
-    static String lfoLevel { "lfolevel" };
-    static String vfoType { "vfoType" };
-    static String vfoFreq { "vfofreq" };
-    static String vfoLevel { "vfolevel" };
+    static String lfoType   { "lfoType" };
+    static String lfoFreq   { "lfofreq" };
+    static String lfoLevel  { "lfolevel" };
+    static String vfoType   { "vfoType" };
+    static String vfoFreq   { "vfofreq" };
+    static String vfoLevel  { "vfolevel" };
+
+    static Identifier oscilloscope { "oscilloscope" };
 }
 
 AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
@@ -40,13 +42,13 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
         {
             if (value > 3000.0f)
                 return jlimit (start, end, 100.0f * roundToInt (value / 100.0f));
-            
+
             if (value > 1000.0f)
                 return jlimit (start, end, 10.0f * roundToInt (value / 10.0f));
-            
+
             return jlimit (start, end, float (roundToInt (value)));
         }};
-    
+
     AudioProcessorValueTreeState::ParameterLayout layout;
     auto generator = std::make_unique<AudioProcessorParameterGroup>("Generator", TRANS ("Generator"), "|");
     generator->addChild (std::make_unique<AudioParameterChoice>(IDs::mainType, "Type", StringArray ("None", "Sine", "Triangle", "Square"), 1),
@@ -104,10 +106,130 @@ SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
     treeState.addParameterListener (IDs::mainType, this);
     treeState.addParameterListener (IDs::lfoType, this);
     treeState.addParameterListener (IDs::vfoType, this);
+
+    // MAGIC GUI: register an oscilloscope to display in the GUI.
+    //            We keep a pointer to push samples into in processBlock().
+    //            And we are only interested in channel 0
+    oscilloscope = magicState.addPlotSource (IDs::oscilloscope, std::make_unique<foleys::MagicOscilloscope>(0));
 }
 
 SignalGeneratorAudioProcessor::~SignalGeneratorAudioProcessor()
 {
+}
+
+//==============================================================================
+
+void SignalGeneratorAudioProcessor::setOscillator (dsp::Oscillator<float>& osc, WaveType type)
+{
+    if (type == WaveType::Sine)
+        osc.initialise ([](auto in) { return std::sin (in); });
+    else if (type == WaveType::Triangle)
+        osc.initialise ([](auto in) { return in / MathConstants<float>::pi; });
+    else if (type == WaveType::Square)
+        osc.initialise ([](auto in) { return in < 0 ? 1.0f : -1.0f; });
+    else
+        osc.initialise ([](auto in) { return 0.0f; });
+}
+
+void SignalGeneratorAudioProcessor::parameterChanged (const String& param, float value)
+{
+    if (param == IDs::mainType)
+        setOscillator (mainOSC, WaveType (roundToInt (value)));
+    else if (param == IDs::lfoType)
+        setOscillator (lfoOSC, WaveType (roundToInt (value)));
+    else if (param == IDs::vfoType)
+        setOscillator (vfoOSC, WaveType (roundToInt (value)));
+}
+
+
+void SignalGeneratorAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+{
+    // Use this method as the place to do any pre-playback
+    // initialisation that you need..
+
+    const auto numChannels = getTotalNumOutputChannels();
+
+    dsp::ProcessSpec spec;
+    spec.sampleRate = sampleRate;
+    spec.maximumBlockSize = uint32 (samplesPerBlock);
+    spec.numChannels = uint32 (numChannels);
+
+    mainOSC.prepare (spec);
+    lfoOSC.prepare (spec);
+    vfoOSC.prepare (spec);
+
+    setOscillator (mainOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::mainType))));
+    setOscillator (lfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::lfoType))));
+    setOscillator (vfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::vfoType))));
+
+    // MAGIC GUI: this will setup all internals like MagicPlotSources etc.
+    magicState.prepareToPlay (sampleRate, samplesPerBlock);
+}
+
+void SignalGeneratorAudioProcessor::releaseResources()
+{
+}
+
+void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+{
+    ScopedNoDenormals noDenormals;
+    auto totalNumInputChannels  = getTotalNumInputChannels();
+    auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+    // In case we have more outputs than inputs, this code clears any output
+    // channels that didn't contain input data, (because these aren't
+    // guaranteed to be empty - they may contain garbage).
+    // This is here to avoid people getting screaming feedback
+    // when they first compile a plugin, but obviously you don't need to keep
+    // this code if your algorithm always overwrites all the output channels.
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+        buffer.clear (i, 0, buffer.getNumSamples());
+
+
+    auto gain = Decibels::decibelsToGain (*level);
+
+    lfoOSC.setFrequency (*lfoFrequency);
+    vfoOSC.setFrequency (*vfoFrequency);
+
+    auto* channelData = buffer.getWritePointer (0);
+    for (int i = 0; i < buffer.getNumSamples(); ++i)
+    {
+        mainOSC.setFrequency (*frequency * (1.0 + vfoOSC.processSample (0.0f) * *vfoLevel));
+        channelData [i] = jlimit (-1.0f, 1.0f,
+                                  mainOSC.processSample (0.0f) * gain * ( 1.0f - (*lfoLevel * lfoOSC.processSample (0.0f))));
+    }
+
+    for (int i=1; i < getTotalNumOutputChannels(); ++i)
+        buffer.copyFrom (i, 0, buffer.getReadPointer (0), buffer.getNumSamples());
+
+    // MAGIC GUI: push the samples to be displayed
+    oscilloscope->pushSamples (buffer);
+}
+
+//==============================================================================
+bool SignalGeneratorAudioProcessor::hasEditor() const
+{
+    return true; // (change this to false if you choose to not supply an editor)
+}
+
+AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
+{
+    // MAGIC GUI: return a default Plugin GUI
+    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
+}
+
+//==============================================================================
+void SignalGeneratorAudioProcessor::getStateInformation (MemoryBlock& destData)
+{
+    MemoryOutputStream stream(destData, false);
+    treeState.state.writeToStream (stream);
+}
+
+void SignalGeneratorAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+{
+    ValueTree tree = ValueTree::readFromData (data, size_t (sizeInBytes));
+    if (tree.isValid())
+        treeState.state = tree;
 }
 
 //==============================================================================
@@ -172,60 +294,6 @@ void SignalGeneratorAudioProcessor::changeProgramName (int index, const String& 
 {
 }
 
-//==============================================================================
-
-void SignalGeneratorAudioProcessor::setOscillator (dsp::Oscillator<float>& osc, WaveType type)
-{
-    if (type == WaveType::Sine)
-        osc.initialise ([](auto in) { return std::sin (in); });
-    else if (type == WaveType::Triangle)
-        osc.initialise ([](auto in) { return in / MathConstants<float>::pi; });
-    else if (type == WaveType::Square)
-        osc.initialise ([](auto in) { return in < 0 ? 1.0f : -1.0f; });
-    else
-        osc.initialise ([](auto in) { return 0.0f; });
-}
-
-void SignalGeneratorAudioProcessor::parameterChanged (const String& param, float value)
-{
-    if (param == IDs::mainType)
-        setOscillator (mainOSC, WaveType (roundToInt (value)));
-    else if (param == IDs::lfoType)
-        setOscillator (lfoOSC, WaveType (roundToInt (value)));
-    else if (param == IDs::vfoType)
-        setOscillator (vfoOSC, WaveType (roundToInt (value)));
-}
-
-
-void SignalGeneratorAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
-{
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
-
-    const auto numChannels = getTotalNumOutputChannels();
-    
-    // GUI MAGIC: call this to set up the visualisers
-    magicState.prepareToPlay (sampleRate, samplesPerBlock);
-    
-    dsp::ProcessSpec spec;
-    spec.sampleRate = sampleRate;
-    spec.maximumBlockSize = uint32 (samplesPerBlock);
-    spec.numChannels = uint32 (numChannels);
-
-    mainOSC.prepare (spec);
-    lfoOSC.prepare (spec);
-    vfoOSC.prepare (spec);
-
-    setOscillator (mainOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::mainType))));
-    setOscillator (lfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::lfoType))));
-    setOscillator (vfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::vfoType))));
-}
-
-void SignalGeneratorAudioProcessor::releaseResources()
-{
-    // When playback stops, you can use this as an opportunity to free up any
-    // spare memory, etc.
-}
 
 #ifndef JucePlugin_PreferredChannelConfigurations
 bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
@@ -250,63 +318,6 @@ bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& l
   #endif
 }
 #endif
-
-void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
-{
-    ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
-    auto totalNumOutputChannels = getTotalNumOutputChannels();
-
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
-
-
-    auto gain = Decibels::decibelsToGain (*level);
-
-    lfoOSC.setFrequency (*lfoFrequency);
-    vfoOSC.setFrequency (*vfoFrequency);
-
-    auto* channelData = buffer.getWritePointer (0);
-    for (int i = 0; i < buffer.getNumSamples(); ++i)
-    {
-        mainOSC.setFrequency (*frequency * (1.0 + vfoOSC.processSample (0.0f) * *vfoLevel));
-        channelData [i] = mainOSC.processSample (0.0f) * gain * ( 1.0f - (*lfoLevel * lfoOSC.processSample (0.0f)));
-    }
-
-    for (int i=1; i < getTotalNumOutputChannels(); ++i)
-        buffer.copyFrom (i, 0, buffer.getReadPointer (0), buffer.getNumSamples());
-}
-
-//==============================================================================
-bool SignalGeneratorAudioProcessor::hasEditor() const
-{
-    return true; // (change this to false if you choose to not supply an editor)
-}
-
-AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
-{
-    return new foleys::MagicPluginEditor (magicState);
-}
-
-//==============================================================================
-void SignalGeneratorAudioProcessor::getStateInformation (MemoryBlock& destData)
-{
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
-}
-
-void SignalGeneratorAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
-{
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
-}
 
 //==============================================================================
 // This creates new instances of the plugin..
