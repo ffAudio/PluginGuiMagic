@@ -215,6 +215,7 @@ bool SignalGeneratorAudioProcessor::hasEditor() const
 AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
 {
     // MAGIC GUI: return a default Plugin GUI
+    //            If you saved a GUI before, it is loaded here from the BinaryResources in the optional arguments
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
@@ -231,6 +232,31 @@ void SignalGeneratorAudioProcessor::setStateInformation (const void* data, int s
     if (tree.isValid())
         treeState.state = tree;
 }
+
+//==============================================================================
+#ifndef JucePlugin_PreferredChannelConfigurations
+bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+{
+#if JucePlugin_IsMidiEffect
+    ignoreUnused (layouts);
+    return true;
+#else
+    // This is the place where you check if the layout is supported.
+    // In this template code we only support mono or stereo.
+    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
+        && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+        return false;
+
+    // This checks if the input layout matches the output layout
+#if ! JucePlugin_IsSynth
+    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
+        return false;
+#endif
+
+    return true;
+#endif
+}
+#endif
 
 //==============================================================================
 const String SignalGeneratorAudioProcessor::getName() const
@@ -293,31 +319,6 @@ const String SignalGeneratorAudioProcessor::getProgramName (int index)
 void SignalGeneratorAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
-
-
-#ifndef JucePlugin_PreferredChannelConfigurations
-bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
-{
-  #if JucePlugin_IsMidiEffect
-    ignoreUnused (layouts);
-    return true;
-  #else
-    // This is the place where you check if the layout is supported.
-    // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
-     && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
-        return false;
-
-    // This checks if the input layout matches the output layout
-   #if ! JucePlugin_IsSynth
-    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
-        return false;
-   #endif
-
-    return true;
-  #endif
-}
-#endif
 
 //==============================================================================
 // This creates new instances of the plugin..
