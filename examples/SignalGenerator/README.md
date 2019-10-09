@@ -1,4 +1,4 @@
-SignamGenerator example
+SignalGenerator example
 =======================
 
 This example demonstrates a simple SignalGenerator and how to add
