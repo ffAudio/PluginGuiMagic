@@ -36,7 +36,7 @@
         <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
         <MODULEPATH id="juce_opengl" path="../../JUCE/modules"/>
-        <MODULEPATH id="foleys_gui_magic" path="../../../PluginGuiMagic"/>
+        <MODULEPATH id="foleys_gui_magic" path="../../foleys_gui_magic"/>
         <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
@@ -60,7 +60,7 @@
         <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
         <MODULEPATH id="juce_opengl" path="../../JUCE/modules"/>
-        <MODULEPATH id="foleys_gui_magic" path="../../../PluginGuiMagic"/>
+        <MODULEPATH id="foleys_gui_magic" path="../../foleys_gui_magic"/>
         <MODULEPATH id="juce_dsp" path="../../JUCE/modules"/>
       </MODULEPATHS>
     </VS2019>
