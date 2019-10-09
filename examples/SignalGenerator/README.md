@@ -7,6 +7,7 @@ a generated GUI, that can be completely styled without programming.
 It also demonstrates how to add an Oscilloscope to visualise the
 outgoing Signal.
 
+![Signal Generator Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/examples/SignalGenerator/Resources/SignalGenerator-screenshot.png)
 
 Setup
 -----
