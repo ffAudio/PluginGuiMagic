@@ -108,6 +108,10 @@ to create the editor to this (assuming you named the GUI magic.xml):
 return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
 ```
 
+And adding `FOLEYS_SHOW_GUI_EDITOR_PALLETTE=0` to the preprocessor
+defines in release avoids shipping your plugin with the Editor 
+attached :-)
+
 That should be all.
 
 
