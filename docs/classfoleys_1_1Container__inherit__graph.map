@@ -1,4 +1,4 @@
 <map id="Container" name="Container">
-<area shape="rect" id="node1" title=" " alt="" coords="6,79,85,104"/>
+<area shape="rect" id="node1" title="The Container is a Decorator, that can hold multiple Components." alt="" coords="6,79,85,104"/>
 <area shape="rect" id="node2" href="$classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined." alt="" coords="5,5,85,31"/>
 </map>

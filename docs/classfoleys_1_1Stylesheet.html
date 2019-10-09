@@ -86,23 +86,30 @@ $(function() {
 <div class="title">Stylesheet Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> class represents all style information.  
+ <a href="classfoleys_1_1Stylesheet.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a66e4a5f102c0a033caa2cb82d62bfabe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a66e4a5f102c0a033caa2cb82d62bfabe">Stylesheet</a> ()=default</td></tr>
 <tr class="separator:a66e4a5f102c0a033caa2cb82d62bfabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aace02b70dd029f2d05a7decb09a49f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aace02b70dd029f2d05a7decb09a49f68">setStyle</a> (const juce::ValueTree &amp;node)</td></tr>
+<tr class="memdesc:aace02b70dd029f2d05a7decb09a49f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> node in the XML can contain several Styles to select from.  <a href="#aace02b70dd029f2d05a7decb09a49f68">More...</a><br /></td></tr>
 <tr class="separator:aace02b70dd029f2d05a7decb09a49f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab98dd4d362ebb78388e4ce312153e410"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ab98dd4d362ebb78388e4ce312153e410">getProperty</a> (const juce::Identifier &amp;name, const juce::ValueTree &amp;node, bool inherit=true) const</td></tr>
 <tr class="memdesc:ab98dd4d362ebb78388e4ce312153e410"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method traverses the dom and checks each style, if that property was defined.  <a href="#ab98dd4d362ebb78388e4ce312153e410">More...</a><br /></td></tr>
 <tr class="separator:ab98dd4d362ebb78388e4ce312153e410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04cc50191b562391a841c8d1ee03b776"><td class="memItemLeft" align="right" valign="top">juce::LookAndFeel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">getLookAndFeel</a> (const juce::ValueTree &amp;node) const</td></tr>
+<tr class="memdesc:a04cc50191b562391a841c8d1ee03b776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> for the node.  <a href="#a04cc50191b562391a841c8d1ee03b776">More...</a><br /></td></tr>
 <tr class="separator:a04cc50191b562391a841c8d1ee03b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d1ee771907ee023bbda1b416271e862"><td class="memItemLeft" align="right" valign="top">juce::Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a2d1ee771907ee023bbda1b416271e862">getBackgroundImage</a> (const juce::ValueTree &amp;node) const</td></tr>
+<tr class="memdesc:a2d1ee771907ee023bbda1b416271e862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a background image for the given node.  <a href="#a2d1ee771907ee023bbda1b416271e862">More...</a><br /></td></tr>
 <tr class="separator:a2d1ee771907ee023bbda1b416271e862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9a127023272f04e07b36d3fd1f2104"><td class="memItemLeft" align="right" valign="top">juce::Array&lt; juce::Colour &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">getBackgroundGradient</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="separator:a2e9a127023272f04e07b36d3fd1f2104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af00e908b32eb28e61de13f9ed2e616f3"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">parseColour</a> (const juce::String &amp;name) const</td></tr>
+<tr class="memdesc:af00e908b32eb28e61de13f9ed2e616f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a slightly more intelligent colour lookup than the JUCE one, as it allows to use colour names, as well as 6 digit colour tuples (JUCE will use red as alpha in that case)  <a href="#af00e908b32eb28e61de13f9ed2e616f3">More...</a><br /></td></tr>
 <tr class="separator:af00e908b32eb28e61de13f9ed2e616f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23357c554f1729a34981aff828025506"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a23357c554f1729a34981aff828025506">getCurrentStyle</a> () const</td></tr>
 <tr class="separator:a23357c554f1729a34981aff828025506"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,9 +124,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="memItemLeft" align="right" valign="top">static juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a0b1d67c1d4f9bfb2aa8af65ec483e436">createDefaultStyle</a> ()</td></tr>
+<tr class="memdesc:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a default stylesheet from scratch, to allow the default GUI to look sensible.  <a href="#a0b1d67c1d4f9bfb2aa8af65ec483e436">More...</a><br /></td></tr>
 <tr class="separator:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> class represents all style information. </p>
+<p>It is organised in types, which corresponds to the Components created, classes that can be referenced by any node, and nodes referenced by id. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a66e4a5f102c0a033caa2cb82d62bfabe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66e4a5f102c0a033caa2cb82d62bfabe">&#9670;&nbsp;</a></span>Stylesheet()</h2>
 
@@ -161,6 +172,9 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> node in the XML can contain several Styles to select from. </p>
+<p>Use this method to select a style. </p>
 
 </div>
 </div>
@@ -225,6 +239,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Return the <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> for the node. </p>
+<p>Make sure never to remove a <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a>, especially as long as the ComponentTree is still referencing any of them.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>is the node in the GUI DOM </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#ab98dd4d362ebb78388e4ce312153e410">Stylesheet::getProperty()</a>.</p>
 
 </div>
@@ -244,6 +267,15 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Finds a background image for the given node. </p>
+<p>Note that this will only return anything useful, if you have added any actual images into the BinaryData and have enabled the FOLEYS_ENABLE_BINARY_DATA setting in the module page.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>is the node in the GUI DOM </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>.</p>
 
@@ -284,6 +316,14 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This is a slightly more intelligent colour lookup than the JUCE one, as it allows to use colour names, as well as 6 digit colour tuples (JUCE will use red as alpha in that case) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>a string representing the colour, can be an actual name or a RGB tuple or ARGB tuple. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>.</p>
 
@@ -335,6 +375,13 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>With that method you can register your custom <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> class and apply it to different components. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the name the <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> can be referenced in the GUI editor </td></tr>
+    <tr><td class="paramname">lookAndFeel</td><td>is an actual <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> instance, that is owned by the <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#adaf9f9ae4a58c03127c5b6940023e94a">MagicBuilder::registerJUCELookAndFeels()</a>.</p>
 
@@ -421,6 +468,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This creates a default stylesheet from scratch, to allow the default GUI to look sensible. </p>
+
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
 
 </div>
@@ -432,7 +481,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2019 15:28:47 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 9 2019 16:01:24 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
