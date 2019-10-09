@@ -1,0 +1,4 @@
+<map id="MagicFilterPlot" name="MagicFilterPlot">
+<area shape="rect" id="node1" title="This will plot the frequency responce for a juce IIR filter." alt="" coords="12,79,121,104"/>
+<area shape="rect" id="node2" href="$classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="5,5,127,31"/>
+</map>
