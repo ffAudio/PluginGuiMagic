@@ -2,5 +2,5 @@
 	path = JUCE
 	url = https://github.com/WeAreRoli/JUCE.git
 [submodule "foleys_gui_magic"]
-	path = foleys_gui_magic
+	path = modules/foleys_gui_magic
 	url = https://github.com/ffAudio/foleys_gui_magic.git
