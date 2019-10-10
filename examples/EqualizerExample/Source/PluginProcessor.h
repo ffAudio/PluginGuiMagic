@@ -57,6 +57,8 @@ public:
         virtual ~AttachedValue();
         void parameterChanged (const String& parameterID, float newValue) override;
     private:
+        void initialUpdate();
+
         AudioProcessorValueTreeState& state;
         ValueType& value;
         String paramID;

@@ -334,7 +334,7 @@ EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioPr
     // Oh uh, tried to attach to a non existing parameter
     jassert (state.getParameter (paramID) != nullptr);
 
-    value = ValueType (*state.getRawParameterValue (paramID));
+    initialUpdate();
     state.addParameterListener (paramID, this);
 }
 
@@ -342,6 +342,18 @@ template<typename ValueType>
 EqualizerExampleAudioProcessor::AttachedValue<ValueType>::~AttachedValue()
 {
     state.removeParameterListener (paramID, this);
+}
+
+template<typename ValueType>
+void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::initialUpdate()
+{
+    value = ValueType (*state.getRawParameterValue (paramID));
+}
+
+template<>
+void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::initialUpdate()
+{
+    value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (*state.getRawParameterValue (paramID)));
 }
 
 template<typename ValueType>
