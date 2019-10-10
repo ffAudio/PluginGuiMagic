@@ -109,7 +109,7 @@ void buildProject(String folder, String project, String configuration)
     {
         bat """
         cd "${folder}"
-        "${env.MSBUILD2017}" /p:Configuration=${configuration} Builds\\VisualStudio2017\\${project}.sln
+        "${env.MSBUILD2019}" /p:Configuration=${configuration} Builds\\VisualStudio2019\\${project}.sln
         """
     }
 }
@@ -133,7 +133,7 @@ def buildPlugin (String pluginName, String iLokID)
             bat "${PROJUCER_EXE} --resave examples\\${pluginName}\\${pluginName}.jucer"
 
             bat """
-            "${env.MSBUILD2017}" /p:Configuration=Release examples\\${pluginName}\\Builds\\VisualStudio2019\\${pluginName}.sln
+            "${env.MSBUILD2019}" /p:Configuration=Release examples\\${pluginName}\\Builds\\VisualStudio2019\\${pluginName}.sln
             """
         }
     }
