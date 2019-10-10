@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="T33gqD" name="SignalGenerator" projectType="audioplug" jucerVersion="5.4.4"
-              pluginAUMainType="'augn'" pluginVST3Category="Generator" pluginRTASCategory="2048"
+              pluginAUMainType="'aufx'" pluginVST3Category="Generator" pluginRTASCategory="2048"
               pluginAAXCategory="2048" pluginVSTCategory="kPlugCategGenerator"
               projectLineFeed="&#10;">
   <MAINGROUP id="KtcAG2" name="SignalGenerator">

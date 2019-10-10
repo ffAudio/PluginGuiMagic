@@ -396,15 +396,16 @@ AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 //==============================================================================
 void EqualizerExampleAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
-    MemoryOutputStream stream(destData, false);
-    treeState.state.writeToStream (stream);
+    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
+    //            You don't need to use that, but it also takes care of restoring the last editor size
+    magicState.getStateInformation (destData);
 }
 
 void EqualizerExampleAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    ValueTree tree = ValueTree::readFromData (data, size_t (sizeInBytes));
-    if (tree.isValid())
-        treeState.state = tree;
+    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
+    //            You don't need to use that, but it also takes care of restoring the last editor size
+    magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
 }
 
 //==============================================================================

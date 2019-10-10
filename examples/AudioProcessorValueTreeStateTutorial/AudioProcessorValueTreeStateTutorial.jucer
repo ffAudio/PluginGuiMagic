@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="f2ElqE" name="AudioProcessorValueTreeStateTutorial" projectType="audioplug"
-              jucerVersion="5.4.4">
+              jucerVersion="5.4.4" projectLineFeed="&#10;">
   <MAINGROUP id="dXEChs" name="AudioProcessorValueTreeStateTutorial">
     <GROUP id="{74E99E7D-2C43-FC6C-1C67-E1435F31EF9C}" name="Source">
-      <FILE id="XTqMbP" name="PluginProcessor.cpp" compile="1" resource="0"
+      <FILE id="w7Q1Wt" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
-      <FILE id="w7Q1Wt" name="PluginProcessor.h" compile="0" resource="0"
-            file="Source/PluginProcessor.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
