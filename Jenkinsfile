@@ -42,6 +42,11 @@ node
         buildProjucer()
     }
 
+    stage('AudioProcessorValueTreeStateTutorial')
+    {
+        buildPlugin ("AudioProcessorValueTreeStateTutorial", "")
+    }
+
     stage('EqualizerExample')
     {
         buildPlugin ("EqualizerExample", "")

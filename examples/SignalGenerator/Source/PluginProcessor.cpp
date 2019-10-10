@@ -216,6 +216,7 @@ AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
 {
     // MAGIC GUI: return a default Plugin GUI
     //            If you saved a GUI before, it is loaded here from the BinaryResources in the optional arguments
+    // return new foleys::MagicPluginEditor (magicState);
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
