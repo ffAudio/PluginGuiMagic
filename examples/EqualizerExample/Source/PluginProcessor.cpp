@@ -169,31 +169,29 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     gainAttachment (treeState, gain, IDs::paramOutput)
 {
     // GUI MAGIC: add plots to be displayed in the GUI
-    magicState.addPlotSource ("plot1", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plot2", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plot3", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plot4", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plot5", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plot6", std::make_unique<foleys::MagicFilterPlot>());
-    magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>());
+    for (int i = 0; i < attachments.size(); ++i)
+    {
+        auto name = "plot" + String (i);
+        magicState.addPlotSource (name, std::make_unique<foleys::MagicFilterPlot>());
+        attachments.at (i)->postFilterUpdate = createPostUpdateLambda (magicState, name);
+    }
+
+    plotSum = dynamic_cast<foleys::MagicFilterPlot*>(magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>()));
 
     // GUI MAGIC: add analyser plots
-    magicState.addPlotSource ("input", std::make_unique<foleys::MagicAnalyser>());
-    magicState.addPlotSource ("output", std::make_unique<foleys::MagicAnalyser>());
-    inputAnalyser  = magicState.getPlotSource ("input");
-    outputAnalyser = magicState.getPlotSource ("output");
+    inputAnalyser  = magicState.addPlotSource ("input", std::make_unique<foleys::MagicAnalyser>());
+    outputAnalyser = magicState.addPlotSource ("output", std::make_unique<foleys::MagicAnalyser>());
 
-    // GUI MAGIC: forward the updated coefficients to the plot visualisers (magic lambda defined above for DRY)
-    attachment1.postFilterUpdate = createPostUpdateLambda (magicState, "plot1");
-    attachment2.postFilterUpdate = createPostUpdateLambda (magicState, "plot2");
-    attachment3.postFilterUpdate = createPostUpdateLambda (magicState, "plot3");
-    attachment4.postFilterUpdate = createPostUpdateLambda (magicState, "plot4");
-    attachment5.postFilterUpdate = createPostUpdateLambda (magicState, "plot5");
-    attachment6.postFilterUpdate = createPostUpdateLambda (magicState, "plot6");
+    for (auto* parameter : getParameters())
+        if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
+            treeState.addParameterListener (p->paramID, this);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
 {
+    for (auto* parameter : getParameters())
+        if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
+            treeState.removeParameterListener (p->paramID, this);
 }
 
 //==============================================================================
@@ -211,12 +209,8 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
 
     filter.get<6>().setGainLinear (*treeState.getRawParameterValue (IDs::paramOutput));
 
-    attachment1.setSampleRate (sampleRate);
-    attachment2.setSampleRate (sampleRate);
-    attachment3.setSampleRate (sampleRate);
-    attachment4.setSampleRate (sampleRate);
-    attachment5.setSampleRate (sampleRate);
-    attachment6.setSampleRate (sampleRate);
+    for (auto* a : attachments)
+        a->setSampleRate (sampleRate);
 
     filter.prepare (spec);
 }
@@ -381,6 +375,22 @@ void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcesso
 }
 
 //==============================================================================
+void EqualizerExampleAudioProcessor::parameterChanged (const String& paramID, float newValue)
+{
+    triggerAsyncUpdate();
+}
+
+void EqualizerExampleAudioProcessor::handleAsyncUpdate()
+{
+    std::vector<juce::dsp::IIR::Coefficients<float>::Ptr> coefficients;
+    for (auto* a : attachments)
+        if (a->isActive())
+            coefficients.push_back (a->coefficients);
+
+    plotSum->setIIRCoefficients (gain, coefficients, maxLevel);
+}
+
+//==============================================================================
 bool EqualizerExampleAudioProcessor::hasEditor() const
 {
     return true;
@@ -388,9 +398,8 @@ bool EqualizerExampleAudioProcessor::hasEditor() const
 
 AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
-    auto* editor = new foleys::MagicPluginEditor (magicState);
-    editor->restoreGUI (BinaryData::magic_xml, BinaryData::magic_xmlSize);
-    return editor;
+    // MAGIC GUI: create the generated editor
+    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
 //==============================================================================

@@ -11,7 +11,9 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-class EqualizerExampleAudioProcessor  : public AudioProcessor
+class EqualizerExampleAudioProcessor  : public AudioProcessor,
+                                        private AudioProcessorValueTreeState::Listener,
+                                        private AsyncUpdater
 {
 public:
 
@@ -106,6 +108,10 @@ public:
     };
 
     //==============================================================================
+    void parameterChanged (const String& paramID, float newValue) override;
+    void handleAsyncUpdate() override;
+
+    //==============================================================================
     AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override;
 
@@ -147,8 +153,13 @@ private:
     FilterAttachment attachment5 { treeState, filter.get<4>(), "Q5", getCallbackLock() };
     FilterAttachment attachment6 { treeState, filter.get<5>(), "Q6", getCallbackLock() };
 
+    std::array<FilterAttachment*, 6> attachments
+    { &attachment1, &attachment2, &attachment3, &attachment4, &attachment5, &attachment6 };
+
     foleys::MagicPlotSource* inputAnalyser  = nullptr;
     foleys::MagicPlotSource* outputAnalyser = nullptr;
+
+    foleys::MagicFilterPlot* plotSum = nullptr;
 
     // define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
