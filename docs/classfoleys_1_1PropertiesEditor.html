@@ -94,10 +94,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0666de33bc5c7bf2911eeeea6b1a339b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a475787eeff4fc68b9036fc78a024b126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a475787eeff4fc68b9036fc78a024b126">setStyle</a> (juce::ValueTree style)</td></tr>
 <tr class="separator:a475787eeff4fc68b9036fc78a024b126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62568851a6ae2477d649eb5098bd5e38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">setNodeToEdit</a> (juce::ValueTree node)</td></tr>
-<tr class="separator:a62568851a6ae2477d649eb5098bd5e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaff5862256bb00d3ee8bac9140f7251"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">setNodeToEdit</a> (juce::ValueTree node, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:aaaff5862256bb00d3ee8bac9140f7251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74018f454b438a5cddc252adc2012086"><td class="memItemLeft" align="right" valign="top">juce::ValueTree &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a74018f454b438a5cddc252adc2012086">getNodeToEdit</a> ()</td></tr>
 <tr class="separator:a74018f454b438a5cddc252adc2012086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62d5a5caa5e2803eb7ce19abd39049d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a62d5a5caa5e2803eb7ce19abd39049d7">addNodeProperties</a> (bool shouldBeOpen, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:a62d5a5caa5e2803eb7ce19abd39049d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6088323404121de89f15994731f66c73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a6088323404121de89f15994731f66c73">addDecoratorProperties</a> (bool shouldBeOpen, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:a6088323404121de89f15994731f66c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79d902b066af0629e46472fd6db8a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#ac79d902b066af0629e46472fd6db8a97">addTypeProperties</a> (juce::Identifier type, juce::Array&lt; juce::PropertyComponent * &gt; additional, bool shouldBeOpen, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:ac79d902b066af0629e46472fd6db8a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b71a5715ab14e4d46f8a5a42d69b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a92b71a5715ab14e4d46f8a5a42d69b77">addFlexItemProperties</a> (bool shouldBeOpen, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:a92b71a5715ab14e4d46f8a5a42d69b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d5b3480d7eeeb66e1d4c309de0997f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#aa3d5b3480d7eeeb66e1d4c309de0997f">addFlexContainerProperties</a> (bool shouldBeOpen, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:aa3d5b3480d7eeeb66e1d4c309de0997f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae6bb82eac6573cea15222efb6ac1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#aaae6bb82eac6573cea15222efb6ac1ed">paint</a> (juce::Graphics &amp;) override</td></tr>
 <tr class="separator:aaae6bb82eac6573cea15222efb6ac1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31cc081b3c77bc8855de79094fc1da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1PropertiesEditor.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
@@ -122,6 +132,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -141,12 +153,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1EditorPanels.html#ac5c54df7ed3b930268c8d7752c101725">EditorPanels::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>.</p>
 
 </div>
 </div>
-<a id="a62568851a6ae2477d649eb5098bd5e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62568851a6ae2477d649eb5098bd5e38">&#9670;&nbsp;</a></span>setNodeToEdit()</h2>
+<a id="aaaff5862256bb00d3ee8bac9140f7251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaff5862256bb00d3ee8bac9140f7251">&#9670;&nbsp;</a></span>setNodeToEdit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,13 +167,25 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void setNodeToEdit </td>
           <td>(</td>
           <td class="paramtype">juce::ValueTree&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1EditorPanels.html#af97ab31a00c8c9a941da5a3095eaf976">EditorPanels::setSelectedNode()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1PropertiesEditor.html#a6088323404121de89f15994731f66c73">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#aa3d5b3480d7eeeb66e1d4c309de0997f">PropertiesEditor::addFlexContainerProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a92b71a5715ab14e4d46f8a5a42d69b77">PropertiesEditor::addFlexItemProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62d5a5caa5e2803eb7ce19abd39049d7">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#ac79d902b066af0629e46472fd6db8a97">PropertiesEditor::addTypeProperties()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a478d2d54e771fca57c48e29e68136199">MagicBuilder::getFactoryNames()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#ac2f341a089d1486e07976fa9e460d06c">MagicBuilder::getParameterNames()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#ac52759ad45a89f798365b19e3de791a2">MagicBuilder::getPlotSourcesNames()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicBuilder::getStylesheet()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a0666de33bc5c7bf2911eeeea6b1a339b">PropertiesEditor::PropertiesEditor()</a>, <a class="el" href="classfoleys_1_1ToolBox.html#aaaff5862256bb00d3ee8bac9140f7251">ToolBox::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#af97ab31a00c8c9a941da5a3095eaf976">ToolBox::setSelectedNode()</a>.</p>
 
 </div>
 </div>
@@ -179,6 +203,172 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62d5a5caa5e2803eb7ce19abd39049d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62d5a5caa5e2803eb7ce19abd39049d7">&#9670;&nbsp;</a></span>addNodeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addNodeProperties </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shouldBeOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#ab6aeff0bd59418beb90893bbbb642858">Stylesheet::getAllClassesNames()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicBuilder::getStylesheet()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+
+</div>
+</div>
+<a id="a6088323404121de89f15994731f66c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6088323404121de89f15994731f66c73">&#9670;&nbsp;</a></span>addDecoratorProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addDecoratorProperties </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shouldBeOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+
+</div>
+</div>
+<a id="ac79d902b066af0629e46472fd6db8a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79d902b066af0629e46472fd6db8a97">&#9670;&nbsp;</a></span>addTypeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addTypeProperties </td>
+          <td>(</td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Array&lt; juce::PropertyComponent * &gt;&#160;</td>
+          <td class="paramname"><em>additional</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shouldBeOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ba5f02b2a7d7bc6051c8c6062b0223b">MagicBuilder::getColourNames()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a7acb666a79b086f68dc644708b001769">MagicBuilder::getSettableProperties()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+
+</div>
+</div>
+<a id="a92b71a5715ab14e4d46f8a5a42d69b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b71a5715ab14e4d46f8a5a42d69b77">&#9670;&nbsp;</a></span>addFlexItemProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addFlexItemProperties </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shouldBeOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+
+</div>
+</div>
+<a id="aa3d5b3480d7eeeb66e1d4c309de0997f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d5b3480d7eeeb66e1d4c309de0997f">&#9670;&nbsp;</a></span>addFlexContainerProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addFlexContainerProperties </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shouldBeOpen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
 
 </div>
 </div>
@@ -257,7 +447,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2019 16:58:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2019 00:13:37 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

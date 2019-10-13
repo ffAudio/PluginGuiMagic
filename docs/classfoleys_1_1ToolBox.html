@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac56f546a808974ae71f0aeb42c7fc847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af97ab31a00c8c9a941da5a3095eaf976"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ToolBox.html#af97ab31a00c8c9a941da5a3095eaf976">setSelectedNode</a> (const juce::ValueTree &amp;node)</td></tr>
 <tr class="separator:af97ab31a00c8c9a941da5a3095eaf976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaff5862256bb00d3ee8bac9140f7251"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ToolBox.html#aaaff5862256bb00d3ee8bac9140f7251">setNodeToEdit</a> (juce::ValueTree node, const juce::Identifier &amp;propToScrollTo=juce::Identifier())</td></tr>
+<tr class="separator:aaaff5862256bb00d3ee8bac9140f7251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bc43348faee558ab0ed69ba8de12473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">stateWasReloaded</a> ()</td></tr>
 <tr class="separator:a3bc43348faee558ab0ed69ba8de12473"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaee4b337a9e4e190184f440b1b68ab21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ToolBox.html#aaee4b337a9e4e190184f440b1b68ab21">keyPressed</a> (const juce::KeyPress &amp;key) override</td></tr>
@@ -198,7 +200,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a6cb3176c3d5ab7d0d5059686bc1c6847">MagicBuilder::getGuiTree()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a2a79a8862c6981b6141ae9ce16559c08">MagicBuilder::getConfigTree()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#adc14861c8090f30b9ebc3eef5c73a7e0">ToolBox::ToolBox()</a>.</p>
 
@@ -296,7 +298,37 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1EditorPanels.html#af97ab31a00c8c9a941da5a3095eaf976">EditorPanels::setSelectedNode()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1GUITreeEditor.html#af97ab31a00c8c9a941da5a3095eaf976">GUITreeEditor::setSelectedNode()</a>.</p>
+
+</div>
+</div>
+<a id="aaaff5862256bb00d3ee8bac9140f7251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaff5862256bb00d3ee8bac9140f7251">&#9670;&nbsp;</a></span>setNodeToEdit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setNodeToEdit </td>
+          <td>(</td>
+          <td class="paramtype">juce::ValueTree&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>propToScrollTo</em> = <code>juce::Identifier()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
 
 </div>
 </div>
@@ -315,7 +347,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1EditorPanels.html#ac5c54df7ed3b930268c8d7752c101725">EditorPanels::update()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#a23357c554f1729a34981aff828025506">Stylesheet::getCurrentStyle()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicBuilder::getStylesheet()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a475787eeff4fc68b9036fc78a024b126">PropertiesEditor::setStyle()</a>, <a class="el" href="classfoleys_1_1Palette.html#ac5c54df7ed3b930268c8d7752c101725">Palette::update()</a>, and <a class="el" href="classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec">GUITreeEditor::updateTree()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1">ToolBox::loadDialog()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#adc14861c8090f30b9ebc3eef5c73a7e0">ToolBox::ToolBox()</a>.</p>
 
@@ -394,7 +426,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2019 16:58:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2019 00:13:37 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

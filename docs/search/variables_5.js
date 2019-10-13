@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]]
+  ['inheritedfrom',['inheritedFrom',['../classfoleys_1_1StylePropertyComponent.html#a8687575acbfd1d4a833a7fc2464da9f1',1,'foleys::StylePropertyComponent']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['editorpanels',['EditorPanels',['../classfoleys_1_1EditorPanels.html',1,'EditorPanels'],['../classfoleys_1_1EditorPanels.html#a48bb6f869a8a55a7c31a8c45dcc27ed7',1,'foleys::EditorPanels::EditorPanels()']]]
+  ['editor',['editor',['../classfoleys_1_1StylePropertyComponent.html#a5554d5d23070388734b7e8a0819a98c0',1,'foleys::StylePropertyComponent']]],
+  ['editorcolours',['EditorColours',['../namespaceEditorColours.html',1,'']]]
 ];

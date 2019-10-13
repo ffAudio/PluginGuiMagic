@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['justification',['justification',['../classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843',1,'foleys::Decorator']]]
+  ['editor',['editor',['../classfoleys_1_1StylePropertyComponent.html#a5554d5d23070388734b7e8a0819a98c0',1,'foleys::StylePropertyComponent']]]
 ];

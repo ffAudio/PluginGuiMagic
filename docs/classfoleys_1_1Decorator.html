@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f3f2116dea564fd1c4298798b8a5bcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">configureDecorator</a> (<a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;stylesheet, const juce::ValueTree &amp;node)</td></tr>
 <tr class="memdesc:a3f3f2116dea564fd1c4298798b8a5bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set the margins/borders etc.  <a href="#a3f3f2116dea564fd1c4298798b8a5bcb">More...</a><br /></td></tr>
 <tr class="separator:a3f3f2116dea564fd1c4298798b8a5bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2161ef5499d6601bf4b5aebaa002ff84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">configureComponent</a> (<a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;stylesheet, const juce::ValueTree &amp;node)</td></tr>
+<tr class="memdesc:a2161ef5499d6601bf4b5aebaa002ff84"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set specific properties for the wrapped component.  <a href="#a2161ef5499d6601bf4b5aebaa002ff84">More...</a><br /></td></tr>
+<tr class="separator:a2161ef5499d6601bf4b5aebaa002ff84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ce1cb5429c5cd3f4b4a07ea1706c8ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a7ce1cb5429c5cd3f4b4a07ea1706c8ba">connectToState</a> (const juce::String &amp;paramID, juce::AudioProcessorValueTreeState &amp;state)</td></tr>
 <tr class="memdesc:a7ce1cb5429c5cd3f4b4a07ea1706c8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will try to connect the Component with the supplied parameter of that name.  <a href="#a7ce1cb5429c5cd3f4b4a07ea1706c8ba">More...</a><br /></td></tr>
 <tr class="separator:a7ce1cb5429c5cd3f4b4a07ea1706c8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,7 +260,39 @@ Protected Member Functions</h2></td></tr>
 <p>This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set the margins/borders etc. </p>
 <p>for the <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>. </p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af046f40a1530d16c28708754586ac5ef">Decorator::backgroundColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a46144f4257b4f5f716aa872e7b49a0ef">Decorator::border</a>, <a class="el" href="classfoleys_1_1Decorator.html#a33865e93b92806c51bbc72a7394fce25">Decorator::borderColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#ad14444d19fe0b02ec4d8592cd206877b">Decorator::captionColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">Stylesheet::getBackgroundGradient()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2d1ee771907ee023bbda1b416271e862">Stylesheet::getBackgroundImage()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#ab98dd4d362ebb78388e4ce312153e410">Stylesheet::getProperty()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>, and <a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">Stylesheet::parseColour()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af046f40a1530d16c28708754586ac5ef">Decorator::backgroundColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a46144f4257b4f5f716aa872e7b49a0ef">Decorator::border</a>, <a class="el" href="classfoleys_1_1Decorator.html#a33865e93b92806c51bbc72a7394fce25">Decorator::borderColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#ad14444d19fe0b02ec4d8592cd206877b">Decorator::captionColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">Stylesheet::getBackgroundGradient()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2d1ee771907ee023bbda1b416271e862">Stylesheet::getBackgroundImage()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>, and <a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">Stylesheet::parseColour()</a>.</p>
+
+</div>
+</div>
+<a id="a2161ef5499d6601bf4b5aebaa002ff84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2161ef5499d6601bf4b5aebaa002ff84">&#9670;&nbsp;</a></span>configureComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void configureComponent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;&#160;</td>
+          <td class="paramname"><em>stylesheet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::ValueTree &amp;&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set specific properties for the wrapped component. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a7acb666a79b086f68dc644708b001769">MagicBuilder::getSettableProperties()</a>.</p>
 
 </div>
 </div>
@@ -604,7 +639,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2019 16:58:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2019 00:13:37 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['undo',['undo',['../classfoleys_1_1MagicBuilder.html#af4aa3a741ed303f7835572542375808a',1,'foleys::MagicBuilder']]]
+  ['name',['name',['../structfoleys_1_1SettableProperty.html#ac9c7171c690a7a068460255551236624',1,'foleys::SettableProperty']]],
+  ['node',['node',['../classfoleys_1_1StylePropertyComponent.html#adb83a582ca7714adbe80c137cbe51bd8',1,'foleys::StylePropertyComponent']]]
 ];

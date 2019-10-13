@@ -107,6 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicFilterPlot.html#a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61">setIIRCoefficients</a> (juce::dsp::IIR::Coefficients&lt; float &gt;::Ptr coefficients, float maxDB)</td></tr>
 <tr class="memdesc:a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new coefficients to calculate the frequency response from.  <a href="#a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61">More...</a><br /></td></tr>
 <tr class="separator:a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09478ded39d77baf647f0ea9d77d32e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicFilterPlot.html#a09478ded39d77baf647f0ea9d77d32e3">setIIRCoefficients</a> (float gain, std::vector&lt; juce::dsp::IIR::Coefficients&lt; float &gt;::Ptr &gt; coefficients, float maxDB)</td></tr>
+<tr class="memdesc:a09478ded39d77baf647f0ea9d77d32e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new coefficients to calculate the frequency response from.  <a href="#a09478ded39d77baf647f0ea9d77d32e3">More...</a><br /></td></tr>
+<tr class="separator:a09478ded39d77baf647f0ea9d77d32e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a380f126aa29c0b4924b9f4961f6f7bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicFilterPlot.html#a380f126aa29c0b4924b9f4961f6f7bea">pushSamples</a> (const juce::AudioBuffer&lt; float &gt; &amp;buffer) override</td></tr>
 <tr class="memdesc:a380f126aa29c0b4924b9f4961f6f7bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing in this class.  <a href="#a380f126aa29c0b4924b9f4961f6f7bea">More...</a><br /></td></tr>
 <tr class="separator:a380f126aa29c0b4924b9f4961f6f7bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +156,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61">&#9670;&nbsp;</a></span>setIIRCoefficients()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0eaa0c4b1b1f3ea8e5cc5b9d971b61">&#9670;&nbsp;</a></span>setIIRCoefficients() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,6 +185,51 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coefficients</td><td>the coefficients to calculate the frequency response for </td></tr>
+    <tr><td class="paramname">sampleRate</td><td>is the sampleRate the processing is happening with </td></tr>
+    <tr><td class="paramname">maxDB</td><td>is the maximum level in dB, that the curve will display </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09478ded39d77baf647f0ea9d77d32e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09478ded39d77baf647f0ea9d77d32e3">&#9670;&nbsp;</a></span>setIIRCoefficients() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setIIRCoefficients </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; juce::dsp::IIR::Coefficients&lt; float &gt;::Ptr &gt;&#160;</td>
+          <td class="paramname"><em>coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxDB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set new coefficients to calculate the frequency response from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gain</td><td>the overall added gain </td></tr>
+    <tr><td class="paramname">coefficients</td><td>a vector of coefficients to sum up (multiply) to calculate the frequency response for </td></tr>
     <tr><td class="paramname">sampleRate</td><td>is the sampleRate the processing is happening with </td></tr>
     <tr><td class="paramname">maxDB</td><td>is the maximum level in dB, that the curve will display </td></tr>
   </table>
@@ -323,7 +371,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2019 16:58:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2019 00:13:37 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
