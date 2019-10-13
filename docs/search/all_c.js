@@ -11,5 +11,7 @@ var searchData=
   ['magicplotsource',['MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html',1,'MagicPlotSource'],['../classfoleys_1_1MagicPlotSource.html#a55bbde130cac6785e2d29b629fd7f7dd',1,'foleys::MagicPlotSource::MagicPlotSource()']]],
   ['magicplugineditor',['MagicPluginEditor',['../classfoleys_1_1MagicPluginEditor.html',1,'MagicPluginEditor'],['../classfoleys_1_1MagicPluginEditor.html#ab0d028ccc813056bc49cc6089f8afcfd',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState)'],['../classfoleys_1_1MagicPluginEditor.html#af2cbf6b43605d292c883973611aac3f8',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState, const char *data, const int dataSize)']]],
   ['magicprocessorstate',['MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html',1,'MagicProcessorState'],['../classfoleys_1_1MagicProcessorState.html#aeccdd2ffdb103851bc31512d5c516039',1,'foleys::MagicProcessorState::MagicProcessorState()']]],
-  ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]]
+  ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]],
+  ['mousedoubleclick',['mouseDoubleClick',['../classfoleys_1_1StylePropertyComponent.html#a157094d9b4f4477360601d2ecbaaafaf',1,'foleys::StylePropertyComponent']]],
+  ['readme_2emd',['README.md',['../modules_2foleys__gui__magic_2README_8md.html',1,'']]]
 ];

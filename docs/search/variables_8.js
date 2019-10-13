@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stylesheet',['stylesheet',['../classfoleys_1_1MagicBuilder.html#a790f91ec36b7ba94a318fc338821219a',1,'foleys::MagicBuilder']]]
+  ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]]
 ];

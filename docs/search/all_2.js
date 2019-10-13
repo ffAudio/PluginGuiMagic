@@ -8,6 +8,7 @@ var searchData=
   ['colourids',['ColourIds',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094',1,'foleys::MagicPlotComponent']]],
   ['colourtranslations',['colourTranslations',['../classfoleys_1_1MagicBuilder.html#acbecc431697bd2e80e8f79f1c646bc1e',1,'foleys::MagicBuilder']]],
   ['config',['config',['../classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75',1,'foleys::MagicBuilder']]],
+  ['configurecomponent',['configureComponent',['../classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84',1,'foleys::Decorator']]],
   ['configuredecorator',['configureDecorator',['../classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb',1,'foleys::Decorator']]],
   ['configureflexbox',['configureFlexBox',['../classfoleys_1_1Stylesheet.html#ad6a744198713f15f99b65a12ec229e7b',1,'foleys::Stylesheet']]],
   ['configureflexboxitem',['configureFlexBoxItem',['../classfoleys_1_1Stylesheet.html#af776c60fdfc4d63f2c8df514ca7b72d5',1,'foleys::Stylesheet']]],
