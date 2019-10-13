@@ -171,7 +171,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     // GUI MAGIC: add plots to be displayed in the GUI
     for (int i = 0; i < attachments.size(); ++i)
     {
-        auto name = "plot" + String (i);
+        auto name = "plot" + String (i + 1);
         magicState.addPlotSource (name, std::make_unique<foleys::MagicFilterPlot>());
         attachments.at (i)->postFilterUpdate = createPostUpdateLambda (magicState, name);
     }
