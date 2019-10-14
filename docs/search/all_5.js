@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['findcolourid',['findColourId',['../classfoleys_1_1MagicBuilder.html#abfa3f7716dd107e23a04074009762ec7',1,'foleys::MagicBuilder::findColourId(juce::Identifier type, juce::Identifier name)'],['../classfoleys_1_1MagicBuilder.html#a0d9f31d6377fe15bb6c98c9ace35fef3',1,'foleys::MagicBuilder::findColourId(juce::Identifier name)']]],
   ['flexbox',['FlexBox',['../classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2',1,'foleys::Container::FlexBox()'],['../classfoleys_1_1Container.html#ab4b4888c7b50ef48d5cbf95877947ee0',1,'foleys::Container::flexBox()']]],
   ['flexitem',['flexItem',['../classfoleys_1_1Decorator.html#a44cf8e179ab02bb4a83b0a2e380d468a',1,'foleys::Decorator']]],
   ['foleys',['foleys',['../namespacefoleys.html',1,'']]],

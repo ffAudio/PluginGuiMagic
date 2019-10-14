@@ -140,6 +140,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b57394f3eec0ce84de0304aa1cc1428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a6b57394f3eec0ce84de0304aa1cc1428">setColourTranslation</a> (juce::Identifier type, std::vector&lt; std::pair&lt; juce::String, int &gt;&gt; mapping)</td></tr>
 <tr class="memdesc:a6b57394f3eec0ce84de0304aa1cc1428"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each factory you can register a translation table, which will forward the colours from the <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> to the Components.  <a href="#a6b57394f3eec0ce84de0304aa1cc1428">More...</a><br /></td></tr>
 <tr class="separator:a6b57394f3eec0ce84de0304aa1cc1428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa3f7716dd107e23a04074009762ec7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#abfa3f7716dd107e23a04074009762ec7">findColourId</a> (juce::Identifier type, juce::Identifier name)</td></tr>
+<tr class="memdesc:abfa3f7716dd107e23a04074009762ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the ColourId for a given type.  <a href="#abfa3f7716dd107e23a04074009762ec7">More...</a><br /></td></tr>
+<tr class="separator:abfa3f7716dd107e23a04074009762ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a0d9f31d6377fe15bb6c98c9ace35fef3">findColourId</a> (juce::Identifier name)</td></tr>
+<tr class="memdesc:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the ColourId in all types.  <a href="#a0d9f31d6377fe15bb6c98c9ace35fef3">More...</a><br /></td></tr>
+<tr class="separator:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa86959a62f6afd5f22a875c60dd75cd5"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#aa86959a62f6afd5f22a875c60dd75cd5">getAllLayoutPropertyNames</a> () const</td></tr>
 <tr class="memdesc:aa86959a62f6afd5f22a875c60dd75cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all possible properties (except colour names) for the editor.  <a href="#aa86959a62f6afd5f22a875c60dd75cd5">More...</a><br /></td></tr>
 <tr class="separator:aa86959a62f6afd5f22a875c60dd75cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -276,7 +282,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a790f91ec36b7ba94a318fc338821219a">MagicBuilder::stylesheet</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62d5a5caa5e2803eb7ce19abd39049d7">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a6088323404121de89f15994731f66c73">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62d5a5caa5e2803eb7ce19abd39049d7">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>.</p>
 
 </div>
 </div>
@@ -496,6 +502,57 @@ Protected Attributes</h2></td></tr>
 <p>For each factory you can register a translation table, which will forward the colours from the <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> to the Components. </p>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#acbecc431697bd2e80e8f79f1c646bc1e">MagicBuilder::colourTranslations</a>.</p>
+
+</div>
+</div>
+<a id="abfa3f7716dd107e23a04074009762ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa3f7716dd107e23a04074009762ec7">&#9670;&nbsp;</a></span>findColourId() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findColourId </td>
+          <td>(</td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Looks up the ColourId for a given type. </p>
+
+</div>
+</div>
+<a id="a0d9f31d6377fe15bb6c98c9ace35fef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d9f31d6377fe15bb6c98c9ace35fef3">&#9670;&nbsp;</a></span>findColourId() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findColourId </td>
+          <td>(</td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Looks up the ColourId in all types. </p>
+<p>Finds only the first hit, if the names are not unique. </p>
 
 </div>
 </div>
@@ -910,7 +967,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2019 00:13:37 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 14 2019 14:05:47 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
