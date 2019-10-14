@@ -15,6 +15,7 @@ var searchData=
   ['getlasteditorsize',['getLastEditorSize',['../classfoleys_1_1MagicProcessorState.html#ada0cc70de53aeb22ee40f1e2ec05618c',1,'foleys::MagicProcessorState']]],
   ['getlevelsource',['getLevelSource',['../classfoleys_1_1MagicProcessorState.html#a256d97fae17102c673190e5563f4f02a',1,'foleys::MagicProcessorState']]],
   ['getlookandfeel',['getLookAndFeel',['../classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776',1,'foleys::Stylesheet']]],
+  ['getlookandfeelnames',['getLookAndFeelNames',['../classfoleys_1_1Stylesheet.html#a22b1650af62f9ab415b49a4ec9fc2a99',1,'foleys::Stylesheet']]],
   ['getmagicbuilder',['getMagicBuilder',['../classfoleys_1_1PropertiesEditor.html#addc57af5c99055d61936c9c506c0494d',1,'foleys::PropertiesEditor']]],
   ['getnodetoedit',['getNodeToEdit',['../classfoleys_1_1PropertiesEditor.html#a74018f454b438a5cddc252adc2012086',1,'foleys::PropertiesEditor']]],
   ['getparameternames',['getParameterNames',['../classfoleys_1_1MagicBuilder.html#ac2f341a089d1486e07976fa9e460d06c',1,'foleys::MagicBuilder::getParameterNames()'],['../classfoleys_1_1MagicGUIBuilder.html#aa79dc253a45b44f9e9809ec526f5bf44',1,'foleys::MagicGUIBuilder::getParameterNames()'],['../classfoleys_1_1MagicProcessorState.html#ae34e27ce712ca7936edc60340aae4bd4',1,'foleys::MagicProcessorState::getParameterNames()']]],
