@@ -30,6 +30,34 @@ a look in the examples folder, the SignalGenerator example is a good starting
 point.
 
 
+Examples
+--------
+
+### SignalGenerator:
+
+[examples/SignalGenerator](examples/SignalGenerator)
+
+This example demonstrates how to add a editable GUI for an AudioProcessor
+without writing code for the GUI, only implementing the processor.
+
+
+### ExtendingExample:
+
+[examples/ExtendingExample](examples/ExtendingExample)
+
+This example shows, how you can add your custom components into the generated
+GUI. There is a Component where you can edit the colours, as well as a
+Component, that accesses a typesafe back reference to the AudioProcessor.
+
+
+### EqualizerExample
+
+[examples/EqualizerExample](examples/EqualizerExample)
+
+An example of a 6 band IIR equalizer with complete plot curves, analysers and
+more features following (this is the reference implementation for new features).
+
+
 Deploying
 ---------
 
