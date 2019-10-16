@@ -47,16 +47,22 @@ node
         buildPlugin ("APVTS_Tutorial", "")
     }
 
-    stage('EqualizerExample')
-    {
-        buildPlugin ("EqualizerExample", "")
-    }
-
     stage('SignalGenerator')
     {
         buildPlugin ("SignalGenerator", "")
     }
+
+    stage('ExtendingExample')
+    {
+        buildPlugin ("ExtendingExample", "")
+    }
+
+    stage('EqualizerExample')
+    {
+        buildPlugin ("EqualizerExample", "")
+    }
 }
+
 
 
 void makeOutputDirectory(String platform)
