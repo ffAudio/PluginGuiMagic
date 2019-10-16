@@ -15,8 +15,21 @@ class Lissajour   : public Component,
                     private Timer
 {
 public:
+    enum ColourIDs
+    {
+        // we are safe from collissions, because we set the colours on every component directly from the stylesheet
+        backgroundColourId,
+        drawColourId,
+        fillColourId
+    };
+
     Lissajour()
     {
+        // make sure you define some default colour, otherwise the juce lookup will choke
+        setColour (backgroundColourId, Colours::black);
+        setColour (drawColourId, Colours::green);
+        setColour (fillColourId, Colours::green.withAlpha (0.5f));
+
         startTimerHz (30);
     }
 
@@ -26,19 +39,23 @@ public:
         const auto  centre = getLocalBounds().getCentre().toFloat();
         const float factor = 3.0f;
 
-        g.fillAll (Colours::black);
-        g.setColour (Colours::green);
+        g.fillAll (findColour (backgroundColourId));
         Path p;
         p.startNewSubPath (centre + Point<float>(0, std::sin (phase)) * radius);
         for (float i = 0.1; i <= MathConstants<float>::twoPi; i += 0.01)
-        {
-            auto x = i;
-            auto y = i * factor + phase;
-            p.lineTo (centre + Point<float>(std::sin (x),
-                                            std::sin (std::fmod (y, MathConstants<float>::twoPi))) * radius);
-        }
+            p.lineTo (centre + Point<float>(std::sin (i),
+                                            std::sin (std::fmod (i * factor + phase,
+                                                                 MathConstants<float>::twoPi))) * radius);
 
+        g.setColour (findColour (drawColourId));
         g.strokePath (p, PathStrokeType (2.0f));
+
+        const auto fillColour = findColour (fillColourId);
+        if (fillColour.isTransparent() == false)
+        {
+            g.setColour (fillColour);
+            g.fillPath (p);
+        }
     }
 
 private:
@@ -179,10 +196,16 @@ AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
     auto builder = std::make_unique<foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>>(*this, &magicState);
     builder->registerJUCEFactories();
 
-    builder->registerFactory ("Lissajour", [](const ValueTree&, ExtendingExampleAudioProcessor&)
+    static Identifier lissajour { "Lissajour" };
+    builder->registerFactory (lissajour, [](const ValueTree&, ExtendingExampleAudioProcessor&)
                               {
                                   return std::make_unique<Lissajour>();
                               });
+
+    builder->setColourTranslation (lissajour, {
+        {"lissajour-background", Lissajour::backgroundColourId},
+        {"lissajour-draw", Lissajour::drawColourId},
+        {"lissajour-fill", Lissajour::fillColourId} });
 
     builder->registerFactory ("Statistics", [](const ValueTree&, ExtendingExampleAudioProcessor& p)
                               {
