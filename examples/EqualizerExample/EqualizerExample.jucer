@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" jucerVersion="5.4.4"
+<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" jucerVersion="5.4.5"
               projectLineFeed="&#10;">
   <MAINGROUP id="FaWUds" name="EqualizerExample">
     <GROUP id="{2FE48CA4-8183-CD45-E26D-AA245FA268D6}" name="Source">
