@@ -12,5 +12,11 @@ var searchData=
   ['magicprocessorstate',['MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html',1,'MagicProcessorState'],['../classfoleys_1_1MagicProcessorState.html#aeccdd2ffdb103851bc31512d5c516039',1,'foleys::MagicProcessorState::MagicProcessorState()']]],
   ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]],
   ['mousedoubleclick',['mouseDoubleClick',['../classfoleys_1_1StylePropertyComponent.html#a157094d9b4f4477360601d2ecbaaafaf',1,'foleys::StylePropertyComponent']]],
+  ['mousedown',['mouseDown',['../classfoleys_1_1XYDragComponent.html#a86e6a10bf75587f36f2ecfa95ec6391e',1,'foleys::XYDragComponent']]],
+  ['mousedrag',['mouseDrag',['../classfoleys_1_1XYDragComponent.html#a8df37390c2a3b934d0f392ba02fedf41',1,'foleys::XYDragComponent']]],
+  ['mouseenter',['mouseEnter',['../classfoleys_1_1XYDragComponent.html#ada27f31be471c2abd5785fb93389f822',1,'foleys::XYDragComponent']]],
+  ['mouseexit',['mouseExit',['../classfoleys_1_1XYDragComponent.html#a4547fdc0d8263dc0570f2de507dc185a',1,'foleys::XYDragComponent']]],
+  ['mousemove',['mouseMove',['../classfoleys_1_1XYDragComponent.html#acb4c9913ede631886952657824a120bc',1,'foleys::XYDragComponent']]],
+  ['mouseup',['mouseUp',['../classfoleys_1_1XYDragComponent.html#a6b5eb44266a8bd8e271ccf6da53b3ce7',1,'foleys::XYDragComponent']]],
   ['readme_2emd',['README.md',['../modules_2foleys__gui__magic_2README_8md.html',1,'']]]
 ];

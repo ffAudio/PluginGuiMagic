@@ -1,9 +1,12 @@
 var searchData=
 [
   ['findcolourid',['findColourId',['../classfoleys_1_1MagicBuilder.html#abfa3f7716dd107e23a04074009762ec7',1,'foleys::MagicBuilder::findColourId(juce::Identifier type, juce::Identifier name)'],['../classfoleys_1_1MagicBuilder.html#a0d9f31d6377fe15bb6c98c9ace35fef3',1,'foleys::MagicBuilder::findColourId(juce::Identifier name)']]],
-  ['flexbox',['FlexBox',['../classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2',1,'foleys::Container::FlexBox()'],['../classfoleys_1_1Container.html#ab4b4888c7b50ef48d5cbf95877947ee0',1,'foleys::Container::flexBox()']]],
+  ['flexbox',['flexBox',['../classfoleys_1_1Container.html#ab4b4888c7b50ef48d5cbf95877947ee0',1,'foleys::Container::flexBox()'],['../classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2',1,'foleys::Container::FlexBox()']]],
   ['flexitem',['flexItem',['../classfoleys_1_1Decorator.html#a44cf8e179ab02bb4a83b0a2e380d468a',1,'foleys::Decorator']]],
   ['foleys',['foleys',['../namespacefoleys.html',1,'']]],
+  ['foleys_5fattachablecomponent_2eh',['foleys_AttachableComponent.h',['../foleys__AttachableComponent_8h.html',1,'']]],
+  ['foleys_5fattachableslider_2ecpp',['foleys_AttachableSlider.cpp',['../foleys__AttachableSlider_8cpp.html',1,'']]],
+  ['foleys_5fattachableslider_2eh',['foleys_AttachableSlider.h',['../foleys__AttachableSlider_8h.html',1,'']]],
   ['foleys_5fcontainer_2ecpp',['foleys_Container.cpp',['../foleys__Container_8cpp.html',1,'']]],
   ['foleys_5fcontainer_2eh',['foleys_Container.h',['../foleys__Container_8h.html',1,'']]],
   ['foleys_5fdecorator_2ecpp',['foleys_Decorator.cpp',['../foleys__Decorator_8cpp.html',1,'']]],
@@ -35,8 +38,10 @@ var searchData=
   ['foleys_5fmagicprocessorstate_2eh',['foleys_MagicProcessorState.h',['../foleys__MagicProcessorState_8h.html',1,'']]],
   ['foleys_5fpalette_2ecpp',['foleys_Palette.cpp',['../foleys__Palette_8cpp.html',1,'']]],
   ['foleys_5fpalette_2eh',['foleys_Palette.h',['../foleys__Palette_8h.html',1,'']]],
+  ['foleys_5fparameterattachment_2eh',['foleys_ParameterAttachment.h',['../foleys__ParameterAttachment_8h.html',1,'']]],
   ['foleys_5fpropertieseditor_2ecpp',['foleys_PropertiesEditor.cpp',['../foleys__PropertiesEditor_8cpp.html',1,'']]],
   ['foleys_5fpropertieseditor_2eh',['foleys_PropertiesEditor.h',['../foleys__PropertiesEditor_8h.html',1,'']]],
+  ['foleys_5fsettableproperties_2eh',['foleys_SettableProperties.h',['../foleys__SettableProperties_8h.html',1,'']]],
   ['foleys_5fshow_5fgui_5feditor_5fpallette',['FOLEYS_SHOW_GUI_EDITOR_PALLETTE',['../foleys__gui__magic_8h.html#a6a3389be06faa256f84cd3d5978d86d8',1,'foleys_gui_magic.h']]],
   ['foleys_5fstringdefinitions_2eh',['foleys_StringDefinitions.h',['../foleys__StringDefinitions_8h.html',1,'']]],
   ['foleys_5fstylechoicepropertycomponent_2ecpp',['foleys_StyleChoicePropertyComponent.cpp',['../foleys__StyleChoicePropertyComponent_8cpp.html',1,'']]],
@@ -51,6 +56,8 @@ var searchData=
   ['foleys_5fstyletextpropertycomponent_2eh',['foleys_StyleTextPropertyComponent.h',['../foleys__StyleTextPropertyComponent_8h.html',1,'']]],
   ['foleys_5ftoolbox_2ecpp',['foleys_ToolBox.cpp',['../foleys__ToolBox_8cpp.html',1,'']]],
   ['foleys_5ftoolbox_2eh',['foleys_ToolBox.h',['../foleys__ToolBox_8h.html',1,'']]],
+  ['foleys_5fxydragcomponent_2ecpp',['foleys_XYDragComponent.cpp',['../foleys__XYDragComponent_8cpp.html',1,'']]],
+  ['foleys_5fxydragcomponent_2eh',['foleys_XYDragComponent.h',['../foleys__XYDragComponent_8h.html',1,'']]],
   ['ids',['IDs',['../namespacefoleys_1_1IDs.html',1,'foleys']]],
   ['foleys_5fgui_5fmagic',['foleys_gui_magic',['../index.html',1,'']]]
 ];

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['loaddialog',['loadDialog',['../classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1',1,'foleys::ToolBox']]],
-  ['lookandfeel',['LookAndFeel',['../classfoleys_1_1LookAndFeel.html#abd999034610de6efc3d2fc33b84485f1',1,'foleys::LookAndFeel']]],
-  ['lookupvalue',['lookupValue',['../classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83',1,'foleys::StylePropertyComponent']]]
+  ['isactive',['isActive',['../classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203',1,'foleys::MagicPlotSource']]],
+  ['isclassnode',['isClassNode',['../classfoleys_1_1Stylesheet.html#af710878f90770580a74bc799c32e2648',1,'foleys::Stylesheet']]],
+  ['iscontainer',['isContainer',['../classfoleys_1_1Container.html#a1e51f776a08211cc55dfd180bb9ec36e',1,'foleys::Container::isContainer()'],['../classfoleys_1_1Decorator.html#ac8f7adb49b91d04a161dd7f9671a4e08',1,'foleys::Decorator::isContainer()']]],
+  ['isidnode',['isIdNode',['../classfoleys_1_1Stylesheet.html#ad4a41f9c5d88da6dc9c4fed533117b9a',1,'foleys::Stylesheet']]],
+  ['istypenode',['isTypeNode',['../classfoleys_1_1Stylesheet.html#a4f817ddb100f9832d2e4126b74dfee96',1,'foleys::Stylesheet']]]
 ];

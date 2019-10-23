@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afef1e8fae153dfa7c8e700b3e5183aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15965664c1822f421d4265386bb992b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a15965664c1822f421d4265386bb992b4">addChildItem</a> (std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; child)</td></tr>
 <tr class="separator:a15965664c1822f421d4265386bb992b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913357d2a274270aab6b7008bf734016"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a913357d2a274270aab6b7008bf734016">setChildNeedsRepaint</a> (bool checkOnly=false)</td></tr>
+<tr class="memdesc:a913357d2a274270aab6b7008bf734016"><td class="mdescLeft">&#160;</td><td class="mdescRight">A child component can call this method instead of repaint(), and the container will make sure, that repaints only happen at a configurable max FPS rate.  <a href="#a913357d2a274270aab6b7008bf734016">More...</a><br /></td></tr>
+<tr class="separator:a913357d2a274270aab6b7008bf734016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61e49b69e48d7c5682feb7ae7fa0e5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#af61e49b69e48d7c5682feb7ae7fa0e5a">setMaxFPSrate</a> (int maxFPS)</td></tr>
+<tr class="memdesc:af61e49b69e48d7c5682feb7ae7fa0e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum frame rate.  <a href="#af61e49b69e48d7c5682feb7ae7fa0e5a">More...</a><br /></td></tr>
+<tr class="separator:af61e49b69e48d7c5682feb7ae7fa0e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a134446b67cb69cce1680150976c411cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a134446b67cb69cce1680150976c411cb">setEditMode</a> (bool shouldEdit) override</td></tr>
 <tr class="memdesc:a134446b67cb69cce1680150976c411cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This switches this node and all it's descendents in the edit mode, which means, the components don't react, but instead you can move them around.  <a href="#a134446b67cb69cce1680150976c411cb">More...</a><br /></td></tr>
 <tr class="separator:a134446b67cb69cce1680150976c411cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,9 +137,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">configureComponent</a> (<a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;stylesheet, const juce::ValueTree &amp;node)</td></tr>
 <tr class="memdesc:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set specific properties for the wrapped component.  <a href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">More...</a><br /></td></tr>
 <tr class="separator:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ce1cb5429c5cd3f4b4a07ea1706c8ba inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a7ce1cb5429c5cd3f4b4a07ea1706c8ba">connectToState</a> (const juce::String &amp;paramID, juce::AudioProcessorValueTreeState &amp;state)</td></tr>
-<tr class="memdesc:a7ce1cb5429c5cd3f4b4a07ea1706c8ba inherit pub_methods_classfoleys_1_1Decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will try to connect the Component with the supplied parameter of that name.  <a href="classfoleys_1_1Decorator.html#a7ce1cb5429c5cd3f4b4a07ea1706c8ba">More...</a><br /></td></tr>
-<tr class="separator:a7ce1cb5429c5cd3f4b4a07ea1706c8ba inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f2c219a2cbbd6b61e7c41564dac6169 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a4f2c219a2cbbd6b61e7c41564dac6169">paint</a> (juce::Graphics &amp;g) override</td></tr>
 <tr class="separator:a4f2c219a2cbbd6b61e7c41564dac6169 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31cc081b3c77bc8855de79094fc1da42 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
@@ -253,6 +256,47 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a913357d2a274270aab6b7008bf734016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913357d2a274270aab6b7008bf734016">&#9670;&nbsp;</a></span>setChildNeedsRepaint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setChildNeedsRepaint </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checkOnly</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A child component can call this method instead of repaint(), and the container will make sure, that repaints only happen at a configurable max FPS rate. </p>
+
+</div>
+</div>
+<a id="af61e49b69e48d7c5682feb7ae7fa0e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61e49b69e48d7c5682feb7ae7fa0e5a">&#9670;&nbsp;</a></span>setMaxFPSrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMaxFPSrate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxFPS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the maximum frame rate. </p>
+<p>If more paint calls via <a class="el" href="classfoleys_1_1Container.html#a913357d2a274270aab6b7008bf734016" title="A child component can call this method instead of repaint(), and the container will make sure,...">setChildNeedsRepaint()</a> arrive, they will be delayed. </p>
 
 </div>
 </div>
@@ -382,7 +426,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 16 2019 22:57:06 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

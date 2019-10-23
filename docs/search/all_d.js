@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../structfoleys_1_1SettableProperty.html#ac9c7171c690a7a068460255551236624',1,'foleys::SettableProperty']]],
-  ['node',['node',['../classfoleys_1_1StylePropertyComponent.html#adb83a582ca7714adbe80c137cbe51bd8',1,'foleys::StylePropertyComponent']]]
+  ['name',['name',['../structfoleys_1_1SettableProperty.html#a6b9e3d5246e6cb71fa29bdcd10b75336',1,'foleys::SettableProperty']]],
+  ['node',['node',['../classfoleys_1_1StylePropertyComponent.html#adb83a582ca7714adbe80c137cbe51bd8',1,'foleys::StylePropertyComponent']]],
+  ['number',['Number',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035',1,'foleys::SettableProperty']]]
 ];
