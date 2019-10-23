@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['_7emagicbuilder',['~MagicBuilder',['../classfoleys_1_1MagicBuilder.html#af8520506b173138f5aa38e321191be5c',1,'foleys::MagicBuilder']]],
-  ['_7emagicplotcomponent',['~MagicPlotComponent',['../classfoleys_1_1MagicPlotComponent.html#a4b26cb792e0cf67af9fcfb0a496de198',1,'foleys::MagicPlotComponent']]],
-  ['_7emagicplotsource',['~MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html#a14623f42ef68c2b5c05018422eb1fed6',1,'foleys::MagicPlotSource']]],
-  ['_7emagicprocessorstate',['~MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html#a87d8af81f927f182e00b9f6b0334db95',1,'foleys::MagicProcessorState']]],
-  ['_7etoolbox',['~ToolBox',['../classfoleys_1_1ToolBox.html#ac1434133ce62136d3bafad4699977f7f',1,'foleys::ToolBox']]]
+  ['xydotcolourid',['xyDotColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a35e1983a8288388cba6ad90ca52abae9',1,'foleys::XYDragComponent']]],
+  ['xydotovercolourid',['xyDotOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a5b2193d6366ad0d01c98bcec4a248b5d',1,'foleys::XYDragComponent']]],
+  ['xydragcomponent',['XYDragComponent',['../classfoleys_1_1XYDragComponent.html',1,'XYDragComponent'],['../classfoleys_1_1XYDragComponent.html#afc291db8b5e3bb17f9d1f47d4709be92',1,'foleys::XYDragComponent::XYDragComponent()']]],
+  ['xyhorizontalcolourid',['xyHorizontalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ae1b97fdda39366e72d80a50f9eed46b2',1,'foleys::XYDragComponent']]],
+  ['xyhorizontalovercolourid',['xyHorizontalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ab94f841dbc097a65237d8742d8e9bee6',1,'foleys::XYDragComponent']]],
+  ['xyverticalcolourid',['xyVerticalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa2a77c5bc9ca8fcb48e55937e50c8e23',1,'foleys::XYDragComponent']]],
+  ['xyverticalovercolourid',['xyVerticalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abfbd97e88983554efdde5d1234340fb2',1,'foleys::XYDragComponent']]]
 ];

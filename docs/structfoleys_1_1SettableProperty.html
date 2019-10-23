@@ -80,95 +80,203 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structfoleys_1_1SettableProperty-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SettableProperty Struct Reference</div>  </div>
+<div class="title">SettableProperty Struct Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a> is a value that can be selected by the designer and will be set for the Component each time the ValueTree is loaded.  
+ <a href="structfoleys_1_1SettableProperty.html#details">More...</a></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for SettableProperty:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="structfoleys_1_1SettableProperty__inherit__graph.png" border="0" usemap="#SettableProperty_inherit__map" alt="Inheritance graph"/></div>
+<map name="SettableProperty_inherit__map" id="SettableProperty_inherit__map">
+<area shape="rect"  title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ..." alt="" coords="215,5,336,31"/>
+<area shape="rect"  href="structfoleys_1_1SettableChoiceProperty.html" title=" " alt="" coords="5,79,167,104"/>
+<area shape="rect"  href="structfoleys_1_1SettableNumberProperty.html" title=" " alt="" coords="192,79,360,104"/>
+<area shape="rect"  href="structfoleys_1_1SettableTextProperty.html" title=" " alt="" coords="383,79,528,104"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a0cfc2a82db94e893f93715914ba84b4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a> = std::vector&lt; std::pair&lt; juce::String, juce::var &gt; &gt;</td></tr>
-<tr class="separator:a0cfc2a82db94e893f93715914ba84b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff5a5c54f182b86d1cd993cf4512c87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a> { <br />
+&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b">Text</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035">Number</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb">Colour</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">Choice</a>, 
+<br />
+&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87ab9a4c44e80a41420a064d301e264870d">Parameter</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87ad2f9d2871f1ad49b0da5736cce024906">PlotSource</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b">AssetFile</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7ff5a5c54f182b86d1cd993cf4512c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af61f49f8f08493a666d6220e460d835c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#af61f49f8f08493a666d6220e460d835c">SettableProperty</a> (const juce::Identifier &amp;n, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a> t)</td></tr>
+<tr class="separator:af61f49f8f08493a666d6220e460d835c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25dd6f652eaf3dbfffade64d0c88dc7b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a25dd6f652eaf3dbfffade64d0c88dc7b">~SettableProperty</a> ()=default</td></tr>
+<tr class="separator:a25dd6f652eaf3dbfffade64d0c88dc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdae08fd45e44bc32277f55dd166040"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#abfdae08fd45e44bc32277f55dd166040">set</a> (juce::Component *, juce::var) const =0</td></tr>
+<tr class="separator:abfdae08fd45e44bc32277f55dd166040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac9c7171c690a7a068460255551236624"><td class="memItemLeft" align="right" valign="top">juce::Identifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#ac9c7171c690a7a068460255551236624">name</a></td></tr>
-<tr class="separator:ac9c7171c690a7a068460255551236624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46cbc0decbb56d513f2b7680446c6027"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a46cbc0decbb56d513f2b7680446c6027">options</a></td></tr>
-<tr class="separator:a46cbc0decbb56d513f2b7680446c6027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1dd67125e39b1a9679881fde07004aa"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::Component *, juce::var, const <a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#af1dd67125e39b1a9679881fde07004aa">setter</a></td></tr>
-<tr class="separator:af1dd67125e39b1a9679881fde07004aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241b351f6d2db6a18cab087e735d3d9d"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a241b351f6d2db6a18cab087e735d3d9d">defaultValue</a></td></tr>
-<tr class="separator:a241b351f6d2db6a18cab087e735d3d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9e3d5246e6cb71fa29bdcd10b75336"><td class="memItemLeft" align="right" valign="top">const juce::Identifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a6b9e3d5246e6cb71fa29bdcd10b75336">name</a></td></tr>
+<tr class="separator:a6b9e3d5246e6cb71fa29bdcd10b75336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8448759cd6a9859ce5056be8261b8d69"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a8448759cd6a9859ce5056be8261b8d69">type</a></td></tr>
+<tr class="separator:a8448759cd6a9859ce5056be8261b8d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a0cfc2a82db94e893f93715914ba84b4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cfc2a82db94e893f93715914ba84b4a">&#9670;&nbsp;</a></span>OptionsType</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a> is a value that can be selected by the designer and will be set for the Component each time the ValueTree is loaded. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a7ff5a5c54f182b86d1cd993cf4512c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff5a5c54f182b86d1cd993cf4512c87">&#9670;&nbsp;</a></span>PropertyType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a> =  std::vector&lt;std::pair&lt;juce::String, juce::var&gt; &gt;</td>
+          <td class="memname">enum <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b"></a>Text&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035"></a>Number&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb"></a>Colour&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6"></a>Choice&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87ab9a4c44e80a41420a064d301e264870d"></a>Parameter&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87ad2f9d2871f1ad49b0da5736cce024906"></a>PlotSource&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b"></a>AssetFile&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af61f49f8f08493a666d6220e460d835c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61f49f8f08493a666d6220e460d835c">&#9670;&nbsp;</a></span>SettableProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> </td>
+          <td>(</td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25dd6f652eaf3dbfffade64d0c88dc7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25dd6f652eaf3dbfffade64d0c88dc7b">&#9670;&nbsp;</a></span>~SettableProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ~<a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abfdae08fd45e44bc32277f55dd166040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdae08fd45e44bc32277f55dd166040">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void set </td>
+          <td>(</td>
+          <td class="paramtype">juce::Component *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::var&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structfoleys_1_1SettableNumberProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableNumberProperty</a>, <a class="el" href="structfoleys_1_1SettableTextProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableTextProperty</a>, and <a class="el" href="structfoleys_1_1SettableChoiceProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableChoiceProperty</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac9c7171c690a7a068460255551236624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9c7171c690a7a068460255551236624">&#9670;&nbsp;</a></span>name</h2>
+<a id="a6b9e3d5246e6cb71fa29bdcd10b75336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9e3d5246e6cb71fa29bdcd10b75336">&#9670;&nbsp;</a></span>name</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::Identifier name</td>
+          <td class="memname">const juce::Identifier name</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a46cbc0decbb56d513f2b7680446c6027"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46cbc0decbb56d513f2b7680446c6027">&#9670;&nbsp;</a></span>options</h2>
+<a id="a8448759cd6a9859ce5056be8261b8d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8448759cd6a9859ce5056be8261b8d69">&#9670;&nbsp;</a></span>type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a> options</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af1dd67125e39b1a9679881fde07004aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1dd67125e39b1a9679881fde07004aa">&#9670;&nbsp;</a></span>setter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::function&lt;void(juce::Component*, juce::var, const <a class="el" href="structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a">OptionsType</a>&amp;)&gt; setter</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a241b351f6d2db6a18cab087e735d3d9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a241b351f6d2db6a18cab087e735d3d9d">&#9670;&nbsp;</a></span>defaultValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">juce::String defaultValue</td>
+          <td class="memname">const <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a> type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,12 +284,12 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="foleys__MagicGUIBuilder_8h.html">foleys_MagicGUIBuilder.h</a></li>
+<li><a class="el" href="foleys__SettableProperties_8h.html">foleys_SettableProperties.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 16 2019 23:32:59 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

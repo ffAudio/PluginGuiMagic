@@ -1,11 +1,19 @@
 var searchData=
 [
-  ['refresh',['refresh',['../classfoleys_1_1StyleChoicePropertyComponent.html#a560bc2eed48662192cdcc685b64068ab',1,'foleys::StyleChoicePropertyComponent::refresh()'],['../classfoleys_1_1StyleColourPropertyComponent.html#a560bc2eed48662192cdcc685b64068ab',1,'foleys::StyleColourPropertyComponent::refresh()'],['../classfoleys_1_1StyleTextPropertyComponent.html#a560bc2eed48662192cdcc685b64068ab',1,'foleys::StyleTextPropertyComponent::refresh()']]],
-  ['registerfactory',['registerFactory',['../classfoleys_1_1MagicGUIBuilder.html#ae41a37ba4b56ed4f3fd2866419b818ec',1,'foleys::MagicGUIBuilder']]],
-  ['registerjucefactories',['registerJUCEFactories',['../classfoleys_1_1MagicBuilder.html#a9a0003df3eb6abd838485553326cb259',1,'foleys::MagicBuilder::registerJUCEFactories()'],['../classfoleys_1_1MagicGUIBuilder.html#a2001d869ae836fed33a0edf66ff89673',1,'foleys::MagicGUIBuilder::registerJUCEFactories()']]],
-  ['registerjucelookandfeels',['registerJUCELookAndFeels',['../classfoleys_1_1MagicBuilder.html#adaf9f9ae4a58c03127c5b6940023e94a',1,'foleys::MagicBuilder']]],
-  ['registerlookandfeel',['registerLookAndFeel',['../classfoleys_1_1MagicBuilder.html#a7c2eb3a5aab67288c147fd30fd316479',1,'foleys::MagicBuilder::registerLookAndFeel()'],['../classfoleys_1_1Stylesheet.html#a7c2eb3a5aab67288c147fd30fd316479',1,'foleys::Stylesheet::registerLookAndFeel()']]],
-  ['resized',['resized',['../classfoleys_1_1GUITreeEditor.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::GUITreeEditor::resized()'],['../classfoleys_1_1Palette.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::Palette::resized()'],['../classfoleys_1_1PropertiesEditor.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::PropertiesEditor::resized()'],['../classfoleys_1_1StylePropertyComponent.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::StylePropertyComponent::resized()'],['../classfoleys_1_1ToolBox.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::ToolBox::resized()'],['../classfoleys_1_1MagicPluginEditor.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::MagicPluginEditor::resized()'],['../classfoleys_1_1Container.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::Container::resized()'],['../classfoleys_1_1Decorator.html#a31cc081b3c77bc8855de79094fc1da42',1,'foleys::Decorator::resized()']]],
-  ['restoregui',['restoreGUI',['../classfoleys_1_1MagicBuilder.html#aa93cfb13a14c288578c009b9f9e40433',1,'foleys::MagicBuilder']]],
-  ['restorenode',['restoreNode',['../classfoleys_1_1MagicBuilder.html#a483d63d052f68e9c1d4ef4d7888aa84d',1,'foleys::MagicBuilder::restoreNode()'],['../classfoleys_1_1MagicGUIBuilder.html#a6b6c3a8f9844e481ef70ca9a0e9337e9',1,'foleys::MagicGUIBuilder::restoreNode()']]]
+  ['magicanalyser',['MagicAnalyser',['../classfoleys_1_1MagicAnalyser.html#aef7fe54dcf22511fab3b456a9381f508',1,'foleys::MagicAnalyser']]],
+  ['magicbuilder',['MagicBuilder',['../classfoleys_1_1MagicBuilder.html#a836b337031f412caf93815e123f164f2',1,'foleys::MagicBuilder']]],
+  ['magicfilterplot',['MagicFilterPlot',['../classfoleys_1_1MagicFilterPlot.html#a5eb6ead6df89e85d9bd7814a4919602c',1,'foleys::MagicFilterPlot']]],
+  ['magicguibuilder',['MagicGUIBuilder',['../classfoleys_1_1MagicGUIBuilder.html#aca1ee02b7299f519c55cc3866db89a78',1,'foleys::MagicGUIBuilder']]],
+  ['magicoscilloscope',['MagicOscilloscope',['../classfoleys_1_1MagicOscilloscope.html#a8830e06f111cf95157a7ae40b8886cbe',1,'foleys::MagicOscilloscope']]],
+  ['magicplotcomponent',['MagicPlotComponent',['../classfoleys_1_1MagicPlotComponent.html#a8bb20c3d03ce8cc74d7091bc35b2b43a',1,'foleys::MagicPlotComponent']]],
+  ['magicplotsource',['MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html#a55bbde130cac6785e2d29b629fd7f7dd',1,'foleys::MagicPlotSource']]],
+  ['magicplugineditor',['MagicPluginEditor',['../classfoleys_1_1MagicPluginEditor.html#ad45b3d91f77af4e1344c9ca9bf9a884b',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState, std::unique_ptr&lt; MagicBuilder &gt; builder={})'],['../classfoleys_1_1MagicPluginEditor.html#ade4eee16b3a67e3defc65caeb30a6630',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState, const char *data, const int dataSize, std::unique_ptr&lt; MagicBuilder &gt; builder={})']]],
+  ['magicprocessorstate',['MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html#aeccdd2ffdb103851bc31512d5c516039',1,'foleys::MagicProcessorState']]],
+  ['mousedoubleclick',['mouseDoubleClick',['../classfoleys_1_1StylePropertyComponent.html#a157094d9b4f4477360601d2ecbaaafaf',1,'foleys::StylePropertyComponent']]],
+  ['mousedown',['mouseDown',['../classfoleys_1_1XYDragComponent.html#a86e6a10bf75587f36f2ecfa95ec6391e',1,'foleys::XYDragComponent']]],
+  ['mousedrag',['mouseDrag',['../classfoleys_1_1XYDragComponent.html#a8df37390c2a3b934d0f392ba02fedf41',1,'foleys::XYDragComponent']]],
+  ['mouseenter',['mouseEnter',['../classfoleys_1_1XYDragComponent.html#ada27f31be471c2abd5785fb93389f822',1,'foleys::XYDragComponent']]],
+  ['mouseexit',['mouseExit',['../classfoleys_1_1XYDragComponent.html#a4547fdc0d8263dc0570f2de507dc185a',1,'foleys::XYDragComponent']]],
+  ['mousemove',['mouseMove',['../classfoleys_1_1XYDragComponent.html#acb4c9913ede631886952657824a120bc',1,'foleys::XYDragComponent']]],
+  ['mouseup',['mouseUp',['../classfoleys_1_1XYDragComponent.html#a6b5eb44266a8bd8e271ccf6da53b3ce7',1,'foleys::XYDragComponent']]]
 ];

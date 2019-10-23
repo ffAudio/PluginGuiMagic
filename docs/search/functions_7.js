@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['keypressed',['keyPressed',['../classfoleys_1_1ToolBox.html#aaee4b337a9e4e190184f440b1b68ab21',1,'foleys::ToolBox::keyPressed(const juce::KeyPress &amp;key) override'],['../classfoleys_1_1ToolBox.html#ae75dc9dcda663c740d3824554a3167ca',1,'foleys::ToolBox::keyPressed(const juce::KeyPress &amp;key, juce::Component *originalComponent) override']]]
+  ['handleasyncupdate',['handleAsyncUpdate',['../classfoleys_1_1ParameterAttachment.html#a750095200ca353d8515d19a8b6bf694a',1,'foleys::ParameterAttachment::handleAsyncUpdate()'],['../classfoleys_1_1MagicPlotComponent.html#a750095200ca353d8515d19a8b6bf694a',1,'foleys::MagicPlotComponent::handleAsyncUpdate()']]],
+  ['hittest',['hitTest',['../classfoleys_1_1MagicPlotComponent.html#a2e65b2f4174827c4fb502af1463bb7c4',1,'foleys::MagicPlotComponent::hitTest()'],['../classfoleys_1_1XYDragComponent.html#aab9879693f87a579c1aaa594f129d916',1,'foleys::XYDragComponent::hitTest()']]]
 ];

@@ -152,9 +152,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a0d9f31d6377fe15bb6c98c9ace35fef3">findColourId</a> (juce::Identifier name)</td></tr>
 <tr class="memdesc:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the ColourId in all types.  <a href="#a0d9f31d6377fe15bb6c98c9ace35fef3">More...</a><br /></td></tr>
 <tr class="separator:a0d9f31d6377fe15bb6c98c9ace35fef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa86959a62f6afd5f22a875c60dd75cd5"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#aa86959a62f6afd5f22a875c60dd75cd5">getAllLayoutPropertyNames</a> () const</td></tr>
-<tr class="memdesc:aa86959a62f6afd5f22a875c60dd75cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all possible properties (except colour names) for the editor.  <a href="#aa86959a62f6afd5f22a875c60dd75cd5">More...</a><br /></td></tr>
-<tr class="separator:aa86959a62f6afd5f22a875c60dd75cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ba5f02b2a7d7bc6051c8c6062b0223b"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a7ba5f02b2a7d7bc6051c8c6062b0223b">getColourNames</a> (juce::Identifier type) const</td></tr>
 <tr class="memdesc:a7ba5f02b2a7d7bc6051c8c6062b0223b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the names of colours for a certain Component type.  <a href="#a7ba5f02b2a7d7bc6051c8c6062b0223b">More...</a><br /></td></tr>
 <tr class="separator:a7ba5f02b2a7d7bc6051c8c6062b0223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,10 +176,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac52759ad45a89f798365b19e3de791a2"><td class="memItemLeft" align="right" valign="top">virtual juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#ac52759ad45a89f798365b19e3de791a2">getPlotSourcesNames</a> () const =0</td></tr>
 <tr class="memdesc:ac52759ad45a89f798365b19e3de791a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicPlotSources for selection.  <a href="#ac52759ad45a89f798365b19e3de791a2">More...</a><br /></td></tr>
 <tr class="separator:ac52759ad45a89f798365b19e3de791a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1d6ace404fa6844067a47dc9cde864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a6c1d6ace404fa6844067a47dc9cde864">addSettableProperty</a> (juce::Identifier type, <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> property)</td></tr>
-<tr class="separator:a6c1d6ace404fa6844067a47dc9cde864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7acb666a79b086f68dc644708b001769"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a7acb666a79b086f68dc644708b001769">getSettableProperties</a> (juce::Identifier type) const</td></tr>
-<tr class="separator:a7acb666a79b086f68dc644708b001769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c809472e536ce223da190d9f9fcab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a51c809472e536ce223da190d9f9fcab3">addSettableProperty</a> (juce::Identifier type, std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; property)</td></tr>
+<tr class="separator:a51c809472e536ce223da190d9f9fcab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1520f0539fec766ae3ec091760691241"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a1520f0539fec766ae3ec091760691241">getSettableProperties</a> (juce::Identifier type) const</td></tr>
+<tr class="separator:a1520f0539fec766ae3ec091760691241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -267,7 +264,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Allows to set the GUI definition when reloading. </p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#af4aa3a741ed303f7835572542375808a">MagicBuilder::undo</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855">MagicBuilder::updateAll()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1">ToolBox::loadDialog()</a>.</p>
 
@@ -314,7 +311,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a790f91ec36b7ba94a318fc338821219a">MagicBuilder::stylesheet</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a6088323404121de89f15994731f66c73">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62d5a5caa5e2803eb7ce19abd39049d7">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aecfdabb619d10906a9d753b84470bdb3">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +376,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">MagicBuilder::updateComponents()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicBuilder::updateLayout()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#aa93cfb13a14c288578c009b9f9e40433">MagicBuilder::restoreGUI()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#aa93cfb13a14c288578c009b9f9e40433">MagicBuilder::restoreGUI()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">MagicBuilder::setConfigTree()</a>.</p>
 
 </div>
 </div>
@@ -615,25 +612,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa86959a62f6afd5f22a875c60dd75cd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa86959a62f6afd5f22a875c60dd75cd5">&#9670;&nbsp;</a></span>getAllLayoutPropertyNames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">juce::StringArray getAllLayoutPropertyNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns all possible properties (except colour names) for the editor. </p>
-
-</div>
-</div>
 <a id="a7ba5f02b2a7d7bc6051c8c6062b0223b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ba5f02b2a7d7bc6051c8c6062b0223b">&#9670;&nbsp;</a></span>getColourNames()</h2>
 
@@ -654,7 +632,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#acbecc431697bd2e80e8f79f1c646bc1e">MagicBuilder::colourTranslations</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#ac79d902b066af0629e46472fd6db8a97">PropertiesEditor::addTypeProperties()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97">PropertiesEditor::addTypeProperties()</a>.</p>
 
 </div>
 </div>
@@ -797,7 +775,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#adc9b38316ec715b26883c232a9d8d28c">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1Palette.html#ac5c54df7ed3b930268c8d7752c101725">Palette::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1Palette.html#ac5c54df7ed3b930268c8d7752c101725">Palette::update()</a>.</p>
 
 </div>
 </div>
@@ -828,7 +806,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aa79dc253a45b44f9e9809ec526f5bf44">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a9e5539ec6ed52969ce0af75be38c5884">StylePropertyComponent::createComponent()</a>.</p>
 
 </div>
 </div>
@@ -859,12 +837,12 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a8cc99fc986209d30c9e2092b3f98badb">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aaaff5862256bb00d3ee8bac9140f7251">PropertiesEditor::setNodeToEdit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a9e5539ec6ed52969ce0af75be38c5884">StylePropertyComponent::createComponent()</a>.</p>
 
 </div>
 </div>
-<a id="a6c1d6ace404fa6844067a47dc9cde864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c1d6ace404fa6844067a47dc9cde864">&#9670;&nbsp;</a></span>addSettableProperty()</h2>
+<a id="a51c809472e536ce223da190d9f9fcab3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c809472e536ce223da190d9f9fcab3">&#9670;&nbsp;</a></span>addSettableProperty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -878,7 +856,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a>&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt;&#160;</td>
           <td class="paramname"><em>property</em>&#160;</td>
         </tr>
         <tr>
@@ -891,14 +869,14 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7acb666a79b086f68dc644708b001769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7acb666a79b086f68dc644708b001769">&#9670;&nbsp;</a></span>getSettableProperties()</h2>
+<a id="a1520f0539fec766ae3ec091760691241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1520f0539fec766ae3ec091760691241">&#9670;&nbsp;</a></span>getSettableProperties()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; getSettableProperties </td>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; &gt; &amp; getSettableProperties </td>
           <td>(</td>
           <td class="paramtype">juce::Identifier&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
@@ -907,7 +885,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#ac79d902b066af0629e46472fd6db8a97">PropertiesEditor::addTypeProperties()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97">PropertiesEditor::addTypeProperties()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>.</p>
 
 </div>
 </div>
@@ -972,7 +950,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">MagicBuilder::updateComponents()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">MagicBuilder::setConfigTree()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">MagicBuilder::updateComponents()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
 
 </div>
 </div>
@@ -1055,7 +1033,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 16 2019 23:32:59 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

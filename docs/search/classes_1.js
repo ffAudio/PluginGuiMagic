@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['decorator',['Decorator',['../classfoleys_1_1Decorator.html',1,'foleys']]]
+  ['buttonattacher',['ButtonAttacher',['../classfoleys_1_1ButtonAttacher.html',1,'foleys']]]
 ];

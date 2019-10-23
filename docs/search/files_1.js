@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['foleys_5fattachablecomponent_2eh',['foleys_AttachableComponent.h',['../foleys__AttachableComponent_8h.html',1,'']]],
+  ['foleys_5fattachableslider_2ecpp',['foleys_AttachableSlider.cpp',['../foleys__AttachableSlider_8cpp.html',1,'']]],
+  ['foleys_5fattachableslider_2eh',['foleys_AttachableSlider.h',['../foleys__AttachableSlider_8h.html',1,'']]],
   ['foleys_5fcontainer_2ecpp',['foleys_Container.cpp',['../foleys__Container_8cpp.html',1,'']]],
   ['foleys_5fcontainer_2eh',['foleys_Container.h',['../foleys__Container_8h.html',1,'']]],
   ['foleys_5fdecorator_2ecpp',['foleys_Decorator.cpp',['../foleys__Decorator_8cpp.html',1,'']]],
@@ -30,8 +33,10 @@ var searchData=
   ['foleys_5fmagicprocessorstate_2eh',['foleys_MagicProcessorState.h',['../foleys__MagicProcessorState_8h.html',1,'']]],
   ['foleys_5fpalette_2ecpp',['foleys_Palette.cpp',['../foleys__Palette_8cpp.html',1,'']]],
   ['foleys_5fpalette_2eh',['foleys_Palette.h',['../foleys__Palette_8h.html',1,'']]],
+  ['foleys_5fparameterattachment_2eh',['foleys_ParameterAttachment.h',['../foleys__ParameterAttachment_8h.html',1,'']]],
   ['foleys_5fpropertieseditor_2ecpp',['foleys_PropertiesEditor.cpp',['../foleys__PropertiesEditor_8cpp.html',1,'']]],
   ['foleys_5fpropertieseditor_2eh',['foleys_PropertiesEditor.h',['../foleys__PropertiesEditor_8h.html',1,'']]],
+  ['foleys_5fsettableproperties_2eh',['foleys_SettableProperties.h',['../foleys__SettableProperties_8h.html',1,'']]],
   ['foleys_5fstringdefinitions_2eh',['foleys_StringDefinitions.h',['../foleys__StringDefinitions_8h.html',1,'']]],
   ['foleys_5fstylechoicepropertycomponent_2ecpp',['foleys_StyleChoicePropertyComponent.cpp',['../foleys__StyleChoicePropertyComponent_8cpp.html',1,'']]],
   ['foleys_5fstylechoicepropertycomponent_2eh',['foleys_StyleChoicePropertyComponent.h',['../foleys__StyleChoicePropertyComponent_8h.html',1,'']]],
@@ -44,5 +49,7 @@ var searchData=
   ['foleys_5fstyletextpropertycomponent_2ecpp',['foleys_StyleTextPropertyComponent.cpp',['../foleys__StyleTextPropertyComponent_8cpp.html',1,'']]],
   ['foleys_5fstyletextpropertycomponent_2eh',['foleys_StyleTextPropertyComponent.h',['../foleys__StyleTextPropertyComponent_8h.html',1,'']]],
   ['foleys_5ftoolbox_2ecpp',['foleys_ToolBox.cpp',['../foleys__ToolBox_8cpp.html',1,'']]],
-  ['foleys_5ftoolbox_2eh',['foleys_ToolBox.h',['../foleys__ToolBox_8h.html',1,'']]]
+  ['foleys_5ftoolbox_2eh',['foleys_ToolBox.h',['../foleys__ToolBox_8h.html',1,'']]],
+  ['foleys_5fxydragcomponent_2ecpp',['foleys_XYDragComponent.cpp',['../foleys__XYDragComponent_8cpp.html',1,'']]],
+  ['foleys_5fxydragcomponent_2eh',['foleys_XYDragComponent.h',['../foleys__XYDragComponent_8h.html',1,'']]]
 ];

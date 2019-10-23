@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['optionstype',['OptionsType',['../structfoleys_1_1SettableProperty.html#a0cfc2a82db94e893f93715914ba84b4a',1,'foleys::SettableProperty']]]
+  ['attachabletextbutton',['AttachableTextButton',['../namespacefoleys.html#aaf59a42a23b8a2d715c2aa6ec44ca5b2',1,'foleys']]],
+  ['attachabletogglebutton',['AttachableToggleButton',['../namespacefoleys.html#a4bc93d217dfacbe65260b57c44e8e551',1,'foleys']]]
 ];
