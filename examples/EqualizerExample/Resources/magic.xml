@@ -5,15 +5,16 @@
     <Style name="default">
       <Nodes>
         <root display="flexbox" flex-grow="1.0" padding="0"/>
-        <main border="0" flex-direction="column" padding="0" margin="0"/>
+        <main border="0" flex-direction="column" padding="0" margin="0" background-color="ff343541"/>
         <frame display="contents" border="2.0" background-color="ff000000"/>
         <nomargin border="0" margin="0" padding="0"/>
-        <horizontal flex-direction="row" border="0" padding="0" background-color="darkgrey"
+        <horizontal flex-direction="row" border="0" padding="0" background-color="80141521"
                     background-image=" " background-gradient="none" flex-grow="2"/>
       </Nodes>
       <Classes>
-        <plot-view border="2" background-color="black" border-color="silver" display="contents"/>
-        <group border="2.0" padding="1" flex-direction="column" background-gradient="linear-gradient(grey, darkgrey)"/>
+        <plot-view border="2" background-color="black" display="contents" border-color=""/>
+        <group padding="1" flex-direction="column" background-gradient="linear-gradient(ff414151, ff151521)"
+               border=""/>
         <logo background-image="Logo_png" border="0"/>
         <frequency flex-grow="3" padding="3"/>
         <small padding="3" slider-textbox="textbox-below" margin="0" background-color="00000000"/>
@@ -45,13 +46,14 @@
         <orange background-color="ffffa500"/>
       </Classes>
       <Types>
-        <ComboBox border="0" max-height="40" combo-background="00000000" background-color="darkgrey"
-                  combo-outline="transparent" caption-size="0" combo-text="silver"
-                  combo-arrow="silver" background-gradient="none"/>
-        <ToggleButton border="0" background-color="darkgrey" max-height="40" caption-size="0"
+        <ComboBox border="0" max-height="40" combo-background="00000000" combo-outline="transparent"
+                  caption-size="0" combo-text="silver" combo-arrow="silver" background-gradient="none"
+                  background-color="00000000"/>
+        <ToggleButton border="0" background-color="00000000" max-height="40" caption-size="0"
                       text="Active" toggle-text="silver" toggle-tick="silver" background-gradient="none"/>
-        <Slider border="0" background-color="40000000" lookAndFeel="FoleysFinest"
-                slider-fill="red" slider-textbox="textbox-below" background-gradient="none"/>
+        <Slider border="0" background-color="80141521" lookAndFeel="Skeuomorphic"
+                slider-fill="red" slider-textbox="textbox-below" background-gradient="none"
+                slider-text-outline="ff414151"/>
         <Plot border="0" margin="0" padding="0" background-color="00000000"/>
         <XYDragComponent border="0" margin="0" padding="0" background-color="00000000"
                          xy-crosshair="horizontal"/>
@@ -77,7 +79,7 @@
         <Plot source="input" class="nomargin" plot-color="khaki"/>
         <Plot source="output" class="nomargin" plot-color="brown"/>
       </View>
-      <View id="nomargin">
+      <View id="nomargin" background-color="ff343541">
         <View caption="Q1" class="group q1">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton caption="Active" parameter="Q1active" text="" max-width="40"/>
@@ -146,7 +148,7 @@
           <Slider class="frequency" caption="Frequency" parameter="Q6freq"/>
         </View>
         <View caption="Globals" class="group gain">
-          <View padding="3" border="0" background-color="40000000" background-gradient="none">
+          <View padding="3" border="0" background-color="80141521" background-gradient="none">
             <Slider caption="Output" parameter="output" padding="3" background-color="00000000"/>
             <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
           </View>
