@@ -58,25 +58,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
 
     auto freqParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramFreq,
                                                                 prefix + ": " + TRANS ("Frequency"),
-                                                                juce::NormalisableRange<float> {20.0f, 20000.0f,
-                                                                    [](float start, float end, float normalised)
-                                                                    {
-                                                                        return start + (std::pow (2.0f, normalised * 10.0f) - 1.0f) * (end - start) / 1023.0f;
-                                                                    },
-                                                                    [](float start, float end, float value)
-                                                                    {
-                                                                        return (std::log (((value - start) * 1023.0f / (end - start)) + 1.0f) / std::log ( 2.0f)) / 10.0f;
-                                                                    },
-                                                                    [](float start, float end, float value)
-                                                                    {
-                                                                        if (value > 3000.0f)
-                                                                            return jlimit (start, end, 100.0f * roundToInt (value / 100.0f));
-
-                                                                        if (value > 1000.0f)
-                                                                            return jlimit (start, end, 10.0f * roundToInt (value / 10.0f));
-
-                                                                        return jlimit (start, end, float (roundToInt (value)));
-                                                                    }},
+                                                                foleys::Conversions::makeLogarithmicRange<float>(20.0f, 20000.0f),
                                                                 frequency,
                                                                 String(),
                                                                 AudioProcessorParameter::genericParameter,
