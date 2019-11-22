@@ -161,7 +161,7 @@ private:
 
     foleys::MagicFilterPlot* plotSum = nullptr;
 
-    // define that as last member of your AudioProcessor
+    // GUI MAGIC: define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EqualizerExampleAudioProcessor)
