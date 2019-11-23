@@ -128,7 +128,7 @@ void SignalGeneratorAudioProcessor::setOscillator (dsp::Oscillator<float>& osc, 
     else if (type == WaveType::Square)
         osc.initialise ([](auto in) { return in < 0 ? 1.0f : -1.0f; });
     else
-        osc.initialise ([](auto in) { return 0.0f; });
+        osc.initialise ([](auto) { return 0.0f; });
 }
 
 void SignalGeneratorAudioProcessor::parameterChanged (const String& param, float value)
@@ -172,6 +172,8 @@ void SignalGeneratorAudioProcessor::releaseResources()
 
 void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
+    ignoreUnused (midiMessages);
+
     ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
@@ -311,15 +313,19 @@ int SignalGeneratorAudioProcessor::getCurrentProgram()
 
 void SignalGeneratorAudioProcessor::setCurrentProgram (int index)
 {
+    ignoreUnused (index);
 }
 
 const String SignalGeneratorAudioProcessor::getProgramName (int index)
 {
+    ignoreUnused (index);
     return {};
 }
 
 void SignalGeneratorAudioProcessor::changeProgramName (int index, const String& newName)
 {
+    ignoreUnused (index);
+    ignoreUnused (newName);
 }
 
 //==============================================================================
