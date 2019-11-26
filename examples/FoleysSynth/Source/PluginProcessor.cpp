@@ -23,6 +23,8 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
                        )
 #endif
 {
+    // MAGIC GUI: add a meter at the output
+    outputMeter = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
 }
 
 FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
@@ -30,10 +32,14 @@ FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
 }
 
 //==============================================================================
-void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+    synthesiser.setCurrentPlaybackSampleRate (sampleRate);
+
+    // MAGIC GUI: setup the output meter
+    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
 }
 
 void FoleysSynthAudioProcessor::releaseResources()
@@ -84,18 +90,10 @@ void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+    synthesiser.renderNextBlock (buffer, midiMessages, 0, buffer.getNumSamples());
 
-        // ..do something to the data...
-    }
+    // MAGIC GUI: send the finished buffer to the level meter
+    outputMeter->pushSamples (buffer);
 }
 
 //==============================================================================
@@ -174,16 +172,16 @@ int FoleysSynthAudioProcessor::getCurrentProgram()
     return 0;
 }
 
-void FoleysSynthAudioProcessor::setCurrentProgram (int index)
+void FoleysSynthAudioProcessor::setCurrentProgram (int)
 {
 }
 
-const String FoleysSynthAudioProcessor::getProgramName (int index)
+const String FoleysSynthAudioProcessor::getProgramName (int)
 {
     return {};
 }
 
-void FoleysSynthAudioProcessor::changeProgramName (int index, const String& newName)
+void FoleysSynthAudioProcessor::changeProgramName (int, const String&)
 {
 }
 

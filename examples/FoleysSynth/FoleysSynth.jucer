@@ -6,6 +6,8 @@
               pluginManufacturerCode="FFAU">
   <MAINGROUP id="LGWoY5" name="FoleysSynth">
     <GROUP id="{0F03A121-FE7D-F4DB-7A0D-D90E378AACC7}" name="Source">
+      <FILE id="fMtZxD" name="FoleysSynth.cpp" compile="1" resource="0" file="Source/FoleysSynth.cpp"/>
+      <FILE id="g66nMd" name="FoleysSynth.h" compile="0" resource="0" file="Source/FoleysSynth.h"/>
       <FILE id="mHBU5k" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="w20MsF" name="PluginProcessor.h" compile="0" resource="0"
@@ -16,7 +18,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-Wall -Wextra -Wshadow">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release"/>

@@ -45,19 +45,19 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                          bool  active  = true)
 {
     auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
-                                                                 prefix + ": " + TRANS ("Filter Type"),
+                                                                 name + ": " + TRANS ("Filter Type"),
                                                                  filterNames,
                                                                  type);
 
     auto actvParameter = std::make_unique<AudioParameterBool> (prefix + IDs::paramActive,
-                                                               prefix + ": " + TRANS ("Active"),
+                                                               name + ": " + TRANS ("Active"),
                                                                active,
                                                                String(),
                                                                [](float value, int) {return value > 0.5f ? TRANS ("active") : TRANS ("bypassed");},
                                                                [](String text) {return text == TRANS ("active");});
 
     auto freqParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramFreq,
-                                                                prefix + ": " + TRANS ("Frequency"),
+                                                                name + ": " + TRANS ("Frequency"),
                                                                 foleys::Conversions::makeLogarithmicRange<float>(20.0f, 20000.0f),
                                                                 frequency,
                                                                 String(),
@@ -70,7 +70,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                     text.getFloatValue(); });
 
     auto qltyParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramQuality,
-                                                                prefix + ": " + TRANS ("Quality"),
+                                                                name + ": " + TRANS ("Quality"),
                                                                 NormalisableRange<float> {0.1f, 10.0f, 0.1f, std::log (0.5f) / std::log (0.9f / 9.9f)},
                                                                 quality,
                                                                 String(),
@@ -79,7 +79,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                 [](const String& text) { return text.getFloatValue(); });
 
     auto gainParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramGain,
-                                                                prefix + ": " + TRANS ("Gain"),
+                                                                name + ": " + TRANS ("Gain"),
                                                                 NormalisableRange<float> {-maxLevel, maxLevel, 0.1f},
                                                                 gain,
                                                                 String(),
@@ -87,7 +87,7 @@ std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const S
                                                                 [](float value, int) {return String (value, 1) + " dB";},
                                                                 [](String text) {return text.getFloatValue();});
 
-    auto group = std::make_unique<AudioProcessorParameterGroup> ("band" + prefix, prefix, "|",
+    auto group = std::make_unique<AudioProcessorParameterGroup> ("band" + prefix, name, "|",
                                                                  std::move (typeParameter),
                                                                  std::move (actvParameter),
                                                                  std::move (freqParameter),
@@ -151,7 +151,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     gainAttachment (treeState, gain, IDs::paramOutput)
 {
     // GUI MAGIC: add plots to be displayed in the GUI
-    for (int i = 0; i < attachments.size(); ++i)
+    for (size_t i = 0; i < attachments.size(); ++i)
     {
         auto name = "plot" + String (i + 1);
         magicState.addPlotSource (name, std::make_unique<foleys::MagicFilterPlot>());
@@ -163,6 +163,9 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     // GUI MAGIC: add analyser plots
     inputAnalyser  = magicState.addPlotSource ("input", std::make_unique<foleys::MagicAnalyser>());
     outputAnalyser = magicState.addPlotSource ("output", std::make_unique<foleys::MagicAnalyser>());
+
+    // MAGIC GUI: add a meter at the output
+    outputMeter = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
 
     for (auto* parameter : getParameters())
         if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
@@ -183,6 +186,7 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
 
     // GUI MAGIC: call this to set up the visualisers
     magicState.prepareToPlay (sampleRate, samplesPerBlock);
+    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
 
     dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;
@@ -223,6 +227,7 @@ bool EqualizerExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& 
 void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
     ScopedNoDenormals noDenormals;
+    ignoreUnused (midiMessages);
 
     filter.setBypassed<0>(attachment1.isActive() == false);
     filter.setBypassed<1>(attachment2.isActive() == false);
@@ -242,6 +247,7 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 
     // GUI MAGIC: measure after processing
     outputAnalyser->pushSamples (buffer);
+    outputMeter->pushSamples (buffer);
 }
 
 //==============================================================================
@@ -333,7 +339,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcesso
 }
 
 template<typename ValueType>
-void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const String& parameterID, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const String&, float newValue)
 {
     value = newValue;
     if (onParameterChanged)
@@ -341,7 +347,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged 
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const String& parameterID, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const String&, float newValue)
 {
     value = (newValue > 0.5f);
     if (onParameterChanged)
@@ -349,7 +355,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (cons
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const String& parameterID, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const String&, float newValue)
 {
     value = EqualizerExampleAudioProcessor::FilterType (roundToInt (newValue));
     if (onParameterChanged)
@@ -357,7 +363,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcesso
 }
 
 //==============================================================================
-void EqualizerExampleAudioProcessor::parameterChanged (const String& paramID, float newValue)
+void EqualizerExampleAudioProcessor::parameterChanged (const String&, float)
 {
     triggerAsyncUpdate();
 }
@@ -448,16 +454,16 @@ int EqualizerExampleAudioProcessor::getCurrentProgram()
     return 0;
 }
 
-void EqualizerExampleAudioProcessor::setCurrentProgram (int index)
+void EqualizerExampleAudioProcessor::setCurrentProgram (int)
 {
 }
 
-const String EqualizerExampleAudioProcessor::getProgramName (int index)
+const String EqualizerExampleAudioProcessor::getProgramName (int)
 {
     return {};
 }
 
-void EqualizerExampleAudioProcessor::changeProgramName (int index, const String& newName)
+void EqualizerExampleAudioProcessor::changeProgramName (int, const String&)
 {
 }
 

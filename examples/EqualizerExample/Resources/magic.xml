@@ -147,9 +147,13 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q6freq"/>
         </View>
-        <View caption="Globals" class="group gain">
+        <View caption="Globals" class="group gain" flex-direction="row">
           <View padding="3" border="0" background-color="80141521" background-gradient="none">
-            <Slider caption="Output" parameter="output" padding="3" background-color="00000000"/>
+            <View flex-direction="row" background-color="" background-gradient="">
+              <Slider caption="Output" parameter="output" padding="3" background-color="00000000"/>
+              <Meter source="output" flex-grow="0.5" outline-color="00000000" background-gradient=""
+                     background-color="" bar-background-color="ff141521"/>
+            </View>
             <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
           </View>
         </View>

@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "FoleysSynth.h"
 
 //==============================================================================
 /**
@@ -59,8 +60,11 @@ private:
     //==============================================================================
     AudioProcessorValueTreeState treeState { *this, nullptr };
 
+    FoleysSynth synthesiser;
+
     // GUI MAGIC: define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicLevelSource*   outputMeter = nullptr;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysSynthAudioProcessor)
 };
