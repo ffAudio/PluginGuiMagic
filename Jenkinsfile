@@ -61,8 +61,12 @@ node
     {
         buildPlugin ("EqualizerExample", "")
     }
-}
 
+    stage('EqualizerExample')
+    {
+        buildPlugin ("FoleysSynth", "")
+    }
+}
 
 
 void makeOutputDirectory(String platform)
