@@ -241,6 +241,7 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
     // GUI MAGIC: measure before processing
     inputAnalyser->pushSamples (buffer);
 
+    DBG ("yeah");
     dsp::AudioBlock<float>              ioBuffer (buffer);
     dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
