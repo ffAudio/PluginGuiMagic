@@ -71,14 +71,14 @@ private:
 
     void setOscillator (dsp::Oscillator<float>& osc, WaveType type);
 
-    float* frequency  = nullptr;
-    float* level      = nullptr;
+    std::atomic<float>* frequency  = nullptr;
+    std::atomic<float>* level      = nullptr;
 
-    float* lfoFrequency  = nullptr;
-    float* lfoLevel      = nullptr;
+    std::atomic<float>* lfoFrequency  = nullptr;
+    std::atomic<float>* lfoLevel      = nullptr;
 
-    float* vfoFrequency  = nullptr;
-    float* vfoLevel      = nullptr;
+    std::atomic<float>* vfoFrequency  = nullptr;
+    std::atomic<float>* vfoLevel      = nullptr;
 
     dsp::Oscillator<float> mainOSC;
     dsp::Oscillator<float> lfoOSC;

@@ -101,8 +101,8 @@ private:
     AudioProcessorValueTreeState parameters;
     float previousGain; // [1]
 
-    float* phaseParameter = nullptr;
-    float* gainParameter  = nullptr;
+    std::atomic<float>* phaseParameter = nullptr;
+    std::atomic<float>* gainParameter  = nullptr;
 
     // Add an instance of MagicProcessorState to connect a MagicGuiEditor to it
     foleys::MagicProcessorState magicState { *this, parameters };
