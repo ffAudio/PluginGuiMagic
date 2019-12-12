@@ -279,11 +279,11 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
         case NoFilter:    coefficients = new dsp::IIR::Coefficients<float> (1, 0, 1, 0); break;
         case LowPass:     coefficients = dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality); break;
         case LowPass1st:  coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency); break;
-        case LowShelf:    coefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
+        case LowShelf:    coefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
         case BandPass:    coefficients = dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality); break;
         case Notch:       coefficients = dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality); break;
-        case Peak:        coefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
-        case HighShelf:   coefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain)); break;
+        case Peak:        coefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
+        case HighShelf:   coefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
         case HighPass1st: coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency); break;
         case HighPass:    coefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality); break;
         default:          return;
@@ -307,7 +307,7 @@ void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sam
 //==============================================================================
 
 template<typename ValueType>
-EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioProcessorValueTreeState& stateToUse, ValueType& valueToUse, const String& paramToUse, std::function<void()> changedLambda)
+EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioProcessorValueTreeState& stateToUse, std::atomic<ValueType>& valueToUse, const String& paramToUse, std::function<void()> changedLambda)
   : state (stateToUse),
     value (valueToUse),
     paramID (paramToUse),
@@ -335,7 +335,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::initialUpdate()
 template<>
 void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::initialUpdate()
 {
-    value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (*state.getRawParameterValue (paramID)));
+    value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (state.getRawParameterValue (paramID)->load()));
 }
 
 template<typename ValueType>
