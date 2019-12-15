@@ -41,7 +41,7 @@ This example demonstrates how to add a editable GUI for an AudioProcessor
 without writing code for the GUI, only implementing the processor.
 
 
-### ExtendingExample
+### ExtendingExample
 
 [examples/ExtendingExample](examples/ExtendingExample)
 
