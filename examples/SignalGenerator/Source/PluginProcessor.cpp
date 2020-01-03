@@ -158,9 +158,9 @@ void SignalGeneratorAudioProcessor::prepareToPlay (double sampleRate, int sample
     lfoOSC.prepare (spec);
     vfoOSC.prepare (spec);
 
-    setOscillator (mainOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::mainType))));
-    setOscillator (lfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::lfoType))));
-    setOscillator (vfoOSC, WaveType (roundToInt (*treeState.getRawParameterValue (IDs::vfoType))));
+    setOscillator (mainOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::mainType)->load())));
+    setOscillator (lfoOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::lfoType)->load())));
+    setOscillator (vfoOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::vfoType)->load())));
 
     // MAGIC GUI: this will setup all internals like MagicPlotSources etc.
     magicState.prepareToPlay (sampleRate, samplesPerBlock);
@@ -188,7 +188,7 @@ void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
         buffer.clear (i, 0, buffer.getNumSamples());
 
 
-    auto gain = Decibels::decibelsToGain (*level);
+    auto gain = Decibels::decibelsToGain (level->load());
 
     lfoOSC.setFrequency (*lfoFrequency);
     vfoOSC.setFrequency (*vfoFrequency);
@@ -196,9 +196,9 @@ void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
     auto* channelData = buffer.getWritePointer (0);
     for (int i = 0; i < buffer.getNumSamples(); ++i)
     {
-        mainOSC.setFrequency (*frequency * (1.0 + vfoOSC.processSample (0.0f) * *vfoLevel));
+        mainOSC.setFrequency (frequency->load() * (1.0 + vfoOSC.processSample (0.0f) * vfoLevel->load()));
         channelData [i] = jlimit (-1.0f, 1.0f,
-                                  mainOSC.processSample (0.0f) * gain * ( 1.0f - (*lfoLevel * lfoOSC.processSample (0.0f))));
+                                  mainOSC.processSample (0.0f) * gain * ( 1.0f - (lfoLevel->load() * lfoOSC.processSample (0.0f))));
     }
 
     for (int i=1; i < getTotalNumOutputChannels(); ++i)

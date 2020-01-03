@@ -55,14 +55,14 @@ public:
     class AttachedValue : private AudioProcessorValueTreeState::Listener
     {
     public:
-        AttachedValue (AudioProcessorValueTreeState& state, ValueType& value, const String& paramID, std::function<void()> changedLambda=nullptr);
+        AttachedValue (AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const String& paramID, std::function<void()> changedLambda=nullptr);
         virtual ~AttachedValue();
         void parameterChanged (const String& parameterID, float newValue) override;
     private:
         void initialUpdate();
 
         AudioProcessorValueTreeState& state;
-        ValueType& value;
+        std::atomic<ValueType>& value;
         String paramID;
         std::function<void()> onParameterChanged;
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
@@ -91,11 +91,11 @@ public:
         String                        prefix;
         const CriticalSection&        callbackLock;
 
-        FilterType type   = NoFilter;
-        float  frequency  = 1000.0f;
-        float  gain       = 0.0f;
-        float  quality    = 1.0f;
-        bool   active     = true;
+        std::atomic<FilterType> type   { NoFilter };
+        std::atomic<float>  frequency  { 1000.0f };
+        std::atomic<float>  gain       { 0.0f };
+        std::atomic<float>  quality    { 1.0f };
+        std::atomic<bool>   active     { true };
 
         friend AttachedValue<float>;
         AttachedValue<FilterType> typeAttachment;
@@ -143,7 +143,7 @@ private:
 
     dsp::ProcessorChain<FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, Gain> filter;
 
-    float gain = 1.0f;
+    std::atomic<float> gain { 1.0f };
     AttachedValue<float> gainAttachment;
 
     FilterAttachment attachment1 { treeState, filter.get<0>(), "Q1", getCallbackLock() };
