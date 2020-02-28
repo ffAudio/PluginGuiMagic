@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" jucerVersion="5.4.5"
+<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" jucerVersion="5.4.7"
               projectLineFeed="&#10;" companyName="Foleys Finest Audio" companyWebsite="https://foleysfinest.com"
               bundleIdentifier="com.foleysfinest.equalizerexample" pluginManufacturerCode="FFAU"
               pluginFormats="buildAU,buildAUv3,buildStandalone,buildVST3">
