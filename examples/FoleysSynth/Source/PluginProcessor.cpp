@@ -24,7 +24,15 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
 #endif
 {
     // MAGIC GUI: add a meter at the output
-    outputMeter = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
+    outputMeter  = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
+    oscilloscope = magicState.addPlotSource ("waveform", std::make_unique<foleys::MagicOscilloscope>());
+    analyser     = magicState.addPlotSource ("analyser", std::make_unique<foleys::MagicAnalyser>());
+
+    FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound());
+    synthesiser.addSound (sound);
+
+    for (int i=0; i < 16; ++i)
+        synthesiser.addVoice (new FoleysSynth::FoleysVoice());
 }
 
 FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
@@ -32,7 +40,7 @@ FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
 }
 
 //==============================================================================
-void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int)
+void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int blockSize)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
@@ -40,6 +48,8 @@ void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int)
 
     // MAGIC GUI: setup the output meter
     outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
+    oscilloscope->prepareToPlay (sampleRate, blockSize);
+    analyser->prepareToPlay (sampleRate, blockSize);
 }
 
 void FoleysSynthAudioProcessor::releaseResources()
@@ -79,7 +89,7 @@ void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     // MAGIC GUI: send midi messages to the keyboard state
-    magicState.processMidiBuffer (midiMessages, buffer.getNumSamples());
+    magicState.processMidiBuffer (midiMessages, buffer.getNumSamples(), true);
 
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
@@ -94,6 +104,8 @@ void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
 
     // MAGIC GUI: send the finished buffer to the level meter
     outputMeter->pushSamples (buffer);
+    oscilloscope->pushSamples (buffer);
+    analyser->pushSamples (buffer);
 }
 
 //==============================================================================

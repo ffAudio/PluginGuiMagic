@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="JeItQC" name="FoleysSynth" projectType="audioplug" jucerVersion="5.4.5"
+<JUCERPROJECT id="JeItQC" name="FoleysSynth" projectType="audioplug" jucerVersion="5.4.7"
               companyName="Foleys Finest Audio" projectLineFeed="&#10;" companyWebsite="https://foleysfinest.com"
               pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
               pluginManufacturerCode="FFAU">

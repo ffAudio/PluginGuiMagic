@@ -20,8 +20,12 @@ public:
     class FoleysSound : public SynthesiserSound
     {
     public:
+        FoleysSound() = default;
         bool appliesToNote (int) override { return true; }
         bool appliesToChannel (int) override { return true; }
+
+        ADSR::Parameters getADSR();
+
     private:
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysSound)
     };
@@ -29,7 +33,9 @@ public:
     class FoleysVoice : public SynthesiserVoice
     {
     public:
-        bool canPlaySound (SynthesiserSound *) override { return true; }
+        FoleysVoice();
+
+        bool canPlaySound (SynthesiserSound *) override;
 
         void startNote (int midiNoteNumber,
                         float velocity,
@@ -46,7 +52,18 @@ public:
                               int startSample,
                               int numSamples) override;
 
+        void setCurrentPlaybackSampleRate (double newRate) override;
+
     private:
+        double getDetuneFromPitchWheel (int wheelValue, double semitonesToDetune) const;
+        double getFrequencyForNote (int noteNumber, double detune, double concertPitch = 440.0) const;
+
+        dsp::Oscillator<float> osc;
+        int                    midiNumber = -1;
+        int                    maxPitchWheelSemitones = 12;
+        AudioBuffer<float>     buffer;
+        ADSR                   adsr;
+
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysVoice)
     };
 
