@@ -15,25 +15,38 @@
 class FoleysSynth : public Synthesiser
 {
 public:
-    FoleysSynth()=default;
+    static int  numOscillators;
+
+    static void addADSRParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
+    static void addOvertoneParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
+    static void addGainParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
+
+    FoleysSynth() = default;
 
     class FoleysSound : public SynthesiserSound
     {
     public:
-        FoleysSound() = default;
+        FoleysSound (AudioProcessorValueTreeState& state);
         bool appliesToNote (int) override { return true; }
         bool appliesToChannel (int) override { return true; }
 
         ADSR::Parameters getADSR();
 
     private:
+        AudioProcessorValueTreeState& state;
+        AudioParameterFloat* attack  = nullptr;
+        AudioParameterFloat* decay   = nullptr;
+        AudioParameterFloat* sustain = nullptr;
+        AudioParameterFloat* release = nullptr;
+        AudioParameterFloat* gain    = nullptr;
+
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysSound)
     };
 
     class FoleysVoice : public SynthesiserVoice
     {
     public:
-        FoleysVoice();
+        FoleysVoice (AudioProcessorValueTreeState& state);
 
         bool canPlaySound (SynthesiserSound *) override;
 
@@ -58,11 +71,30 @@ public:
         double getDetuneFromPitchWheel (int wheelValue, double semitonesToDetune) const;
         double getFrequencyForNote (int noteNumber, double detune, double concertPitch = 440.0) const;
 
-        dsp::Oscillator<float> osc;
+        class BaseOscillator
+        {
+        public:
+            BaseOscillator (AudioParameterFloat* gainPtr) : gain (gainPtr) {}
+
+            using OscChain=dsp::ProcessorChain<dsp::Oscillator<float>, dsp::Gain<float>>;
+            OscChain osc;
+            AudioParameterFloat* gain = nullptr;
+            double multiplier = 1.0;
+
+        private:
+            JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BaseOscillator)
+        };
+
+        std::vector<std::unique_ptr<BaseOscillator>> oscillators;
+
         int                    midiNumber = -1;
         int                    maxPitchWheelSemitones = 12;
-        AudioBuffer<float>     buffer;
+        const int              internalBufferSize = 64;
+        AudioBuffer<float>     oscillatorBuffer;
+        AudioBuffer<float>     voiceBuffer;
         ADSR                   adsr;
+        AudioParameterFloat*   gainParameter = nullptr;
+        double                 lastGain = 0.0;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysVoice)
     };
