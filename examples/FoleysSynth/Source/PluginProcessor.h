@@ -58,11 +58,7 @@ public:
 
 private:
     //==============================================================================
-    AudioProcessorValueTreeState treeState { *this,
-        nullptr,
-        ProjectInfo::projectName,
-        AudioProcessorValueTreeState::ParameterLayout()
-    };
+    AudioProcessorValueTreeState treeState;
 
     FoleysSynth              synthesiser;
 

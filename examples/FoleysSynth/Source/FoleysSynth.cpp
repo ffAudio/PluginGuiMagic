@@ -10,11 +10,96 @@
 
 #include "FoleysSynth.h"
 
-FoleysSynth::FoleysVoice::FoleysVoice()
+namespace IDs
 {
-    osc.initialise ([](auto arg){return std::sin (arg);}, 512);
+    static String paramAttack  { "attack" };
+    static String paramDecay   { "decay" };
+    static String paramSustain { "sustain" };
+    static String paramRelease { "release" };
+    static String paramGain    { "gain" };
+}
 
-    buffer.setSize (1, 128);
+//==============================================================================
+
+int FoleysSynth::numOscillators = 8;
+
+void FoleysSynth::addADSRParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+{
+    auto attack  = std::make_unique<AudioParameterFloat>(IDs::paramAttack,  "Attack",  NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto decay   = std::make_unique<AudioParameterFloat>(IDs::paramDecay,   "Decay",   NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto sustain = std::make_unique<AudioParameterFloat>(IDs::paramSustain, "Sustain", NormalisableRange<float> (0.0f,   1.0f, 0.01f), 1.0f);
+    auto release = std::make_unique<AudioParameterFloat>(IDs::paramRelease, "Release", NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+
+    auto group = std::make_unique<AudioProcessorParameterGroup>("adsr", "ADRS", "|",
+                                                                std::move (attack),
+                                                                std::move (decay),
+                                                                std::move (sustain),
+                                                                std::move (release));
+    layout.add (std::move (group));
+}
+
+void FoleysSynth::addOvertoneParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+{
+    auto group = std::make_unique<AudioProcessorParameterGroup>("oscillators", "Oscillators", "|");
+    for (int i = 0; i < FoleysSynth::numOscillators; ++i)
+    {
+        group->addChild (std::make_unique<AudioParameterFloat>("osc" + String (i), "Oscillator " + String (i), NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
+    }
+
+    layout.add (std::move (group));
+}
+
+void FoleysSynth::addGainParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+{
+    auto gain  = std::make_unique<AudioParameterFloat>(IDs::paramGain,  "Gain",  NormalisableRange<float> (0.0f, 1.0f, 0.01f), 0.70f);
+
+    layout.add (std::make_unique<AudioProcessorParameterGroup>("output", "Output", "|", std::move (gain)));
+}
+
+//==============================================================================
+
+FoleysSynth::FoleysSound::FoleysSound (AudioProcessorValueTreeState& stateToUse)
+  : state (stateToUse)
+{
+    attack = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramAttack));
+    jassert (attack);
+    decay = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramDecay));
+    jassert (decay);
+    sustain = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramSustain));
+    jassert (sustain);
+    release = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramRelease));
+    jassert (release);
+    gain = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramGain));
+    jassert (gain);
+}
+
+ADSR::Parameters FoleysSynth::FoleysSound::getADSR()
+{
+    ADSR::Parameters parameters;
+    parameters.attack  = attack->get();
+    parameters.decay   = decay->get();
+    parameters.sustain = sustain->get();
+    parameters.release = release->get();
+    return parameters;
+}
+
+//==============================================================================
+
+FoleysSynth::FoleysVoice::FoleysVoice (AudioProcessorValueTreeState& state)
+{
+    for (int i=0; i < FoleysSynth::numOscillators; ++i)
+    {
+        oscillators.push_back (std::make_unique<BaseOscillator>(dynamic_cast<AudioParameterFloat*>(state.getParameter ("osc" + String (i)))));
+        auto& osc = oscillators.back();
+        osc->osc.get<0>().initialise ([](auto arg){return std::sin (arg);}, 512);
+        osc->multiplier = i + 1;
+    }
+
+    gainParameter = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramGain));
+    jassert (gainParameter);
+
+    oscillatorBuffer.setSize (1, internalBufferSize);
+    voiceBuffer.setSize (1, internalBufferSize);
 }
 
 bool FoleysSynth::FoleysVoice::canPlaySound (SynthesiserSound* sound)
@@ -23,7 +108,7 @@ bool FoleysSynth::FoleysVoice::canPlaySound (SynthesiserSound* sound)
 }
 
 void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
-                                          float velocity,
+                                          [[maybe_unused]]float velocity,
                                           SynthesiserSound* sound,
                                           int currentPitchWheelPosition)
 {
@@ -32,13 +117,17 @@ void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
         adsr.setParameters (foleysSound->getADSR());
     }
 
-    osc.setFrequency (getFrequencyForNote (midiNoteNumber, getDetuneFromPitchWheel (currentPitchWheelPosition, maxPitchWheelSemitones)));
+    const auto freq = getFrequencyForNote (midiNoteNumber, getDetuneFromPitchWheel (currentPitchWheelPosition, maxPitchWheelSemitones));
+    for (auto& osc : oscillators)
+        osc->osc.get<0>().setFrequency (freq * osc->multiplier);
+
     midiNumber = midiNoteNumber;
 
     adsr.noteOn();
 }
 
-void FoleysSynth::FoleysVoice::stopNote (float velocity, bool allowTailOff)
+void FoleysSynth::FoleysVoice::stopNote ([[maybe_unused]]float velocity,
+                                         bool allowTailOff)
 {
     adsr.noteOff();
 
@@ -48,12 +137,13 @@ void FoleysSynth::FoleysVoice::stopNote (float velocity, bool allowTailOff)
 
 void FoleysSynth::FoleysVoice::pitchWheelMoved (int newPitchWheelValue)
 {
-    osc.setFrequency (getFrequencyForNote (midiNumber, getDetuneFromPitchWheel (newPitchWheelValue, maxPitchWheelSemitones)));
+    const auto freq = getFrequencyForNote (midiNumber, getDetuneFromPitchWheel (newPitchWheelValue, maxPitchWheelSemitones));
+    for (auto& osc : oscillators)
+        osc->osc.get<0>().setFrequency (freq * osc->multiplier);
 }
 
-void FoleysSynth::FoleysVoice::controllerMoved (int controllerNumber, int newControllerValue)
+void FoleysSynth::FoleysVoice::controllerMoved ([[maybe_unused]]int controllerNumber, [[maybe_unused]]int newControllerValue)
 {
-    DBG ("Controller moved: " << controllerNumber << ": " << newControllerValue);
 }
 
 void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer,
@@ -65,14 +155,24 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
 
     while (numSamples > 0)
     {
-        auto left = std::min (numSamples, buffer.getNumSamples());
-        auto block = dsp::AudioBlock<float> (buffer).getSingleChannelBlock (0).getSubBlock (0, left);
-        buffer.clear();
+        auto left = std::min (numSamples, oscillatorBuffer.getNumSamples());
+        auto block = dsp::AudioBlock<float> (oscillatorBuffer).getSingleChannelBlock (0).getSubBlock (0, left);
 
         dsp::ProcessContextReplacing<float> context (block);
-        osc.process (context);
-        adsr.applyEnvelopeToBuffer (buffer, 0, left);
-        outputBuffer.addFrom (0, startSample, buffer.getReadPointer (0), left);
+        voiceBuffer.clear();
+        for (auto& osc : oscillators)
+        {
+            osc->osc.get<1>().setGainLinear (osc->gain->get());
+            oscillatorBuffer.clear();
+            osc->osc.process (context);
+            voiceBuffer.addFrom (0, 0, oscillatorBuffer.getReadPointer (0), left);
+        }
+
+        adsr.applyEnvelopeToBuffer (voiceBuffer, 0, left);
+
+        const auto gain = gainParameter->get();
+        outputBuffer.addFromWithRamp (0, startSample, voiceBuffer.getReadPointer (0), left, lastGain, gain);
+        lastGain = gain;
 
         startSample += left;
         numSamples  -= left;
@@ -86,7 +186,8 @@ void FoleysSynth::FoleysVoice::setCurrentPlaybackSampleRate (double newRate)
     dsp::ProcessSpec spec;
     spec.sampleRate = newRate;
     spec.numChannels = 1;
-    osc.prepare (spec);
+    for (auto& osc : oscillators)
+        osc->osc.prepare (spec);
 }
 
 double FoleysSynth::FoleysVoice::getFrequencyForNote (int noteNumber, double detune, double concertPitch) const
@@ -99,10 +200,3 @@ double FoleysSynth::FoleysVoice::getDetuneFromPitchWheel (int wheelValue, double
     return semitonesToDetune * ((wheelValue / 8192.0) - 1.0);
 }
 
-
-ADSR::Parameters FoleysSynth::FoleysSound::getADSR()
-{
-    ADSR::Parameters parameters;
-
-    return parameters;
-}

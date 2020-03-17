@@ -11,6 +11,18 @@
 #include "PluginProcessor.h"
 
 //==============================================================================
+
+AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+{
+    AudioProcessorValueTreeState::ParameterLayout layout;
+    FoleysSynth::addADSRParameters (layout);
+    FoleysSynth::addOvertoneParameters (layout);
+    FoleysSynth::addGainParameters (layout);
+    return layout;
+}
+
+//==============================================================================
+
 FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
@@ -20,19 +32,22 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
                       #endif
                        .withOutput ("Output", AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
+#else
+    :
 #endif
+    treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
 {
     // MAGIC GUI: add a meter at the output
     outputMeter  = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
     oscilloscope = magicState.addPlotSource ("waveform", std::make_unique<foleys::MagicOscilloscope>());
     analyser     = magicState.addPlotSource ("analyser", std::make_unique<foleys::MagicAnalyser>());
 
-    FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound());
+    FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound (treeState));
     synthesiser.addSound (sound);
 
     for (int i=0; i < 16; ++i)
-        synthesiser.addVoice (new FoleysSynth::FoleysVoice());
+        synthesiser.addVoice (new FoleysSynth::FoleysVoice (treeState));
 }
 
 FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
@@ -101,6 +116,9 @@ void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
         buffer.clear (i, 0, buffer.getNumSamples());
 
     synthesiser.renderNextBlock (buffer, midiMessages, 0, buffer.getNumSamples());
+
+    for (int i = 1; i < buffer.getNumChannels(); ++i)
+        buffer.copyFrom (i, 0, buffer.getReadPointer (0), buffer.getNumSamples());
 
     // MAGIC GUI: send the finished buffer to the level meter
     outputMeter->pushSamples (buffer);
