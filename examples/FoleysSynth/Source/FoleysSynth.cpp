@@ -158,8 +158,12 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
         voiceBuffer.clear();
         for (auto& osc : oscillators)
         {
+            auto oscGain = osc->gain->get();
+            if (oscGain < 0.01)
+                continue;
+
             updateFrequency (*osc);
-            osc->osc.get<1>().setGainLinear (osc->gain->get());
+            osc->osc.get<1>().setGainLinear (oscGain);
             oscillatorBuffer.clear();
             osc->osc.process (context);
             voiceBuffer.addFrom (0, 0, oscillatorBuffer.getReadPointer (0), left);
@@ -182,6 +186,7 @@ void FoleysSynth::FoleysVoice::setCurrentPlaybackSampleRate (double newRate)
 
     dsp::ProcessSpec spec;
     spec.sampleRate = newRate;
+    spec.maximumBlockSize = internalBufferSize;
     spec.numChannels = 1;
     for (auto& osc : oscillators)
         osc->osc.prepare (spec);
