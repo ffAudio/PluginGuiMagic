@@ -68,26 +68,30 @@ public:
         void setCurrentPlaybackSampleRate (double newRate) override;
 
     private:
-        double getDetuneFromPitchWheel (int wheelValue, double semitonesToDetune) const;
-        double getFrequencyForNote (int noteNumber, double detune, double concertPitch = 440.0) const;
 
         class BaseOscillator
         {
         public:
-            BaseOscillator (AudioParameterFloat* gainPtr) : gain (gainPtr) {}
+            BaseOscillator() = default;
 
-            using OscChain=dsp::ProcessorChain<dsp::Oscillator<float>, dsp::Gain<float>>;
-            OscChain osc;
-            AudioParameterFloat* gain = nullptr;
+            dsp::ProcessorChain<dsp::Oscillator<float>, dsp::Gain<float>> osc;
+            AudioParameterFloat* gain   = nullptr;
+            AudioParameterFloat* detune = nullptr;
             double multiplier = 1.0;
 
         private:
             JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BaseOscillator)
         };
 
+        double getDetuneFromPitchWheel (int wheelValue) const;
+        double getFrequencyForNote (int noteNumber, double detune, double concertPitch = 440.0) const;
+
+        void updateFrequency (BaseOscillator& oscillator);
+
         std::vector<std::unique_ptr<BaseOscillator>> oscillators;
 
         int                    midiNumber = -1;
+        double                 pitchWheelValue = 0.0;
         int                    maxPitchWheelSemitones = 12;
         const int              internalBufferSize = 64;
         AudioBuffer<float>     oscillatorBuffer;

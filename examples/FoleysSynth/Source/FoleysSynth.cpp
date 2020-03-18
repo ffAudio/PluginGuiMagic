@@ -44,6 +44,7 @@ void FoleysSynth::addOvertoneParameters (AudioProcessorValueTreeState::Parameter
     for (int i = 0; i < FoleysSynth::numOscillators; ++i)
     {
         group->addChild (std::make_unique<AudioParameterFloat>("osc" + String (i), "Oscillator " + String (i), NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
+        group->addChild (std::make_unique<AudioParameterFloat>("detune" + String (i), "Detune " + String (i), NormalisableRange<float>(-0.5f, 0.5f, 0.01f), 0.0f));
     }
 
     layout.add (std::move (group));
@@ -89,8 +90,10 @@ FoleysSynth::FoleysVoice::FoleysVoice (AudioProcessorValueTreeState& state)
 {
     for (int i=0; i < FoleysSynth::numOscillators; ++i)
     {
-        oscillators.push_back (std::make_unique<BaseOscillator>(dynamic_cast<AudioParameterFloat*>(state.getParameter ("osc" + String (i)))));
+        oscillators.push_back (std::make_unique<BaseOscillator>());
         auto& osc = oscillators.back();
+        osc->gain = dynamic_cast<AudioParameterFloat*>(state.getParameter ("osc" + String (i)));
+        osc->detune = dynamic_cast<AudioParameterFloat*>(state.getParameter ("detune" + String (i)));
         osc->osc.get<0>().initialise ([](auto arg){return std::sin (arg);}, 512);
         osc->multiplier = i + 1;
     }
@@ -113,14 +116,9 @@ void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
                                           int currentPitchWheelPosition)
 {
     if (auto* foleysSound = dynamic_cast<FoleysSound*>(sound))
-    {
         adsr.setParameters (foleysSound->getADSR());
-    }
 
-    const auto freq = getFrequencyForNote (midiNoteNumber, getDetuneFromPitchWheel (currentPitchWheelPosition, maxPitchWheelSemitones));
-    for (auto& osc : oscillators)
-        osc->osc.get<0>().setFrequency (freq * osc->multiplier);
-
+    pitchWheelValue = getDetuneFromPitchWheel (currentPitchWheelPosition);
     midiNumber = midiNoteNumber;
 
     adsr.noteOn();
@@ -137,9 +135,7 @@ void FoleysSynth::FoleysVoice::stopNote ([[maybe_unused]]float velocity,
 
 void FoleysSynth::FoleysVoice::pitchWheelMoved (int newPitchWheelValue)
 {
-    const auto freq = getFrequencyForNote (midiNumber, getDetuneFromPitchWheel (newPitchWheelValue, maxPitchWheelSemitones));
-    for (auto& osc : oscillators)
-        osc->osc.get<0>().setFrequency (freq * osc->multiplier);
+    pitchWheelValue = getDetuneFromPitchWheel (newPitchWheelValue);
 }
 
 void FoleysSynth::FoleysVoice::controllerMoved ([[maybe_unused]]int controllerNumber, [[maybe_unused]]int newControllerValue)
@@ -162,6 +158,7 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
         voiceBuffer.clear();
         for (auto& osc : oscillators)
         {
+            updateFrequency (*osc);
             osc->osc.get<1>().setGainLinear (osc->gain->get());
             oscillatorBuffer.clear();
             osc->osc.process (context);
@@ -195,8 +192,15 @@ double FoleysSynth::FoleysVoice::getFrequencyForNote (int noteNumber, double det
     return concertPitch * std::pow (2.0, (noteNumber + detune - 69.0) / 12.0);
 }
 
-double FoleysSynth::FoleysVoice::getDetuneFromPitchWheel (int wheelValue, double semitonesToDetune) const
+double FoleysSynth::FoleysVoice::getDetuneFromPitchWheel (int wheelValue) const
 {
-    return semitonesToDetune * ((wheelValue / 8192.0) - 1.0);
+    return (wheelValue / 8192.0) - 1.0;
 }
 
+void FoleysSynth::FoleysVoice::updateFrequency (BaseOscillator& oscillator)
+{
+    const auto freq = getFrequencyForNote (midiNumber,
+                                           pitchWheelValue * maxPitchWheelSemitones
+                                           + oscillator.detune->get());
+    oscillator.osc.get<0>().setFrequency (freq * oscillator.multiplier);
+}
