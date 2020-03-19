@@ -156,14 +156,14 @@ private:
     std::array<FilterAttachment*, 6> attachments
     { &attachment1, &attachment2, &attachment3, &attachment4, &attachment5, &attachment6 };
 
-    foleys::MagicPlotSource* inputAnalyser  = nullptr;
-    foleys::MagicPlotSource* outputAnalyser = nullptr;
+    foleys::MagicPlotSource*  inputAnalyser  = nullptr;
+    foleys::MagicPlotSource*  outputAnalyser = nullptr;
 
-    foleys::MagicFilterPlot* plotSum = nullptr;
+    foleys::MagicFilterPlot*  plotSum = nullptr;
+    foleys::MagicLevelSource* outputMeter = nullptr;
 
     // GUI MAGIC: define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
-    foleys::MagicLevelSource*   outputMeter = nullptr;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EqualizerExampleAudioProcessor)
 };

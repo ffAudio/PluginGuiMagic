@@ -58,13 +58,15 @@ public:
 
 private:
     //==============================================================================
-    AudioProcessorValueTreeState treeState { *this, nullptr };
+    AudioProcessorValueTreeState treeState;
 
-    FoleysSynth synthesiser;
+    FoleysSynth              synthesiser;
 
     // GUI MAGIC: define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
-    foleys::MagicLevelSource*   outputMeter = nullptr;
+    foleys::MagicLevelSource*   outputMeter  = nullptr;
+    foleys::MagicPlotSource*    oscilloscope = nullptr;
+    foleys::MagicPlotSource*    analyser     = nullptr;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysSynthAudioProcessor)
 };

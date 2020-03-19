@@ -62,7 +62,7 @@ node
         buildPlugin ("EqualizerExample", "")
     }
 
-    stage('EqualizerExample')
+    stage('FoleysSynth')
     {
         buildPlugin ("FoleysSynth", "")
     }

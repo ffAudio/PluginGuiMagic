@@ -54,7 +54,8 @@
         <Slider border="0" background-color="80141521" lookAndFeel="Skeuomorphic"
                 slider-fill="red" slider-textbox="textbox-below" background-gradient="none"
                 slider-text-outline="ff414151"/>
-        <Plot border="0" margin="0" padding="0" background-color="00000000"/>
+        <Plot border="0" margin="0" padding="0" background-color="00000000"
+              plot-fill-color="00000000"/>
         <XYDragComponent border="0" margin="0" padding="0" background-color="00000000"
                          xy-crosshair="horizontal"/>
       </Types>
@@ -63,21 +64,24 @@
   <View id="root">
     <View id="main">
       <View id="frame" class="plot-view">
-        <Plot source="plot1" class="nomargin q1"/>
-        <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"/>
-        <Plot source="plot2" class="nomargin q2"/>
-        <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"/>
-        <Plot source="plot3" class="nomargin q3"/>
-        <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"/>
-        <Plot source="plot4" class="nomargin q4"/>
-        <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
-        <Plot source="plot5" class="nomargin q5"/>
-        <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
-        <Plot source="plot6" class="nomargin q6"/>
-        <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"/>
-        <Plot source="plotSum" class="nomargin gain"/>
+        <Plot source="plot1" class="nomargin q1" plot-fill-color="30FF0000"/>
+        <Plot source="plot2" class="nomargin q2" plot-fill-color="3000FF00"/>
+        <Plot source="plot3" class="nomargin q3" plot-fill-color="30FFA500"
+              plot-color="FFFFA500"/>
+        <Plot source="plot4" class="nomargin q4" plot-color="FF00FFFF" plot-fill-color="3000FFFF"/>
+        <Plot source="plot5" class="nomargin q5" plot-fill-color="300000FF"/>
+        <Plot source="plot6" class="nomargin q6" plot-fill-color="30FFFF00"
+              plot-color="FFFFFF00"/>
+        <Plot source="plotSum" class="nomargin gain" plot-fill-color="30C0C0C0"
+              plot-color="FFC0C0C0"/>
         <Plot source="input" class="nomargin" plot-color="khaki"/>
         <Plot source="output" class="nomargin" plot-color="brown"/>
+        <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"/>
+        <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"/>
+        <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"/>
+        <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"/>
+        <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
+        <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
       </View>
       <View id="nomargin" background-color="ff343541">
         <View caption="Q1" class="group q1">
@@ -161,4 +165,3 @@
     </View>
   </View>
 </magic>
- 
