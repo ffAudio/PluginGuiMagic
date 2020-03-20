@@ -110,7 +110,7 @@ bool FoleysSynth::FoleysVoice::canPlaySound (SynthesiserSound* sound)
     return dynamic_cast<FoleysSound*>(sound) != nullptr;
 }
 
-void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
+void FoleysSynth::FoleysVoice::startNote ([[maybe_unused]]int midiNoteNumber,
                                           [[maybe_unused]]float velocity,
                                           SynthesiserSound* sound,
                                           int currentPitchWheelPosition)
@@ -119,7 +119,6 @@ void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
         adsr.setParameters (foleysSound->getADSR());
 
     pitchWheelValue = getDetuneFromPitchWheel (currentPitchWheelPosition);
-    midiNumber = midiNoteNumber;
 
     adsr.noteOn();
 }
@@ -127,10 +126,15 @@ void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
 void FoleysSynth::FoleysVoice::stopNote ([[maybe_unused]]float velocity,
                                          bool allowTailOff)
 {
-    adsr.noteOff();
-
-    if (! allowTailOff)
+    if (allowTailOff)
+    {
+        adsr.noteOff();
+    }
+    else
+    {
         adsr.reset();
+        clearCurrentNote();
+    }
 }
 
 void FoleysSynth::FoleysVoice::pitchWheelMoved (int newPitchWheelValue)
@@ -177,6 +181,9 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
 
         startSample += left;
         numSamples  -= left;
+
+        if (! adsr.isActive())
+            clearCurrentNote();
     }
 }
 
@@ -204,7 +211,7 @@ double FoleysSynth::FoleysVoice::getDetuneFromPitchWheel (int wheelValue) const
 
 void FoleysSynth::FoleysVoice::updateFrequency (BaseOscillator& oscillator)
 {
-    const auto freq = getFrequencyForNote (midiNumber,
+    const auto freq = getFrequencyForNote (getCurrentlyPlayingNote(),
                                            pitchWheelValue * maxPitchWheelSemitones
                                            + oscillator.detune->get());
     oscillator.osc.get<0>().setFrequency (freq * oscillator.multiplier);
