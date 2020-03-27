@@ -114,6 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6458b65a25c3b48d48c67c252b39f8aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a6458b65a25c3b48d48c67c252b39f8aa">drawPlot</a> (juce::Graphics &amp;g, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)=0</td></tr>
 <tr class="memdesc:a6458b65a25c3b48d48c67c252b39f8aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the callback that draws the plot.  <a href="#a6458b65a25c3b48d48c67c252b39f8aa">More...</a><br /></td></tr>
 <tr class="separator:a6458b65a25c3b48d48c67c252b39f8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e68b927be0dd3342be054163cdb714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">fillPlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
+<tr class="memdesc:ad5e68b927be0dd3342be054163cdb714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="#ad5e68b927be0dd3342be054163cdb714">More...</a><br /></td></tr>
+<tr class="separator:ad5e68b927be0dd3342be054163cdb714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91156f041d21e1c2f9472b931a271053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">strokePlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
+<tr class="memdesc:a91156f041d21e1c2f9472b931a271053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="#a91156f041d21e1c2f9472b931a271053">More...</a><br /></td></tr>
+<tr class="separator:a91156f041d21e1c2f9472b931a271053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadec6c2312fe1ac4cfc12324f3001203"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">isActive</a> () const</td></tr>
 <tr class="memdesc:aadec6c2312fe1ac4cfc12324f3001203"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can add an active state to your plot to allow to paint in different colours.  <a href="#aadec6c2312fe1ac4cfc12324f3001203">More...</a><br /></td></tr>
 <tr class="separator:aadec6c2312fe1ac4cfc12324f3001203"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,6 +272,109 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad5e68b927be0dd3342be054163cdb714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e68b927be0dd3342be054163cdb714">&#9670;&nbsp;</a></span>fillPlotPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fillPlotPath </td>
+          <td>(</td>
+          <td class="paramtype">juce::Graphics &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Rectangle&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>bounds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;&#160;</td>
+          <td class="paramname"><em>component</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Your implementation of drawPlot should call this at the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the Graphics context to draw onto </td></tr>
+    <tr><td class="paramname">path</td><td>the path to close </td></tr>
+    <tr><td class="paramname">bounds</td><td>the bounds of the plot </td></tr>
+    <tr><td class="paramname">component</td><td>grants access to the plot component, e.g. to find the colours from it </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">MagicPlotSource::isActive()</a>, <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a20c3379327fe323e6fd8d8e97008c0e0">MagicPlotComponent::plotFillColourId</a>, and <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa8a901238b8d0a63c4391c033d948e7b">MagicPlotComponent::plotInactiveFillColourId</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicOscilloscope.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicOscilloscope::drawPlot()</a>, <a class="el" href="classfoleys_1_1MagicAnalyser.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicAnalyser::drawPlot()</a>, and <a class="el" href="classfoleys_1_1MagicFilterPlot.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicFilterPlot::drawPlot()</a>.</p>
+
+</div>
+</div>
+<a id="a91156f041d21e1c2f9472b931a271053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91156f041d21e1c2f9472b931a271053">&#9670;&nbsp;</a></span>strokePlotPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void strokePlotPath </td>
+          <td>(</td>
+          <td class="paramtype">juce::Graphics &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::Path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;&#160;</td>
+          <td class="paramname"><em>component</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Your implementation of drawPlot should call this at the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the Graphics context to draw onto </td></tr>
+    <tr><td class="paramname">path</td><td>the path to close </td></tr>
+    <tr><td class="paramname">component</td><td>grants access to the plot component, e.g. to find the colours from it </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">MagicPlotSource::isActive()</a>, <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a7ad19ba09115dc9bdf288d631dad6699">MagicPlotComponent::plotColourId</a>, and <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abbcfcec1c016f811e31fbd277cd8029a">MagicPlotComponent::plotInactiveColourId</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicOscilloscope.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicOscilloscope::drawPlot()</a>, <a class="el" href="classfoleys_1_1MagicAnalyser.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicAnalyser::drawPlot()</a>, and <a class="el" href="classfoleys_1_1MagicFilterPlot.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicFilterPlot::drawPlot()</a>.</p>
+
+</div>
+</div>
 <a id="aadec6c2312fe1ac4cfc12324f3001203"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aadec6c2312fe1ac4cfc12324f3001203">&#9670;&nbsp;</a></span>isActive()</h2>
 
@@ -291,7 +400,7 @@ Public Member Functions</h2></td></tr>
 
 <p>You can add an active state to your plot to allow to paint in different colours. </p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicOscilloscope.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicOscilloscope::drawPlot()</a>, <a class="el" href="classfoleys_1_1MagicAnalyser.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicAnalyser::drawPlot()</a>, and <a class="el" href="classfoleys_1_1MagicFilterPlot.html#a3d9b0fefa1e383edab2b4115920a0a63">MagicFilterPlot::drawPlot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">MagicPlotSource::fillPlotPath()</a>, and <a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">MagicPlotSource::strokePlotPath()</a>.</p>
 
 </div>
 </div>
@@ -390,13 +499,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__MagicPlotSource_8h.html">foleys_MagicPlotSource.h</a></li>
+<li><a class="el" href="foleys__MagicPlotSource_8cpp.html">foleys_MagicPlotSource.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

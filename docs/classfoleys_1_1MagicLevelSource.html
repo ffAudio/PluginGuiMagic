@@ -78,17 +78,244 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classfoleys_1_1MagicLevelSource-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MagicLevelSource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<hr/>The documentation for this class was generated from the following file:<ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a46538644ce145a069dee4eb7a4579ef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#a46538644ce145a069dee4eb7a4579ef0">MagicLevelSource</a> ()=default</td></tr>
+<tr class="separator:a46538644ce145a069dee4eb7a4579ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae216fbb9ec71b88b503e27a622462177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#ae216fbb9ec71b88b503e27a622462177">pushSamples</a> (const juce::AudioBuffer&lt; float &gt; &amp;buffer)</td></tr>
+<tr class="memdesc:ae216fbb9ec71b88b503e27a622462177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send new sample values to the measurement.  <a href="#ae216fbb9ec71b88b503e27a622462177">More...</a><br /></td></tr>
+<tr class="separator:ae216fbb9ec71b88b503e27a622462177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039feedf853af8aa2285b556b84a2fb9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#a039feedf853af8aa2285b556b84a2fb9">getRMSvalue</a> (int channel) const</td></tr>
+<tr class="separator:a039feedf853af8aa2285b556b84a2fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e07bf359dc117004185654b0b2050b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#a47e07bf359dc117004185654b0b2050b">getMaxValue</a> (int channel) const</td></tr>
+<tr class="separator:a47e07bf359dc117004185654b0b2050b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e05c097a3ef908a8ba02074d42b53dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#a6e05c097a3ef908a8ba02074d42b53dc">setupSource</a> (int numChannels, double sampleRate, int maxKeepMS, int rmsWindowMS)</td></tr>
+<tr class="memdesc:a6e05c097a3ef908a8ba02074d42b53dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the source to measure a signal.  <a href="#a6e05c097a3ef908a8ba02074d42b53dc">More...</a><br /></td></tr>
+<tr class="separator:a6e05c097a3ef908a8ba02074d42b53dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0838f597aa46360a96313fad9d564b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#a2a0838f597aa46360a96313fad9d564b">setNumChannels</a> (int numChannels)</td></tr>
+<tr class="memdesc:a2a0838f597aa46360a96313fad9d564b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of channels to measure.  <a href="#a2a0838f597aa46360a96313fad9d564b">More...</a><br /></td></tr>
+<tr class="separator:a2a0838f597aa46360a96313fad9d564b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af75e87eec6999b3bc3c1ea6466e64211"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#af75e87eec6999b3bc3c1ea6466e64211">getNumChannels</a> () const</td></tr>
+<tr class="separator:af75e87eec6999b3bc3c1ea6466e64211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0275ab7250ff786140e3f2fb85abec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicLevelSource.html#aef0275ab7250ff786140e3f2fb85abec">setRmsLength</a> (int numSamples)</td></tr>
+<tr class="memdesc:aef0275ab7250ff786140e3f2fb85abec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of samples to be averaged.  <a href="#aef0275ab7250ff786140e3f2fb85abec">More...</a><br /></td></tr>
+<tr class="separator:aef0275ab7250ff786140e3f2fb85abec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a46538644ce145a069dee4eb7a4579ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46538644ce145a069dee4eb7a4579ef0">&#9670;&nbsp;</a></span>MagicLevelSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae216fbb9ec71b88b503e27a622462177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae216fbb9ec71b88b503e27a622462177">&#9670;&nbsp;</a></span>pushSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pushSamples </td>
+          <td>(</td>
+          <td class="paramtype">const juce::AudioBuffer&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send new sample values to the measurement. </p>
+
+</div>
+</div>
+<a id="a039feedf853af8aa2285b556b84a2fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039feedf853af8aa2285b556b84a2fb9">&#9670;&nbsp;</a></span>getRMSvalue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float getRMSvalue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47e07bf359dc117004185654b0b2050b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e07bf359dc117004185654b0b2050b">&#9670;&nbsp;</a></span>getMaxValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float getMaxValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e05c097a3ef908a8ba02074d42b53dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e05c097a3ef908a8ba02074d42b53dc">&#9670;&nbsp;</a></span>setupSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupSource </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numChannels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sampleRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxKeepMS</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rmsWindowMS</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setup the source to measure a signal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numChannels</td><td>the number of channels that will be sent </td></tr>
+    <tr><td class="paramname">sampleRate</td><td>the sampleRate the signal is timed in </td></tr>
+    <tr><td class="paramname">maxKeepMS</td><td>the number of milliseconds to keep the max </td></tr>
+    <tr><td class="paramname">rmsWindowMS</td><td>the length to calculate the RMS of it </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicLevelSource.html#a2a0838f597aa46360a96313fad9d564b">MagicLevelSource::setNumChannels()</a>, and <a class="el" href="classfoleys_1_1MagicLevelSource.html#aef0275ab7250ff786140e3f2fb85abec">MagicLevelSource::setRmsLength()</a>.</p>
+
+</div>
+</div>
+<a id="a2a0838f597aa46360a96313fad9d564b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0838f597aa46360a96313fad9d564b">&#9670;&nbsp;</a></span>setNumChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setNumChannels </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numChannels</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the number of channels to measure. </p>
+<p>This should be done on a non-realtime thread. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicLevelSource.html#a6e05c097a3ef908a8ba02074d42b53dc">MagicLevelSource::setupSource()</a>.</p>
+
+</div>
+</div>
+<a id="af75e87eec6999b3bc3c1ea6466e64211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af75e87eec6999b3bc3c1ea6466e64211">&#9670;&nbsp;</a></span>getNumChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getNumChannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef0275ab7250ff786140e3f2fb85abec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0275ab7250ff786140e3f2fb85abec">&#9670;&nbsp;</a></span>setRmsLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setRmsLength </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numSamples</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the number of samples to be averaged. </p>
+<p>They are stored in 64 samples blocks to minimise calculation overhead. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicLevelSource.html#a6e05c097a3ef908a8ba02074d42b53dc">MagicLevelSource::setupSource()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__MagicLevelSource_8h.html">foleys_MagicLevelSource.h</a></li>
+<li><a class="el" href="foleys__MagicLevelSource_8cpp.html">foleys_MagicLevelSource.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

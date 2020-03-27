@@ -122,6 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a55bbde130cac6785e2d29b629fd7f7dd inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14623f42ef68c2b5c05018422eb1fed6 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a14623f42ef68c2b5c05018422eb1fed6">~MagicPlotSource</a> ()=default</td></tr>
 <tr class="separator:a14623f42ef68c2b5c05018422eb1fed6 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">fillPlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
+<tr class="memdesc:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">More...</a><br /></td></tr>
+<tr class="separator:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">strokePlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
+<tr class="memdesc:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">More...</a><br /></td></tr>
+<tr class="separator:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">isActive</a> () const</td></tr>
 <tr class="memdesc:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can add an active state to your plot to allow to paint in different colours.  <a href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">More...</a><br /></td></tr>
 <tr class="separator:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,7 +253,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classfoleys_1_1MagicPlotSource.html#a6458b65a25c3b48d48c67c252b39f8aa">MagicPlotSource</a>.</p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">MagicPlotSource::isActive()</a>, <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a7ad19ba09115dc9bdf288d631dad6699">MagicPlotComponent::plotColourId</a>, and <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abbcfcec1c016f811e31fbd277cd8029a">MagicPlotComponent::plotInactiveColourId</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">MagicPlotSource::fillPlotPath()</a>, and <a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">MagicPlotSource::strokePlotPath()</a>.</p>
 
 </div>
 </div>
@@ -327,7 +333,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

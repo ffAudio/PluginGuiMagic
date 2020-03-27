@@ -97,10 +97,11 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structfoleys_1_1SettableProperty__inherit__graph.png" border="0" usemap="#SettableProperty_inherit__map" alt="Inheritance graph"/></div>
 <map name="SettableProperty_inherit__map" id="SettableProperty_inherit__map">
-<area shape="rect"  title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ..." alt="" coords="215,5,336,31"/>
-<area shape="rect"  href="structfoleys_1_1SettableChoiceProperty.html" title=" " alt="" coords="5,79,167,104"/>
-<area shape="rect"  href="structfoleys_1_1SettableNumberProperty.html" title=" " alt="" coords="192,79,360,104"/>
-<area shape="rect"  href="structfoleys_1_1SettableTextProperty.html" title=" " alt="" coords="383,79,528,104"/>
+<area shape="rect"  title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ..." alt="" coords="5,80,126,105"/>
+<area shape="rect"  href="structfoleys_1_1SettableBoolProperty.html" title=" " alt="" coords="184,5,332,31"/>
+<area shape="rect"  href="structfoleys_1_1SettableChoiceProperty.html" title=" " alt="" coords="177,55,339,80"/>
+<area shape="rect"  href="structfoleys_1_1SettableNumberProperty.html" title=" " alt="" coords="174,104,342,129"/>
+<area shape="rect"  href="structfoleys_1_1SettableTextProperty.html" title=" " alt="" coords="185,153,331,179"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -110,10 +111,15 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b">Text</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035">Number</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb">Colour</a>, 
-<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">Choice</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0884ca4af1f5df7de6604f540de37743">Toggle</a>, 
 <br />
-&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87ab9a4c44e80a41420a064d301e264870d">Parameter</a>, 
+&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">Choice</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87ab9a4c44e80a41420a064d301e264870d">Parameter</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a5fa7e83281d5c6fac9c1da229cc1fe81">LevelSource</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87ad2f9d2871f1ad49b0da5736cce024906">PlotSource</a>, 
+<br />
+&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87abcca265f99b1a98a7fde47c9fa0bd844">Trigger</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a6b59cf161fe69fad3478f2aa7b98bf7f">Property</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b">AssetFile</a>
 <br />
  }</td></tr>
@@ -121,8 +127,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af61f49f8f08493a666d6220e460d835c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#af61f49f8f08493a666d6220e460d835c">SettableProperty</a> (const juce::Identifier &amp;n, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a> t)</td></tr>
-<tr class="separator:af61f49f8f08493a666d6220e460d835c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c1cf2ef59e5d93a219d6ba539451695"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a9c1cf2ef59e5d93a219d6ba539451695">SettableProperty</a> (const juce::Identifier &amp;n, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a> t, juce::var defaultToUse)</td></tr>
+<tr class="separator:a9c1cf2ef59e5d93a219d6ba539451695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25dd6f652eaf3dbfffade64d0c88dc7b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a25dd6f652eaf3dbfffade64d0c88dc7b">~SettableProperty</a> ()=default</td></tr>
 <tr class="separator:a25dd6f652eaf3dbfffade64d0c88dc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfdae08fd45e44bc32277f55dd166040"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#abfdae08fd45e44bc32277f55dd166040">set</a> (juce::Component *, juce::var) const =0</td></tr>
@@ -134,6 +140,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a6b9e3d5246e6cb71fa29bdcd10b75336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8448759cd6a9859ce5056be8261b8d69"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a8448759cd6a9859ce5056be8261b8d69">type</a></td></tr>
 <tr class="separator:a8448759cd6a9859ce5056be8261b8d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586885fbebf656fcf85ead6508943be5"><td class="memItemLeft" align="right" valign="top">const juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a586885fbebf656fcf85ead6508943be5">defaultValue</a></td></tr>
+<tr class="separator:a586885fbebf656fcf85ead6508943be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a> is a value that can be selected by the designer and will be set for the Component each time the ValueTree is loaded. </p>
@@ -153,17 +161,21 @@ Public Attributes</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b"></a>Text&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035"></a>Number&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb"></a>Colour&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a0884ca4af1f5df7de6604f540de37743"></a>Toggle&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6"></a>Choice&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87ab9a4c44e80a41420a064d301e264870d"></a>Parameter&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a5fa7e83281d5c6fac9c1da229cc1fe81"></a>LevelSource&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87ad2f9d2871f1ad49b0da5736cce024906"></a>PlotSource&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87abcca265f99b1a98a7fde47c9fa0bd844"></a>Trigger&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a6b59cf161fe69fad3478f2aa7b98bf7f"></a>Property&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b"></a>AssetFile&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af61f49f8f08493a666d6220e460d835c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af61f49f8f08493a666d6220e460d835c">&#9670;&nbsp;</a></span>SettableProperty()</h2>
+<a id="a9c1cf2ef59e5d93a219d6ba539451695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1cf2ef59e5d93a219d6ba539451695">&#9670;&nbsp;</a></span>SettableProperty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +190,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">PropertyType</a>&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::var&#160;</td>
+          <td class="paramname"><em>defaultToUse</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -250,7 +268,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structfoleys_1_1SettableNumberProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableNumberProperty</a>, <a class="el" href="structfoleys_1_1SettableTextProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableTextProperty</a>, and <a class="el" href="structfoleys_1_1SettableChoiceProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableChoiceProperty</a>.</p>
+<p>Implemented in <a class="el" href="structfoleys_1_1SettableNumberProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableNumberProperty</a>, <a class="el" href="structfoleys_1_1SettableBoolProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableBoolProperty</a>, <a class="el" href="structfoleys_1_1SettableTextProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableTextProperty</a>, and <a class="el" href="structfoleys_1_1SettableChoiceProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableChoiceProperty</a>.</p>
 
 </div>
 </div>
@@ -283,13 +301,29 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a586885fbebf656fcf85ead6508943be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586885fbebf656fcf85ead6508943be5">&#9670;&nbsp;</a></span>defaultValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const juce::var defaultValue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structfoleys_1_1SettableChoiceProperty.html#a1b06538da1f8417db7f2b7a15526e404">SettableChoiceProperty::set()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="foleys__SettableProperties_8h.html">foleys_SettableProperties.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

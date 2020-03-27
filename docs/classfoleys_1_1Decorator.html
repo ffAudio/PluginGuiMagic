@@ -121,9 +121,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a31cc081b3c77bc8855de79094fc1da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8f7adb49b91d04a161dd7f9671a4e08"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#ac8f7adb49b91d04a161dd7f9671a4e08">isContainer</a> () const</td></tr>
 <tr class="separator:ac8f7adb49b91d04a161dd7f9671a4e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a1d6370ebf9c300d4b0bffe8b8a821731">updateLayout</a> ()</td></tr>
+<tr class="memdesc:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will trigger a recalculation of the children layout regardless of resized.  <a href="#a1d6370ebf9c300d4b0bffe8b8a821731">More...</a><br /></td></tr>
+<tr class="separator:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b677536a60aced3dd19089185e823fa"><td class="memItemLeft" align="right" valign="top">juce::Component *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a3b677536a60aced3dd19089185e823fa">getWrappedComponent</a> ()</td></tr>
 <tr class="memdesc:a3b677536a60aced3dd19089185e823fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows accessing the Component inside that <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>.  <a href="#a3b677536a60aced3dd19089185e823fa">More...</a><br /></td></tr>
 <tr class="separator:a3b677536a60aced3dd19089185e823fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d53e0f11290c1c9d03fcd30545886a7"><td class="memItemLeft" align="right" valign="top">const juce::ValueTree &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a1d53e0f11290c1c9d03fcd30545886a7">getConfigNode</a> () const</td></tr>
+<tr class="separator:a1d53e0f11290c1c9d03fcd30545886a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -255,7 +260,9 @@ Protected Member Functions</h2></td></tr>
 <p>This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set the margins/borders etc. </p>
 <p>for the <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>. </p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af046f40a1530d16c28708754586ac5ef">Decorator::backgroundColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a46144f4257b4f5f716aa872e7b49a0ef">Decorator::border</a>, <a class="el" href="classfoleys_1_1Decorator.html#a33865e93b92806c51bbc72a7394fce25">Decorator::borderColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#ad14444d19fe0b02ec4d8592cd206877b">Decorator::captionColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">Stylesheet::getBackgroundGradient()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2d1ee771907ee023bbda1b416271e862">Stylesheet::getBackgroundImage()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">Stylesheet::parseColour()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a5050a760c11da521cd4aee6336f6529f">Decorator::radius</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af046f40a1530d16c28708754586ac5ef">Decorator::backgroundColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a46144f4257b4f5f716aa872e7b49a0ef">Decorator::border</a>, <a class="el" href="classfoleys_1_1Decorator.html#a33865e93b92806c51bbc72a7394fce25">Decorator::borderColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#ad14444d19fe0b02ec4d8592cd206877b">Decorator::captionColour</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">Stylesheet::getBackgroundGradient()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a2d1ee771907ee023bbda1b416271e862">Stylesheet::getBackgroundImage()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">Stylesheet::getLookAndFeel()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a95063af0511a05903e211db453ddbebc">MagicBuilder::getProcessorState()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">Stylesheet::parseColour()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a5050a760c11da521cd4aee6336f6529f">Decorator::radius</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
 
 </div>
 </div>
@@ -288,6 +295,8 @@ Protected Member Functions</h2></td></tr>
 <p>This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set specific properties for the wrapped component. </p>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a1520f0539fec766ae3ec091760691241">MagicBuilder::getSettableProperties()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
 
 </div>
 </div>
@@ -344,6 +353,8 @@ Protected Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a1d6370ebf9c300d4b0bffe8b8a821731">Decorator::updateLayout()</a>.</p>
+
 </div>
 </div>
 <a id="ac8f7adb49b91d04a161dd7f9671a4e08"></a>
@@ -373,6 +384,37 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1d6370ebf9c300d4b0bffe8b8a821731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6370ebf9c300d4b0bffe8b8a821731">&#9670;&nbsp;</a></span>updateLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateLayout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This will trigger a recalculation of the children layout regardless of resized. </p>
+
+<p>Reimplemented in <a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">Container</a>.</p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#a31cc081b3c77bc8855de79094fc1da42">Decorator::resized()</a>.</p>
+
+</div>
+</div>
 <a id="a3b677536a60aced3dd19089185e823fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b677536a60aced3dd19089185e823fa">&#9670;&nbsp;</a></span>getWrappedComponent()</h2>
 
@@ -390,6 +432,27 @@ Protected Member Functions</h2></td></tr>
 
 <p>Allows accessing the Component inside that <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>. </p>
 <p>Don't keep this pointer! </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
+
+</div>
+</div>
+<a id="a1d53e0f11290c1c9d03fcd30545886a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d53e0f11290c1c9d03fcd30545886a7">&#9670;&nbsp;</a></span>getConfigNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const juce::ValueTree &amp; getConfigNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
 
 </div>
 </div>
@@ -418,7 +481,7 @@ Protected Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">Decorator::caption</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">Decorator::captionSize</a>, <a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">Decorator::justification</a>, <a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">Decorator::margin</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">Decorator::padding</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a31cc081b3c77bc8855de79094fc1da42">Container::resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">Container::updateLayout()</a>.</p>
 
 </div>
 </div>
@@ -595,6 +658,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -604,7 +669,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

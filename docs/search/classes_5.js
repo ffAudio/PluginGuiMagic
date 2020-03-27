@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lookandfeel',['LookAndFeel',['../classfoleys_1_1LookAndFeel.html',1,'foleys']]]
+  ['guitreeeditor',['GUITreeEditor',['../classfoleys_1_1GUITreeEditor.html',1,'foleys']]]
 ];

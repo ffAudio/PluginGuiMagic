@@ -2,6 +2,7 @@ var searchData=
 [
   ['changelistenercallback',['changeListenerCallback',['../classfoleys_1_1MagicPlotComponent.html#a7e1b476dbb39b58eabf615686abc08cf',1,'foleys::MagicPlotComponent']]],
   ['cleargui',['clearGUI',['../classfoleys_1_1MagicBuilder.html#ab56c8da24e699987007b1f5c6ed3a506',1,'foleys::MagicBuilder']]],
+  ['closeoverlaydialog',['closeOverlayDialog',['../classfoleys_1_1MagicBuilder.html#a97ed5c560959843658a5f7b77f7dc356',1,'foleys::MagicBuilder']]],
   ['configurecomponent',['configureComponent',['../classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84',1,'foleys::Decorator']]],
   ['configuredecorator',['configureDecorator',['../classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb',1,'foleys::Decorator']]],
   ['configureflexbox',['configureFlexBox',['../classfoleys_1_1Stylesheet.html#ad6a744198713f15f99b65a12ec229e7b',1,'foleys::Stylesheet']]],

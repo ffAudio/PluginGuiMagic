@@ -104,8 +104,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a836b337031f412caf93815e123f164f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a836b337031f412caf93815e123f164f2">MagicBuilder</a> ()</td></tr>
-<tr class="separator:a836b337031f412caf93815e123f164f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f19b8ebe4ae63a2483e76fc2363845"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a57f19b8ebe4ae63a2483e76fc2363845">MagicBuilder</a> (<a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> *magicStateToUse)</td></tr>
+<tr class="separator:a57f19b8ebe4ae63a2483e76fc2363845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8520506b173138f5aa38e321191be5c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#af8520506b173138f5aa38e321191be5c">~MagicBuilder</a> ()</td></tr>
 <tr class="separator:af8520506b173138f5aa38e321191be5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac7ca96dc0e1237e8b93f6930a8e4a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">setConfigTree</a> (const juce::ValueTree &amp;<a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">config</a>)</td></tr>
@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1f510563dafe287c64932a66ae663a46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">updateComponents</a> ()</td></tr>
 <tr class="memdesc:a1f510563dafe287c64932a66ae663a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates all components from the </p><div> tree. </div> <a href="#a1f510563dafe287c64932a66ae663a46">More...</a><br /></td></tr>
 <tr class="separator:a1f510563dafe287c64932a66ae663a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7837c19d7e492a5127305917cc386a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">updateProperties</a> (<a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &amp;item)</td></tr>
+<tr class="memdesc:ad7837c19d7e492a5127305917cc386a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the colours and properties for all components.  <a href="#ad7837c19d7e492a5127305917cc386a2">More...</a><br /></td></tr>
+<tr class="separator:ad7837c19d7e492a5127305917cc386a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">updateLayout</a> ()</td></tr>
 <tr class="memdesc:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalculates the layout of all components.  <a href="#a1d6370ebf9c300d4b0bffe8b8a821731">More...</a><br /></td></tr>
 <tr class="separator:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,19 +170,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b0a02b95478a77cd94f5b765efb8c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a6b0a02b95478a77cd94f5b765efb8c28">createDefaultFromParameters</a> (juce::ValueTree &amp;node, const juce::AudioProcessorParameterGroup &amp;tree)</td></tr>
 <tr class="memdesc:a6b0a02b95478a77cd94f5b765efb8c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a hierarchical DOM according to the parameters defined in an AudioProcessor.  <a href="#a6b0a02b95478a77cd94f5b765efb8c28">More...</a><br /></td></tr>
 <tr class="separator:a6b0a02b95478a77cd94f5b765efb8c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3daa659f35fba512eab7621bccf537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#aef3daa659f35fba512eab7621bccf537">showOverlayDialog</a> (std::unique_ptr&lt; juce::Component &gt; dialog)</td></tr>
+<tr class="memdesc:aef3daa659f35fba512eab7621bccf537"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used to display a dialog box.  <a href="#aef3daa659f35fba512eab7621bccf537">More...</a><br /></td></tr>
+<tr class="separator:aef3daa659f35fba512eab7621bccf537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97ed5c560959843658a5f7b77f7dc356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a97ed5c560959843658a5f7b77f7dc356">closeOverlayDialog</a> ()</td></tr>
+<tr class="memdesc:a97ed5c560959843658a5f7b77f7dc356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes a possibly open overlay dialog.  <a href="#a97ed5c560959843658a5f7b77f7dc356">More...</a><br /></td></tr>
+<tr class="separator:a97ed5c560959843658a5f7b77f7dc356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478d2d54e771fca57c48e29e68136199"><td class="memItemLeft" align="right" valign="top">virtual juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a478d2d54e771fca57c48e29e68136199">getFactoryNames</a> () const =0</td></tr>
 <tr class="memdesc:a478d2d54e771fca57c48e29e68136199"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the names of all registered factories  <a href="#a478d2d54e771fca57c48e29e68136199">More...</a><br /></td></tr>
 <tr class="separator:a478d2d54e771fca57c48e29e68136199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f341a089d1486e07976fa9e460d06c"><td class="memItemLeft" align="right" valign="top">virtual juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#ac2f341a089d1486e07976fa9e460d06c">getParameterNames</a> () const =0</td></tr>
-<tr class="memdesc:ac2f341a089d1486e07976fa9e460d06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of AudioProcessorParameters for selection.  <a href="#ac2f341a089d1486e07976fa9e460d06c">More...</a><br /></td></tr>
-<tr class="separator:ac2f341a089d1486e07976fa9e460d06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52759ad45a89f798365b19e3de791a2"><td class="memItemLeft" align="right" valign="top">virtual juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#ac52759ad45a89f798365b19e3de791a2">getPlotSourcesNames</a> () const =0</td></tr>
-<tr class="memdesc:ac52759ad45a89f798365b19e3de791a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicPlotSources for selection.  <a href="#ac52759ad45a89f798365b19e3de791a2">More...</a><br /></td></tr>
-<tr class="separator:ac52759ad45a89f798365b19e3de791a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51c809472e536ce223da190d9f9fcab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a51c809472e536ce223da190d9f9fcab3">addSettableProperty</a> (juce::Identifier type, std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; property)</td></tr>
 <tr class="separator:a51c809472e536ce223da190d9f9fcab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1520f0539fec766ae3ec091760691241"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a1520f0539fec766ae3ec091760691241">getSettableProperties</a> (juce::Identifier type) const</td></tr>
 <tr class="separator:a1520f0539fec766ae3ec091760691241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7760e73ecec8d91288a3f3c4c96a890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#ac7760e73ecec8d91288a3f3c4c96a890">populateSettableOptionsMenu</a> (juce::ComboBox &amp;comboBox, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">SettableProperty::PropertyType</a> type) const</td></tr>
+<tr class="memdesc:ac7760e73ecec8d91288a3f3c4c96a890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the list of options.  <a href="#ac7760e73ecec8d91288a3f3c4c96a890">More...</a><br /></td></tr>
+<tr class="separator:ac7760e73ecec8d91288a3f3c4c96a890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1075e303ed9058011e57d075432054f6"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a1075e303ed9058011e57d075432054f6">getPropertyDefaultValue</a> (juce::Identifier type, juce::Identifier property) const</td></tr>
+<tr class="memdesc:a1075e303ed9058011e57d075432054f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup the default value of the property.  <a href="#a1075e303ed9058011e57d075432054f6">More...</a><br /></td></tr>
+<tr class="separator:a1075e303ed9058011e57d075432054f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95063af0511a05903e211db453ddbebc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicBuilder.html#a95063af0511a05903e211db453ddbebc">getProcessorState</a> ()</td></tr>
+<tr class="separator:a95063af0511a05903e211db453ddbebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -201,8 +212,8 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="classfoleys_1_1MagicBuilder.html" title="The MagicBuilder is responsible to recreate the GUI from a single ValueTree.">MagicBuilder</a> is responsible to recreate the GUI from a single ValueTree. </p>
 <p>You can add your own factories to the builder to allow additional components. There is a template available that allows for instance a specific AudioProcessor to be supplied to components, that need it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a836b337031f412caf93815e123f164f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a836b337031f412caf93815e123f164f2">&#9670;&nbsp;</a></span>MagicBuilder()</h2>
+<a id="a57f19b8ebe4ae63a2483e76fc2363845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f19b8ebe4ae63a2483e76fc2363845">&#9670;&nbsp;</a></span>MagicBuilder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +221,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classfoleys_1_1MagicBuilder.html">MagicBuilder</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> *&#160;</td>
+          <td class="paramname"><em>magicStateToUse</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -266,7 +278,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#af4aa3a741ed303f7835572542375808a">MagicBuilder::undo</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855">MagicBuilder::updateAll()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1">ToolBox::loadDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a5d6b4ed7f2f67cfa2fb4e290d3bec785">ToolBox::loadGUI()</a>.</p>
 
 </div>
 </div>
@@ -334,7 +346,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#acbebf8b4789a348f0474ef5714aeb6ce">ToolBox::saveDialog()</a>, and <a class="el" href="classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec">GUITreeEditor::updateTree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a13cad6e3a70fe25d1f7fd1ef4a1d588c">ToolBox::saveGUI()</a>, and <a class="el" href="classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec">GUITreeEditor::updateTree()</a>.</p>
 
 </div>
 </div>
@@ -374,7 +386,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">MagicBuilder::updateComponents()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicBuilder::updateLayout()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#aadc67051e112f4bbe87bf735412e6d75">MagicBuilder::config</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46">MagicBuilder::updateComponents()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicBuilder::updateLayout()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicBuilder::updateStylesheet()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#aa93cfb13a14c288578c009b9f9e40433">MagicBuilder::restoreGUI()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">MagicBuilder::setConfigTree()</a>.</p>
 
@@ -428,6 +440,30 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7837c19d7e492a5127305917cc386a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7837c19d7e492a5127305917cc386a2">&#9670;&nbsp;</a></span>updateProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateProperties </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the colours and properties for all components. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#acbecc431697bd2e80e8f79f1c646bc1e">MagicBuilder::colourTranslations</a>, <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#af776c60fdfc4d63f2c8df514ca7b72d5">Stylesheet::configureFlexBoxItem()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a44cf8e179ab02bb4a83b0a2e380d468a">Decorator::flexItem</a>, <a class="el" href="classfoleys_1_1Decorator.html#a1d53e0f11290c1c9d03fcd30545886a7">Decorator::getConfigNode()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a3b677536a60aced3dd19089185e823fa">Decorator::getWrappedComponent()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a790f91ec36b7ba94a318fc338821219a">MagicBuilder::stylesheet</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855">MagicBuilder::updateAll()</a>.</p>
+
+</div>
+</div>
 <a id="a1d6370ebf9c300d4b0bffe8b8a821731"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d6370ebf9c300d4b0bffe8b8a821731">&#9670;&nbsp;</a></span>updateLayout()</h2>
 
@@ -445,7 +481,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Recalculates the layout of all components. </p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855">MagicBuilder::updateAll()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#aef3daa659f35fba512eab7621bccf537">MagicBuilder::showOverlayDialog()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855">MagicBuilder::updateAll()</a>.</p>
 
 </div>
 </div>
@@ -632,8 +668,6 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#acbecc431697bd2e80e8f79f1c646bc1e">MagicBuilder::colourTranslations</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97">PropertiesEditor::addTypeProperties()</a>.</p>
-
 </div>
 </div>
 <a id="a2457854fcdddaa20970449ed3d6564ad"></a>
@@ -748,6 +782,52 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aef3daa659f35fba512eab7621bccf537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef3daa659f35fba512eab7621bccf537">&#9670;&nbsp;</a></span>showOverlayDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void showOverlayDialog </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; juce::Component &gt;&#160;</td>
+          <td class="paramname"><em>dialog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is used to display a dialog box. </p>
+<p>It is called by the GUI editor, but in future it might be reached using the configured GUI. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicBuilder::updateLayout()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1">ToolBox::loadDialog()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#acbebf8b4789a348f0474ef5714aeb6ce">ToolBox::saveDialog()</a>.</p>
+
+</div>
+</div>
+<a id="a97ed5c560959843658a5f7b77f7dc356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97ed5c560959843658a5f7b77f7dc356">&#9670;&nbsp;</a></span>closeOverlayDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void closeOverlayDialog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes a possibly open overlay dialog. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ToolBox.html#a2cff51a89362766a03ec7e2288a2adc1">ToolBox::loadDialog()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#acbebf8b4789a348f0474ef5714aeb6ce">ToolBox::saveDialog()</a>.</p>
+
+</div>
+</div>
 <a id="a478d2d54e771fca57c48e29e68136199"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a478d2d54e771fca57c48e29e68136199">&#9670;&nbsp;</a></span>getFactoryNames()</h2>
 
@@ -776,68 +856,6 @@ Protected Attributes</h2></td></tr>
 <p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#adc9b38316ec715b26883c232a9d8d28c">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">PropertiesEditor::setNodeToEdit()</a>, and <a class="el" href="classfoleys_1_1Palette.html#ac5c54df7ed3b930268c8d7752c101725">Palette::update()</a>.</p>
-
-</div>
-</div>
-<a id="ac2f341a089d1486e07976fa9e460d06c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f341a089d1486e07976fa9e460d06c">&#9670;&nbsp;</a></span>getParameterNames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual juce::StringArray getParameterNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of AudioProcessorParameters for selection. </p>
-
-<p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aa79dc253a45b44f9e9809ec526f5bf44">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a9e5539ec6ed52969ce0af75be38c5884">StylePropertyComponent::createComponent()</a>.</p>
-
-</div>
-</div>
-<a id="ac52759ad45a89f798365b19e3de791a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac52759ad45a89f798365b19e3de791a2">&#9670;&nbsp;</a></span>getPlotSourcesNames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual juce::StringArray getPlotSourcesNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicPlotSources for selection. </p>
-
-<p>Implemented in <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a8cc99fc986209d30c9e2092b3f98badb">MagicGUIBuilder&lt; AppType &gt;</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a9e5539ec6ed52969ce0af75be38c5884">StylePropertyComponent::createComponent()</a>.</p>
 
 </div>
 </div>
@@ -885,7 +903,90 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97">PropertiesEditor::addTypeProperties()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97">PropertiesEditor::addTypeProperties()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a1075e303ed9058011e57d075432054f6">MagicBuilder::getPropertyDefaultValue()</a>.</p>
+
+</div>
+</div>
+<a id="ac7760e73ecec8d91288a3f3c4c96a890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7760e73ecec8d91288a3f3c4c96a890">&#9670;&nbsp;</a></span>populateSettableOptionsMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void populateSettableOptionsMenu </td>
+          <td>(</td>
+          <td class="paramtype">juce::ComboBox &amp;&#160;</td>
+          <td class="paramname"><em>comboBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">SettableProperty::PropertyType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the list of options. </p>
+
+</div>
+</div>
+<a id="a1075e303ed9058011e57d075432054f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1075e303ed9058011e57d075432054f6">&#9670;&nbsp;</a></span>getPropertyDefaultValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::var getPropertyDefaultValue </td>
+          <td>(</td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Identifier&#160;</td>
+          <td class="paramname"><em>property</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lookup the default value of the property. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicBuilder.html#a1520f0539fec766ae3ec091760691241">MagicBuilder::getSettableProperties()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>.</p>
+
+</div>
+</div>
+<a id="a95063af0511a05903e211db453ddbebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95063af0511a05903e211db453ddbebc">&#9670;&nbsp;</a></span>getProcessorState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> * getProcessorState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>.</p>
 
 </div>
 </div>
@@ -998,7 +1099,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicBuilder::getStylesheet()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#adaf9f9ae4a58c03127c5b6940023e94a">MagicBuilder::registerJUCELookAndFeels()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicBuilder::getStylesheet()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#adaf9f9ae4a58c03127c5b6940023e94a">MagicBuilder::registerJUCELookAndFeels()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +1123,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a2457854fcdddaa20970449ed3d6564ad">MagicBuilder::getAllColourNames()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ba5f02b2a7d7bc6051c8c6062b0223b">MagicBuilder::getColourNames()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#a6b57394f3eec0ce84de0304aa1cc1428">MagicBuilder::setColourTranslation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicBuilder.html#a2457854fcdddaa20970449ed3d6564ad">MagicBuilder::getAllColourNames()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a7ba5f02b2a7d7bc6051c8c6062b0223b">MagicBuilder::getColourNames()</a>, <a class="el" href="classfoleys_1_1MagicBuilder.html#a6b57394f3eec0ce84de0304aa1cc1428">MagicBuilder::setColourTranslation()</a>, and <a class="el" href="classfoleys_1_1MagicBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicBuilder::updateProperties()</a>.</p>
 
 </div>
 </div>
@@ -1033,7 +1134,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 27 2020 12:36:40 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
