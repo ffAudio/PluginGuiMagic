@@ -170,6 +170,9 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     for (auto* parameter : getParameters())
         if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
             treeState.addParameterListener (p->paramID, this);
+
+    magicState.getPropertyAsValue ("analyser:input").setValue (true);
+    magicState.getPropertyAsValue ("analyser:output").setValue (true);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
