@@ -64,6 +64,11 @@
   <View id="root">
     <View id="main">
       <View id="frame" class="plot-view">
+        <View display="flexbox" flex-direction="column">
+          <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"/>
+          <ToggleButton text="Output" value="analyser:output" flex-align-self="auto"
+                        max-height="40"/>
+        </View>
         <Plot source="plot1" class="nomargin q1" plot-fill-color="30FF0000"/>
         <Plot source="plot2" class="nomargin q2" plot-fill-color="3000FF00"/>
         <Plot source="plot3" class="nomargin q3" plot-fill-color="30FFA500"
@@ -74,8 +79,8 @@
               plot-color="FFFFFF00"/>
         <Plot source="plotSum" class="nomargin gain" plot-fill-color="30C0C0C0"
               plot-color="FFC0C0C0"/>
-        <Plot source="input" class="nomargin" plot-color="khaki"/>
-        <Plot source="output" class="nomargin" plot-color="brown"/>
+        <Plot source="input" class="nomargin" plot-color="khaki" visibility="analyser:input"/>
+        <Plot source="output" class="nomargin" plot-color="brown" visibility="analyser:output"/>
         <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"/>
         <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"/>
         <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"/>
@@ -165,3 +170,4 @@
     </View>
   </View>
 </magic>
+ 
