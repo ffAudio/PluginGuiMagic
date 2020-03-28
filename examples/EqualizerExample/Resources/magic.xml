@@ -44,6 +44,10 @@
             xy-vertical-over="yellow"/>
         <gain plot-color="silver" rotary-fill="silver"/>
         <orange background-color="ffffa500"/>
+        <input toggle-text="FFDF0E0E" plot-color="FFDF0E0E" plot-fill-color="30DF0E0E"
+               toggle-tick="FFDF0E0E" plot-inactive-color="" toggle-tick-disabled="FFDF0E0E"/>
+        <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
+                toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
       </Classes>
       <Types>
         <ComboBox border="0" max-height="40" combo-background="00000000" combo-outline="transparent"
@@ -65,9 +69,10 @@
     <View id="main">
       <View id="frame" class="plot-view">
         <View display="flexbox" flex-direction="column">
-          <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"/>
+          <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"
+                        class="input"/>
           <ToggleButton text="Output" value="analyser:output" flex-align-self="auto"
-                        max-height="40"/>
+                        max-height="40" class="output"/>
         </View>
         <Plot source="plot1" class="nomargin q1" plot-fill-color="30FF0000"/>
         <Plot source="plot2" class="nomargin q2" plot-fill-color="3000FF00"/>
@@ -79,8 +84,10 @@
               plot-color="FFFFFF00"/>
         <Plot source="plotSum" class="nomargin gain" plot-fill-color="30C0C0C0"
               plot-color="FFC0C0C0"/>
-        <Plot source="input" class="nomargin" plot-color="khaki" visibility="analyser:input"/>
-        <Plot source="output" class="nomargin" plot-color="brown" visibility="analyser:output"/>
+        <Plot source="input" class="nomargin input" visibility="analyser:input"
+              plot-color="FFDF0E0E"/>
+        <Plot source="output" class="nomargin output" visibility="analyser:output"
+              plot-color="FF0E23DF"/>
         <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"/>
         <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"/>
         <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"/>
