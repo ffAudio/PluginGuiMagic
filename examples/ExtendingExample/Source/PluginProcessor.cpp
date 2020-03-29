@@ -78,10 +78,10 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Lissajour)
 };
 
-void registerLissajourComponent (foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>& builder)
+void registerLissajourComponent (foleys::MagicGUIBuilder& builder)
 {
     static Identifier lissajour { "Lissajour" };
-    builder.registerFactory (lissajour, [](const ValueTree&, ExtendingExampleAudioProcessor&)
+    builder.registerFactory (lissajour, [](const ValueTree&)
                              {
                                  return std::make_unique<Lissajour>();
                              });
@@ -137,11 +137,11 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponent)
 };
 
-void registerStatisticsComponent (foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>& builder)
+void registerStatisticsComponent (foleys::MagicGUIBuilder& builder, ExtendingExampleAudioProcessor* proc)
 {
-    builder.registerFactory ("Statistics", [](const ValueTree&, ExtendingExampleAudioProcessor& p)
+    builder.registerFactory ("Statistics", [proc](const ValueTree&)
                              {
-                                 return std::make_unique<StatisticsComponent>(p);
+                                 return std::make_unique<StatisticsComponent>(*proc);
                              });
 }
 
@@ -233,11 +233,11 @@ bool ExtendingExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
 {
     // MAGIC GUI: we create our custom builder instance here, that will be available for all factories we add
-    auto builder = std::make_unique<foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>>(*this, &magicState);
+    auto builder = std::make_unique<foleys::MagicGUIBuilder>(&magicState);
     builder->registerJUCEFactories();
 
     registerLissajourComponent (*builder);
-    registerStatisticsComponent (*builder);
+    registerStatisticsComponent (*builder, this);
 
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize, std::move (builder));
 }
