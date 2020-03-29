@@ -8,7 +8,7 @@ var searchData=
   ['addnewstyleclass',['addNewStyleClass',['../classfoleys_1_1Stylesheet.html#ac5360dbddf6f9462fdcc907a63b18995',1,'foleys::Stylesheet']]],
   ['addnodeproperties',['addNodeProperties',['../classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1',1,'foleys::PropertiesEditor']]],
   ['addplotsource',['addPlotSource',['../classfoleys_1_1MagicProcessorState.html#a4c514b073bdd801b5e982a52878f55bb',1,'foleys::MagicProcessorState']]],
-  ['addsettableproperty',['addSettableProperty',['../classfoleys_1_1MagicBuilder.html#a51c809472e536ce223da190d9f9fcab3',1,'foleys::MagicBuilder']]],
+  ['addsettableproperty',['addSettableProperty',['../classfoleys_1_1MagicGUIBuilder.html#a51c809472e536ce223da190d9f9fcab3',1,'foleys::MagicGUIBuilder']]],
   ['addtrigger',['addTrigger',['../classfoleys_1_1MagicProcessorState.html#a10d7cebd842af92a5eb88efb88e4e4ef',1,'foleys::MagicProcessorState']]],
   ['addtypeproperties',['addTypeProperties',['../classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97',1,'foleys::PropertiesEditor']]],
   ['attachablecombobox',['AttachableComboBox',['../classfoleys_1_1AttachableComboBox.html#a0f258da756e29e3ca7a46087497755e0',1,'foleys::AttachableComboBox']]],

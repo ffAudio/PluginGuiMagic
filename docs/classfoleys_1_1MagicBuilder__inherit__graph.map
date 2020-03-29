@@ -1,4 +1,0 @@
-<map id="MagicBuilder" name="MagicBuilder">
-<area shape="rect" id="node1" title="The MagicBuilder is responsible to recreate the GUI from a single ValueTree." alt="" coords="55,5,153,31"/>
-<area shape="rect" id="node2" href="$classfoleys_1_1MagicGUIBuilder.html" title="The MagicGUIBuilder is responsible to recreate the GUI from a single ValueTree." alt="" coords="5,79,202,104"/>
-</map>

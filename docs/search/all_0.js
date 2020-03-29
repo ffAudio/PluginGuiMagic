@@ -8,7 +8,7 @@ var searchData=
   ['addnewstyleclass',['addNewStyleClass',['../classfoleys_1_1Stylesheet.html#ac5360dbddf6f9462fdcc907a63b18995',1,'foleys::Stylesheet']]],
   ['addnodeproperties',['addNodeProperties',['../classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1',1,'foleys::PropertiesEditor']]],
   ['addplotsource',['addPlotSource',['../classfoleys_1_1MagicProcessorState.html#a4c514b073bdd801b5e982a52878f55bb',1,'foleys::MagicProcessorState']]],
-  ['addsettableproperty',['addSettableProperty',['../classfoleys_1_1MagicBuilder.html#a51c809472e536ce223da190d9f9fcab3',1,'foleys::MagicBuilder']]],
+  ['addsettableproperty',['addSettableProperty',['../classfoleys_1_1MagicGUIBuilder.html#a51c809472e536ce223da190d9f9fcab3',1,'foleys::MagicGUIBuilder']]],
   ['addtrigger',['addTrigger',['../classfoleys_1_1MagicProcessorState.html#a10d7cebd842af92a5eb88efb88e4e4ef',1,'foleys::MagicProcessorState']]],
   ['addtypeproperties',['addTypeProperties',['../classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97',1,'foleys::PropertiesEditor']]],
   ['assetfile',['AssetFile',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b',1,'foleys::SettableProperty']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['_7elookandfeelmethods',['~LookAndFeelMethods',['../structfoleys_1_1MagicLevelMeter_1_1LookAndFeelMethods.html#a60ade24b57926428cf83fc41c8cd4d90',1,'foleys::MagicLevelMeter::LookAndFeelMethods']]],
-  ['_7emagicbuilder',['~MagicBuilder',['../classfoleys_1_1MagicBuilder.html#af8520506b173138f5aa38e321191be5c',1,'foleys::MagicBuilder']]],
+  ['_7emagicguibuilder',['~MagicGUIBuilder',['../classfoleys_1_1MagicGUIBuilder.html#a40a8e37b197fc58c6fcf4f59879cac95',1,'foleys::MagicGUIBuilder']]],
   ['_7emagicplotcomponent',['~MagicPlotComponent',['../classfoleys_1_1MagicPlotComponent.html#a4b26cb792e0cf67af9fcfb0a496de198',1,'foleys::MagicPlotComponent']]],
   ['_7emagicplotsource',['~MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html#a14623f42ef68c2b5c05018422eb1fed6',1,'foleys::MagicPlotSource']]],
   ['_7emagicplugineditor',['~MagicPluginEditor',['../classfoleys_1_1MagicPluginEditor.html#acedb3d202897c74efd49f839f3931603',1,'foleys::MagicPluginEditor']]],

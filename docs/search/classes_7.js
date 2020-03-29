@@ -1,7 +1,6 @@
 var searchData=
 [
   ['magicanalyser',['MagicAnalyser',['../classfoleys_1_1MagicAnalyser.html',1,'foleys']]],
-  ['magicbuilder',['MagicBuilder',['../classfoleys_1_1MagicBuilder.html',1,'foleys']]],
   ['magicfilterplot',['MagicFilterPlot',['../classfoleys_1_1MagicFilterPlot.html',1,'foleys']]],
   ['magicguibuilder',['MagicGUIBuilder',['../classfoleys_1_1MagicGUIBuilder.html',1,'foleys']]],
   ['magiclevelmeter',['MagicLevelMeter',['../classfoleys_1_1MagicLevelMeter.html',1,'foleys']]],
