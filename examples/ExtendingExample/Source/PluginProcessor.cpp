@@ -33,11 +33,15 @@ public:
         startTimerHz (30);
     }
 
+    void setFactor (float f)
+    {
+        factor = f;
+    }
+
     void paint (Graphics& g) override
     {
         const float radius = std::min (getWidth(), getHeight()) * 0.4f;
         const auto  centre = getLocalBounds().getCentre().toFloat();
-        const float factor = 3.0f;
 
         g.fillAll (findColour (backgroundColourId));
         Path p;
@@ -46,6 +50,7 @@ public:
             p.lineTo (centre + Point<float>(std::sin (i),
                                             std::sin (std::fmod (i * factor + phase,
                                                                  MathConstants<float>::twoPi))) * radius);
+        p.closeSubPath();
 
         g.setColour (findColour (drawColourId));
         g.strokePath (p, PathStrokeType (2.0f));
@@ -68,9 +73,35 @@ private:
         repaint();
     }
 
+    float factor = 3.0f;
     float phase = 0.0f;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Lissajour)
 };
+
+void registerLissajourComponent (foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>& builder)
+{
+    static Identifier lissajour { "Lissajour" };
+    builder.registerFactory (lissajour, [](const ValueTree&, ExtendingExampleAudioProcessor&)
+                             {
+                                 return std::make_unique<Lissajour>();
+                             });
+
+    builder.setColourTranslation (lissajour, {
+        {"lissajour-background", Lissajour::backgroundColourId},
+        {"lissajour-draw", Lissajour::drawColourId},
+        {"lissajour-fill", Lissajour::fillColourId} });
+
+    builder.addSettableProperty (lissajour,
+                                  std::make_unique<foleys::SettableNumberProperty>
+                                  ("factor", 3.0,
+                                   [] (juce::Component* component, juce::var value)
+                                   {
+                                       if (auto* lc = dynamic_cast<Lissajour*>(component))
+                                           lc->setFactor (float (value));
+                                   }));
+}
+
+//==============================================================================
 
 // Silly example class that displays some members from your specific processor
 class StatisticsComponent : public Component,
@@ -106,7 +137,16 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponent)
 };
 
+void registerStatisticsComponent (foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>& builder)
+{
+    builder.registerFactory ("Statistics", [](const ValueTree&, ExtendingExampleAudioProcessor& p)
+                             {
+                                 return std::make_unique<StatisticsComponent>(p);
+                             });
+}
+
 //==============================================================================
+
 ExtendingExampleAudioProcessor::ExtendingExampleAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
@@ -196,21 +236,8 @@ AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
     auto builder = std::make_unique<foleys::MagicGUIBuilder<ExtendingExampleAudioProcessor>>(*this, &magicState);
     builder->registerJUCEFactories();
 
-    static Identifier lissajour { "Lissajour" };
-    builder->registerFactory (lissajour, [](const ValueTree&, ExtendingExampleAudioProcessor&)
-                              {
-                                  return std::make_unique<Lissajour>();
-                              });
-
-    builder->setColourTranslation (lissajour, {
-        {"lissajour-background", Lissajour::backgroundColourId},
-        {"lissajour-draw", Lissajour::drawColourId},
-        {"lissajour-fill", Lissajour::fillColourId} });
-
-    builder->registerFactory ("Statistics", [](const ValueTree&, ExtendingExampleAudioProcessor& p)
-                              {
-                                  return std::make_unique<StatisticsComponent>(p);
-                              });
+    registerLissajourComponent (*builder);
+    registerStatisticsComponent (*builder);
 
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize, std::move (builder));
 }
