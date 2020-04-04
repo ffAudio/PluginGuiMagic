@@ -171,6 +171,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
         if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
             treeState.addParameterListener (p->paramID, this);
 
+    // MAGIC GUI: add properties to connect visibility to
     magicState.getPropertyAsValue ("analyser:input").setValue (true);
     magicState.getPropertyAsValue ("analyser:output").setValue (true);
 }

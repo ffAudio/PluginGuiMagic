@@ -42,6 +42,7 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
     outputMeter  = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
     oscilloscope = magicState.addPlotSource ("waveform", std::make_unique<foleys::MagicOscilloscope>());
     analyser     = magicState.addPlotSource ("analyser", std::make_unique<foleys::MagicAnalyser>());
+    magicState.setPlayheadUpdateFrequency (30);
 
     FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound (treeState));
     synthesiser.addSound (sound);
@@ -105,6 +106,9 @@ void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBu
 
     // MAGIC GUI: send midi messages to the keyboard state
     magicState.processMidiBuffer (midiMessages, buffer.getNumSamples(), true);
+
+    // MAGIC GUI: send playhead information to the GUI
+    magicState.updatePlayheadInformation (getPlayHead());
 
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
