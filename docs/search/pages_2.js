@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['license',['LICENSE',['../md__Users_daniel_Developer_FoleysFinest_github_foleysfinest_PluginGuiMagic_modules_foleys_gui_magic_LICENSE.html',1,'']]]
+  ['foleys_5fgui_5fmagic',['foleys_gui_magic',['../index.html',1,'']]]
 ];

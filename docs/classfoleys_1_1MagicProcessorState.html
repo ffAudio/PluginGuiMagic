@@ -88,6 +88,8 @@ $(function() {
 
 <p>The <a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is the docking station for the MagicPluginEditor.">MagicProcessorState</a> is the docking station for the <a class="el" href="classfoleys_1_1MagicPluginEditor.html" title="This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.">MagicPluginEditor</a>.  
  <a href="classfoleys_1_1MagicProcessorState.html#details">More...</a></p>
+
+<p>Inherits Timer.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -136,6 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ab2e33f4cb255ecbc31ec191507d96b2e">processMidiBuffer</a> (juce::MidiBuffer &amp;buffer, int numSamples, bool injectIndirectEvents=true)</td></tr>
 <tr class="memdesc:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the midi data to the keyboard.  <a href="#ab2e33f4cb255ecbc31ec191507d96b2e">More...</a><br /></td></tr>
 <tr class="separator:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aaa782b68fb52f4af68c5c5d9e38a66ce">updatePlayheadInformation</a> (juce::AudioPlayHead *playhead)</td></tr>
+<tr class="memdesc:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this in the processBlock() will store the values from AudioPlayHead into the state, so it can be used in the GUI.  <a href="#aaa782b68fb52f4af68c5c5d9e38a66ce">More...</a><br /></td></tr>
+<tr class="separator:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42b19577027cba831679259f0c595d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ad42b19577027cba831679259f0c595d2">setPlayheadUpdateFrequency</a> (int frequency)</td></tr>
+<tr class="memdesc:ad42b19577027cba831679259f0c595d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the timer to fetch the playhead values from the audio thread.  <a href="#ad42b19577027cba831679259f0c595d2">More...</a><br /></td></tr>
+<tr class="separator:ad42b19577027cba831679259f0c595d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a6371dfb6565fbf0d0eb9731c7def87a1">setLastEditorSize</a> (int width, int height)</td></tr>
 <tr class="memdesc:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the editor to set its last size to resore next time.  <a href="#a6371dfb6565fbf0d0eb9731c7def87a1">More...</a><br /></td></tr>
 <tr class="separator:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -564,6 +572,47 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aaa782b68fb52f4af68c5c5d9e38a66ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa782b68fb52f4af68c5c5d9e38a66ce">&#9670;&nbsp;</a></span>updatePlayheadInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updatePlayheadInformation </td>
+          <td>(</td>
+          <td class="paramtype">juce::AudioPlayHead *&#160;</td>
+          <td class="paramname"><em>playhead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calling this in the processBlock() will store the values from AudioPlayHead into the state, so it can be used in the GUI. </p>
+<p>To enable this call setPlayheadUpdateFrequency (frequency) with an appropriate value </p>
+
+</div>
+</div>
+<a id="ad42b19577027cba831679259f0c595d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad42b19577027cba831679259f0c595d2">&#9670;&nbsp;</a></span>setPlayheadUpdateFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPlayheadUpdateFrequency </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts the timer to fetch the playhead values from the audio thread. </p>
+
+</div>
+</div>
 <a id="a6371dfb6565fbf0d0eb9731c7def87a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6371dfb6565fbf0d0eb9731c7def87a1">&#9670;&nbsp;</a></span>setLastEditorSize()</h2>
 
@@ -755,7 +804,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 30 2020 00:44:44 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 4 2020 22:13:45 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

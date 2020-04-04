@@ -5,6 +5,7 @@ var searchData=
   ['settablenumberproperty',['SettableNumberProperty',['../structfoleys_1_1SettableNumberProperty.html',1,'foleys']]],
   ['settableproperty',['SettableProperty',['../structfoleys_1_1SettableProperty.html',1,'foleys']]],
   ['settabletextproperty',['SettableTextProperty',['../structfoleys_1_1SettableTextProperty.html',1,'foleys']]],
+  ['settablevalueproperty',['SettableValueProperty',['../structfoleys_1_1SettableValueProperty.html',1,'foleys']]],
   ['skeuomorphic',['Skeuomorphic',['../classfoleys_1_1Skeuomorphic.html',1,'foleys']]],
   ['styleboolpropertycomponent',['StyleBoolPropertyComponent',['../classfoleys_1_1StyleBoolPropertyComponent.html',1,'foleys']]],
   ['stylechoicepropertycomponent',['StyleChoicePropertyComponent',['../classfoleys_1_1StyleChoicePropertyComponent.html',1,'foleys']]],
