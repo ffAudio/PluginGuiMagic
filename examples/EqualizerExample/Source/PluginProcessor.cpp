@@ -174,6 +174,9 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     // MAGIC GUI: add properties to connect visibility to
     magicState.getPropertyAsValue ("analyser:input").setValue (true);
     magicState.getPropertyAsValue ("analyser:output").setValue (true);
+
+    inputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:input"));
+    outputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:output"));
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -243,14 +246,17 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
     filter.get<6>().setGainLinear (gain);
 
     // GUI MAGIC: measure before processing
-    inputAnalyser->pushSamples (buffer);
+    if (inputAnalysing.get())
+        inputAnalyser->pushSamples (buffer);
 
     dsp::AudioBlock<float>              ioBuffer (buffer);
     dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
 
     // GUI MAGIC: measure after processing
-    outputAnalyser->pushSamples (buffer);
+    if (outputAnalysing.get())
+        outputAnalyser->pushSamples (buffer);
+
     outputMeter->pushSamples (buffer);
 }
 
@@ -407,6 +413,9 @@ void EqualizerExampleAudioProcessor::setStateInformation (const void* data, int 
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
     magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
+
+    inputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:input"));
+    outputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:output"));
 }
 
 //==============================================================================
