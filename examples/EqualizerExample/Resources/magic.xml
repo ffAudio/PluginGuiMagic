@@ -14,52 +14,76 @@
       <Classes>
         <plot-view border="2" background-color="black" display="contents" border-color=""/>
         <group padding="1" flex-direction="column" background-gradient="linear-gradient(ff414151, ff151521)"
-               border=""/>
+               border="">
+          <media/>
+        </group>
         <logo background-image="Logo_png" border="0"/>
         <frequency flex-grow="3" padding="3"/>
         <small padding="3" slider-textbox="textbox-below" margin="0" background-color="00000000"/>
-        <nomargin border="0" margin="0" padding="0" background-color="00000000"/>
+        <nomargin border="0" margin="0" padding="0" background-color="00000000"
+                  recursive="1">
+          <media/>
+        </nomargin>
         <q1 background-color="red" plot-color="red" rotary-fill="red" plot-inactive-color="darkred"
             xy-drag-handle="darkred" xy-drag-handle-over="red" xy-horizontal="darkred"
-            xy-vertical="darkred" xy-horizontal-over="red" xy-vertical-over="red"/>
+            xy-vertical="darkred" xy-horizontal-over="red" xy-vertical-over="red"
+            recursive="1">
+          <media/>
+        </q1>
         <q2 background-color="green" plot-color="green" rotary-fill="green"
             plot-inactive-color="darkgreen" xy-drag-handle="darkgreen" xy-horizontal="darkgreen"
             xy-vertical="darkgreen" xy-drag-handle-over="green" xy-horizontal-over="green"
-            xy-vertical-over="green"/>
+            xy-vertical-over="green" recursive="1">
+          <media/>
+        </q2>
         <q3 background-color="orange" plot-color="orange" rotary-fill="orange"
             plot-inactive-color="darkorange" xy-drag-handle="darkorange"
             xy-horizontal="darkorange" xy-vertical="darkorange" xy-drag-handle-over="orange"
-            xy-horizontal-over="orange" xy-vertical-over="orange"/>
+            xy-horizontal-over="orange" xy-vertical-over="orange" recursive="1">
+          <media/>
+        </q3>
         <q4 background-color="cyan" plot-color="cyan" rotary-fill="cyan"
             plot-inactive-color="darkcyan" xy-drag-handle="darkcyan" xy-horizontal="darkcyan"
             xy-vertical="darkcyan" xy-drag-handle-over="cyan" xy-horizontal-over="cyan"
-            xy-vertical-over="cyan"/>
+            xy-vertical-over="cyan" recursive="1">
+          <media/>
+        </q4>
         <q5 background-color="blue" plot-color="blue" rotary-fill="blue"
             plot-inactive-color="darkblue" xy-drag-handle="darkblue" xy-horizontal="darkblue"
             xy-vertical="darkblue" xy-drag-handle-over="blue" xy-horizontal-over="blue"
-            xy-vertical-over="blue"/>
+            xy-vertical-over="blue" recursive="1">
+          <media/>
+        </q5>
         <q6 background-color="yellow" plot-color="yellow" rotary-fill="yellow"
             plot-inactive-color="ffafaf00" xy-drag-handle="ffafaf00" xy-horizontal="ffafaf00"
             xy-vertical="ffafaf00" xy-drag-handle-over="yellow" xy-horizontal-over="yellow"
-            xy-vertical-over="yellow"/>
-        <gain plot-color="silver" rotary-fill="silver"/>
+            xy-vertical-over="yellow" recursive="1">
+          <media/>
+        </q6>
+        <gain plot-color="silver" rotary-fill="silver" recursive="1">
+          <media/>
+        </gain>
         <orange background-color="ffffa500"/>
         <input toggle-text="FFDF0E0E" plot-color="FFDF0E0E" plot-fill-color="30DF0E0E"
                toggle-tick="FFDF0E0E" plot-inactive-color="" toggle-tick-disabled="FFDF0E0E"/>
         <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
                 toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
+        <collapse recursive="0" display="tabbed">
+          <media recursive="1" max-width="500" max-height="500"/>
+        </collapse>
       </Classes>
       <Types>
         <ComboBox border="0" max-height="40" combo-background="00000000" combo-outline="transparent"
                   caption-size="0" combo-text="silver" combo-arrow="silver" background-gradient="none"
-                  background-color="00000000"/>
+                  background-color="00000000" margin="" padding="" lookAndFeel="FoleysFinest"
+                  combo-menu-background="80141521" combo-menu-text="silver" combo-menu-background-highlight="80323452"/>
         <ToggleButton border="0" background-color="00000000" max-height="40" caption-size="0"
                       text="Active" toggle-text="silver" toggle-tick="silver" background-gradient="none"/>
         <Slider border="0" background-color="80141521" lookAndFeel="Skeuomorphic"
                 slider-fill="red" slider-textbox="textbox-below" background-gradient="none"
                 slider-text-outline="ff414151"/>
-        <Plot border="0" margin="0" padding="0" background-color="00000000"
-              plot-fill-color="00000000"/>
+        <Plot border="0" margin="0" padding="0" plot-fill-color="00000000"
+              background-color=""/>
         <XYDragComponent border="0" margin="0" padding="0" background-color="00000000"
                          xy-crosshair="horizontal"/>
       </Types>
@@ -68,7 +92,8 @@
   <View id="root">
     <View id="main">
       <View id="frame" class="plot-view">
-        <View display="flexbox" flex-direction="column">
+        <View display="flexbox" flex-direction="column" background-color="00000000"
+              class="nomargin">
           <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"
                         class="input"/>
           <ToggleButton text="Output" value="analyser:output" flex-align-self="auto"
@@ -95,11 +120,11 @@
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
       </View>
-      <View id="nomargin" background-color="ff343541">
+      <View id="nomargin" background-color="ff343541" class="collapse">
         <View caption="Q1" class="group q1">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q1active" text="" max-width="40"/>
-            <ComboBox parameter="Q1type"/>
+            <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
+            <ComboBox parameter="Q1type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q1quality"/>
@@ -110,8 +135,8 @@
         </View>
         <View caption="Q2" class="group q2">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q2active" max-width="40" text=""/>
-            <ComboBox parameter="Q2type"/>
+            <ToggleButton parameter="Q2active" max-width="40" text="" class="nomargin"/>
+            <ComboBox parameter="Q2type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q2quality"/>
@@ -121,8 +146,8 @@
         </View>
         <View caption="Q3" class="group q3">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q3active" text="" max-width="40"/>
-            <ComboBox parameter="Q3type"/>
+            <ToggleButton parameter="Q3active" text="" max-width="40" class="nomargin"/>
+            <ComboBox parameter="Q3type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q3quality"/>
@@ -132,8 +157,8 @@
         </View>
         <View caption="Q4" class="group q4">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q4active" text="" max-width="40"/>
-            <ComboBox parameter="Q4type"/>
+            <ToggleButton parameter="Q4active" text="" max-width="40" class="nomargin"/>
+            <ComboBox parameter="Q4type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q4quality"/>
@@ -143,8 +168,8 @@
         </View>
         <View caption="Q5" class="group q5">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q5active" text="" max-width="40"/>
-            <ComboBox parameter="Q5type"/>
+            <ToggleButton parameter="Q5active" text="" max-width="40" class="nomargin"/>
+            <ComboBox parameter="Q5type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q5quality"/>
@@ -154,8 +179,9 @@
         </View>
         <View caption="Q6" class="group q6">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton caption="Active" parameter="Q6active" text="" max-width="40"/>
-            <ComboBox parameter="Q6type"/>
+            <ToggleButton parameter="Q6active" text="" max-width="40" class="nomargin"
+                          background-gradient="none"/>
+            <ComboBox parameter="Q6type" class="nomargin"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q6quality"/>
@@ -164,11 +190,14 @@
           <Slider class="frequency" caption="Frequency" parameter="Q6freq"/>
         </View>
         <View caption="Globals" class="group gain" flex-direction="row">
-          <View padding="3" border="0" background-color="80141521" background-gradient="none">
+          <View padding="3" border="0" background-color="80141521" background-gradient="none"
+                flex-direction="column">
             <View flex-direction="row" background-color="" background-gradient="">
-              <Slider caption="Output" parameter="output" padding="3" background-color="00000000"/>
+              <Slider caption="Output" parameter="output" padding="3" background-color="00000000"
+                      slider-type="rotary" slider-textbox="textbox-below" lookAndFeel="Skeuomorphic"
+                      slider-text="FFFFFFFF" slider-text-outline="ff414151"/>
               <Meter source="output" flex-grow="0.5" outline-color="00000000" background-gradient=""
-                     background-color="" bar-background-color="ff141521"/>
+                     background-color="" bar-background-color="ff141521" class="nomargin"/>
             </View>
             <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
           </View>
