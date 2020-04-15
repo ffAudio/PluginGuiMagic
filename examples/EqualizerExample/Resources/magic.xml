@@ -69,8 +69,11 @@
         <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
                 toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
         <collapse recursive="0" display="tabbed">
-          <media recursive="1" max-width="500" max-height="500"/>
+          <media recursive="1" max-width="600" max-height="999999"/>
         </collapse>
+        <hidden flex-grow="0" flex-shrink="0">
+          <media max-height="400"/>
+        </hidden>
       </Classes>
       <Types>
         <ComboBox border="0" max-height="40" combo-background="00000000" combo-outline="transparent"
@@ -120,7 +123,7 @@
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
       </View>
-      <View id="nomargin" background-color="ff343541" class="collapse">
+      <View id="nomargin" background-color="ff343541" class="collapse hidden">
         <View caption="Q1" class="group q1">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
