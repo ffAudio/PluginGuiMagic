@@ -87,6 +87,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classfoleys_1_1ParameterAttachment.html" title="The ParameterAttachment is a class you can use to have a value synchronised with an AudioProcessorPar...">ParameterAttachment</a> is a class you can use to have a value synchronised with an AudioProcessorParameter.  
+ <a href="classfoleys_1_1ParameterAttachment.html#details">More...</a></p>
+
 <p>Inherits Listener, and AsyncUpdater.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -96,18 +99,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac51bc58ec8c09c72d952180073931758"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#ac51bc58ec8c09c72d952180073931758">~ParameterAttachment</a> ()</td></tr>
 <tr class="separator:ac51bc58ec8c09c72d952180073931758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dde62ea0dafbbb2f77f161287e5e05f"><td class="memItemLeft" align="right" valign="top">ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a8dde62ea0dafbbb2f77f161287e5e05f">getValue</a> () const</td></tr>
+<tr class="memdesc:a8dde62ea0dafbbb2f77f161287e5e05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread safe way to read the current value.  <a href="#a8dde62ea0dafbbb2f77f161287e5e05f">More...</a><br /></td></tr>
 <tr class="separator:a8dde62ea0dafbbb2f77f161287e5e05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ecbfe51f88c6bc6f94fac3545449f6b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a9ecbfe51f88c6bc6f94fac3545449f6b">getNormalisedValue</a> () const</td></tr>
-<tr class="separator:a9ecbfe51f88c6bc6f94fac3545449f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a83b10b0666a915eea55a5681fe5089"><td class="memItemLeft" align="right" valign="top">ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a9a83b10b0666a915eea55a5681fe5089">getNormalisedValue</a> () const</td></tr>
+<tr class="memdesc:a9a83b10b0666a915eea55a5681fe5089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread safe way to read the normalised value of the current value.  <a href="#a9a83b10b0666a915eea55a5681fe5089">More...</a><br /></td></tr>
+<tr class="separator:a9a83b10b0666a915eea55a5681fe5089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf9096d962ce9707cb898e1fd402a71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a3cf9096d962ce9707cb898e1fd402a71">setValue</a> (ValueType newValue)</td></tr>
+<tr class="memdesc:a3cf9096d962ce9707cb898e1fd402a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value from a not normalised range.min..range.max value.  <a href="#a3cf9096d962ce9707cb898e1fd402a71">More...</a><br /></td></tr>
+<tr class="separator:a3cf9096d962ce9707cb898e1fd402a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b7739eb998c16f575a11c91803335e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a3b7739eb998c16f575a11c91803335e3">setNormalisedValue</a> (ValueType newValue)</td></tr>
+<tr class="memdesc:a3b7739eb998c16f575a11c91803335e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value from a normalised 0..1 value.  <a href="#a3b7739eb998c16f575a11c91803335e3">More...</a><br /></td></tr>
 <tr class="separator:a3b7739eb998c16f575a11c91803335e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c9428e5f79d858eed903c038d20128f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a8c9428e5f79d858eed903c038d20128f">attachToParameter</a> (const juce::String &amp;parameterID)</td></tr>
+<tr class="memdesc:a8c9428e5f79d858eed903c038d20128f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make this value attached to the parameter with the supplied parameterID.  <a href="#a8c9428e5f79d858eed903c038d20128f">More...</a><br /></td></tr>
 <tr class="separator:a8c9428e5f79d858eed903c038d20128f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae23af8faa33b024d7e5e7f9c5656b954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#ae23af8faa33b024d7e5e7f9c5656b954">detachFromParameter</a> ()</td></tr>
 <tr class="separator:ae23af8faa33b024d7e5e7f9c5656b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7de3d2942dc7551647d212b588a8502a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#a7de3d2942dc7551647d212b588a8502a">beginGesture</a> ()</td></tr>
+<tr class="memdesc:a7de3d2942dc7551647d212b588a8502a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make sure to call this before you send changes (e.g.  <a href="#a7de3d2942dc7551647d212b588a8502a">More...</a><br /></td></tr>
 <tr class="separator:a7de3d2942dc7551647d212b588a8502a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6cd18e2e783c4e85417f8d01e5ef523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#aa6cd18e2e783c4e85417f8d01e5ef523">endGesture</a> ()</td></tr>
+<tr class="memdesc:aa6cd18e2e783c4e85417f8d01e5ef523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make sure to call this after finishing your changes (e.g.  <a href="#aa6cd18e2e783c4e85417f8d01e5ef523">More...</a><br /></td></tr>
 <tr class="separator:aa6cd18e2e783c4e85417f8d01e5ef523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2962619aca777119da4e6047528c995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1ParameterAttachment.html#ae2962619aca777119da4e6047528c995">parameterChanged</a> (const juce::String &amp;parameterID, float newValue) override</td></tr>
 <tr class="separator:ae2962619aca777119da4e6047528c995"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,7 +135,13 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a82321d600ba46899614dbae5d0df39a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this lambda to be called from the message thread via AsyncUpdater.  <a href="#a82321d600ba46899614dbae5d0df39a0">More...</a><br /></td></tr>
 <tr class="separator:a82321d600ba46899614dbae5d0df39a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename ValueType&gt;<br />
+class foleys::ParameterAttachment&lt; ValueType &gt;</h3>
+
+<p>The <a class="el" href="classfoleys_1_1ParameterAttachment.html" title="The ParameterAttachment is a class you can use to have a value synchronised with an AudioProcessorPar...">ParameterAttachment</a> is a class you can use to have a value synchronised with an AudioProcessorParameter. </p>
+<p>It takes care of updating either way, keeps the value thread safe in an atomic and allows setting lambdas to be executed when the value changes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a38203b7c568371202b68fe2309ecb903"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38203b7c568371202b68fe2309ecb903">&#9670;&nbsp;</a></span>ParameterAttachment()</h2>
 
@@ -183,22 +201,46 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Thread safe way to read the current value. </p>
+
 </div>
 </div>
-<a id="a9ecbfe51f88c6bc6f94fac3545449f6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ecbfe51f88c6bc6f94fac3545449f6b">&#9670;&nbsp;</a></span>getNormalisedValue()</h2>
+<a id="a9a83b10b0666a915eea55a5681fe5089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a83b10b0666a915eea55a5681fe5089">&#9670;&nbsp;</a></span>getNormalisedValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float getNormalisedValue </td>
+          <td class="memname">ValueType getNormalisedValue </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Thread safe way to read the normalised value of the current value. </p>
+
+</div>
+</div>
+<a id="a3cf9096d962ce9707cb898e1fd402a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf9096d962ce9707cb898e1fd402a71">&#9670;&nbsp;</a></span>setValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setValue </td>
+          <td>(</td>
+          <td class="paramtype">ValueType&#160;</td>
+          <td class="paramname"><em>newValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the value from a not normalised range.min..range.max value. </p>
 
 </div>
 </div>
@@ -217,6 +259,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the value from a normalised 0..1 value. </p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDragComponent.html#a8df37390c2a3b934d0f392ba02fedf41">XYDragComponent::mouseDrag()</a>.</p>
 
@@ -237,6 +281,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Make this value attached to the parameter with the supplied parameterID. </p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDragComponent.html#a97259203949ea2eca2dbf6c223523d28">XYDragComponent::setParameterX()</a>, and <a class="el" href="classfoleys_1_1XYDragComponent.html#a5d1d69a904550e080ae075664b598019">XYDragComponent::setParameterY()</a>.</p>
 
@@ -276,6 +322,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Make sure to call this before you send changes (e.g. </p>
+<p>from mouseDown of your UI widget), otherwise the hosts automation will battle with your value changes. </p>
+
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDragComponent.html#a86e6a10bf75587f36f2ecfa95ec6391e">XYDragComponent::mouseDown()</a>.</p>
 
 </div>
@@ -294,6 +343,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Make sure to call this after finishing your changes (e.g. </p>
+<p>from mouseDown of your UI widget), this way the automation can take back control (like e.g. latch mode). </p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDragComponent.html#a6b5eb44266a8bd8e271ccf6da53b3ce7">XYDragComponent::mouseUp()</a>.</p>
 
@@ -333,7 +385,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ParameterAttachment.html#a3b7739eb998c16f575a11c91803335e3">ParameterAttachment&lt; float &gt;::setNormalisedValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1ParameterAttachment.html#a3b7739eb998c16f575a11c91803335e3">ParameterAttachment&lt; float &gt;::setNormalisedValue()</a>, and <a class="el" href="classfoleys_1_1ParameterAttachment.html#a3cf9096d962ce9707cb898e1fd402a71">ParameterAttachment&lt; float &gt;::setValue()</a>.</p>
 
 </div>
 </div>
@@ -405,7 +457,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 16 2020 01:08:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

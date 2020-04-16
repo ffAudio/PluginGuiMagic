@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['undo',['undo',['../classfoleys_1_1MagicBuilder.html#af4aa3a741ed303f7835572542375808a',1,'foleys::MagicBuilder']]],
   ['update',['update',['../classfoleys_1_1Palette.html#ac5c54df7ed3b930268c8d7752c101725',1,'foleys::Palette']]],
-  ['updateall',['updateAll',['../classfoleys_1_1MagicBuilder.html#a022d93af929968660f14b9a507500855',1,'foleys::MagicBuilder']]],
-  ['updatecomponents',['updateComponents',['../classfoleys_1_1MagicBuilder.html#a1f510563dafe287c64932a66ae663a46',1,'foleys::MagicBuilder']]],
-  ['updatelayout',['updateLayout',['../classfoleys_1_1MagicBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731',1,'foleys::MagicBuilder']]],
-  ['updatestylesheet',['updateStylesheet',['../classfoleys_1_1MagicBuilder.html#a620ec9b39cea3022359e9a104204466b',1,'foleys::MagicBuilder']]],
-  ['updatetree',['updateTree',['../classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec',1,'foleys::GUITreeEditor']]]
+  ['updateall',['updateAll',['../classfoleys_1_1MagicGUIBuilder.html#a022d93af929968660f14b9a507500855',1,'foleys::MagicGUIBuilder']]],
+  ['updatecomponents',['updateComponents',['../classfoleys_1_1MagicGUIBuilder.html#a1f510563dafe287c64932a66ae663a46',1,'foleys::MagicGUIBuilder']]],
+  ['updatelayout',['updateLayout',['../classfoleys_1_1MagicGUIBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731',1,'foleys::MagicGUIBuilder::updateLayout()'],['../classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c',1,'foleys::Container::updateLayout()'],['../classfoleys_1_1Decorator.html#a1d6370ebf9c300d4b0bffe8b8a821731',1,'foleys::Decorator::updateLayout()']]],
+  ['updateplayheadinformation',['updatePlayheadInformation',['../classfoleys_1_1MagicProcessorState.html#aaa782b68fb52f4af68c5c5d9e38a66ce',1,'foleys::MagicProcessorState']]],
+  ['updateproperties',['updateProperties',['../classfoleys_1_1MagicGUIBuilder.html#ad7837c19d7e492a5127305917cc386a2',1,'foleys::MagicGUIBuilder']]],
+  ['updatestylesheet',['updateStylesheet',['../classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b',1,'foleys::MagicGUIBuilder']]],
+  ['updatetree',['updateTree',['../classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec',1,'foleys::GUITreeEditor']]],
+  ['updatevalidranges',['updateValidRanges',['../classfoleys_1_1Stylesheet.html#a82e0001970c6441bc76629f1d901f8b8',1,'foleys::Stylesheet']]]
 ];

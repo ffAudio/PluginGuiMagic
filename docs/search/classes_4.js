@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['guitreeeditor',['GUITreeEditor',['../classfoleys_1_1GUITreeEditor.html',1,'foleys']]]
+  ['filebrowserdialog',['FileBrowserDialog',['../classfoleys_1_1FileBrowserDialog.html',1,'foleys']]]
 ];

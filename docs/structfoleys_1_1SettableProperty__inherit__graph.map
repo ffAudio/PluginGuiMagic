@@ -1,6 +1,8 @@
 <map id="SettableProperty" name="SettableProperty">
-<area shape="rect" id="node1" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ..." alt="" coords="215,5,336,31"/>
-<area shape="rect" id="node2" href="$structfoleys_1_1SettableChoiceProperty.html" title=" " alt="" coords="5,79,167,104"/>
-<area shape="rect" id="node3" href="$structfoleys_1_1SettableNumberProperty.html" title=" " alt="" coords="192,79,360,104"/>
-<area shape="rect" id="node4" href="$structfoleys_1_1SettableTextProperty.html" title=" " alt="" coords="383,79,528,104"/>
+<area shape="rect" id="node1" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ..." alt="" coords="5,104,126,129"/>
+<area shape="rect" id="node2" href="$structfoleys_1_1SettableBoolProperty.html" title=" " alt="" coords="184,5,332,31"/>
+<area shape="rect" id="node3" href="$structfoleys_1_1SettableChoiceProperty.html" title=" " alt="" coords="177,55,339,80"/>
+<area shape="rect" id="node4" href="$structfoleys_1_1SettableNumberProperty.html" title=" " alt="" coords="174,104,342,129"/>
+<area shape="rect" id="node5" href="$structfoleys_1_1SettableTextProperty.html" title=" " alt="" coords="185,153,331,179"/>
+<area shape="rect" id="node6" href="$structfoleys_1_1SettableValueProperty.html" title=" " alt="" coords="181,203,335,228"/>
 </map>

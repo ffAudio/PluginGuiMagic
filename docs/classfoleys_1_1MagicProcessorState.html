@@ -88,6 +88,8 @@ $(function() {
 
 <p>The <a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is the docking station for the MagicPluginEditor.">MagicProcessorState</a> is the docking station for the <a class="el" href="classfoleys_1_1MagicPluginEditor.html" title="This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.">MagicPluginEditor</a>.  
  <a href="classfoleys_1_1MagicProcessorState.html#details">More...</a></p>
+
+<p>Inherits Timer.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -96,9 +98,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeccdd2ffdb103851bc31512d5c516039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87d8af81f927f182e00b9f6b0334db95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a87d8af81f927f182e00b9f6b0334db95">~MagicProcessorState</a> ()</td></tr>
 <tr class="separator:a87d8af81f927f182e00b9f6b0334db95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c35348ec09b0fa8b493b8576ef0152a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a8c35348ec09b0fa8b493b8576ef0152a">addLevelSource</a> (const juce::Identifier &amp;sourceID, std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> &gt; source)</td></tr>
-<tr class="memdesc:a8c35348ec09b0fa8b493b8576ef0152a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> to measure the level at any point in your DSP.  <a href="#a8c35348ec09b0fa8b493b8576ef0152a">More...</a><br /></td></tr>
-<tr class="separator:a8c35348ec09b0fa8b493b8576ef0152a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc90e826f7ae0e1de204351f7dcf849"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a7fc90e826f7ae0e1de204351f7dcf849">addLevelSource</a> (const juce::Identifier &amp;sourceID, std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> &gt; source)</td></tr>
+<tr class="memdesc:a7fc90e826f7ae0e1de204351f7dcf849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> to measure the level at any point in your DSP.  <a href="#a7fc90e826f7ae0e1de204351f7dcf849">More...</a><br /></td></tr>
+<tr class="separator:a7fc90e826f7ae0e1de204351f7dcf849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a256d97fae17102c673190e5563f4f02a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a256d97fae17102c673190e5563f4f02a">getLevelSource</a> (const juce::Identifier &amp;sourceID)</td></tr>
 <tr class="separator:a256d97fae17102c673190e5563f4f02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c514b073bdd801b5e982a52878f55bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicPlotSource.html">MagicPlotSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a4c514b073bdd801b5e982a52878f55bb">addPlotSource</a> (const juce::Identifier &amp;sourceID, std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicPlotSource.html">MagicPlotSource</a> &gt; source)</td></tr>
@@ -107,15 +109,41 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7facfd9d9473c366d26259d3ff36b6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicPlotSource.html">MagicPlotSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aa7facfd9d9473c366d26259d3ff36b6a">getPlotSource</a> (const juce::Identifier &amp;sourceID)</td></tr>
 <tr class="memdesc:aa7facfd9d9473c366d26259d3ff36b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this to lookup a <a class="el" href="classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data.">MagicPlotSource</a>.  <a href="#aa7facfd9d9473c366d26259d3ff36b6a">More...</a><br /></td></tr>
 <tr class="separator:aa7facfd9d9473c366d26259d3ff36b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d7cebd842af92a5eb88efb88e4e4ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a10d7cebd842af92a5eb88efb88e4e4ef">addTrigger</a> (const juce::Identifier &amp;triggerID, std::function&lt; void()&gt; function)</td></tr>
+<tr class="memdesc:a10d7cebd842af92a5eb88efb88e4e4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a function to be connected to e.g.  <a href="#a10d7cebd842af92a5eb88efb88e4e4ef">More...</a><br /></td></tr>
+<tr class="separator:a10d7cebd842af92a5eb88efb88e4e4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0bf8ef95ebafdabd37209b79da35c11"><td class="memItemLeft" align="right" valign="top">std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ab0bf8ef95ebafdabd37209b79da35c11">getTrigger</a> (const juce::Identifier &amp;triggerID)</td></tr>
+<tr class="separator:ab0bf8ef95ebafdabd37209b79da35c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0d5fa3164aae0ad944d3543d7cbbee"><td class="memItemLeft" align="right" valign="top">juce::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a7f0d5fa3164aae0ad944d3543d7cbbee">getPropertyAsValue</a> (const juce::String &amp;pathToProperty)</td></tr>
+<tr class="memdesc:a7f0d5fa3164aae0ad944d3543d7cbbee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a property as value inside the ValueTreeState.  <a href="#a7f0d5fa3164aae0ad944d3543d7cbbee">More...</a><br /></td></tr>
+<tr class="separator:a7f0d5fa3164aae0ad944d3543d7cbbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36d253c521d9c10653c23be63defe93"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aa36d253c521d9c10653c23be63defe93">getPropertyRoot</a> () const</td></tr>
+<tr class="memdesc:aa36d253c521d9c10653c23be63defe93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root node for exposed properties for the GUI.  <a href="#aa36d253c521d9c10653c23be63defe93">More...</a><br /></td></tr>
+<tr class="separator:aa36d253c521d9c10653c23be63defe93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34e27ce712ca7936edc60340aae4bd4"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ae34e27ce712ca7936edc60340aae4bd4">getParameterNames</a> () const</td></tr>
 <tr class="memdesc:ae34e27ce712ca7936edc60340aae4bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of AudioProcessorParameters for selection.  <a href="#ae34e27ce712ca7936edc60340aae4bd4">More...</a><br /></td></tr>
 <tr class="separator:ae34e27ce712ca7936edc60340aae4bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c37749c7f665b57cdd6219f1b72a37"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ab0c37749c7f665b57cdd6219f1b72a37">getLevelSourcesNames</a> () const</td></tr>
+<tr class="memdesc:ab0c37749c7f665b57cdd6219f1b72a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicLevelSources for selection.  <a href="#ab0c37749c7f665b57cdd6219f1b72a37">More...</a><br /></td></tr>
+<tr class="separator:ab0c37749c7f665b57cdd6219f1b72a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92f274181bafd00640dd6c7115f735e9"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a92f274181bafd00640dd6c7115f735e9">getPlotSourcesNames</a> () const</td></tr>
 <tr class="memdesc:a92f274181bafd00640dd6c7115f735e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicPlotSources for selection.  <a href="#a92f274181bafd00640dd6c7115f735e9">More...</a><br /></td></tr>
 <tr class="separator:a92f274181bafd00640dd6c7115f735e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7760e73ecec8d91288a3f3c4c96a890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ac7760e73ecec8d91288a3f3c4c96a890">populateSettableOptionsMenu</a> (juce::ComboBox &amp;comboBox, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">SettableProperty::PropertyType</a> type) const</td></tr>
+<tr class="memdesc:ac7760e73ecec8d91288a3f3c4c96a890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates a menu with options from <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a>.  <a href="#ac7760e73ecec8d91288a3f3c4c96a890">More...</a><br /></td></tr>
+<tr class="separator:ac7760e73ecec8d91288a3f3c4c96a890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79eed67186a502d929e05a07f9a1b7d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a79eed67186a502d929e05a07f9a1b7d8">prepareToPlay</a> (double sampleRate, int samplesPerBlockExpected)</td></tr>
 <tr class="memdesc:a79eed67186a502d929e05a07f9a1b7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this method in your prepareToPlay implementation, to allow th visualisers to be properly setup.  <a href="#a79eed67186a502d929e05a07f9a1b7d8">More...</a><br /></td></tr>
 <tr class="separator:a79eed67186a502d929e05a07f9a1b7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ab2e33f4cb255ecbc31ec191507d96b2e">processMidiBuffer</a> (juce::MidiBuffer &amp;buffer, int numSamples, bool injectIndirectEvents=true)</td></tr>
+<tr class="memdesc:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the midi data to the keyboard.  <a href="#ab2e33f4cb255ecbc31ec191507d96b2e">More...</a><br /></td></tr>
+<tr class="separator:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aaa782b68fb52f4af68c5c5d9e38a66ce">updatePlayheadInformation</a> (juce::AudioPlayHead *playhead)</td></tr>
+<tr class="memdesc:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this in the processBlock() will store the values from AudioPlayHead into the state, so it can be used in the GUI.  <a href="#aaa782b68fb52f4af68c5c5d9e38a66ce">More...</a><br /></td></tr>
+<tr class="separator:aaa782b68fb52f4af68c5c5d9e38a66ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42b19577027cba831679259f0c595d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ad42b19577027cba831679259f0c595d2">setPlayheadUpdateFrequency</a> (int frequency)</td></tr>
+<tr class="memdesc:ad42b19577027cba831679259f0c595d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the timer to fetch the playhead values from the audio thread.  <a href="#ad42b19577027cba831679259f0c595d2">More...</a><br /></td></tr>
+<tr class="separator:ad42b19577027cba831679259f0c595d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a6371dfb6565fbf0d0eb9731c7def87a1">setLastEditorSize</a> (int width, int height)</td></tr>
 <tr class="memdesc:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the editor to set its last size to resore next time.  <a href="#a6371dfb6565fbf0d0eb9731c7def87a1">More...</a><br /></td></tr>
 <tr class="separator:a6371dfb6565fbf0d0eb9731c7def87a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,6 +159,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af8987d6c93b1b9ee9438e747bb98e727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a176ff8a861d8279883696017c1b341"><td class="memItemLeft" align="right" valign="top">juce::AudioProcessorValueTreeState &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a0a176ff8a861d8279883696017c1b341">getValueTreeState</a> ()</td></tr>
 <tr class="separator:a0a176ff8a861d8279883696017c1b341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f8e25ec48881caac26f790f357977f"><td class="memItemLeft" align="right" valign="top">juce::MidiKeyboardState &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aa9f8e25ec48881caac26f790f357977f">getKeyboardState</a> ()</td></tr>
+<tr class="separator:aa9f8e25ec48881caac26f790f357977f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is the docking station for the MagicPluginEditor.">MagicProcessorState</a> is the docking station for the <a class="el" href="classfoleys_1_1MagicPluginEditor.html" title="This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.">MagicPluginEditor</a>. </p>
@@ -184,14 +214,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8c35348ec09b0fa8b493b8576ef0152a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c35348ec09b0fa8b493b8576ef0152a">&#9670;&nbsp;</a></span>addLevelSource()</h2>
+<a id="a7fc90e826f7ae0e1de204351f7dcf849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc90e826f7ae0e1de204351f7dcf849">&#9670;&nbsp;</a></span>addLevelSource()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void addLevelSource </td>
+          <td class="memname"><a class="el" href="classfoleys_1_1MagicLevelSource.html">MagicLevelSource</a> * addLevelSource </td>
           <td>(</td>
           <td class="paramtype">const juce::Identifier &amp;&#160;</td>
           <td class="paramname"><em>sourceID</em>, </td>
@@ -285,6 +315,99 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a10d7cebd842af92a5eb88efb88e4e4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d7cebd842af92a5eb88efb88e4e4ef">&#9670;&nbsp;</a></span>addTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addTrigger </td>
+          <td>(</td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>triggerID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>function</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a function to be connected to e.g. </p>
+<p>Buttons </p>
+
+</div>
+</div>
+<a id="ab0bf8ef95ebafdabd37209b79da35c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0bf8ef95ebafdabd37209b79da35c11">&#9670;&nbsp;</a></span>getTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt; void()&gt; getTrigger </td>
+          <td>(</td>
+          <td class="paramtype">const juce::Identifier &amp;&#160;</td>
+          <td class="paramname"><em>triggerID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f0d5fa3164aae0ad944d3543d7cbbee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f0d5fa3164aae0ad944d3543d7cbbee">&#9670;&nbsp;</a></span>getPropertyAsValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::Value getPropertyAsValue </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>pathToProperty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a property as value inside the ValueTreeState. </p>
+<p>The nodes are a colon separated list, the last component is the property name </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicProcessorState.html#aa36d253c521d9c10653c23be63defe93">MagicProcessorState::getPropertyRoot()</a>.</p>
+
+</div>
+</div>
+<a id="aa36d253c521d9c10653c23be63defe93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36d253c521d9c10653c23be63defe93">&#9670;&nbsp;</a></span>getPropertyRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::ValueTree getPropertyRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the root node for exposed properties for the GUI. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicProcessorState.html#a7f0d5fa3164aae0ad944d3543d7cbbee">MagicProcessorState::getPropertyAsValue()</a>.</p>
+
+</div>
+</div>
 <a id="ae34e27ce712ca7936edc60340aae4bd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae34e27ce712ca7936edc60340aae4bd4">&#9670;&nbsp;</a></span>getParameterNames()</h2>
 
@@ -304,6 +427,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab0c37749c7f665b57cdd6219f1b72a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c37749c7f665b57cdd6219f1b72a37">&#9670;&nbsp;</a></span>getLevelSourcesNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::StringArray getLevelSourcesNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicLevelSources for selection. </p>
+
+</div>
+</div>
 <a id="a92f274181bafd00640dd6c7115f735e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92f274181bafd00640dd6c7115f735e9">&#9670;&nbsp;</a></span>getPlotSourcesNames()</h2>
 
@@ -320,6 +462,38 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the <a class="el" href="namespacefoleys_1_1IDs.html">IDs</a> of MagicPlotSources for selection. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af0d016675371ca23bde95b2d9382f5da">MagicGUIBuilder::createDefaultGUITree()</a>.</p>
+
+</div>
+</div>
+<a id="ac7760e73ecec8d91288a3f3c4c96a890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7760e73ecec8d91288a3f3c4c96a890">&#9670;&nbsp;</a></span>populateSettableOptionsMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void populateSettableOptionsMenu </td>
+          <td>(</td>
+          <td class="paramtype">juce::ComboBox &amp;&#160;</td>
+          <td class="paramname"><em>comboBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87">SettableProperty::PropertyType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Populates a menu with options from <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a>. </p>
 
 </div>
 </div>
@@ -350,6 +524,92 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Call this method in your prepareToPlay implementation, to allow th visualisers to be properly setup. </p>
+
+</div>
+</div>
+<a id="ab2e33f4cb255ecbc31ec191507d96b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e33f4cb255ecbc31ec191507d96b2e">&#9670;&nbsp;</a></span>processMidiBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processMidiBuffer </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numSamples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>injectIndirectEvents</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send the midi data to the keyboard. </p>
+<p>This is only needed, if you added a MidiKeyboardComponent.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>the midi buffer from processBlock </td></tr>
+    <tr><td class="paramname">numSamples</td><td>the number of samples in the corresponding audio buffer </td></tr>
+    <tr><td class="paramname">injectIndirectEvents</td><td>if true key presses from the GUI are added to the midi stream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaa782b68fb52f4af68c5c5d9e38a66ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa782b68fb52f4af68c5c5d9e38a66ce">&#9670;&nbsp;</a></span>updatePlayheadInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updatePlayheadInformation </td>
+          <td>(</td>
+          <td class="paramtype">juce::AudioPlayHead *&#160;</td>
+          <td class="paramname"><em>playhead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calling this in the processBlock() will store the values from AudioPlayHead into the state, so it can be used in the GUI. </p>
+<p>To enable this call setPlayheadUpdateFrequency (frequency) with an appropriate value </p>
+
+</div>
+</div>
+<a id="ad42b19577027cba831679259f0c595d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad42b19577027cba831679259f0c595d2">&#9670;&nbsp;</a></span>setPlayheadUpdateFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setPlayheadUpdateFrequency </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts the timer to fetch the playhead values from the audio thread. </p>
 
 </div>
 </div>
@@ -499,6 +759,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af0d016675371ca23bde95b2d9382f5da">MagicGUIBuilder::createDefaultGUITree()</a>.</p>
+
 </div>
 </div>
 <a id="a0a176ff8a861d8279883696017c1b341"></a>
@@ -518,6 +780,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa9f8e25ec48881caac26f790f357977f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f8e25ec48881caac26f790f357977f">&#9670;&nbsp;</a></span>getKeyboardState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::MidiKeyboardState &amp; getKeyboardState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__MagicProcessorState_8h.html">foleys_MagicProcessorState.h</a></li>
 <li><a class="el" href="foleys__MagicProcessorState_8cpp.html">foleys_MagicProcessorState.cpp</a></li>
@@ -525,7 +804,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 23 2019 19:02:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 16 2020 01:08:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

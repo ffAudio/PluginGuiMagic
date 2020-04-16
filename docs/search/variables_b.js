@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['padding',['padding',['../classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b',1,'foleys::Decorator']]],
-  ['property',['property',['../classfoleys_1_1StylePropertyComponent.html#ad417a18038a464a5f4a1f0a19f100cfd',1,'foleys::StylePropertyComponent']]]
+  ['radius',['radius',['../classfoleys_1_1Decorator.html#a5050a760c11da521cd4aee6336f6529f',1,'foleys::Decorator']]],
+  ['remove',['remove',['../classfoleys_1_1StylePropertyComponent.html#a5469c38701cf16f2998f8b47bf600905',1,'foleys::StylePropertyComponent']]]
 ];

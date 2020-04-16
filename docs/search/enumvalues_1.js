@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['choice',['Choice',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6',1,'foleys::SettableProperty']]],
-  ['colour',['Colour',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb',1,'foleys::SettableProperty']]],
-  ['contents',['Contents',['../classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799bac1df1da7a1ce305a3b60af9d5733ac1d',1,'foleys::Container']]]
+  ['backgroundcolourid',['backgroundColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094a4cf91a9c6ef5de7c3b1ab2c2f2bbe5da',1,'foleys::MagicLevelMeter']]],
+  ['barbackgroundcolourid',['barBackgroundColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094a95067a1e8f16928d4d3ddc92e9567646',1,'foleys::MagicLevelMeter']]],
+  ['barfillcolourid',['barFillColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094aedbec93d7edd0187ef63a72971dd7a41',1,'foleys::MagicLevelMeter']]]
 ];
