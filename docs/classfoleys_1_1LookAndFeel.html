@@ -94,6 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abd999034610de6efc3d2fc33b84485f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8f3a497360bdf08c182e2b6e2e36f70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1LookAndFeel.html#ac8f3a497360bdf08c182e2b6e2e36f70">drawRotarySlider</a> (juce::Graphics &amp;, int x, int y, int width, int height, float sliderPosProportional, float rotaryStartAngle, float rotaryEndAngle, juce::Slider &amp;) override</td></tr>
 <tr class="separator:ac8f3a497360bdf08c182e2b6e2e36f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e8d7982e7888cdf4a80a671e6dc2f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1LookAndFeel.html#aa5e8d7982e7888cdf4a80a671e6dc2f5">drawComboBox</a> (juce::Graphics &amp;, int width, int height, bool isButtonDown, int buttonX, int buttonY, int buttonW, int buttonH, juce::ComboBox &amp;) override</td></tr>
+<tr class="separator:aa5e8d7982e7888cdf4a80a671e6dc2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b53a1b03889ffe22f277fbe62fd21ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1LookAndFeel.html#a2b53a1b03889ffe22f277fbe62fd21ae">positionComboBoxText</a> (juce::ComboBox &amp;, juce::Label &amp;labelToPosition) override</td></tr>
+<tr class="separator:a2b53a1b03889ffe22f277fbe62fd21ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd999034610de6efc3d2fc33b84485f1"></a>
@@ -200,6 +204,120 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa5e8d7982e7888cdf4a80a671e6dc2f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e8d7982e7888cdf4a80a671e6dc2f5">&#9670;&nbsp;</a></span>drawComboBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawComboBox </td>
+          <td>(</td>
+          <td class="paramtype">juce::Graphics &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isButtonDown</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonW</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonH</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::ComboBox &amp;&#160;</td>
+          <td class="paramname"><em>box</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b53a1b03889ffe22f277fbe62fd21ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b53a1b03889ffe22f277fbe62fd21ae">&#9670;&nbsp;</a></span>positionComboBoxText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void positionComboBoxText </td>
+          <td>(</td>
+          <td class="paramtype">juce::ComboBox &amp;&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Label &amp;&#160;</td>
+          <td class="paramname"><em>labelToPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__LookAndFeel_8h.html">foleys_LookAndFeel.h</a></li>
 <li><a class="el" href="foleys__LookAndFeel_8cpp.html">foleys_LookAndFeel.cpp</a></li>
@@ -207,7 +325,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 4 2020 22:13:45 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 16 2020 01:08:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

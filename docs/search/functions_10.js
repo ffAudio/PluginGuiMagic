@@ -7,5 +7,6 @@ var searchData=
   ['updateplayheadinformation',['updatePlayheadInformation',['../classfoleys_1_1MagicProcessorState.html#aaa782b68fb52f4af68c5c5d9e38a66ce',1,'foleys::MagicProcessorState']]],
   ['updateproperties',['updateProperties',['../classfoleys_1_1MagicGUIBuilder.html#ad7837c19d7e492a5127305917cc386a2',1,'foleys::MagicGUIBuilder']]],
   ['updatestylesheet',['updateStylesheet',['../classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b',1,'foleys::MagicGUIBuilder']]],
-  ['updatetree',['updateTree',['../classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec',1,'foleys::GUITreeEditor']]]
+  ['updatetree',['updateTree',['../classfoleys_1_1GUITreeEditor.html#a891e6c43656fa8d7ed0c2fc1571ca2ec',1,'foleys::GUITreeEditor']]],
+  ['updatevalidranges',['updateValidRanges',['../classfoleys_1_1Stylesheet.html#a82e0001970c6441bc76629f1d901f8b8',1,'foleys::Stylesheet']]]
 ];

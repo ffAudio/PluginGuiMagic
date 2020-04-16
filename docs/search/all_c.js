@@ -1,6 +1,7 @@
 var searchData=
 [
   ['magicanalyser',['MagicAnalyser',['../classfoleys_1_1MagicAnalyser.html',1,'MagicAnalyser'],['../classfoleys_1_1MagicAnalyser.html#aef7fe54dcf22511fab3b456a9381f508',1,'foleys::MagicAnalyser::MagicAnalyser()']]],
+  ['magicbuilder',['magicBuilder',['../classfoleys_1_1Decorator.html#ad7c2bad28688c00046d2fc4e4d032047',1,'foleys::Decorator']]],
   ['magicfilterplot',['MagicFilterPlot',['../classfoleys_1_1MagicFilterPlot.html',1,'MagicFilterPlot'],['../classfoleys_1_1MagicFilterPlot.html#a5eb6ead6df89e85d9bd7814a4919602c',1,'foleys::MagicFilterPlot::MagicFilterPlot()']]],
   ['magicguibuilder',['MagicGUIBuilder',['../classfoleys_1_1MagicGUIBuilder.html',1,'MagicGUIBuilder'],['../classfoleys_1_1MagicGUIBuilder.html#ac7bba7d20deb7f099d8b4b105051f092',1,'foleys::MagicGUIBuilder::MagicGUIBuilder()']]],
   ['magiclevelmeter',['MagicLevelMeter',['../classfoleys_1_1MagicLevelMeter.html',1,'MagicLevelMeter'],['../classfoleys_1_1MagicLevelMeter.html#a0d8bb4a1930bde45fe92ecd655ce0412',1,'foleys::MagicLevelMeter::MagicLevelMeter()']]],
@@ -10,6 +11,7 @@ var searchData=
   ['magicplotsource',['MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html',1,'MagicPlotSource'],['../classfoleys_1_1MagicPlotSource.html#a55bbde130cac6785e2d29b629fd7f7dd',1,'foleys::MagicPlotSource::MagicPlotSource()']]],
   ['magicplugineditor',['MagicPluginEditor',['../classfoleys_1_1MagicPluginEditor.html',1,'MagicPluginEditor'],['../classfoleys_1_1MagicPluginEditor.html#a187579f20217ccde96385c6ee2800d0f',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState, std::unique_ptr&lt; MagicGUIBuilder &gt; builder={})'],['../classfoleys_1_1MagicPluginEditor.html#ae533d5acdd2c21cde92f192fbfba5773',1,'foleys::MagicPluginEditor::MagicPluginEditor(MagicProcessorState &amp;processorState, const char *data, const int dataSize, std::unique_ptr&lt; MagicGUIBuilder &gt; builder={})']]],
   ['magicprocessorstate',['MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html',1,'MagicProcessorState'],['../classfoleys_1_1MagicProcessorState.html#aeccdd2ffdb103851bc31512d5c516039',1,'foleys::MagicProcessorState::MagicProcessorState()']]],
+  ['makejustificationschoices',['makeJustificationsChoices',['../classfoleys_1_1MagicGUIBuilder.html#a00aef75ec40afe57d34736abe24454d9',1,'foleys::MagicGUIBuilder']]],
   ['margin',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]],
   ['mousedoubleclick',['mouseDoubleClick',['../classfoleys_1_1StylePropertyComponent.html#a157094d9b4f4477360601d2ecbaaafaf',1,'foleys::StylePropertyComponent::mouseDoubleClick()'],['../classfoleys_1_1MouseLambdas.html#a157094d9b4f4477360601d2ecbaaafaf',1,'foleys::MouseLambdas::mouseDoubleClick()']]],
   ['mousedown',['mouseDown',['../classfoleys_1_1MouseLambdas.html#af4b7e0f49cf4e0fde0dbcdcae6a3410c',1,'foleys::MouseLambdas::mouseDown()'],['../classfoleys_1_1XYDragComponent.html#a86e6a10bf75587f36f2ecfa95ec6391e',1,'foleys::XYDragComponent::mouseDown()']]],

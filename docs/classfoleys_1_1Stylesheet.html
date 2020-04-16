@@ -97,9 +97,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aace02b70dd029f2d05a7decb09a49f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aace02b70dd029f2d05a7decb09a49f68">setStyle</a> (const juce::ValueTree &amp;node)</td></tr>
 <tr class="memdesc:aace02b70dd029f2d05a7decb09a49f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> node in the XML can contain several Styles to select from.  <a href="#aace02b70dd029f2d05a7decb09a49f68">More...</a><br /></td></tr>
 <tr class="separator:aace02b70dd029f2d05a7decb09a49f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe53eccc64bfb05741d4543877b65d23"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">getProperty</a> (const juce::Identifier &amp;name, const juce::ValueTree &amp;node, bool inherit=true, juce::ValueTree *definedHere=nullptr) const</td></tr>
-<tr class="memdesc:abe53eccc64bfb05741d4543877b65d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method traverses the dom and checks each style, if that property was defined.  <a href="#abe53eccc64bfb05741d4543877b65d23">More...</a><br /></td></tr>
-<tr class="separator:abe53eccc64bfb05741d4543877b65d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c572270636bf148c2c36f2bc1599099"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a3c572270636bf148c2c36f2bc1599099">setMediaSize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a3c572270636bf148c2c36f2bc1599099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the UI.  <a href="#a3c572270636bf148c2c36f2bc1599099">More...</a><br /></td></tr>
+<tr class="separator:a3c572270636bf148c2c36f2bc1599099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82e0001970c6441bc76629f1d901f8b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a82e0001970c6441bc76629f1d901f8b8">updateValidRanges</a> ()</td></tr>
+<tr class="memdesc:a82e0001970c6441bc76629f1d901f8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the range, in which the properties won't change due to conditional classes.  <a href="#a82e0001970c6441bc76629f1d901f8b8">More...</a><br /></td></tr>
+<tr class="separator:a82e0001970c6441bc76629f1d901f8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8278afaae8ebf326442e9bb81209f359"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">getStyleProperty</a> (const juce::Identifier &amp;name, const juce::ValueTree &amp;node, bool inherit=true, juce::ValueTree *definedHere=nullptr) const</td></tr>
+<tr class="memdesc:a8278afaae8ebf326442e9bb81209f359"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method traverses the dom and checks each style, if that property was defined.  <a href="#a8278afaae8ebf326442e9bb81209f359">More...</a><br /></td></tr>
+<tr class="separator:a8278afaae8ebf326442e9bb81209f359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04cc50191b562391a841c8d1ee03b776"><td class="memItemLeft" align="right" valign="top">juce::LookAndFeel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">getLookAndFeel</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="memdesc:a04cc50191b562391a841c8d1ee03b776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> for the node.  <a href="#a04cc50191b562391a841c8d1ee03b776">More...</a><br /></td></tr>
 <tr class="separator:a04cc50191b562391a841c8d1ee03b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,9 +114,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2d1ee771907ee023bbda1b416271e862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9a127023272f04e07b36d3fd1f2104"><td class="memItemLeft" align="right" valign="top">juce::Array&lt; juce::Colour &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">getBackgroundGradient</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="separator:a2e9a127023272f04e07b36d3fd1f2104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00e908b32eb28e61de13f9ed2e616f3"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#af00e908b32eb28e61de13f9ed2e616f3">parseColour</a> (const juce::String &amp;name) const</td></tr>
-<tr class="memdesc:af00e908b32eb28e61de13f9ed2e616f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a slightly more intelligent colour lookup than the JUCE one, as it allows to use colour names, as well as 6 digit colour tuples (JUCE will use red as alpha in that case)  <a href="#af00e908b32eb28e61de13f9ed2e616f3">More...</a><br /></td></tr>
-<tr class="separator:af00e908b32eb28e61de13f9ed2e616f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23357c554f1729a34981aff828025506"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a23357c554f1729a34981aff828025506">getCurrentStyle</a> () const</td></tr>
 <tr class="separator:a23357c554f1729a34981aff828025506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5360dbddf6f9462fdcc907a63b18995"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ac5360dbddf6f9462fdcc907a63b18995">addNewStyleClass</a> (const juce::String &amp;name, juce::UndoManager *undo)</td></tr>
@@ -122,10 +125,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c2eb3a5aab67288c147fd30fd316479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a7c2eb3a5aab67288c147fd30fd316479">registerLookAndFeel</a> (juce::String name, std::unique_ptr&lt; juce::LookAndFeel &gt; lookAndFeel)</td></tr>
 <tr class="memdesc:a7c2eb3a5aab67288c147fd30fd316479"><td class="mdescLeft">&#160;</td><td class="mdescRight">With that method you can register your custom <a class="el" href="classfoleys_1_1LookAndFeel.html">LookAndFeel</a> class and apply it to different components.  <a href="#a7c2eb3a5aab67288c147fd30fd316479">More...</a><br /></td></tr>
 <tr class="separator:a7c2eb3a5aab67288c147fd30fd316479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6a744198713f15f99b65a12ec229e7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ad6a744198713f15f99b65a12ec229e7b">configureFlexBox</a> (juce::FlexBox &amp;flexBox, const juce::ValueTree &amp;node) const</td></tr>
-<tr class="separator:ad6a744198713f15f99b65a12ec229e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af776c60fdfc4d63f2c8df514ca7b72d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#af776c60fdfc4d63f2c8df514ca7b72d5">configureFlexBoxItem</a> (juce::FlexItem &amp;item, const juce::ValueTree &amp;node) const</td></tr>
-<tr class="separator:af776c60fdfc4d63f2c8df514ca7b72d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6aeff0bd59418beb90893bbbb642858"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ab6aeff0bd59418beb90893bbbb642858">getAllClassesNames</a> () const</td></tr>
 <tr class="separator:ab6aeff0bd59418beb90893bbbb642858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22b1650af62f9ab415b49a4ec9fc2a99"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a22b1650af62f9ab415b49a4ec9fc2a99">getLookAndFeelNames</a> () const</td></tr>
@@ -139,6 +138,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afed5c686beb123ea8846d5a92199ad7e"><td class="memItemLeft" align="right" valign="top">static juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#afed5c686beb123ea8846d5a92199ad7e">parseColour</a> (const juce::String &amp;name)</td></tr>
+<tr class="memdesc:afed5c686beb123ea8846d5a92199ad7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a slightly more intelligent colour lookup than the JUCE one, as it allows to use colour names, as well as 6 digit colour tuples (JUCE will use red as alpha in that case)  <a href="#afed5c686beb123ea8846d5a92199ad7e">More...</a><br /></td></tr>
+<tr class="separator:afed5c686beb123ea8846d5a92199ad7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="memItemLeft" align="right" valign="top">static juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a0b1d67c1d4f9bfb2aa8af65ec483e436">createDefaultStyle</a> ()</td></tr>
 <tr class="memdesc:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="mdescLeft">&#160;</td><td class="mdescRight">This creates a default stylesheet from scratch, to allow the default GUI to look sensible.  <a href="#a0b1d67c1d4f9bfb2aa8af65ec483e436">More...</a><br /></td></tr>
 <tr class="separator:a0b1d67c1d4f9bfb2aa8af65ec483e436"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,14 +196,75 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abe53eccc64bfb05741d4543877b65d23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe53eccc64bfb05741d4543877b65d23">&#9670;&nbsp;</a></span>getProperty()</h2>
+<a id="a3c572270636bf148c2c36f2bc1599099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c572270636bf148c2c36f2bc1599099">&#9670;&nbsp;</a></span>setMediaSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::var getProperty </td>
+          <td class="memname">bool setMediaSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the size of the UI. </p>
+<p>This will be used to resolve the properties from the style classes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>is the width of the UI </td></tr>
+    <tr><td class="paramname">height</td><td>is the height of the UI </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false, if the properties are likely to have changed (because a conditional class became valid or invalid) </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicGUIBuilder::updateLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a82e0001970c6441bc76629f1d901f8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e0001970c6441bc76629f1d901f8b8">&#9670;&nbsp;</a></span>updateValidRanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateValidRanges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the range, in which the properties won't change due to conditional classes. </p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">MagicGUIBuilder::updateLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a8278afaae8ebf326442e9bb81209f359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8278afaae8ebf326442e9bb81209f359">&#9670;&nbsp;</a></span>getStyleProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::var getStyleProperty </td>
           <td>(</td>
           <td class="paramtype">const juce::Identifier &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -241,7 +304,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#ad6a744198713f15f99b65a12ec229e7b">Stylesheet::configureFlexBox()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">Stylesheet::getLookAndFeel()</a>, and <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">Stylesheet::getLookAndFeel()</a>, and <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>.</p>
 
 </div>
 </div>
@@ -270,7 +333,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">Stylesheet::getStyleProperty()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">Decorator::configureDecorator()</a>.</p>
 
@@ -325,20 +388,28 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af00e908b32eb28e61de13f9ed2e616f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00e908b32eb28e61de13f9ed2e616f3">&#9670;&nbsp;</a></span>parseColour()</h2>
+<a id="afed5c686beb123ea8846d5a92199ad7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed5c686beb123ea8846d5a92199ad7e">&#9670;&nbsp;</a></span>parseColour()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">juce::Colour parseColour </td>
           <td>(</td>
           <td class="paramtype">const juce::String &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>This is a slightly more intelligent colour lookup than the JUCE one, as it allows to use colour names, as well as 6 digit colour tuples (JUCE will use red as alpha in that case) </p>
@@ -486,66 +557,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad6a744198713f15f99b65a12ec229e7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6a744198713f15f99b65a12ec229e7b">&#9670;&nbsp;</a></span>configureFlexBox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void configureFlexBox </td>
-          <td>(</td>
-          <td class="paramtype">juce::FlexBox &amp;&#160;</td>
-          <td class="paramname"><em>flexBox</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const juce::ValueTree &amp;&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#abe53eccc64bfb05741d4543877b65d23">Stylesheet::getProperty()</a>.</p>
-
-</div>
-</div>
-<a id="af776c60fdfc4d63f2c8df514ca7b72d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af776c60fdfc4d63f2c8df514ca7b72d5">&#9670;&nbsp;</a></span>configureFlexBoxItem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void configureFlexBoxItem </td>
-          <td>(</td>
-          <td class="paramtype">juce::FlexItem &amp;&#160;</td>
-          <td class="paramname"><em>item</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const juce::ValueTree &amp;&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ad7837c19d7e492a5127305917cc386a2">MagicGUIBuilder::updateProperties()</a>.</p>
-
-</div>
-</div>
 <a id="a0b1d67c1d4f9bfb2aa8af65ec483e436"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b1d67c1d4f9bfb2aa8af65ec483e436">&#9670;&nbsp;</a></span>createDefaultStyle()</h2>
 
@@ -589,8 +600,6 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1">PropertiesEditor::addNodeProperties()</a>.</p>
 
 </div>
 </div>
@@ -674,7 +683,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 4 2020 22:13:45 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Apr 16 2020 01:08:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
