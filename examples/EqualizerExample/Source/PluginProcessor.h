@@ -162,6 +162,9 @@ private:
     foleys::MagicFilterPlot*  plotSum = nullptr;
     foleys::MagicLevelSource* outputMeter = nullptr;
 
+    foleys::AtomicValueAttachment<bool> inputAnalysing;
+    foleys::AtomicValueAttachment<bool> outputAnalysing;
+
     // GUI MAGIC: define that as last member of your AudioProcessor
     foleys::MagicProcessorState magicState { *this, treeState };
 

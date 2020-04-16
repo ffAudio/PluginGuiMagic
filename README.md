@@ -57,6 +57,14 @@ Component, that accesses a typesafe back reference to the AudioProcessor.
 An example of a 6 band IIR equalizer with complete plot curves, analysers and
 more features following (this is the reference implementation for new features).
 
+### FoleysSynth
+
+[examples/FoleysSynth](examples/FoleysSynth)
+
+An example additive synthisizer to show the MidiKeyboardComponent and how to 
+create a nice GUI with PluginGuiMagic.
+
+![FoleysSynth Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/FoleysSynth-screenshot.png)
 
 Deploying
 ---------
