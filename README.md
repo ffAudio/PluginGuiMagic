@@ -80,16 +80,14 @@ components be automatically generated each time.
 Licensing
 ---------
 
-The code is supplied under the BSD-3 clause license, free to use. 
+The code is supplied under the BSD-3 clause license, free to use for non-commercial purposes. 
 
-Once you are selling products using foleys_gui_magic, we kindly ask 
-you to support the ongoing development by buying an annual license 
-for 35 GBP, or a perpetual license for 99 GBP. I will take your 
-contribution into account, when I pick the next feature requests
-to implement (no promises though).
+To use PluginGuiMagic in commercial products, you should buy a license on our web-page.
 
-A page to buy the licenses will appear shortly on https://foleysfinest.com
+To check the pricing and buy licenses please look at https://foleysfinest.com/developer/pluginguimagic
 
+License holders will get priority on bug reports and feature requests. There will also be additional
+exclusive content coming soon, like smoothed analysers, additional visualisations and more.
 
 Contributing
 ------------
