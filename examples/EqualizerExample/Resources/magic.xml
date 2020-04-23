@@ -69,10 +69,10 @@
         <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
                 toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
         <collapse recursive="0" display="tabbed">
-          <media recursive="1" max-width="600" max-height="999999"/>
+          <media recursive="1" max-width="650" max-height="999999"/>
         </collapse>
         <hidden flex-grow="0" flex-shrink="0">
-          <media max-height="400"/>
+          <media max-height="450"/>
         </hidden>
       </Classes>
       <Types>
@@ -92,7 +92,7 @@
       </Types>
     </Style>
   </Styles>
-  <View id="root">
+  <View id="root" resizable="1" resize-corner="1">
     <View id="main">
       <View id="frame" class="plot-view">
         <View display="flexbox" flex-direction="column" background-color="00000000"
@@ -123,8 +123,9 @@
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
       </View>
-      <View id="nomargin" background-color="ff343541" class="collapse hidden">
-        <View caption="Q1" class="group q1">
+      <View id="nomargin" background-color="ff343541" class="collapse hidden"
+            lookAndFeel="FoleysFinest">
+        <View caption="Q1" class="group q1" tab-color="red">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q1type" class="nomargin"/>
@@ -136,7 +137,7 @@
           <Slider class="frequency" caption="Frequency" parameter="Q1freq" rotary-outline=""
                   flex-grow="3"/>
         </View>
-        <View caption="Q2" class="group q2">
+        <View caption="Q2" class="group q2" tab-color="green">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q2active" max-width="40" text="" class="nomargin"/>
             <ComboBox parameter="Q2type" class="nomargin"/>
@@ -147,7 +148,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q2freq"/>
         </View>
-        <View caption="Q3" class="group q3">
+        <View caption="Q3" class="group q3" tab-color="orange">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q3active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q3type" class="nomargin"/>
@@ -158,7 +159,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q3freq"/>
         </View>
-        <View caption="Q4" class="group q4">
+        <View caption="Q4" class="group q4" tab-color="cyan">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q4active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q4type" class="nomargin"/>
@@ -169,7 +170,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q4freq"/>
         </View>
-        <View caption="Q5" class="group q5">
+        <View caption="Q5" class="group q5" tab-color="blue">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q5active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q5type" class="nomargin"/>
@@ -180,7 +181,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q5freq"/>
         </View>
-        <View caption="Q6" class="group q6">
+        <View caption="Q6" class="group q6" tab-color="yellow" lookAndFeel="FoleysFinest">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q6active" text="" max-width="40" class="nomargin"
                           background-gradient="none"/>
