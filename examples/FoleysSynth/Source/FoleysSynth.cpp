@@ -121,6 +121,9 @@ void FoleysSynth::FoleysVoice::startNote ([[maybe_unused]]int midiNoteNumber,
     pitchWheelValue = getDetuneFromPitchWheel (currentPitchWheelPosition);
 
     adsr.noteOn();
+
+    for (auto& osc : oscillators)
+        updateFrequency (*osc, true);
 }
 
 void FoleysSynth::FoleysVoice::stopNote ([[maybe_unused]]float velocity,
@@ -209,10 +212,10 @@ double FoleysSynth::FoleysVoice::getDetuneFromPitchWheel (int wheelValue) const
     return (wheelValue / 8192.0) - 1.0;
 }
 
-void FoleysSynth::FoleysVoice::updateFrequency (BaseOscillator& oscillator)
+void FoleysSynth::FoleysVoice::updateFrequency (BaseOscillator& oscillator, bool noteStart)
 {
     const auto freq = getFrequencyForNote (getCurrentlyPlayingNote(),
                                            pitchWheelValue * maxPitchWheelSemitones
                                            + oscillator.detune->get());
-    oscillator.osc.get<0>().setFrequency (freq * oscillator.multiplier);
+    oscillator.osc.get<0>().setFrequency (freq * oscillator.multiplier, noteStart);
 }

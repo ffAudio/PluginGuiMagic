@@ -86,7 +86,7 @@ public:
         double getDetuneFromPitchWheel (int wheelValue) const;
         double getFrequencyForNote (int noteNumber, double detune, double concertPitch = 440.0) const;
 
-        void updateFrequency (BaseOscillator& oscillator);
+        void updateFrequency (BaseOscillator& oscillator, bool noteStart = false);
 
         std::vector<std::unique_ptr<BaseOscillator>> oscillators;
 
