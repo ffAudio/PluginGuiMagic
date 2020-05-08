@@ -96,7 +96,7 @@
     <View id="main">
       <View id="frame" class="plot-view">
         <View display="flexbox" flex-direction="column" background-color="00000000"
-              class="nomargin">
+              class="nomargin" flex-justify-content="" flex-align-self="">
           <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"
                         class="input"/>
           <ToggleButton text="Output" value="analyser:output" flex-align-self="auto"
@@ -116,19 +116,26 @@
               plot-color="FFDF0E0E"/>
         <Plot source="output" class="nomargin output" visibility="analyser:output"
               plot-color="FF0E23DF"/>
-        <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"/>
-        <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"/>
-        <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"/>
-        <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"/>
-        <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"/>
-        <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"/>
+        <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"
+                         parameter-right-click="Q1type"/>
+        <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"
+                         parameter-right-click="Q2type"/>
+        <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"
+                         parameter-right-click="Q3type"/>
+        <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"
+                         parameter-right-click="Q4type"/>
+        <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"
+                         parameter-right-click="Q5type"/>
+        <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"
+                         parameter-right-click="Q6type"/>
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
             lookAndFeel="FoleysFinest">
         <View caption="Q1" class="group q1" tab-color="red">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
-            <ComboBox parameter="Q1type" class="nomargin"/>
+            <ComboBox parameter="Q1type" class="nomargin" combo-menu-background="80141521"
+                      combo-menu-text="silver"/>
           </View>
           <View id="horizontal">
             <Slider class="small" caption="Quality" parameter="Q1quality"/>
