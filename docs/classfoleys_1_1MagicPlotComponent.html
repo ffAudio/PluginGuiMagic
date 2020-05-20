@@ -87,7 +87,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits Component, AsyncUpdater, and ChangeListener.</p>
+<p>Inherits Component.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -102,8 +102,6 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bb20c3d03ce8cc74d7091bc35b2b43a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a8bb20c3d03ce8cc74d7091bc35b2b43a">MagicPlotComponent</a> ()</td></tr>
 <tr class="separator:a8bb20c3d03ce8cc74d7091bc35b2b43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b26cb792e0cf67af9fcfb0a496de198"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4b26cb792e0cf67af9fcfb0a496de198">~MagicPlotComponent</a> ()</td></tr>
-<tr class="separator:a4b26cb792e0cf67af9fcfb0a496de198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad521ba5ef58913bf81f253894684604f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#ad521ba5ef58913bf81f253894684604f">setPlotSource</a> (<a class="el" href="classfoleys_1_1MagicPlotSource.html">MagicPlotSource</a> *source)</td></tr>
 <tr class="separator:ad521ba5ef58913bf81f253894684604f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26f0024e727743482fbcd1ab21f05e14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a26f0024e727743482fbcd1ab21f05e14">setDecayFactor</a> (float decayFactor)</td></tr>
@@ -112,12 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4f2c219a2cbbd6b61e7c41564dac6169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31cc081b3c77bc8855de79094fc1da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
 <tr class="separator:a31cc081b3c77bc8855de79094fc1da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e1b476dbb39b58eabf615686abc08cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a7e1b476dbb39b58eabf615686abc08cf">changeListenerCallback</a> (juce::ChangeBroadcaster *source) override</td></tr>
-<tr class="separator:a7e1b476dbb39b58eabf615686abc08cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750095200ca353d8515d19a8b6bf694a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a750095200ca353d8515d19a8b6bf694a">handleAsyncUpdate</a> () override</td></tr>
-<tr class="separator:a750095200ca353d8515d19a8b6bf694a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e65b2f4174827c4fb502af1463bb7c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#a2e65b2f4174827c4fb502af1463bb7c4">hitTest</a> (int, int) override</td></tr>
 <tr class="separator:a2e65b2f4174827c4fb502af1463bb7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ea374c75eabd2f592dc4e6c3304c6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotComponent.html#aa0ea374c75eabd2f592dc4e6c3304c6b">needsUpdate</a> () const</td></tr>
+<tr class="separator:aa0ea374c75eabd2f592dc4e6c3304c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4dde7f9621b7b13ca0f47b0b5b08f094"></a>
@@ -157,23 +153,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a7ad19ba09115dc9bdf288d631dad6699">MagicPlotComponent::plotColourId</a>, <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a20c3379327fe323e6fd8d8e97008c0e0">MagicPlotComponent::plotFillColourId</a>, <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abbcfcec1c016f811e31fbd277cd8029a">MagicPlotComponent::plotInactiveColourId</a>, and <a class="el" href="classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa8a901238b8d0a63c4391c033d948e7b">MagicPlotComponent::plotInactiveFillColourId</a>.</p>
-
-</div>
-</div>
-<a id="a4b26cb792e0cf67af9fcfb0a496de198"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b26cb792e0cf67af9fcfb0a496de198">&#9670;&nbsp;</a></span>~MagicPlotComponent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">~<a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -265,57 +244,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e1b476dbb39b58eabf615686abc08cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e1b476dbb39b58eabf615686abc08cf">&#9670;&nbsp;</a></span>changeListenerCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void changeListenerCallback </td>
-          <td>(</td>
-          <td class="paramtype">juce::ChangeBroadcaster *&#160;</td>
-          <td class="paramname"><em>source</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a750095200ca353d8515d19a8b6bf694a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a750095200ca353d8515d19a8b6bf694a">&#9670;&nbsp;</a></span>handleAsyncUpdate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void handleAsyncUpdate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2e65b2f4174827c4fb502af1463bb7c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e65b2f4174827c4fb502af1463bb7c4">&#9670;&nbsp;</a></span>hitTest()</h2>
 
@@ -352,6 +280,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa0ea374c75eabd2f592dc4e6c3304c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ea374c75eabd2f592dc4e6c3304c6b">&#9670;&nbsp;</a></span>needsUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool needsUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__MagicPlotComponent_8h.html">foleys_MagicPlotComponent.h</a></li>
 <li><a class="el" href="foleys__MagicPlotComponent_8cpp.html">foleys_MagicPlotComponent.cpp</a></li>
@@ -359,7 +304,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 23 2020 00:02:57 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
