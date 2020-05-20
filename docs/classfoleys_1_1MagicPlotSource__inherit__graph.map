@@ -1,6 +1,6 @@
 <map id="MagicPlotSource" name="MagicPlotSource">
-<area shape="rect" id="node1" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="132,5,254,31"/>
-<area shape="rect" id="node2" href="$classfoleys_1_1MagicAnalyser.html" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="5,79,114,104"/>
-<area shape="rect" id="node3" href="$classfoleys_1_1MagicFilterPlot.html" title="This will plot the frequency responce for a juce IIR filter." alt="" coords="138,79,248,104"/>
-<area shape="rect" id="node4" href="$classfoleys_1_1MagicOscilloscope.html" title="This class collects your samples in a circular buffer and allows the GUI to draw it in the style of a..." alt="" coords="272,79,405,104"/>
+<area shape="rect" id="node1" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="132,5,253,32"/>
+<area shape="rect" id="node2" href="$classfoleys_1_1MagicAnalyser.html" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="$classfoleys_1_1MagicFilterPlot.html" title="This will plot the frequency responce for a juce IIR filter." alt="" coords="138,80,247,107"/>
+<area shape="rect" id="node4" href="$classfoleys_1_1MagicOscilloscope.html" title="This class collects your samples in a circular buffer and allows the GUI to draw it in the style of a..." alt="" coords="272,80,404,107"/>
 </map>

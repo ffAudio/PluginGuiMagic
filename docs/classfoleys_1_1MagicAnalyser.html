@@ -95,8 +95,8 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classfoleys_1_1MagicAnalyser__inherit__graph.png" border="0" usemap="#MagicAnalyser_inherit__map" alt="Inheritance graph"/></div>
 <map name="MagicAnalyser_inherit__map" id="MagicAnalyser_inherit__map">
-<area shape="rect" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="12,79,121,104"/>
-<area shape="rect" href="classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="5,5,127,31"/>
+<area shape="rect" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="12,80,120,107"/>
+<area shape="rect" href="classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="5,5,127,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -108,9 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a380f126aa29c0b4924b9f4961f6f7bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicAnalyser.html#a380f126aa29c0b4924b9f4961f6f7bea">pushSamples</a> (const juce::AudioBuffer&lt; float &gt; &amp;buffer) override</td></tr>
 <tr class="memdesc:a380f126aa29c0b4924b9f4961f6f7bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push new samples to the buffer, so a background worker can create a frequency plot of it.  <a href="classfoleys_1_1MagicAnalyser.html#a380f126aa29c0b4924b9f4961f6f7bea">More...</a><br /></td></tr>
 <tr class="separator:a380f126aa29c0b4924b9f4961f6f7bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d9b0fefa1e383edab2b4115920a0a63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicAnalyser.html#a3d9b0fefa1e383edab2b4115920a0a63">drawPlot</a> (juce::Graphics &amp;g, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component) override</td></tr>
-<tr class="memdesc:a3d9b0fefa1e383edab2b4115920a0a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the callback that draws the frequency plot.  <a href="classfoleys_1_1MagicAnalyser.html#a3d9b0fefa1e383edab2b4115920a0a63">More...</a><br /></td></tr>
-<tr class="separator:a3d9b0fefa1e383edab2b4115920a0a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f228445e12e24e37b3ae5b0e848004"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicAnalyser.html#a22f228445e12e24e37b3ae5b0e848004">createPlotPaths</a> (juce::Path &amp;path, juce::Path &amp;filledPath, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component) override</td></tr>
+<tr class="memdesc:a22f228445e12e24e37b3ae5b0e848004"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the callback that creates the plot for drawing.  <a href="classfoleys_1_1MagicAnalyser.html#a22f228445e12e24e37b3ae5b0e848004">More...</a><br /></td></tr>
+<tr class="separator:a22f228445e12e24e37b3ae5b0e848004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9889c68373e04df23952c79e01b8b87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicAnalyser.html#a9889c68373e04df23952c79e01b8b87d">prepareToPlay</a> (double sampleRate, int samplesPerBlockExpected) override</td></tr>
 <tr class="memdesc:a9889c68373e04df23952c79e01b8b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the <a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is the docking station for the MagicPluginEditor.">MagicProcessorState</a> to allow the plot computation to be set up.  <a href="classfoleys_1_1MagicAnalyser.html#a9889c68373e04df23952c79e01b8b87d">More...</a><br /></td></tr>
 <tr class="separator:a9889c68373e04df23952c79e01b8b87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,17 +122,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a55bbde130cac6785e2d29b629fd7f7dd inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14623f42ef68c2b5c05018422eb1fed6 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a14623f42ef68c2b5c05018422eb1fed6">~MagicPlotSource</a> ()=default</td></tr>
 <tr class="separator:a14623f42ef68c2b5c05018422eb1fed6 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">fillPlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, juce::Rectangle&lt; float &gt; bounds, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
-<tr class="memdesc:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">More...</a><br /></td></tr>
-<tr class="separator:ad5e68b927be0dd3342be054163cdb714 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">strokePlotPath</a> (juce::Graphics &amp;g, const juce::Path &amp;path, <a class="el" href="classfoleys_1_1MagicPlotComponent.html">MagicPlotComponent</a> &amp;component)</td></tr>
-<tr class="memdesc:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Your implementation of drawPlot should call this at the end.  <a href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">More...</a><br /></td></tr>
-<tr class="separator:a91156f041d21e1c2f9472b931a271053 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">isActive</a> () const</td></tr>
 <tr class="memdesc:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can add an active state to your plot to allow to paint in different colours.  <a href="classfoleys_1_1MagicPlotSource.html#aadec6c2312fe1ac4cfc12324f3001203">More...</a><br /></td></tr>
 <tr class="separator:aadec6c2312fe1ac4cfc12324f3001203 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4272702bf2de8a1a3cfcf94d6641370 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#ad4272702bf2de8a1a3cfcf94d6641370">setActive</a> (bool shouldBeActive)</td></tr>
 <tr class="separator:ad4272702bf2de8a1a3cfcf94d6641370 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc473e4193d786a0cbf64aa5d609a0f7 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">juce::int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#afc473e4193d786a0cbf64aa5d609a0f7">getLastDataUpdate</a> () const</td></tr>
+<tr class="memdesc:afc473e4193d786a0cbf64aa5d609a0f7 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this information to invalidate your plot drawing.  <a href="classfoleys_1_1MagicPlotSource.html#afc473e4193d786a0cbf64aa5d609a0f7">More...</a><br /></td></tr>
+<tr class="separator:afc473e4193d786a0cbf64aa5d609a0f7 inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcc83194bb760e056c631c1b2a3bd7d inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPlotSource.html#a7dcc83194bb760e056c631c1b2a3bd7d">resetLastDataFlag</a> ()</td></tr>
+<tr class="memdesc:a7dcc83194bb760e056c631c1b2a3bd7d inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to invalidate the lastData flag.  <a href="classfoleys_1_1MagicPlotSource.html#a7dcc83194bb760e056c631c1b2a3bd7d">More...</a><br /></td></tr>
+<tr class="separator:a7dcc83194bb760e056c631c1b2a3bd7d inherit pub_methods_classfoleys_1_1MagicPlotSource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This will plot the magnitudes of the frequencies in a signal. </p>
@@ -201,8 +201,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3d9b0fefa1e383edab2b4115920a0a63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d9b0fefa1e383edab2b4115920a0a63">&#9670;&nbsp;</a></span>drawPlot()</h2>
+<a id="a22f228445e12e24e37b3ae5b0e848004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f228445e12e24e37b3ae5b0e848004">&#9670;&nbsp;</a></span>createPlotPaths()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,10 +211,16 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void drawPlot </td>
+          <td class="memname">void createPlotPaths </td>
           <td>(</td>
-          <td class="paramtype">juce::Graphics &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype">juce::Path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Path &amp;&#160;</td>
+          <td class="paramname"><em>filledPath</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -241,19 +247,18 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This is the callback that draws the frequency plot. </p>
+<p>This is the callback that creates the plot for drawing. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td>the Graphics context to draw onto </td></tr>
+    <tr><td class="paramname">path</td><td>is the path instance that is constructed by the <a class="el" href="classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data.">MagicPlotSource</a> </td></tr>
+    <tr><td class="paramname">filledPath</td><td>is the path instance that is constructed by the <a class="el" href="classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data.">MagicPlotSource</a> to be filled </td></tr>
     <tr><td class="paramname">bounds</td><td>the bounds of the plot </td></tr>
     <tr><td class="paramname">component</td><td>grants access to the plot component, e.g. to find the colours from it </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classfoleys_1_1MagicPlotSource.html#a6458b65a25c3b48d48c67c252b39f8aa">MagicPlotSource</a>.</p>
-
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicPlotSource.html#ad5e68b927be0dd3342be054163cdb714">MagicPlotSource::fillPlotPath()</a>, and <a class="el" href="classfoleys_1_1MagicPlotSource.html#a91156f041d21e1c2f9472b931a271053">MagicPlotSource::strokePlotPath()</a>.</p>
+<p>Implements <a class="el" href="classfoleys_1_1MagicPlotSource.html#abc7e60e6d2e6d5b667de3fbbd1b2336f">MagicPlotSource</a>.</p>
 
 </div>
 </div>
@@ -333,7 +338,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 23 2020 00:02:57 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
