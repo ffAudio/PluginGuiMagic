@@ -110,7 +110,7 @@ SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
     // MAGIC GUI: register an oscilloscope to display in the GUI.
     //            We keep a pointer to push samples into in processBlock().
     //            And we are only interested in channel 0
-    oscilloscope = magicState.addPlotSource (IDs::oscilloscope, std::make_unique<foleys::MagicOscilloscope>(0));
+    oscilloscope = magicState.createAndAddObject<foleys::MagicOscilloscope>(IDs::oscilloscope, 0);
 }
 
 SignalGeneratorAudioProcessor::~SignalGeneratorAudioProcessor()

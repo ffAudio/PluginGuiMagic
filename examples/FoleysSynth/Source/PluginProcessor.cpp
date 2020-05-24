@@ -39,9 +39,12 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
     treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
 {
     // MAGIC GUI: add a meter at the output
-    outputMeter  = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
-    oscilloscope = magicState.addPlotSource ("waveform", std::make_unique<foleys::MagicOscilloscope>());
-    analyser     = magicState.addPlotSource ("analyser", std::make_unique<foleys::MagicAnalyser>());
+    outputMeter  = magicState.createAndAddObject<foleys::MagicLevelSource>("output");
+    oscilloscope = magicState.createAndAddObject<foleys::MagicOscilloscope>("waveform");
+
+    analyser     = magicState.createAndAddObject<foleys::MagicAnalyser>("analyser");
+    magicState.addBackgroundProcessing (analyser);
+
     magicState.setPlayheadUpdateFrequency (30);
 
     FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound (treeState));

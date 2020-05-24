@@ -207,7 +207,7 @@
               <Slider caption="Output" parameter="output" padding="3" background-color="00000000"
                       slider-type="rotary" slider-textbox="textbox-below" lookAndFeel="Skeuomorphic"
                       slider-text="FFFFFFFF" slider-text-outline="ff414151"/>
-              <Meter source="output" flex-grow="0.5" outline-color="00000000" background-gradient=""
+              <Meter source="outputMeter" flex-grow="0.5" outline-color="00000000" background-gradient=""
                      background-color="" bar-background-color="ff141521" class="nomargin"/>
             </View>
             <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
