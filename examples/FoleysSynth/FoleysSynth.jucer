@@ -12,6 +12,7 @@
             file="Source/PluginProcessor.cpp"/>
       <FILE id="w20MsF" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
+      <FILE id="L28JKh" name="PresetListBox.h" compile="0" resource="0" file="Source/PresetListBox.h"/>
     </GROUP>
     <GROUP id="{99A1E16A-8343-0C77-9D5B-A3401E80CB20}" name="Resources">
       <FILE id="o1fhw1" name="Logo.png" compile="0" resource="1" file="Resources/Logo.png"/>
