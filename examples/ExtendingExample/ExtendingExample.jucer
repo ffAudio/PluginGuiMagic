@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="yiwLut" name="ExtendingExample" projectType="audioplug" jucerVersion="5.4.5"
+<JUCERPROJECT id="yiwLut" name="ExtendingExample" projectType="audioplug" jucerVersion="5.4.7"
               projectLineFeed="&#10;">
   <MAINGROUP id="YlTe1F" name="ExtendingExample">
     <GROUP id="{792094DB-E732-2ADA-93CB-1F5D3139D8C3}" name="Source">
