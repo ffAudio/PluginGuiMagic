@@ -1,7 +1,8 @@
 
 #pragma once
 
-class PresetListBox : public ListBoxModel
+class PresetListBox   : public ListBoxModel,
+                        public ChangeBroadcaster
 {
 public:
     PresetListBox (ValueTree presetsNode) : presets (presetsNode)

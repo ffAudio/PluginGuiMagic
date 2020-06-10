@@ -167,8 +167,9 @@ void FoleysSynthAudioProcessor::savePresetInternal()
         if (p.getType().toString() == "PARAM")
             preset.appendChild (p.createCopy(), nullptr);
 
-    DBG (preset.toXmlString());
     presetNode.appendChild (preset, nullptr);
+
+    presetList->sendChangeMessage();
 }
 
 void FoleysSynthAudioProcessor::loadPresetInternal(int index)
