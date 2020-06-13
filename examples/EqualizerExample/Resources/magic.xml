@@ -12,7 +12,9 @@
                     background-image=" " background-gradient="none" flex-grow="2"/>
       </Nodes>
       <Classes>
-        <plot-view border="2" background-color="black" display="contents" border-color=""/>
+        <plot-view border="2" background-color="black" display="contents" border-color="">
+          <media/>
+        </plot-view>
         <group padding="1" flex-direction="column" background-gradient="linear-gradient(ff414151, ff151521)"
                border="">
           <media/>
@@ -65,7 +67,9 @@
         </gain>
         <orange background-color="ffffa500"/>
         <input toggle-text="FFDF0E0E" plot-color="FFDF0E0E" plot-fill-color="30DF0E0E"
-               toggle-tick="FFDF0E0E" plot-inactive-color="" toggle-tick-disabled="FFDF0E0E"/>
+               toggle-tick="FFDF0E0E" plot-inactive-color="" toggle-tick-disabled="FFDF0E0E">
+          <media/>
+        </input>
         <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
                 toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
         <collapse recursive="0" display="tabbed">
@@ -93,7 +97,7 @@
     </Style>
   </Styles>
   <View id="root" resizable="1" resize-corner="1">
-    <View id="main">
+    <View id="main" visibility="analyser:foo">
       <View id="frame" class="plot-view">
         <View display="flexbox" flex-direction="column" background-color="00000000"
               class="nomargin" flex-justify-content="" flex-align-self="">
@@ -117,17 +121,17 @@
         <Plot source="output" class="nomargin output" visibility="analyser:output"
               plot-color="FF0E23DF"/>
         <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"
-                         parameter-right-click="Q1type"/>
+                         parameter-right-click="Q1type" right-click="Q1type"/>
         <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"
-                         parameter-right-click="Q2type"/>
+                         parameter-right-click="Q2type" right-click="Q2type"/>
         <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"
-                         parameter-right-click="Q3type"/>
+                         parameter-right-click="Q3type" right-click="Q3type"/>
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"
-                         parameter-right-click="Q4type"/>
+                         parameter-right-click="Q4type" right-click="Q4type"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"
-                         parameter-right-click="Q5type"/>
+                         parameter-right-click="Q5type" right-click="Q5type"/>
         <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"
-                         parameter-right-click="Q6type"/>
+                         parameter-right-click="Q6type" right-click="Q6type"/>
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
             lookAndFeel="FoleysFinest">
@@ -207,8 +211,9 @@
               <Slider caption="Output" parameter="output" padding="3" background-color="00000000"
                       slider-type="rotary" slider-textbox="textbox-below" lookAndFeel="Skeuomorphic"
                       slider-text="FFFFFFFF" slider-text-outline="ff414151"/>
-              <Meter source="outputMeter" flex-grow="0.5" outline-color="00000000" background-gradient=""
-                     background-color="" bar-background-color="ff141521" class="nomargin"/>
+              <Meter source="outputMeter" flex-grow="0.5" outline-color="00000000"
+                     background-gradient="" background-color="" bar-background-color="ff141521"
+                     class="nomargin"/>
             </View>
             <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
           </View>

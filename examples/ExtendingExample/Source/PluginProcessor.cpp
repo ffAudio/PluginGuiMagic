@@ -262,7 +262,7 @@ bool ExtendingExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
 {
     // MAGIC GUI: we create our custom builder instance here, that will be available for all factories we add
-    auto builder = std::make_unique<foleys::MagicGUIBuilder>(&magicState);
+    auto builder = std::make_unique<foleys::MagicGUIBuilder>(magicState);
     builder->registerJUCEFactories();
 
     builder->registerFactory ("Lissajour", &LissajourItem::factory);
