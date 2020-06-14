@@ -78,28 +78,40 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Lissajour)
 };
 
-void registerLissajourComponent (foleys::MagicGUIBuilder& builder)
+// This class is creating and configuring your custom component
+class LissajourItem : public foleys::GuiItem
 {
-    static Identifier lissajour { "Lissajour" };
-    builder.registerFactory (lissajour, [](const ValueTree&)
-                             {
-                                 return std::make_unique<Lissajour>();
-                             });
+public:
+    FOLEYS_DECLARE_GUI_FACTORY (LissajourItem)
 
-    builder.setColourTranslation (lissajour, {
-        {"lissajour-background", Lissajour::backgroundColourId},
-        {"lissajour-draw", Lissajour::drawColourId},
-        {"lissajour-fill", Lissajour::fillColourId} });
+    LissajourItem (foleys::MagicGUIBuilder& builder, const juce::ValueTree& node) : foleys::GuiItem (builder, node)
+    {
+        // Create the colour names to have them configurable
+        setColourTranslation ({
+            {"lissajour-background", Lissajour::backgroundColourId},
+            {"lissajour-draw", Lissajour::drawColourId},
+            {"lissajour-fill", Lissajour::fillColourId} });
 
-    builder.addSettableProperty (lissajour,
-                                  std::make_unique<foleys::SettableNumberProperty>
-                                  ("factor", 3.0,
-                                   [] (juce::Component* component, juce::var value)
-                                   {
-                                       if (auto* lc = dynamic_cast<Lissajour*>(component))
-                                           lc->setFactor (float (value));
-                                   }));
-}
+        addAndMakeVisible (lissajour);
+    }
+
+    // Override update() to set the values to your custom component
+    void update() override
+    {
+        auto factor = getProperty ("factor");
+        lissajour.setFactor (factor.isVoid() ? 3.0f : float (factor));
+    }
+
+    juce::Component* getWrappedComponent() override
+    {
+        return &lissajour;
+    }
+
+private:
+    Lissajour lissajour;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (LissajourItem)
+};
 
 //==============================================================================
 
@@ -137,13 +149,30 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponent)
 };
 
-void registerStatisticsComponent (foleys::MagicGUIBuilder& builder, ExtendingExampleAudioProcessor* proc)
+/*
+ // The new method doesn't have a way to supply the processor yet :-(
+class StatisticsComponentItem : public foleys::GuiItem
 {
-    builder.registerFactory ("Statistics", [proc](const ValueTree&)
-                             {
-                                 return std::make_unique<StatisticsComponent>(*proc);
-                             });
-}
+public:
+    FOLEYS_DECLARE_GUI_FACTORY (StatisticsComponentItem)
+
+    StatisticsComponentItem (foleys::MagicGUIBuilder& builder, const juce::ValueTree& node)
+      : foleys::GuiItem (builder, node)
+    {
+        addAndMakeVisible (stats);
+    }
+
+    juce::Component* getWrappedComponent() override
+    {
+        return &stats;
+    }
+
+private:
+    StatisticsComponent stats;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponentItem)
+};
+ */
 
 //==============================================================================
 
@@ -233,11 +262,11 @@ bool ExtendingExampleAudioProcessor::hasEditor() const
 AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
 {
     // MAGIC GUI: we create our custom builder instance here, that will be available for all factories we add
-    auto builder = std::make_unique<foleys::MagicGUIBuilder>(&magicState);
+    auto builder = std::make_unique<foleys::MagicGUIBuilder>(magicState);
     builder->registerJUCEFactories();
 
-    registerLissajourComponent (*builder);
-    registerStatisticsComponent (*builder, this);
+    builder->registerFactory ("Lissajour", &LissajourItem::factory);
+//    builder->registerFactory ("Statistics", &StatisticsComponentItem::factory);
 
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize, std::move (builder));
 }

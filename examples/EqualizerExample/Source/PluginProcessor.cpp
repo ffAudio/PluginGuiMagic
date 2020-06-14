@@ -123,7 +123,7 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
 auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const String& plotID)
 {
-    return [plot = dynamic_cast<foleys::MagicFilterPlot*>(magicState.getPlotSource (plotID))] (const EqualizerExampleAudioProcessor::FilterAttachment& a)
+    return [plot = magicState.getObjectWithType<foleys::MagicFilterPlot>(plotID)] (const EqualizerExampleAudioProcessor::FilterAttachment& a)
     {
         if (plot != nullptr)
         {
@@ -154,18 +154,20 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     for (size_t i = 0; i < attachments.size(); ++i)
     {
         auto name = "plot" + String (i + 1);
-        magicState.addPlotSource (name, std::make_unique<foleys::MagicFilterPlot>());
+        magicState.createAndAddObject<foleys::MagicFilterPlot>(name);
         attachments.at (i)->postFilterUpdate = createPostUpdateLambda (magicState, name);
     }
 
-    plotSum = dynamic_cast<foleys::MagicFilterPlot*>(magicState.addPlotSource ("plotSum", std::make_unique<foleys::MagicFilterPlot>()));
+    plotSum = magicState.createAndAddObject<foleys::MagicFilterPlot>("plotSum");
 
     // GUI MAGIC: add analyser plots
-    inputAnalyser  = magicState.addPlotSource ("input", std::make_unique<foleys::MagicAnalyser>());
-    outputAnalyser = magicState.addPlotSource ("output", std::make_unique<foleys::MagicAnalyser>());
+    inputAnalyser   = magicState.createAndAddObject<foleys::MagicAnalyser>("input");
+    outputAnalyser  = magicState.createAndAddObject<foleys::MagicAnalyser>("output");
+    magicState.addBackgroundProcessing (inputAnalyser);
+    magicState.addBackgroundProcessing (outputAnalyser);
 
     // MAGIC GUI: add a meter at the output
-    outputMeter = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
+    outputMeter = magicState.createAndAddObject<foleys::MagicLevelSource>("outputMeter");
 
     for (auto* parameter : getParameters())
         if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))

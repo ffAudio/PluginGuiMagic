@@ -9,6 +9,7 @@
 */
 
 #include "PluginProcessor.h"
+#include "PresetListBox.h"
 
 //==============================================================================
 
@@ -39,9 +40,24 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
     treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
 {
     // MAGIC GUI: add a meter at the output
-    outputMeter  = magicState.addLevelSource ("output", std::make_unique<foleys::MagicLevelSource>());
-    oscilloscope = magicState.addPlotSource ("waveform", std::make_unique<foleys::MagicOscilloscope>());
-    analyser     = magicState.addPlotSource ("analyser", std::make_unique<foleys::MagicAnalyser>());
+    outputMeter  = magicState.createAndAddObject<foleys::MagicLevelSource>("output");
+    oscilloscope = magicState.createAndAddObject<foleys::MagicOscilloscope>("waveform");
+
+    analyser     = magicState.createAndAddObject<foleys::MagicAnalyser>("analyser");
+    magicState.addBackgroundProcessing (analyser);
+
+    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
+
+    presetList = magicState.createAndAddObject<PresetListBox>("presets", presetNode);
+    presetList->onSelectionChanged = [&](int number)
+    {
+        loadPresetInternal (number);
+    };
+    magicState.addTrigger ("save-preset", [this]
+    {
+        savePresetInternal();
+    });
+
     magicState.setPlayheadUpdateFrequency (30);
 
     FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound (treeState));
@@ -143,6 +159,34 @@ AudioProcessorEditor* FoleysSynthAudioProcessor::createEditor()
 }
 
 //==============================================================================
+void FoleysSynthAudioProcessor::savePresetInternal()
+{
+    ValueTree preset { "Preset" };
+    preset.setProperty ("name", "Preset " + String (presetNode.getNumChildren() + 1), nullptr);
+    for (const auto& p : magicState.getValueTreeState().state)
+        if (p.getType().toString() == "PARAM")
+            preset.appendChild (p.createCopy(), nullptr);
+
+    presetNode.appendChild (preset, nullptr);
+
+    presetList->sendChangeMessage();
+}
+
+void FoleysSynthAudioProcessor::loadPresetInternal(int index)
+{
+    auto preset = presetNode.getChild (index);
+    for (const auto& p : preset)
+    {
+        if (p.hasType ("PARAM"))
+        {
+            auto id = p.getProperty ("id", "unknownID").toString();
+            if (auto* parameter = dynamic_cast<RangedAudioParameter*>(magicState.getValueTreeState().getParameter (id)))
+                parameter->setValueNotifyingHost (parameter->convertTo0to1 (p.getProperty ("value")));
+        }
+    }
+}
+
+//==============================================================================
 void FoleysSynthAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
@@ -155,6 +199,9 @@ void FoleysSynthAudioProcessor::setStateInformation (const void* data, int sizeI
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
     magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
+
+    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
+    presetList->setPresetsNode (presetNode);
 }
 
 //==============================================================================
@@ -206,8 +253,9 @@ int FoleysSynthAudioProcessor::getCurrentProgram()
     return 0;
 }
 
-void FoleysSynthAudioProcessor::setCurrentProgram (int)
+void FoleysSynthAudioProcessor::setCurrentProgram (int index)
 {
+    loadPresetInternal (index);
 }
 
 const String FoleysSynthAudioProcessor::getProgramName (int)
