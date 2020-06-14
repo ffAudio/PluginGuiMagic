@@ -35,8 +35,13 @@ private:
     //==============================================================================
     // Your private member variables go here...
 
-    foleys::MagicGUIState magicState;
-    foleys::MagicGUIBuilder magicBuilder { magicState };
+    std::unique_ptr<AudioFormatReaderSource> source;
+    AudioTransportSource     transport;
+
+    foleys::MagicGUIState    magicState;
+    foleys::MagicGUIBuilder  magicBuilder { magicState };
+
+    foleys::MagicPlotSource* outputAnalyser { nullptr };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

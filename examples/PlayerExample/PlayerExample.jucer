@@ -8,6 +8,9 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="ywSe1o" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
+    <GROUP id="{B5D102AE-5032-8356-9668-FA39C7E17F57}" name="Resources">
+      <FILE id="L22ao1" name="magic.xml" compile="0" resource="1" file="Resources/magic.xml"/>
+    </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
@@ -100,5 +103,5 @@
   <LIVE_SETTINGS>
     <OSX/>
   </LIVE_SETTINGS>
-  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" FOLEYS_ENABLE_BINARY_DATA="1"/>
 </JUCERPROJECT>

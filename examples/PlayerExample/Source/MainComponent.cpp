@@ -18,6 +18,28 @@ MainComponent::MainComponent()
 
     setSize (800, 600);
 
+    magicState.addTrigger ("start", [&] { transport.start(); });
+    magicState.addTrigger ("stop", [&] { transport.stop(); });
+    magicState.addTrigger ("rewind", [&] { transport.setNextReadPosition (0); });
+
+    outputAnalyser = magicState.createAndAddObject<foleys::MagicAnalyser>("analyser");
+    magicState.addBackgroundProcessing (outputAnalyser);
+
+    AudioFormatManager manager;
+    manager.registerBasicFormats();
+    auto reader = manager.createReaderFor (File::getSpecialLocation (File::userDesktopDirectory).getChildFile ("02 Heroes.mp3"));
+    if (reader)
+    {
+        source.reset (new AudioFormatReaderSource (reader, true));
+        transport.setSource (source.get());
+    }
+
+//    magicBuilder.setConfigTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+
+#if FOLEYS_SHOW_GUI_EDITOR_PALLETTE
+    magicBuilder.attachToolboxToWindow (*this);
+#endif
+
     // Some platforms require permissions to open input channels so request that here
     if (RuntimePermissions::isRequired (RuntimePermissions::recordAudio)
         && ! RuntimePermissions::isGranted (RuntimePermissions::recordAudio))
@@ -30,8 +52,6 @@ MainComponent::MainComponent()
         // Specify the number of input and output channels that we want to open
         setAudioChannels (0, 2);
     }
-
-    magicBuilder.attachToolboxToWindow (*this);
 }
 
 MainComponent::~MainComponent()
@@ -43,32 +63,24 @@ MainComponent::~MainComponent()
 //==============================================================================
 void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
 {
-    // This function will be called when the audio device is started, or when
-    // its settings (i.e. sample rate, block size, etc) are changed.
-
-    // You can use this function to initialise any resources you might need,
-    // but be careful - it will be called on the audio thread, not the GUI thread.
-
-    // For more details, see the help for AudioProcessor::prepareToPlay()
+    outputAnalyser->prepareToPlay (sampleRate, samplesPerBlockExpected);
+    transport.prepareToPlay (samplesPerBlockExpected, sampleRate);
 }
 
 void MainComponent::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
 {
-    // Your audio-processing code goes here!
+    transport.getNextAudioBlock (bufferToFill);
 
-    // For more details, see the help for AudioProcessor::getNextAudioBlock()
-
-    // Right now we are not producing any data, in which case we need to clear the buffer
-    // (to prevent the output of random noise)
-    bufferToFill.clearActiveBufferRegion();
+    AudioBuffer<float> proxy (bufferToFill.buffer->getArrayOfWritePointers(),
+                              bufferToFill.buffer->getNumChannels(),
+                              bufferToFill.startSample,
+                              bufferToFill.numSamples);
+    outputAnalyser->pushSamples (proxy);
 }
 
 void MainComponent::releaseResources()
 {
-    // This will be called when the audio device stops, or when it is being
-    // restarted due to a setting change.
-
-    // For more details, see the help for AudioProcessor::releaseResources()
+    transport.releaseResources();
 }
 
 //==============================================================================

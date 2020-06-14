@@ -67,7 +67,7 @@ node
         buildPlugin ("FoleysSynth", "")
     }
 
-    stage('FoleysSynth')
+    stage('PlayerExample')
     {
         buildPlugin ("PlayerExample", "")
     }
