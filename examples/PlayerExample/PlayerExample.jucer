@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="XZZjeE" name="PlayerExample" projectType="guiapp" jucerVersion="5.4.7">
+<JUCERPROJECT id="XZZjeE" name="PlayerExample" projectType="guiapp" jucerVersion="5.4.7"
+              projectLineFeed="&#10;">
   <MAINGROUP id="e5wKIA" name="PlayerExample">
     <GROUP id="{E2C06D57-202F-4FA6-0A4A-08B4DC0C4252}" name="Source">
       <FILE id="dyfiOX" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>

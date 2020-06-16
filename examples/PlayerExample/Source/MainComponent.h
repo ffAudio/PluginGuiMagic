@@ -15,12 +15,15 @@
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent   : public AudioAppComponent
+class MainComponent   : public AudioAppComponent,
+                        private Value::Listener
 {
 public:
     //==============================================================================
     MainComponent();
     ~MainComponent() override;
+
+    void loadFile (const File& file);
 
     //==============================================================================
     void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override;
@@ -32,16 +35,24 @@ public:
     void resized() override;
 
 private:
+
+    void valueChanged (Value&) override;
+
     //==============================================================================
     // Your private member variables go here...
 
+    AudioFormatManager manager;
+    File               lastFolder = File::getSpecialLocation (File::userMusicDirectory);
+
     std::unique_ptr<AudioFormatReaderSource> source;
     AudioTransportSource     transport;
+    Value                    gainValue { 1.0f };
 
     foleys::MagicGUIState    magicState;
     foleys::MagicGUIBuilder  magicBuilder { magicState };
 
-    foleys::MagicPlotSource* outputAnalyser { nullptr };
+    foleys::MagicPlotSource*  outputAnalyser { nullptr };
+    foleys::MagicLevelSource* outputLevel    { nullptr };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
