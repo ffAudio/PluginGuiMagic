@@ -16,7 +16,10 @@
     your controls and content.
 */
 class MainComponent   : public AudioAppComponent,
-                        private Value::Listener
+                        public Slider::Listener,
+                        private Value::Listener,
+                        private ChangeListener,
+                        private Timer
 {
 public:
     //==============================================================================
@@ -37,6 +40,11 @@ public:
 private:
 
     void valueChanged (Value&) override;
+    void sliderValueChanged (Slider*) override;
+    void changeListenerCallback (ChangeBroadcaster*) override;
+    void timerCallback() override;
+
+    void updatePositionSlider();
 
     //==============================================================================
     // Your private member variables go here...

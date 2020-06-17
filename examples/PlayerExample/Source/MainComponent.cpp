@@ -51,7 +51,11 @@ MainComponent::MainComponent()
 
     magicBuilder.setConfigTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
     magicBuilder.createGUI (*this);
+    updatePositionSlider();
+
     setSize (800, 600);
+
+    transport.addChangeListener (this);
 
 #if FOLEYS_SHOW_GUI_EDITOR_PALLETTE
     magicBuilder.attachToolboxToWindow (*this);
@@ -96,6 +100,48 @@ void MainComponent::valueChanged (Value& value)
 {
     if (value == gainValue)
         transport.setGain (gainValue.getValue());
+}
+
+void MainComponent::sliderValueChanged (Slider* slider)
+{
+    transport.setPosition (slider->getValue());
+}
+
+void MainComponent::changeListenerCallback (ChangeBroadcaster*)
+{
+    updatePositionSlider();
+}
+
+void MainComponent::updatePositionSlider()
+{
+    if (auto* item = magicBuilder.findGuiItemWithId ("position"))
+    {
+        if (auto* position = dynamic_cast<Slider*>(item->getWrappedComponent()))
+        {
+            if (transport.getLengthInSeconds() > 0)
+                position->setRange (0, transport.getLengthInSeconds());
+
+            position->textFromValueFunction = [](float value){
+                return String (int (value / 3600)) + ":" +
+                       String (int (value / 60) % 60).paddedLeft ('0', 2) + ":" +
+                       String (int(value) % 60).paddedLeft ('0', 2); };
+            position->addListener (this);
+
+            if (transport.isPlaying())
+                startTimerHz (4);
+            else
+                stopTimer();
+        }
+    }
+}
+
+void MainComponent::timerCallback()
+{
+    if (auto* item = magicBuilder.findGuiItemWithId ("position"))
+    {
+        if (auto* position = dynamic_cast<Slider*>(item->getWrappedComponent()))
+            position->setValue (transport.getCurrentPosition(), dontSendNotification);
+    }
 }
 
 void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
