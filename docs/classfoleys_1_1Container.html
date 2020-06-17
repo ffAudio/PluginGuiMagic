@@ -87,7 +87,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="classfoleys_1_1Container.html" title="The Container is a Decorator, that can hold multiple Components.">Container</a> is a <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>, that can hold multiple Components.  
+<p>The <a class="el" href="classfoleys_1_1Container.html" title="The Container is a GuiItem, that can hold multiple Components.">Container</a> is a <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>, that can hold multiple Components.  
  <a href="classfoleys_1_1Container.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Container:</div>
@@ -96,8 +96,8 @@ $(function() {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classfoleys_1_1Container__inherit__graph.png" border="0" usemap="#Container_inherit__map" alt="Inheritance graph"/></div>
 <map name="Container_inherit__map" id="Container_inherit__map">
-<area shape="rect" title="The Container is a Decorator, that can hold multiple Components." alt="" coords="5,80,84,107"/>
-<area shape="rect" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined." alt="" coords="5,5,84,32"/>
+<area shape="rect" title="The Container is a GuiItem, that can hold multiple Components." alt="" coords="5,80,84,107"/>
+<area shape="rect" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined." alt="" coords="11,5,79,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -113,90 +113,89 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9c8611ad2af5c15e42e564dca4327b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#ad9c8611ad2af5c15e42e564dca4327b8">Container</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder, juce::ValueTree node)</td></tr>
 <tr class="separator:ad9c8611ad2af5c15e42e564dca4327b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15965664c1822f421d4265386bb992b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a15965664c1822f421d4265386bb992b4">addChildItem</a> (std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; child)</td></tr>
-<tr class="memdesc:a15965664c1822f421d4265386bb992b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a child item.  <a href="classfoleys_1_1Container.html#a15965664c1822f421d4265386bb992b4">More...</a><br /></td></tr>
-<tr class="separator:a15965664c1822f421d4265386bb992b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0826d6449a9490da8db71129fc5c242d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a0826d6449a9490da8db71129fc5c242d">begin</a> ()</td></tr>
-<tr class="separator:a0826d6449a9490da8db71129fc5c242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca5d6f84de4b73e97559a9833241ca4c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#aca5d6f84de4b73e97559a9833241ca4c">end</a> ()</td></tr>
-<tr class="separator:aca5d6f84de4b73e97559a9833241ca4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44137bb65de2396875934e48a6ee5099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">update</a> () override</td></tr>
+<tr class="memdesc:a44137bb65de2396875934e48a6ee5099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the layout fo children.  <a href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">More...</a><br /></td></tr>
+<tr class="separator:a44137bb65de2396875934e48a6ee5099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbc635b711666ba3b3c534a995a53b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a5bbc635b711666ba3b3c534a995a53b4">addChildItem</a> (std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt; child)</td></tr>
+<tr class="memdesc:a5bbc635b711666ba3b3c534a995a53b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a child item.  <a href="classfoleys_1_1Container.html#a5bbc635b711666ba3b3c534a995a53b4">More...</a><br /></td></tr>
+<tr class="separator:a5bbc635b711666ba3b3c534a995a53b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76792772dc9a068662170ede52bcb7b9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a76792772dc9a068662170ede52bcb7b9">begin</a> ()</td></tr>
+<tr class="separator:a76792772dc9a068662170ede52bcb7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae42128f4528f8f0d4a988bc11af09ea4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#ae42128f4528f8f0d4a988bc11af09ea4">end</a> ()</td></tr>
+<tr class="separator:ae42128f4528f8f0d4a988bc11af09ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ca8489bb13b8d0a9c946b4fc3bcda80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a0ca8489bb13b8d0a9c946b4fc3bcda80">setLayoutMode</a> (<a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799b">Layout</a> layout)</td></tr>
 <tr class="memdesc:a0ca8489bb13b8d0a9c946b4fc3bcda80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout mode of the container.  <a href="classfoleys_1_1Container.html#a0ca8489bb13b8d0a9c946b4fc3bcda80">More...</a><br /></td></tr>
 <tr class="separator:a0ca8489bb13b8d0a9c946b4fc3bcda80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a134446b67cb69cce1680150976c411cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a134446b67cb69cce1680150976c411cb">setEditMode</a> (bool shouldEdit) override</td></tr>
-<tr class="memdesc:a134446b67cb69cce1680150976c411cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This switches this node and all it's descendents in the edit mode, which means, the components don't react, but instead you can move them around.  <a href="classfoleys_1_1Container.html#a134446b67cb69cce1680150976c411cb">More...</a><br /></td></tr>
-<tr class="separator:a134446b67cb69cce1680150976c411cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31cc081b3c77bc8855de79094fc1da42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
 <tr class="separator:a31cc081b3c77bc8855de79094fc1da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e51f776a08211cc55dfd180bb9ec36e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a1e51f776a08211cc55dfd180bb9ec36e">isContainer</a> () const override</td></tr>
 <tr class="separator:a1e51f776a08211cc55dfd180bb9ec36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452718cb63f74ce89fa38277e4b4028c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">createSubComponents</a> () override</td></tr>
+<tr class="separator:a452718cb63f74ce89fa38277e4b4028c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6192a85e736e937a12161b7d2e34cc4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">updateLayout</a> () override</td></tr>
 <tr class="memdesc:a6192a85e736e937a12161b7d2e34cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will trigger a recalculation of the children layout regardless of resized.  <a href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">More...</a><br /></td></tr>
 <tr class="separator:a6192a85e736e937a12161b7d2e34cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab48014aa86ec50d567abad984743d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#aab48014aa86ec50d567abad984743d08">updateContinuousRedraw</a> ()</td></tr>
 <tr class="separator:aab48014aa86ec50d567abad984743d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98623597ebb4532072f928a59d9b0aa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a98623597ebb4532072f928a59d9b0aa0">setRefreshRate</a> (int refreshRate)</td></tr>
-<tr class="memdesc:a98623597ebb4532072f928a59d9b0aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If that container contains MacicPlotComponents, it will be repainted with that FPS.  <a href="classfoleys_1_1Container.html#a98623597ebb4532072f928a59d9b0aa0">More...</a><br /></td></tr>
-<tr class="separator:a98623597ebb4532072f928a59d9b0aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf053e8c92c17e8d216d8da48046f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#afcf053e8c92c17e8d216d8da48046f02">configureFlexBox</a> (const juce::ValueTree &amp;node)</td></tr>
 <tr class="separator:afcf053e8c92c17e8d216d8da48046f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classfoleys_1_1Decorator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfoleys_1_1Decorator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a></td></tr>
-<tr class="memitem:a417384a1557ba91f6166b804264dbf27 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a417384a1557ba91f6166b804264dbf27">Decorator</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder, juce::ValueTree node, std::unique_ptr&lt; juce::Component &gt; wrapped={})</td></tr>
-<tr class="separator:a417384a1557ba91f6166b804264dbf27 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f3f2116dea564fd1c4298798b8a5bcb inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">configureDecorator</a> (<a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;stylesheet, const juce::ValueTree &amp;node)</td></tr>
-<tr class="memdesc:a3f3f2116dea564fd1c4298798b8a5bcb inherit pub_methods_classfoleys_1_1Decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set the margins/borders etc.  <a href="classfoleys_1_1Decorator.html#a3f3f2116dea564fd1c4298798b8a5bcb">More...</a><br /></td></tr>
-<tr class="separator:a3f3f2116dea564fd1c4298798b8a5bcb inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">configureComponent</a> (<a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> &amp;stylesheet, const juce::ValueTree &amp;node)</td></tr>
-<tr class="memdesc:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will get the necessary information from the stylesheet, using inheritance of nodes if needed, to set specific properties for the wrapped component.  <a href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">More...</a><br /></td></tr>
-<tr class="separator:a2161ef5499d6601bf4b5aebaa002ff84 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2c219a2cbbd6b61e7c41564dac6169 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a4f2c219a2cbbd6b61e7c41564dac6169">paint</a> (juce::Graphics &amp;g) override</td></tr>
-<tr class="separator:a4f2c219a2cbbd6b61e7c41564dac6169 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cc081b3c77bc8855de79094fc1da42 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
-<tr class="separator:a31cc081b3c77bc8855de79094fc1da42 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf75fb1301a3b6af50a6217e60f09f1f inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#aaf75fb1301a3b6af50a6217e60f09f1f">configureFlexBoxItem</a> (const juce::ValueTree &amp;node)</td></tr>
-<tr class="separator:aaf75fb1301a3b6af50a6217e60f09f1f inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b677536a60aced3dd19089185e823fa inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Component *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a3b677536a60aced3dd19089185e823fa">getWrappedComponent</a> ()</td></tr>
-<tr class="memdesc:a3b677536a60aced3dd19089185e823fa inherit pub_methods_classfoleys_1_1Decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows accessing the Component inside that <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>.  <a href="classfoleys_1_1Decorator.html#a3b677536a60aced3dd19089185e823fa">More...</a><br /></td></tr>
-<tr class="separator:a3b677536a60aced3dd19089185e823fa inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d53e0f11290c1c9d03fcd30545886a7 inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">const juce::ValueTree &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a1d53e0f11290c1c9d03fcd30545886a7">getConfigNode</a> () const</td></tr>
-<tr class="separator:a1d53e0f11290c1c9d03fcd30545886a7 inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af485f4f521ebf5c7b439b787439b667d inherit pub_methods_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfoleys_1_1Decorator_1_1ClientBounds.html">ClientBounds</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#af485f4f521ebf5c7b439b787439b667d">getClientBounds</a> () const</td></tr>
-<tr class="separator:af485f4f521ebf5c7b439b787439b667d inherit pub_methods_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64886d23ebfdd75ae21930e09a14bba7"><td class="memItemLeft" align="right" valign="top">juce::Component *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a64886d23ebfdd75ae21930e09a14bba7">getWrappedComponent</a> () override</td></tr>
+<tr class="memdesc:a64886d23ebfdd75ae21930e09a14bba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows accessing the Component inside that <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>.  <a href="classfoleys_1_1Container.html#a64886d23ebfdd75ae21930e09a14bba7">More...</a><br /></td></tr>
+<tr class="separator:a64886d23ebfdd75ae21930e09a14bba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eef3252ec8c214bc4fde840c81c64c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a7eef3252ec8c214bc4fde840c81c64c0">findGuiItemWithId</a> (const juce::String &amp;name) override</td></tr>
+<tr class="memdesc:a7eef3252ec8c214bc4fde840c81c64c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a Component through the tree.  <a href="classfoleys_1_1Container.html#a7eef3252ec8c214bc4fde840c81c64c0">More...</a><br /></td></tr>
+<tr class="separator:a7eef3252ec8c214bc4fde840c81c64c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classfoleys_1_1GuiItem"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfoleys_1_1GuiItem')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a></td></tr>
+<tr class="memitem:afcf6f2dd9b4083d1d56deb14d675e43c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder, juce::ValueTree node)</td></tr>
+<tr class="separator:afcf6f2dd9b4083d1d56deb14d675e43c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48e716a38a013f59c0556fc66da381c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ad48e716a38a013f59c0556fc66da381c">getSettableProperties</a> () const</td></tr>
+<tr class="memdesc:ad48e716a38a013f59c0556fc66da381c inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to return each settable option the designer should be able to configure on your component.  <a href="classfoleys_1_1GuiItem.html#ad48e716a38a013f59c0556fc66da381c">More...</a><br /></td></tr>
+<tr class="separator:ad48e716a38a013f59c0556fc66da381c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6959c29fd255c269e76a9f6b6d4fc998 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a6959c29fd255c269e76a9f6b6d4fc998">setColourTranslation</a> (std::vector&lt; std::pair&lt; juce::String, int &gt;&gt; mapping)</td></tr>
+<tr class="memdesc:a6959c29fd255c269e76a9f6b6d4fc998 inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each factory you can register a translation table, which will forward the colours from the <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> to the Components.  <a href="classfoleys_1_1GuiItem.html#a6959c29fd255c269e76a9f6b6d4fc998">More...</a><br /></td></tr>
+<tr class="separator:a6959c29fd255c269e76a9f6b6d4fc998 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa363acc9a1e1bed7477c4246766b8894 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#aa363acc9a1e1bed7477c4246766b8894">getColourNames</a> () const</td></tr>
+<tr class="memdesc:aa363acc9a1e1bed7477c4246766b8894 inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the names of configurable colours.  <a href="classfoleys_1_1GuiItem.html#aa363acc9a1e1bed7477c4246766b8894">More...</a><br /></td></tr>
+<tr class="separator:aa363acc9a1e1bed7477c4246766b8894 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af991d47099426335ce00b00072524195 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">getProperty</a> (const juce::Identifier &amp;property)</td></tr>
+<tr class="memdesc:af991d47099426335ce00b00072524195 inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Look up a value through the DOM and CSS.  <a href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">More...</a><br /></td></tr>
+<tr class="separator:af991d47099426335ce00b00072524195 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef237f655db41e906c13d14267512be inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicGUIState.html">MagicGUIState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#aaef237f655db41e906c13d14267512be">getMagicState</a> ()</td></tr>
+<tr class="separator:aaef237f655db41e906c13d14267512be inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a3edb3ee73b494195850a7a0081ad1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">updateInternal</a> ()</td></tr>
+<tr class="memdesc:ae7a3edb3ee73b494195850a7a0081ad1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reread properties from the config ValueTree.  <a href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">More...</a><br /></td></tr>
+<tr class="separator:ae7a3edb3ee73b494195850a7a0081ad1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad86e5c3f4edcc1277aabaa4bb71e4b4 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#aad86e5c3f4edcc1277aabaa4bb71e4b4">paint</a> (juce::Graphics &amp;g) final</td></tr>
+<tr class="separator:aad86e5c3f4edcc1277aabaa4bb71e4b4 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cc081b3c77bc8855de79094fc1da42 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a31cc081b3c77bc8855de79094fc1da42">resized</a> () override</td></tr>
+<tr class="separator:a31cc081b3c77bc8855de79094fc1da42 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf75fb1301a3b6af50a6217e60f09f1f inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#aaf75fb1301a3b6af50a6217e60f09f1f">configureFlexBoxItem</a> (const juce::ValueTree &amp;node)</td></tr>
+<tr class="separator:aaf75fb1301a3b6af50a6217e60f09f1f inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c76c970e216fac326c9b91f4805a4ff inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::Rectangle&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a5c76c970e216fac326c9b91f4805a4ff">getClientBounds</a> () const</td></tr>
+<tr class="memdesc:a5c76c970e216fac326c9b91f4805a4ff inherit pub_methods_classfoleys_1_1GuiItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounds of the wrapped Component.  <a href="classfoleys_1_1GuiItem.html#a5c76c970e216fac326c9b91f4805a4ff">More...</a><br /></td></tr>
+<tr class="separator:a5c76c970e216fac326c9b91f4805a4ff inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf631f77b35796b9ad189887c129d381 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#aaf631f77b35796b9ad189887c129d381">getTabCaption</a> (const juce::String &amp;defaultName) const</td></tr>
+<tr class="separator:aaf631f77b35796b9ad189887c129d381 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b594ff40a2c4b2d1739f22b699666d1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a1b594ff40a2c4b2d1739f22b699666d1">getTabColour</a> () const</td></tr>
+<tr class="separator:a1b594ff40a2c4b2d1739f22b699666d1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e59be9e76ef10c99b1dcf64797e9c2c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::FlexItem &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a1e59be9e76ef10c99b1dcf64797e9c2c">getFlexItem</a> ()</td></tr>
+<tr class="separator:a1e59be9e76ef10c99b1dcf64797e9c2c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classfoleys_1_1Decorator"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfoleys_1_1Decorator')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a></td></tr>
-<tr class="memitem:af046f40a1530d16c28708754586ac5ef inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#af046f40a1530d16c28708754586ac5ef">backgroundColour</a> { juce::Colours::darkgrey }</td></tr>
-<tr class="separator:af046f40a1530d16c28708754586ac5ef inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33865e93b92806c51bbc72a7394fce25 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a33865e93b92806c51bbc72a7394fce25">borderColour</a> { juce::Colours::silver }</td></tr>
-<tr class="separator:a33865e93b92806c51bbc72a7394fce25 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea1419deaadb54e70abae7fe5aada09e inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e">margin</a> = 5.0f</td></tr>
-<tr class="separator:aea1419deaadb54e70abae7fe5aada09e inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dfdecd571356742820e39fdf5a2847b inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a0dfdecd571356742820e39fdf5a2847b">padding</a> = 5.0f</td></tr>
-<tr class="separator:a0dfdecd571356742820e39fdf5a2847b inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46144f4257b4f5f716aa872e7b49a0ef inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a46144f4257b4f5f716aa872e7b49a0ef">border</a> = 0.0f</td></tr>
-<tr class="separator:a46144f4257b4f5f716aa872e7b49a0ef inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5050a760c11da521cd4aee6336f6529f inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a5050a760c11da521cd4aee6336f6529f">radius</a> = 5.0f</td></tr>
-<tr class="separator:a5050a760c11da521cd4aee6336f6529f inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af056aafb61b8ca92b850a9722257846c inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#af056aafb61b8ca92b850a9722257846c">caption</a></td></tr>
-<tr class="separator:af056aafb61b8ca92b850a9722257846c inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94ef5062277b8863857ea77234c99843 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Justification&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a94ef5062277b8863857ea77234c99843">justification</a> = juce::Justification::centredTop</td></tr>
-<tr class="separator:a94ef5062277b8863857ea77234c99843 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b08ca62bfe68edd6eb04acf5d839cdb inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a1b08ca62bfe68edd6eb04acf5d839cdb">captionSize</a> = 20.0f</td></tr>
-<tr class="separator:a1b08ca62bfe68edd6eb04acf5d839cdb inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad14444d19fe0b02ec4d8592cd206877b inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#ad14444d19fe0b02ec4d8592cd206877b">captionColour</a> = juce::Colours::silver</td></tr>
-<tr class="separator:ad14444d19fe0b02ec4d8592cd206877b inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd38f32b7341e06141db7625221b24f5 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#acd38f32b7341e06141db7625221b24f5">tabCaption</a></td></tr>
-<tr class="separator:acd38f32b7341e06141db7625221b24f5 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abac684b637687703a40bd6432c2f49c1 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#abac684b637687703a40bd6432c2f49c1">tabColour</a></td></tr>
-<tr class="separator:abac684b637687703a40bd6432c2f49c1 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cf8e179ab02bb4a83b0a2e380d468a inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top">juce::FlexItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#a44cf8e179ab02bb4a83b0a2e380d468a">flexItem</a> { juce::FlexItem (*this).withFlex (1.0f) }</td></tr>
-<tr class="separator:a44cf8e179ab02bb4a83b0a2e380d468a inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c2bad28688c00046d2fc4e4d032047 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Decorator.html#ad7c2bad28688c00046d2fc4e4d032047">magicBuilder</a></td></tr>
-<tr class="separator:ad7c2bad28688c00046d2fc4e4d032047 inherit pub_attribs_classfoleys_1_1Decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classfoleys_1_1GuiItem"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classfoleys_1_1GuiItem')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a></td></tr>
+<tr class="memitem:ad7c2bad28688c00046d2fc4e4d032047 inherit pub_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">magicBuilder</a></td></tr>
+<tr class="separator:ad7c2bad28688c00046d2fc4e4d032047 inherit pub_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classfoleys_1_1GuiItem"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfoleys_1_1GuiItem')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a></td></tr>
+<tr class="memitem:a3c8c453d9c939917013c01fd2e09ab29 inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">configNode</a></td></tr>
+<tr class="separator:a3c8c453d9c939917013c01fd2e09ab29 inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44cf8e179ab02bb4a83b0a2e380d468a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::FlexItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a44cf8e179ab02bb4a83b0a2e380d468a">flexItem</a> { juce::FlexItem (*this).withFlex (1.0f) }</td></tr>
+<tr class="separator:a44cf8e179ab02bb4a83b0a2e380d468a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd1264e9f7ab0a402841a81fdc2128c inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; juce::String, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a3fd1264e9f7ab0a402841a81fdc2128c">colourTranslation</a></td></tr>
+<tr class="separator:a3fd1264e9f7ab0a402841a81fdc2128c inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="classfoleys_1_1Container.html" title="The Container is a Decorator, that can hold multiple Components.">Container</a> is a <a class="el" href="classfoleys_1_1Decorator.html" title="The Decorator class will draw borders and descriptions around widgets, if defined.">Decorator</a>, that can hold multiple Components. </p>
+<div class="textblock"><p>The <a class="el" href="classfoleys_1_1Container.html" title="The Container is a GuiItem, that can hold multiple Components.">Container</a> is a <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>, that can hold multiple Components. </p>
 <p>In the editor it is seen as "View". With the setting "display" the layout strategy can be chosen. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a1b7da28ed84c0763e8f92cde2df4799b"></a>
@@ -256,8 +255,39 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a15965664c1822f421d4265386bb992b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15965664c1822f421d4265386bb992b4">&#9670;&nbsp;</a></span>addChildItem()</h2>
+<a id="a44137bb65de2396875934e48a6ee5099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44137bb65de2396875934e48a6ee5099">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the layout fo children. </p>
+
+<p>Implements <a class="el" href="classfoleys_1_1GuiItem.html#a99b02345a8a15d3c5ea2844a2253f510">GuiItem</a>.</p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, and <a class="el" href="classfoleys_1_1Container.html#afcf053e8c92c17e8d216d8da48046f02">Container::configureFlexBox()</a>.</p>
+
+</div>
+</div>
+<a id="a5bbc635b711666ba3b3c534a995a53b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbc635b711666ba3b3c534a995a53b4">&#9670;&nbsp;</a></span>addChildItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void addChildItem </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt;&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt;&#160;</td>
           <td class="paramname"><em>child</em></td><td>)</td>
           <td></td>
         </tr>
@@ -277,14 +307,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0826d6449a9490da8db71129fc5c242d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0826d6449a9490da8db71129fc5c242d">&#9670;&nbsp;</a></span>begin()</h2>
+<a id="a76792772dc9a068662170ede52bcb7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76792772dc9a068662170ede52bcb7b9">&#9670;&nbsp;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; &gt;::iterator begin </td>
+          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt; &gt;::iterator begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -294,14 +324,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aca5d6f84de4b73e97559a9833241ca4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca5d6f84de4b73e97559a9833241ca4c">&#9670;&nbsp;</a></span>end()</h2>
+<a id="ae42128f4528f8f0d4a988bc11af09ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42128f4528f8f0d4a988bc11af09ea4">&#9670;&nbsp;</a></span>end()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1Decorator.html">Decorator</a> &gt; &gt;::iterator end </td>
+          <td class="memname">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> &gt; &gt;::iterator end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -329,39 +359,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Sets the layout mode of the container. </p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba5a9bcd254ef990f0d957e9e1c1848663">Container::Tabbed</a>.</p>
-
-</div>
-</div>
-<a id="a134446b67cb69cce1680150976c411cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a134446b67cb69cce1680150976c411cb">&#9670;&nbsp;</a></span>setEditMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setEditMode </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>shouldEdit</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This switches this node and all it's descendents in the edit mode, which means, the components don't react, but instead you can move them around. </p>
-
-<p>Reimplemented from <a class="el" href="classfoleys_1_1Decorator.html#a2e70a84b45bfa09b89d00d54e1bbf1d1">Decorator</a>.</p>
-
-<p class="reference">References <a class="el" href="classfoleys_1_1Decorator.html#a2e70a84b45bfa09b89d00d54e1bbf1d1">Decorator::setEditMode()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba5a9bcd254ef990f0d957e9e1c1848663">Container::Tabbed</a>, and <a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">Container::updateLayout()</a>.</p>
 
 </div>
 </div>
@@ -415,7 +413,36 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classfoleys_1_1Decorator.html#ac8f7adb49b91d04a161dd7f9671a4e08">Decorator</a>.</p>
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#ac8f7adb49b91d04a161dd7f9671a4e08">GuiItem</a>.</p>
+
+</div>
+</div>
+<a id="a452718cb63f74ce89fa38277e4b4028c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452718cb63f74ce89fa38277e4b4028c">&#9670;&nbsp;</a></span>createSubComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createSubComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#a8c50b69b47c901f9b08e510333c55169">GuiItem</a>.</p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a2a06ca0ff5ac25ee8e29a7c8615ee1c4">MagicGUIBuilder::createGuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, <a class="el" href="classfoleys_1_1Container.html#aab48014aa86ec50d567abad984743d08">Container::updateContinuousRedraw()</a>, and <a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">Container::updateLayout()</a>.</p>
 
 </div>
 </div>
@@ -444,11 +471,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>This will trigger a recalculation of the children layout regardless of resized. </p>
 
-<p>Reimplemented from <a class="el" href="classfoleys_1_1Decorator.html#a1d6370ebf9c300d4b0bffe8b8a821731">Decorator</a>.</p>
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#a1d6370ebf9c300d4b0bffe8b8a821731">GuiItem</a>.</p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2">Container::FlexBox</a>, <a class="el" href="classfoleys_1_1Decorator.html#af485f4f521ebf5c7b439b787439b667d">Decorator::getClientBounds()</a>, and <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba5a9bcd254ef990f0d957e9e1c1848663">Container::Tabbed</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2">Container::FlexBox</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a5c76c970e216fac326c9b91f4805a4ff">GuiItem::getClientBounds()</a>, and <a class="el" href="classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba5a9bcd254ef990f0d957e9e1c1848663">Container::Tabbed</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a31cc081b3c77bc8855de79094fc1da42">Container::resized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>, <a class="el" href="classfoleys_1_1Container.html#a31cc081b3c77bc8855de79094fc1da42">Container::resized()</a>, and <a class="el" href="classfoleys_1_1Container.html#a0ca8489bb13b8d0a9c946b4fc3bcda80">Container::setLayoutMode()</a>.</p>
 
 </div>
 </div>
@@ -467,36 +494,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a98623597ebb4532072f928a59d9b0aa0">Container::setRefreshRate()</a>.</p>
-
-</div>
-</div>
-<a id="a98623597ebb4532072f928a59d9b0aa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98623597ebb4532072f928a59d9b0aa0">&#9670;&nbsp;</a></span>setRefreshRate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setRefreshRate </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>refreshRate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If that container contains MacicPlotComponents, it will be repainted with that FPS. </p>
-<p>The components will be checked, if a redraw is necessary.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">refreshRate</td><td>is the refresh rate to redraw </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">References <a class="el" href="classfoleys_1_1Container.html#aab48014aa86ec50d567abad984743d08">Container::updateContinuousRedraw()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>.</p>
 
 </div>
 </div>
@@ -516,7 +514,70 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab6fb1eec48bdac436d67f149ace49038">MagicGUIBuilder::getStyleProperty()</a>, and <a class="el" href="classfoleys_1_1Decorator.html#ad7c2bad28688c00046d2fc4e4d032047">Decorator::magicBuilder</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab6fb1eec48bdac436d67f149ace49038">MagicGUIBuilder::getStyleProperty()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">Container::update()</a>.</p>
+
+</div>
+</div>
+<a id="a64886d23ebfdd75ae21930e09a14bba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64886d23ebfdd75ae21930e09a14bba7">&#9670;&nbsp;</a></span>getWrappedComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::Component* getWrappedComponent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allows accessing the Component inside that <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>. </p>
+<p>Don't keep this pointer! </p>
+
+<p>Implements <a class="el" href="classfoleys_1_1GuiItem.html#af185d08727bd6532babf4d6ae784b7c5">GuiItem</a>.</p>
+
+</div>
+</div>
+<a id="a7eef3252ec8c214bc4fde840c81c64c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eef3252ec8c214bc4fde840c81c64c0">&#9670;&nbsp;</a></span>findGuiItemWithId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> * findGuiItemWithId </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lookup a Component through the tree. </p>
+<p>It will return the first with that id regardless if there is another one. We discourage using that function, because that Component can be deleted and recreated at any time without notice. </p>
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#aee2b32e43d9fc686d99b51daea2afeff">GuiItem</a>.</p>
 
 </div>
 </div>
@@ -527,7 +588,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 00:02:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

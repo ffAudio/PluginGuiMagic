@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['radius_733',['radius',['../classfoleys_1_1Decorator.html#a5050a760c11da521cd4aee6336f6529f',1,'foleys::Decorator']]],
-  ['remove_734',['remove',['../classfoleys_1_1StylePropertyComponent.html#a5469c38701cf16f2998f8b47bf600905',1,'foleys::StylePropertyComponent']]]
+  ['type_775',['type',['../structfoleys_1_1SettableProperty.html#a8448759cd6a9859ce5056be8261b8d69',1,'foleys::SettableProperty']]]
 ];

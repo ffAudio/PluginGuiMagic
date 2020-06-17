@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['magicbuilder_721',['magicBuilder',['../classfoleys_1_1Decorator.html#ad7c2bad28688c00046d2fc4e4d032047',1,'foleys::Decorator']]],
-  ['margin_722',['margin',['../classfoleys_1_1Decorator.html#aea1419deaadb54e70abae7fe5aada09e',1,'foleys::Decorator']]]
+  ['name_753',['name',['../structfoleys_1_1SettableProperty.html#a6b9e3d5246e6cb71fa29bdcd10b75336',1,'foleys::SettableProperty']]],
+  ['node_754',['node',['../classfoleys_1_1StylePropertyComponent.html#adb83a582ca7714adbe80c137cbe51bd8',1,'foleys::StylePropertyComponent::node()'],['../structfoleys_1_1SettableProperty.html#afdf2d81eff053ac6bf704b137f3bd107',1,'foleys::SettableProperty::node()']]]
 ];

@@ -80,7 +80,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">foleys_MagicGUIBuilder.h File Reference</div>  </div>
 </div><!--header-->
@@ -96,11 +97,40 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefoleys"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefoleys.html">foleys</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a08deeebcb4571590642ea36acc9c1637"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="foleys__MagicGUIBuilder_8h.html#a08deeebcb4571590642ea36acc9c1637">FOLEYS_DECLARE_GUI_FACTORY</a>(itemName)</td></tr>
+<tr class="separator:a08deeebcb4571590642ea36acc9c1637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a08deeebcb4571590642ea36acc9c1637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08deeebcb4571590642ea36acc9c1637">&#9670;&nbsp;</a></span>FOLEYS_DECLARE_GUI_FACTORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FOLEYS_DECLARE_GUI_FACTORY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">itemName</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> std::unique_ptr&lt;GuiItem&gt; factory (<a class="code" href="classfoleys_1_1MagicGUIBuilder.html">foleys::MagicGUIBuilder</a>&amp; builder, <span class="keyword">const</span> juce::ValueTree&amp; node)\</div>
+<div class="line">{\</div>
+<div class="line">    return std::make_unique&lt;itemName&gt;(builder, node);\</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
+<div class="ttc" id="aclassfoleys_1_1MagicGUIBuilder_html"><div class="ttname"><a href="classfoleys_1_1MagicGUIBuilder.html">foleys::MagicGUIBuilder</a></div><div class="ttdoc">The MagicGUIBuilder is responsible to recreate the GUI from a single ValueTree.</div><div class="ttdef"><b>Definition:</b> foleys_MagicGUIBuilder.h:48</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 00:02:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

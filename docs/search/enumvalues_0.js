@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['assetfile_745',['AssetFile',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a98d2b021deecf4de5f5df3f501d9ca9b',1,'foleys::SettableProperty']]]
+  ['backgroundcolourid_780',['backgroundColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094a4cf91a9c6ef5de7c3b1ab2c2f2bbe5da',1,'foleys::MagicLevelMeter']]],
+  ['barbackgroundcolourid_781',['barBackgroundColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094a95067a1e8f16928d4d3ddc92e9567646',1,'foleys::MagicLevelMeter']]],
+  ['barfillcolourid_782',['barFillColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094aedbec93d7edd0187ef63a72971dd7a41',1,'foleys::MagicLevelMeter']]]
 ];

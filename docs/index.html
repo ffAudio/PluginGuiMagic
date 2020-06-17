@@ -78,11 +78,11 @@ $(function() {
 <div class="title">foleys_gui_magic </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__Users_daniel_Developer_PluginGuiMagic_modules_foleys_gui_magic_README"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__Users_daniel_Developer_Foleys_PluginGuiMagic_modules_foleys_gui_magic_README"></a></p>
 <p>This module allows to create GUIs without any coding. It is created with a DOM model that provides a hierarchical information, and a CSS cascading stylesheet to define rules for the appeareance of the GUI.</p>
 <p>There will be a drag and drop editor to add GUI elements, and to connect to parameters of your AudioProcessorValueTreeState. Also an editor in the style of FireBug to investigate the individual properties, and how they were obtained/calculated.</p>
 <h1>Setup </h1>
-<p>To use the WYSWYG plugin editor, add this module via Projucer to your JUCE project. Remove the PluginEditor, that was automatically created by Projucer. Instead add a member called <code><a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is the docking station for the MagicPluginEditor.">foleys::MagicProcessorState</a></code> to your processor and create a <code><a class="el" href="classfoleys_1_1MagicPluginEditor.html" title="This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.">foleys::MagicPluginEditor</a></code> in the <code>createEditor()</code> method of your processor:</p>
+<p>To use the WYSWYG plugin editor, add this module via Projucer to your JUCE project. Remove the PluginEditor, that was automatically created by Projucer. Instead add a member called <code><a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is a subclass of MagicGUIState, that adds AudioProcessor specific functionali...">foleys::MagicProcessorState</a></code> to your processor and create a <code><a class="el" href="classfoleys_1_1MagicPluginEditor.html" title="This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.">foleys::MagicPluginEditor</a></code> in the <code>createEditor()</code> method of your processor:</p>
 <div class="fragment"><div class="line">// assumes an AudioProcessorValueTreeState named treeState</div>
 <div class="line">foleys::MagicProcessorState magicState { *this, treeState };</div>
 <div class="line"> </div>
@@ -149,7 +149,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 00:02:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

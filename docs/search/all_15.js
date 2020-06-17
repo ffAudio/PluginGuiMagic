@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['xydotcolourid_355',['xyDotColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a35e1983a8288388cba6ad90ca52abae9',1,'foleys::XYDragComponent']]],
-  ['xydotovercolourid_356',['xyDotOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a5b2193d6366ad0d01c98bcec4a248b5d',1,'foleys::XYDragComponent']]],
-  ['xydragcomponent_357',['XYDragComponent',['../classfoleys_1_1XYDragComponent.html',1,'XYDragComponent'],['../classfoleys_1_1XYDragComponent.html#afc291db8b5e3bb17f9d1f47d4709be92',1,'foleys::XYDragComponent::XYDragComponent()']]],
-  ['xyhorizontalcolourid_358',['xyHorizontalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ae1b97fdda39366e72d80a50f9eed46b2',1,'foleys::XYDragComponent']]],
-  ['xyhorizontalovercolourid_359',['xyHorizontalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ab94f841dbc097a65237d8742d8e9bee6',1,'foleys::XYDragComponent']]],
-  ['xyverticalcolourid_360',['xyVerticalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa2a77c5bc9ca8fcb48e55937e50c8e23',1,'foleys::XYDragComponent']]],
-  ['xyverticalovercolourid_361',['xyVerticalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abfbd97e88983554efdde5d1234340fb2',1,'foleys::XYDragComponent']]]
+  ['xydotcolourid_368',['xyDotColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a35e1983a8288388cba6ad90ca52abae9',1,'foleys::XYDragComponent']]],
+  ['xydotovercolourid_369',['xyDotOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a5b2193d6366ad0d01c98bcec4a248b5d',1,'foleys::XYDragComponent']]],
+  ['xydragcomponent_370',['XYDragComponent',['../classfoleys_1_1XYDragComponent.html',1,'XYDragComponent'],['../classfoleys_1_1XYDragComponent.html#ad7cb15bb3440fae3f35d366e1b85b631',1,'foleys::XYDragComponent::XYDragComponent()']]],
+  ['xydraggeritem_371',['XYDraggerItem',['../classfoleys_1_1XYDraggerItem.html',1,'XYDraggerItem'],['../classfoleys_1_1XYDraggerItem.html#aaf6cb4d659f0f9360b335da4adac0ba0',1,'foleys::XYDraggerItem::XYDraggerItem()']]],
+  ['xyhorizontalcolourid_372',['xyHorizontalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ae1b97fdda39366e72d80a50f9eed46b2',1,'foleys::XYDragComponent']]],
+  ['xyhorizontalovercolourid_373',['xyHorizontalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094ab94f841dbc097a65237d8742d8e9bee6',1,'foleys::XYDragComponent']]],
+  ['xyverticalcolourid_374',['xyVerticalColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa2a77c5bc9ca8fcb48e55937e50c8e23',1,'foleys::XYDragComponent']]],
+  ['xyverticalovercolourid_375',['xyVerticalOverColourId',['../classfoleys_1_1XYDragComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abfbd97e88983554efdde5d1234340fb2',1,'foleys::XYDragComponent']]]
 ];

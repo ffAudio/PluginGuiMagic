@@ -92,8 +92,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a66e4a5f102c0a033caa2cb82d62bfabe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a66e4a5f102c0a033caa2cb82d62bfabe">Stylesheet</a> ()=default</td></tr>
-<tr class="separator:a66e4a5f102c0a033caa2cb82d62bfabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4ff3b614c742146a07a000d4cd2993"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#acc4ff3b614c742146a07a000d4cd2993">Stylesheet</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder)</td></tr>
+<tr class="separator:acc4ff3b614c742146a07a000d4cd2993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aace02b70dd029f2d05a7decb09a49f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aace02b70dd029f2d05a7decb09a49f68">setStyle</a> (const juce::ValueTree &amp;node)</td></tr>
 <tr class="memdesc:aace02b70dd029f2d05a7decb09a49f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> node in the XML can contain several Styles to select from.  <a href="classfoleys_1_1Stylesheet.html#aace02b70dd029f2d05a7decb09a49f68">More...</a><br /></td></tr>
 <tr class="separator:aace02b70dd029f2d05a7decb09a49f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,9 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a82e0001970c6441bc76629f1d901f8b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a82e0001970c6441bc76629f1d901f8b8">updateValidRanges</a> ()</td></tr>
 <tr class="memdesc:a82e0001970c6441bc76629f1d901f8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the range, in which the properties won't change due to conditional classes.  <a href="classfoleys_1_1Stylesheet.html#a82e0001970c6441bc76629f1d901f8b8">More...</a><br /></td></tr>
 <tr class="separator:a82e0001970c6441bc76629f1d901f8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae545ab0a4ca5ec8fbda3fca07dbe2eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ae545ab0a4ca5ec8fbda3fca07dbe2eb0">updateStyleClasses</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder)</td></tr>
-<tr class="memdesc:ae545ab0a4ca5ec8fbda3fca07dbe2eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the style classes and connect variables.  <a href="classfoleys_1_1Stylesheet.html#ae545ab0a4ca5ec8fbda3fca07dbe2eb0">More...</a><br /></td></tr>
-<tr class="separator:ae545ab0a4ca5ec8fbda3fca07dbe2eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dfbc045e15a29971db1e1b990939bd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a6dfbc045e15a29971db1e1b990939bd5">updateStyleClasses</a> ()</td></tr>
+<tr class="memdesc:a6dfbc045e15a29971db1e1b990939bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the style classes and connect variables.  <a href="classfoleys_1_1Stylesheet.html#a6dfbc045e15a29971db1e1b990939bd5">More...</a><br /></td></tr>
+<tr class="separator:a6dfbc045e15a29971db1e1b990939bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8278afaae8ebf326442e9bb81209f359"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">getStyleProperty</a> (const juce::Identifier &amp;name, const juce::ValueTree &amp;node, bool inherit=true, juce::ValueTree *definedHere=nullptr) const</td></tr>
 <tr class="memdesc:a8278afaae8ebf326442e9bb81209f359"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method traverses the dom and checks each style, if that property was defined.  <a href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">More...</a><br /></td></tr>
 <tr class="separator:a8278afaae8ebf326442e9bb81209f359"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,27 +152,20 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> class represents all style information. </p>
 <p>It is organised in types, which corresponds to the Components created, classes that can be referenced by any node, and nodes referenced by id. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a66e4a5f102c0a033caa2cb82d62bfabe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66e4a5f102c0a033caa2cb82d62bfabe">&#9670;&nbsp;</a></span>Stylesheet()</h2>
+<a id="acc4ff3b614c742146a07a000d4cd2993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4ff3b614c742146a07a000d4cd2993">&#9670;&nbsp;</a></span>Stylesheet()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classfoleys_1_1Stylesheet.html">Stylesheet</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;&#160;</td>
+          <td class="paramname"><em>builder</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -260,8 +253,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae545ab0a4ca5ec8fbda3fca07dbe2eb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae545ab0a4ca5ec8fbda3fca07dbe2eb0">&#9670;&nbsp;</a></span>updateStyleClasses()</h2>
+<a id="a6dfbc045e15a29971db1e1b990939bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dfbc045e15a29971db1e1b990939bd5">&#9670;&nbsp;</a></span>updateStyleClasses()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,8 +262,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void updateStyleClasses </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;&#160;</td>
-          <td class="paramname"><em>builder</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -333,7 +325,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a2161ef5499d6601bf4b5aebaa002ff84">Decorator::configureComponent()</a>, <a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">Stylesheet::getLookAndFeel()</a>, and <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Stylesheet.html#a04cc50191b562391a841c8d1ee03b776">Stylesheet::getLookAndFeel()</a>, and <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>.</p>
 
 </div>
 </div>
@@ -442,6 +434,8 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a6eb3d15cc5e954c43be27fd57a4b7a01">Decorator::configure()</a>.</p>
 
 </div>
 </div>
@@ -603,7 +597,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>This creates a default stylesheet from scratch, to allow the default GUI to look sensible. </p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicGUIBuilder::updateStylesheet()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIState.html#adf84e3e2204fb339b51ede64bb64eeb3">MagicGUIState::createDefaultStylesheet()</a>.</p>
 
 </div>
 </div>
@@ -704,7 +698,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 20 2020 21:32:29 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 18 2020 00:02:16 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

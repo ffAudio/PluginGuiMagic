@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flexbox_753',['FlexBox',['../classfoleys_1_1Container.html#a1b7da28ed84c0763e8f92cde2df4799ba51df0bcf52afdbfe048277e82308a4c2',1,'foleys::Container']]]
+  ['justification_788',['Justification',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a137f661cea6e4c35bebe01aba3b1d103',1,'foleys::SettableProperty']]]
 ];
