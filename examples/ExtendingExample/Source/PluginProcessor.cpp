@@ -149,8 +149,7 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponent)
 };
 
-/*
- // The new method doesn't have a way to supply the processor yet :-(
+
 class StatisticsComponentItem : public foleys::GuiItem
 {
 public:
@@ -159,20 +158,25 @@ public:
     StatisticsComponentItem (foleys::MagicGUIBuilder& builder, const juce::ValueTree& node)
       : foleys::GuiItem (builder, node)
     {
-        addAndMakeVisible (stats);
+        if (auto* proc = dynamic_cast<ExtendingExampleAudioProcessor*>(builder.getMagicState().getProcessor()))
+        {
+            stats = std::make_unique<StatisticsComponent>(*proc);
+            addAndMakeVisible (stats.get());
+        }
     }
+
+    void update() override {}
 
     juce::Component* getWrappedComponent() override
     {
-        return &stats;
+        return stats.get();
     }
 
 private:
-    StatisticsComponent stats;
+    std::unique_ptr<StatisticsComponent> stats;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StatisticsComponentItem)
 };
- */
 
 //==============================================================================
 
@@ -266,7 +270,7 @@ AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
     builder->registerJUCEFactories();
 
     builder->registerFactory ("Lissajour", &LissajourItem::factory);
-//    builder->registerFactory ("Statistics", &StatisticsComponentItem::factory);
+    builder->registerFactory ("Statistics", &StatisticsComponentItem::factory);
 
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize, std::move (builder));
 }
