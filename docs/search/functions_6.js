@@ -30,7 +30,7 @@ var searchData=
   ['getobjectwithtype_593',['getObjectWithType',['../classfoleys_1_1MagicGUIState.html#a224fdef3024cc48f60f4c04588162316',1,'foleys::MagicGUIState']]],
   ['getparameter_594',['getParameter',['../classfoleys_1_1MagicGUIState.html#ada4cb245e53579a4a00547e6a3ed759d',1,'foleys::MagicGUIState::getParameter()'],['../classfoleys_1_1MagicProcessorState.html#a264db76880224d3b3c980d0fe8e1bf0b',1,'foleys::MagicProcessorState::getParameter()']]],
   ['getparameternames_595',['getParameterNames',['../classfoleys_1_1MagicGUIState.html#ae34e27ce712ca7936edc60340aae4bd4',1,'foleys::MagicGUIState::getParameterNames()'],['../classfoleys_1_1MagicProcessorState.html#aa79dc253a45b44f9e9809ec526f5bf44',1,'foleys::MagicProcessorState::getParameterNames()']]],
-  ['getprocessor_596',['getProcessor',['../classfoleys_1_1MagicProcessorState.html#af8987d6c93b1b9ee9438e747bb98e727',1,'foleys::MagicProcessorState']]],
+  ['getprocessor_596',['getProcessor',['../classfoleys_1_1MagicGUIState.html#a8f27cb2fc0fa8c82235494cafb450654',1,'foleys::MagicGUIState::getProcessor()'],['../classfoleys_1_1MagicProcessorState.html#a3b35835ba3c1e4c0d871dbabe36fa260',1,'foleys::MagicProcessorState::getProcessor()']]],
   ['getproperty_597',['getProperty',['../classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195',1,'foleys::GuiItem']]],
   ['getpropertyasvalue_598',['getPropertyAsValue',['../classfoleys_1_1MagicGUIState.html#a7f0d5fa3164aae0ad944d3543d7cbbee',1,'foleys::MagicGUIState']]],
   ['getpropertydefaultvalue_599',['getPropertyDefaultValue',['../classfoleys_1_1MagicGUIBuilder.html#a447b54434bb343271fa1c88bf2784bb4',1,'foleys::MagicGUIBuilder']]],
