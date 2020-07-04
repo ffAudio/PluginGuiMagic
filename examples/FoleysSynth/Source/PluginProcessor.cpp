@@ -67,10 +67,6 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
         synthesiser.addVoice (new FoleysSynth::FoleysVoice (treeState));
 }
 
-FoleysSynthAudioProcessor::~FoleysSynthAudioProcessor()
-{
-}
-
 //==============================================================================
 void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int blockSize)
 {

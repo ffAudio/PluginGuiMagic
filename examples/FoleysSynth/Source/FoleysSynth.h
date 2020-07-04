@@ -97,7 +97,7 @@ public:
         AudioBuffer<float>     voiceBuffer;
         ADSR                   adsr;
         AudioParameterFloat*   gainParameter = nullptr;
-        double                 lastGain = 0.0;
+        float                  lastGain = 0.0;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysVoice)
     };

@@ -23,7 +23,6 @@ class FoleysSynthAudioProcessor  : public AudioProcessor
 public:
     //==============================================================================
     FoleysSynthAudioProcessor();
-    ~FoleysSynthAudioProcessor();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
