@@ -298,6 +298,7 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
         case HighShelf:   coefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
         case HighPass1st: coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency); break;
         case HighPass:    coefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality); break;
+        case LastFilterID:
         default:          return;
     }
 

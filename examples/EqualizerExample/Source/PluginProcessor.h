@@ -37,7 +37,7 @@ public:
 
     //==============================================================================
     EqualizerExampleAudioProcessor();
-    ~EqualizerExampleAudioProcessor();
+    ~EqualizerExampleAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -56,7 +56,7 @@ public:
     {
     public:
         AttachedValue (AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const String& paramID, std::function<void()> changedLambda=nullptr);
-        virtual ~AttachedValue();
+        ~AttachedValue() override;
         void parameterChanged (const String& parameterID, float newValue) override;
     private:
         void initialUpdate();
