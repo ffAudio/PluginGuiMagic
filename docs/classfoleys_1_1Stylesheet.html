@@ -89,6 +89,8 @@ $(function() {
 
 <p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> class represents all style information.  
  <a href="classfoleys_1_1Stylesheet.html#details">More...</a></p>
+
+<p>Inherits Listener.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -106,6 +108,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6dfbc045e15a29971db1e1b990939bd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a6dfbc045e15a29971db1e1b990939bd5">updateStyleClasses</a> ()</td></tr>
 <tr class="memdesc:a6dfbc045e15a29971db1e1b990939bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the style classes and connect variables.  <a href="classfoleys_1_1Stylesheet.html#a6dfbc045e15a29971db1e1b990939bd5">More...</a><br /></td></tr>
 <tr class="separator:a6dfbc045e15a29971db1e1b990939bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f4b4bdfd6e5bfa5785c23aa3fcf787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a90f4b4bdfd6e5bfa5785c23aa3fcf787">setColourPalette</a> ()</td></tr>
+<tr class="memdesc:a90f4b4bdfd6e5bfa5785c23aa3fcf787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the colourPalette.  <a href="classfoleys_1_1Stylesheet.html#a90f4b4bdfd6e5bfa5785c23aa3fcf787">More...</a><br /></td></tr>
+<tr class="separator:a90f4b4bdfd6e5bfa5785c23aa3fcf787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46cdf168679abe39ec616aebd5006639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a46cdf168679abe39ec616aebd5006639">addPaletteEntry</a> (const juce::String &amp;name, juce::Colour colour, bool keepIfExists)</td></tr>
+<tr class="separator:a46cdf168679abe39ec616aebd5006639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0438730c8e571943e6bb7e244de36b65"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a0438730c8e571943e6bb7e244de36b65">getCurrentPalette</a> ()</td></tr>
+<tr class="separator:a0438730c8e571943e6bb7e244de36b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1238e60a59b3fb96f42b400efc31bad5"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a1238e60a59b3fb96f42b400efc31bad5">getPaletteEntryNames</a> () const</td></tr>
+<tr class="memdesc:a1238e60a59b3fb96f42b400efc31bad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all variables for selection in colour values.  <a href="classfoleys_1_1Stylesheet.html#a1238e60a59b3fb96f42b400efc31bad5">More...</a><br /></td></tr>
+<tr class="separator:a1238e60a59b3fb96f42b400efc31bad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8278afaae8ebf326442e9bb81209f359"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">getStyleProperty</a> (const juce::Identifier &amp;name, const juce::ValueTree &amp;node, bool inherit=true, juce::ValueTree *definedHere=nullptr) const</td></tr>
 <tr class="memdesc:a8278afaae8ebf326442e9bb81209f359"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method traverses the dom and checks each style, if that property was defined.  <a href="classfoleys_1_1Stylesheet.html#a8278afaae8ebf326442e9bb81209f359">More...</a><br /></td></tr>
 <tr class="separator:a8278afaae8ebf326442e9bb81209f359"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2d1ee771907ee023bbda1b416271e862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9a127023272f04e07b36d3fd1f2104"><td class="memItemLeft" align="right" valign="top">juce::Array&lt; juce::Colour &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a2e9a127023272f04e07b36d3fd1f2104">getBackgroundGradient</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="separator:a2e9a127023272f04e07b36d3fd1f2104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307aa18bbc56bdd0e2bec3bcc98ebc96"><td class="memItemLeft" align="right" valign="top">juce::Colour&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a307aa18bbc56bdd0e2bec3bcc98ebc96">getColour</a> (const juce::String &amp;name) const</td></tr>
+<tr class="memdesc:a307aa18bbc56bdd0e2bec3bcc98ebc96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup a colour.  <a href="classfoleys_1_1Stylesheet.html#a307aa18bbc56bdd0e2bec3bcc98ebc96">More...</a><br /></td></tr>
+<tr class="separator:a307aa18bbc56bdd0e2bec3bcc98ebc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23357c554f1729a34981aff828025506"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a23357c554f1729a34981aff828025506">getCurrentStyle</a> () const</td></tr>
 <tr class="separator:a23357c554f1729a34981aff828025506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5360dbddf6f9462fdcc907a63b18995"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ac5360dbddf6f9462fdcc907a63b18995">addNewStyleClass</a> (const juce::String &amp;name, juce::UndoManager *undo)</td></tr>
@@ -138,6 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4f817ddb100f9832d2e4126b74dfee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4a41f9c5d88da6dc9c4fed533117b9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#ad4a41f9c5d88da6dc9c4fed533117b9a">isIdNode</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="separator:ad4a41f9c5d88da6dc9c4fed533117b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa307049d295bd11b0494454fcdfc19cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aa307049d295bd11b0494454fcdfc19cb">isColourPaletteNode</a> (const juce::ValueTree &amp;node) const</td></tr>
+<tr class="separator:aa307049d295bd11b0494454fcdfc19cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -168,6 +185,8 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#a90f4b4bdfd6e5bfa5785c23aa3fcf787">Stylesheet::setColourPalette()</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -189,6 +208,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>The <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a> node in the XML can contain several Styles to select from. </p>
 <p>Use this method to select a style. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#a90f4b4bdfd6e5bfa5785c23aa3fcf787">Stylesheet::setColourPalette()</a>.</p>
 
 </div>
 </div>
@@ -275,6 +296,99 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a90f4b4bdfd6e5bfa5785c23aa3fcf787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f4b4bdfd6e5bfa5785c23aa3fcf787">&#9670;&nbsp;</a></span>setColourPalette()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setColourPalette </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the colourPalette. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a4231e47d5a21991a8901926c91c11ffa">MagicGUIBuilder::getUndoManager()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Stylesheet.html#aace02b70dd029f2d05a7decb09a49f68">Stylesheet::setStyle()</a>, and <a class="el" href="classfoleys_1_1Stylesheet.html#acc4ff3b614c742146a07a000d4cd2993">Stylesheet::Stylesheet()</a>.</p>
+
+</div>
+</div>
+<a id="a46cdf168679abe39ec616aebd5006639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46cdf168679abe39ec616aebd5006639">&#9670;&nbsp;</a></span>addPaletteEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addPaletteEntry </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">juce::Colour&#160;</td>
+          <td class="paramname"><em>colour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>keepIfExists</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0438730c8e571943e6bb7e244de36b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0438730c8e571943e6bb7e244de36b65">&#9670;&nbsp;</a></span>getCurrentPalette()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::ValueTree getCurrentPalette </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1238e60a59b3fb96f42b400efc31bad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1238e60a59b3fb96f42b400efc31bad5">&#9670;&nbsp;</a></span>getPaletteEntryNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::StringArray getPaletteEntryNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns all variables for selection in colour values. </p>
 
 </div>
 </div>
@@ -435,7 +549,26 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Decorator.html#a6eb3d15cc5e954c43be27fd57a4b7a01">Decorator::configure()</a>.</p>
+</div>
+</div>
+<a id="a307aa18bbc56bdd0e2bec3bcc98ebc96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307aa18bbc56bdd0e2bec3bcc98ebc96">&#9670;&nbsp;</a></span>getColour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::Colour getColour </td>
+          <td>(</td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lookup a colour. </p>
+<p>This will go through the colourPalette to catch variables like $text. </p>
 
 </div>
 </div>
@@ -691,6 +824,24 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa307049d295bd11b0494454fcdfc19cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa307049d295bd11b0494454fcdfc19cb">&#9670;&nbsp;</a></span>isColourPaletteNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isColourPaletteNode </td>
+          <td>(</td>
+          <td class="paramtype">const juce::ValueTree &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__Stylesheet_8h.html">foleys_Stylesheet.h</a></li>
 <li><a class="el" href="foleys__Stylesheet_8cpp.html">foleys_Stylesheet.cpp</a></li>
@@ -698,7 +849,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 19 2020 23:39:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 9 2020 00:11:54 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

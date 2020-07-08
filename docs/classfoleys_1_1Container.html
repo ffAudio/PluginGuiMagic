@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6192a85e736e937a12161b7d2e34cc4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">updateLayout</a> () override</td></tr>
 <tr class="memdesc:a6192a85e736e937a12161b7d2e34cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will trigger a recalculation of the children layout regardless of resized.  <a href="classfoleys_1_1Container.html#a6192a85e736e937a12161b7d2e34cc4c">More...</a><br /></td></tr>
 <tr class="separator:a6192a85e736e937a12161b7d2e34cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c90879c026e540093261a1a5bb330f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">updateColours</a> () override</td></tr>
+<tr class="memdesc:a4c90879c026e540093261a1a5bb330f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set colours in the wrapped Component to the value from the stylesheet and palette.  <a href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">More...</a><br /></td></tr>
+<tr class="separator:a4c90879c026e540093261a1a5bb330f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab48014aa86ec50d567abad984743d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#aab48014aa86ec50d567abad984743d08">updateContinuousRedraw</a> ()</td></tr>
 <tr class="separator:aab48014aa86ec50d567abad984743d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf053e8c92c17e8d216d8da48046f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Container.html#afcf053e8c92c17e8d216d8da48046f02">configureFlexBox</a> (const juce::ValueTree &amp;node)</td></tr>
@@ -189,6 +192,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classfoleys_1_1GuiItem"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfoleys_1_1GuiItem')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a></td></tr>
 <tr class="memitem:a3c8c453d9c939917013c01fd2e09ab29 inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">configNode</a></td></tr>
 <tr class="separator:a3c8c453d9c939917013c01fd2e09ab29 inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94a6ed08e37f209cb4ddf38b7fb708a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1Decorator.html">Decorator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a">decorator</a></td></tr>
+<tr class="separator:ab94a6ed08e37f209cb4ddf38b7fb708a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44cf8e179ab02bb4a83b0a2e380d468a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::FlexItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a44cf8e179ab02bb4a83b0a2e380d468a">flexItem</a> { juce::FlexItem (*this).withFlex (1.0f) }</td></tr>
 <tr class="separator:a44cf8e179ab02bb4a83b0a2e380d468a inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fd1264e9f7ab0a402841a81fdc2128c inherit pro_attribs_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; juce::String, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a3fd1264e9f7ab0a402841a81fdc2128c">colourTranslation</a></td></tr>
@@ -479,6 +484,37 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a4c90879c026e540093261a1a5bb330f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c90879c026e540093261a1a5bb330f9">&#9670;&nbsp;</a></span>updateColours()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateColours </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set colours in the wrapped Component to the value from the stylesheet and palette. </p>
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem</a>.</p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a">GuiItem::decorator</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a2c1f9b412ce610c990bc713301e82f8d">Decorator::updateColours()</a>.</p>
+
+</div>
+</div>
 <a id="aab48014aa86ec50d567abad984743d08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab48014aa86ec50d567abad984743d08">&#9670;&nbsp;</a></span>updateContinuousRedraw()</h2>
 
@@ -588,7 +624,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 19 2020 23:39:49 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 9 2020 00:11:53 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
