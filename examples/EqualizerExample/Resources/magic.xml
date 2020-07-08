@@ -66,12 +66,14 @@
           <media/>
         </gain>
         <orange background-color="ffffa500"/>
-        <input toggle-text="FFDF0E0E" plot-color="FFDF0E0E" plot-fill-color="30DF0E0E"
-               toggle-tick="FFDF0E0E" plot-inactive-color="" toggle-tick-disabled="FFDF0E0E">
+        <input toggle-text="$input" plot-color="$input" plot-fill-color="30DF0E0E"
+               toggle-tick="$input" plot-inactive-color="" toggle-tick-disabled="$input">
           <media/>
         </input>
-        <output plot-color="FF0E23DF" plot-fill-color="300E23DF" toggle-text="FF0E23DF"
-                toggle-tick="FF0E23DF" toggle-tick-disabled="FF0E23DF"/>
+        <output plot-color="$output" plot-fill-color="300E23DF" toggle-text="$output"
+                toggle-tick="$output" toggle-tick-disabled="$output">
+          <media/>
+        </output>
         <collapse recursive="0" display="tabbed">
           <media recursive="1" max-width="650" max-height="999999"/>
         </collapse>
@@ -95,9 +97,10 @@
                          xy-crosshair="horizontal"/>
       </Types>
       <Palettes>
-        <default q1="FFFF0000" q1dark="FFA30000" q2="FF00FF00" q2dark="green"
-                 q3="FFFFBF00" q3dark="FFB58700" q4="cyan" q4dark="FF00A0A0"
-                 q5="FF8C00C8" q5dark="FF5D0085" q6="yellow" q6dark="FFA8A800"/>
+        <default q1="FFFF0000" q1dark="FFA30000" q2="FF00C600" q2dark="green"
+                 q3="FFFFBF00" q3dark="FFB58700" q4="cyan" q4dark="FF00A0A0" q5="FF8C00C8"
+                 q5dark="FF5D0085" q6="yellow" q6dark="FFA8A800" input="FFE40000"
+                 output="FF2100DE"/>
       </Palettes>
     </Style>
   </Styles>
@@ -150,8 +153,7 @@
             <Slider class="small" caption="Quality" parameter="Q1quality"/>
             <Slider class="small" caption="Gain" parameter="Q1gain"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q1freq" rotary-outline=""
-                  flex-grow="3"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q1freq" flex-grow="3"/>
         </View>
         <View caption="Q2" class="group q2" tab-color="green">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
