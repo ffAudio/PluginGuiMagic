@@ -159,7 +159,7 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
     while (numSamples > 0)
     {
         auto left = std::min (numSamples, oscillatorBuffer.getNumSamples());
-        auto block = dsp::AudioBlock<float> (oscillatorBuffer).getSingleChannelBlock (0).getSubBlock (0, left);
+        auto block = dsp::AudioBlock<float> (oscillatorBuffer).getSingleChannelBlock (0).getSubBlock (0, size_t (left));
 
         dsp::ProcessContextReplacing<float> context (block);
         voiceBuffer.clear();
@@ -196,7 +196,7 @@ void FoleysSynth::FoleysVoice::setCurrentPlaybackSampleRate (double newRate)
 
     dsp::ProcessSpec spec;
     spec.sampleRate = newRate;
-    spec.maximumBlockSize = internalBufferSize;
+    spec.maximumBlockSize = juce::uint32 (internalBufferSize);
     spec.numChannels = 1;
     for (auto& osc : oscillators)
         osc->osc.prepare (spec);
@@ -217,5 +217,5 @@ void FoleysSynth::FoleysVoice::updateFrequency (BaseOscillator& oscillator, bool
     const auto freq = getFrequencyForNote (getCurrentlyPlayingNote(),
                                            pitchWheelValue * maxPitchWheelSemitones
                                            + oscillator.detune->get());
-    oscillator.osc.get<0>().setFrequency (freq * oscillator.multiplier, noteStart);
+    oscillator.osc.get<0>().setFrequency (float (freq * oscillator.multiplier), noteStart);
 }
