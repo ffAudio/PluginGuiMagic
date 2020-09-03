@@ -97,7 +97,6 @@ public:
         std::atomic<float>  quality    { 1.0f };
         std::atomic<bool>   active     { true };
 
-        friend AttachedValue<float>;
         AttachedValue<FilterType> typeAttachment;
         AttachedValue<float> frequencyAttachment;
         AttachedValue<float> gainAttachment;
