@@ -13,9 +13,9 @@
 
 //==============================================================================
 
-AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
-    AudioProcessorValueTreeState::ParameterLayout layout;
+    juce::AudioProcessorValueTreeState::ParameterLayout layout;
     FoleysSynth::addADSRParameters (layout);
     FoleysSynth::addOvertoneParameters (layout);
     FoleysSynth::addGainParameters (layout);
@@ -26,12 +26,12 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
 FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
+     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
+                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
                       #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
+                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        ),
 #else
@@ -87,7 +87,7 @@ void FoleysSynthAudioProcessor::releaseResources()
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool FoleysSynthAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool FoleysSynthAudioProcessor::isBusesLayoutSupported (const juce::AudioProcessor::BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     ignoreUnused (layouts);
@@ -95,8 +95,8 @@ bool FoleysSynthAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
   #else
     // This is the place where you check if the layout is supported.
     // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
-     && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
         return false;
 
     // This checks if the input layout matches the output layout
@@ -110,9 +110,9 @@ bool FoleysSynthAudioProcessor::isBusesLayoutSupported (const BusesLayout& layou
 }
 #endif
 
-void FoleysSynthAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void FoleysSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    ScopedNoDenormals noDenormals;
+    juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
@@ -148,7 +148,7 @@ bool FoleysSynthAudioProcessor::hasEditor() const
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* FoleysSynthAudioProcessor::createEditor()
+juce::AudioProcessorEditor* FoleysSynthAudioProcessor::createEditor()
 {
     // MAGIC GUI: create the generated editor
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
@@ -157,8 +157,8 @@ AudioProcessorEditor* FoleysSynthAudioProcessor::createEditor()
 //==============================================================================
 void FoleysSynthAudioProcessor::savePresetInternal()
 {
-    ValueTree preset { "Preset" };
-    preset.setProperty ("name", "Preset " + String (presetNode.getNumChildren() + 1), nullptr);
+    juce::ValueTree preset { "Preset" };
+    preset.setProperty ("name", "Preset " + juce::String (presetNode.getNumChildren() + 1), nullptr);
     for (const auto& p : magicState.getValueTreeState().state)
         if (p.getType().toString() == "PARAM")
             preset.appendChild (p.createCopy(), nullptr);
@@ -176,14 +176,14 @@ void FoleysSynthAudioProcessor::loadPresetInternal(int index)
         if (p.hasType ("PARAM"))
         {
             auto id = p.getProperty ("id", "unknownID").toString();
-            if (auto* parameter = dynamic_cast<RangedAudioParameter*>(magicState.getValueTreeState().getParameter (id)))
+            if (auto* parameter = dynamic_cast<juce::RangedAudioParameter*>(magicState.getValueTreeState().getParameter (id)))
                 parameter->setValueNotifyingHost (parameter->convertTo0to1 (p.getProperty ("value")));
         }
     }
 }
 
 //==============================================================================
-void FoleysSynthAudioProcessor::getStateInformation (MemoryBlock& destData)
+void FoleysSynthAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
@@ -201,7 +201,7 @@ void FoleysSynthAudioProcessor::setStateInformation (const void* data, int sizeI
 }
 
 //==============================================================================
-const String FoleysSynthAudioProcessor::getName() const
+const juce::String FoleysSynthAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
@@ -254,18 +254,18 @@ void FoleysSynthAudioProcessor::setCurrentProgram (int index)
     loadPresetInternal (index);
 }
 
-const String FoleysSynthAudioProcessor::getProgramName (int)
+const juce::String FoleysSynthAudioProcessor::getProgramName (int)
 {
     return {};
 }
 
-void FoleysSynthAudioProcessor::changeProgramName (int, const String&)
+void FoleysSynthAudioProcessor::changeProgramName (int, const juce::String&)
 {
 }
 
 //==============================================================================
 // This creates new instances of the plugin..
-AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new FoleysSynthAudioProcessor();
 }

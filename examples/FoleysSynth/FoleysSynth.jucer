@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="JeItQC" name="FoleysSynth" projectType="audioplug" jucerVersion="5.4.7"
-              companyName="Foleys Finest Audio" projectLineFeed="&#10;" companyWebsite="https://foleysfinest.com"
+<JUCERPROJECT id="JeItQC" name="FoleysSynth" projectType="audioplug" companyName="Foleys Finest Audio"
+              projectLineFeed="&#10;" companyWebsite="https://foleysfinest.com"
               pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
-              pluginManufacturerCode="FFAU">
+              pluginManufacturerCode="FFAU" addUsingNamespaceToJuceHeader="0"
+              jucerFormatVersion="1">
   <MAINGROUP id="LGWoY5" name="FoleysSynth">
     <GROUP id="{0F03A121-FE7D-F4DB-7A0D-D90E378AACC7}" name="Source">
       <FILE id="fMtZxD" name="FoleysSynth.cpp" compile="1" resource="0" file="Source/FoleysSynth.cpp"/>

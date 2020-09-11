@@ -11,14 +11,14 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-class EqualizerExampleAudioProcessor  : public AudioProcessor,
-                                        private AudioProcessorValueTreeState::Listener,
-                                        private AsyncUpdater
+class EqualizerExampleAudioProcessor  : public juce::AudioProcessor,
+                                        private juce::AudioProcessorValueTreeState::Listener,
+                                        private juce::AsyncUpdater
 {
 public:
 
-    using FilterBand = dsp::ProcessorDuplicator<dsp::IIR::Filter<float>, dsp::IIR::Coefficients<float>>;
-    using Gain       = dsp::Gain<float>;
+    using FilterBand = juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>>;
+    using Gain       = juce::dsp::Gain<float>;
 
     enum FilterType
     {
@@ -47,23 +47,23 @@ public:
     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
    #endif
 
-    void processBlock (AudioBuffer<float>&, MidiBuffer&) override;
+    void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
 
     template<typename ValueType>
-    class AttachedValue : private AudioProcessorValueTreeState::Listener
+    class AttachedValue : private juce::AudioProcessorValueTreeState::Listener
     {
     public:
-        AttachedValue (AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const String& paramID, std::function<void()> changedLambda=nullptr);
+        AttachedValue (juce::AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const juce::String& paramID, std::function<void()> changedLambda=nullptr);
         ~AttachedValue() override;
-        void parameterChanged (const String& parameterID, float newValue) override;
+        void parameterChanged (const juce::String& parameterID, float newValue) override;
     private:
         void initialUpdate();
 
-        AudioProcessorValueTreeState& state;
+        juce::AudioProcessorValueTreeState& state;
         std::atomic<ValueType>& value;
-        String paramID;
+        juce::String paramID;
         std::function<void()> onParameterChanged;
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
     };
@@ -73,7 +73,7 @@ public:
     class FilterAttachment
     {
     public:
-        FilterAttachment (AudioProcessorValueTreeState& state, FilterBand& filter, const String& prefix, const CriticalSection& lock);
+        FilterAttachment (juce::AudioProcessorValueTreeState& state, FilterBand& filter, const juce::String& prefix, const juce::CriticalSection& lock);
 
         void setSampleRate (double sampleRate);
         bool isActive() const { return active; }
@@ -86,10 +86,10 @@ public:
     private:
         void updateFilter();
 
-        AudioProcessorValueTreeState& state;
-        FilterBand&                   filter;
-        String                        prefix;
-        const CriticalSection&        callbackLock;
+        juce::AudioProcessorValueTreeState& state;
+        FilterBand&                         filter;
+        juce::String                        prefix;
+        const juce::CriticalSection&        callbackLock;
 
         std::atomic<FilterType> type   { NoFilter };
         std::atomic<float>  frequency  { 1000.0f };
@@ -107,15 +107,15 @@ public:
     };
 
     //==============================================================================
-    void parameterChanged (const String& paramID, float newValue) override;
+    void parameterChanged (const juce::String& paramID, float newValue) override;
     void handleAsyncUpdate() override;
 
     //==============================================================================
-    AudioProcessorEditor* createEditor() override;
+    juce::AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override;
 
     //==============================================================================
-    const String getName() const override;
+    const juce::String getName() const override;
 
     bool acceptsMidi() const override;
     bool producesMidi() const override;
@@ -126,21 +126,21 @@ public:
     int getNumPrograms() override;
     int getCurrentProgram() override;
     void setCurrentProgram (int index) override;
-    const String getProgramName (int index) override;
-    void changeProgramName (int index, const String& newName) override;
+    const juce::String getProgramName (int index) override;
+    void changeProgramName (int index, const juce::String& newName) override;
 
     //==============================================================================
-    void getStateInformation (MemoryBlock& destData) override;
+    void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-    static StringArray filterNames;
+    static juce::StringArray filterNames;
 
 private:
     //==============================================================================
 
-    AudioProcessorValueTreeState treeState { *this, nullptr };
+    juce::AudioProcessorValueTreeState treeState { *this, nullptr };
 
-    dsp::ProcessorChain<FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, Gain> filter;
+    juce::dsp::ProcessorChain<FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, FilterBand, Gain> filter;
 
     std::atomic<float> gain { 1.0f };
     AttachedValue<float> gainAttachment;

@@ -14,20 +14,20 @@
 
 namespace IDs
 {
-    static String mainType  { "mainType" };
-    static String mainFreq  { "mainfreq" };
-    static String mainLevel { "mainlevel" };
-    static String lfoType   { "lfoType" };
-    static String lfoFreq   { "lfofreq" };
-    static String lfoLevel  { "lfolevel" };
-    static String vfoType   { "vfoType" };
-    static String vfoFreq   { "vfofreq" };
-    static String vfoLevel  { "vfolevel" };
+    static juce::String mainType  { "mainType" };
+    static juce::String mainFreq  { "mainfreq" };
+    static juce::String mainLevel { "mainlevel" };
+    static juce::String lfoType   { "lfoType" };
+    static juce::String lfoFreq   { "lfofreq" };
+    static juce::String lfoLevel  { "lfolevel" };
+    static juce::String vfoType   { "vfoType" };
+    static juce::String vfoFreq   { "vfofreq" };
+    static juce::String vfoLevel  { "vfolevel" };
 
-    static Identifier oscilloscope { "oscilloscope" };
+    static juce::Identifier oscilloscope { "oscilloscope" };
 }
 
-AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     auto freqRange = juce::NormalisableRange<float> {20.0f, 20000.0f,
         [](float start, float end, float normalised)
@@ -41,29 +41,29 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
         [](float start, float end, float value)
         {
             if (value > 3000.0f)
-                return jlimit (start, end, 100.0f * roundToInt (value / 100.0f));
+                return juce::jlimit (start, end, 100.0f * juce::roundToInt (value / 100.0f));
 
             if (value > 1000.0f)
-                return jlimit (start, end, 10.0f * roundToInt (value / 10.0f));
+                return juce::jlimit (start, end, 10.0f * juce::roundToInt (value / 10.0f));
 
-            return jlimit (start, end, float (roundToInt (value)));
+            return juce::jlimit (start, end, float (juce::roundToInt (value)));
         }};
 
-    AudioProcessorValueTreeState::ParameterLayout layout;
-    auto generator = std::make_unique<AudioProcessorParameterGroup>("Generator", TRANS ("Generator"), "|");
-    generator->addChild (std::make_unique<AudioParameterChoice>(IDs::mainType, "Type", StringArray ("None", "Sine", "Triangle", "Square"), 1),
-                         std::make_unique<AudioParameterFloat>(IDs::mainFreq, "Frequency", freqRange, 440),
-                         std::make_unique<AudioParameterFloat>(IDs::mainLevel, "Level", NormalisableRange<float>(-100.0f, 0.0, 1.0), -6.0f));
+    juce::AudioProcessorValueTreeState::ParameterLayout layout;
+    auto generator = std::make_unique<juce::AudioProcessorParameterGroup>("Generator", TRANS ("Generator"), "|");
+    generator->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::mainType, "Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 1),
+                         std::make_unique<juce::AudioParameterFloat>(IDs::mainFreq, "Frequency", freqRange, 440),
+                         std::make_unique<juce::AudioParameterFloat>(IDs::mainLevel, "Level", juce::NormalisableRange<float>(-100.0f, 0.0, 1.0), -6.0f));
 
-    auto lfo = std::make_unique<AudioProcessorParameterGroup>("lfo", TRANS ("LFO"), "|");
-    lfo->addChild (std::make_unique<AudioParameterChoice>(IDs::lfoType, "LFO-Type", StringArray ("None", "Sine", "Triangle", "Square"), 0),
-                   std::make_unique<AudioParameterFloat>(IDs::lfoFreq, "Frequency", NormalisableRange<float>(0.25f, 10.0f), 2.0f),
-                         std::make_unique<AudioParameterFloat>(IDs::lfoLevel, "Level", NormalisableRange<float>(0.0f, 1.0f), 0.0f));
+    auto lfo = std::make_unique<juce::AudioProcessorParameterGroup>("lfo", TRANS ("LFO"), "|");
+    lfo->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::lfoType, "LFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
+                   std::make_unique<juce::AudioParameterFloat>(IDs::lfoFreq, "Frequency", juce::NormalisableRange<float>(0.25f, 10.0f), 2.0f),
+                         std::make_unique<juce::AudioParameterFloat>(IDs::lfoLevel, "Level", juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f));
 
-    auto vfo = std::make_unique<AudioProcessorParameterGroup>("vfo", TRANS ("VFO"), "|");
-    vfo->addChild (std::make_unique<AudioParameterChoice>(IDs::vfoType, "VFO-Type", StringArray ("None", "Sine", "Triangle", "Square"), 0),
-                   std::make_unique<AudioParameterFloat>(IDs::vfoFreq, "Frequency", NormalisableRange<float>(0.5f, 10.0f), 2.0f),
-                   std::make_unique<AudioParameterFloat>(IDs::vfoLevel, "Level", NormalisableRange<float>(0.0f, 1.0), 0.0f));
+    auto vfo = std::make_unique<juce::AudioProcessorParameterGroup>("vfo", TRANS ("VFO"), "|");
+    vfo->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::vfoType, "VFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
+                   std::make_unique<juce::AudioParameterFloat>(IDs::vfoFreq, "Frequency", juce::NormalisableRange<float>(0.5f, 10.0f), 2.0f),
+                   std::make_unique<juce::AudioParameterFloat>(IDs::vfoLevel, "Level", juce::NormalisableRange<float>(0.0f, 1.0), 0.0f));
 
     layout.add (std::move (generator),
                 std::move (lfo),
@@ -75,12 +75,12 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 //==============================================================================
 SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
+     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
+                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
                       #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
+                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        ),
 #else
@@ -119,26 +119,26 @@ SignalGeneratorAudioProcessor::~SignalGeneratorAudioProcessor()
 
 //==============================================================================
 
-void SignalGeneratorAudioProcessor::setOscillator (dsp::Oscillator<float>& osc, WaveType type)
+void SignalGeneratorAudioProcessor::setOscillator (juce::dsp::Oscillator<float>& osc, WaveType type)
 {
     if (type == WaveType::Sine)
         osc.initialise ([](auto in) { return std::sin (in); });
     else if (type == WaveType::Triangle)
-        osc.initialise ([](auto in) { return in / MathConstants<float>::pi; });
+        osc.initialise ([](auto in) { return in / juce::MathConstants<float>::pi; });
     else if (type == WaveType::Square)
         osc.initialise ([](auto in) { return in < 0 ? 1.0f : -1.0f; });
     else
         osc.initialise ([](auto) { return 0.0f; });
 }
 
-void SignalGeneratorAudioProcessor::parameterChanged (const String& param, float value)
+void SignalGeneratorAudioProcessor::parameterChanged (const juce::String& param, float value)
 {
     if (param == IDs::mainType)
-        setOscillator (mainOSC, WaveType (roundToInt (value)));
+        setOscillator (mainOSC, WaveType (juce::roundToInt (value)));
     else if (param == IDs::lfoType)
-        setOscillator (lfoOSC, WaveType (roundToInt (value)));
+        setOscillator (lfoOSC, WaveType (juce::roundToInt (value)));
     else if (param == IDs::vfoType)
-        setOscillator (vfoOSC, WaveType (roundToInt (value)));
+        setOscillator (vfoOSC, WaveType (juce::roundToInt (value)));
 }
 
 
@@ -149,18 +149,18 @@ void SignalGeneratorAudioProcessor::prepareToPlay (double sampleRate, int sample
 
     const auto numChannels = getTotalNumOutputChannels();
 
-    dsp::ProcessSpec spec;
+    juce::dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;
-    spec.maximumBlockSize = uint32 (samplesPerBlock);
-    spec.numChannels = uint32 (numChannels);
+    spec.maximumBlockSize = juce::uint32 (samplesPerBlock);
+    spec.numChannels = juce::uint32 (numChannels);
 
     mainOSC.prepare (spec);
     lfoOSC.prepare (spec);
     vfoOSC.prepare (spec);
 
-    setOscillator (mainOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::mainType)->load())));
-    setOscillator (lfoOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::lfoType)->load())));
-    setOscillator (vfoOSC, WaveType (roundToInt (treeState.getRawParameterValue (IDs::vfoType)->load())));
+    setOscillator (mainOSC, WaveType (juce::roundToInt (treeState.getRawParameterValue (IDs::mainType)->load())));
+    setOscillator (lfoOSC, WaveType (juce::roundToInt (treeState.getRawParameterValue (IDs::lfoType)->load())));
+    setOscillator (vfoOSC, WaveType (juce::roundToInt (treeState.getRawParameterValue (IDs::vfoType)->load())));
 
     // MAGIC GUI: this will setup all internals like MagicPlotSources etc.
     magicState.prepareToPlay (sampleRate, samplesPerBlock);
@@ -170,11 +170,11 @@ void SignalGeneratorAudioProcessor::releaseResources()
 {
 }
 
-void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void SignalGeneratorAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     ignoreUnused (midiMessages);
 
-    ScopedNoDenormals noDenormals;
+    juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
@@ -188,7 +188,7 @@ void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
         buffer.clear (i, 0, buffer.getNumSamples());
 
 
-    auto gain = Decibels::decibelsToGain (level->load());
+    auto gain = juce::Decibels::decibelsToGain (level->load());
 
     lfoOSC.setFrequency (*lfoFrequency);
     vfoOSC.setFrequency (*vfoFrequency);
@@ -197,7 +197,7 @@ void SignalGeneratorAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
     for (int i = 0; i < buffer.getNumSamples(); ++i)
     {
         mainOSC.setFrequency (frequency->load() * (1.0 + vfoOSC.processSample (0.0f) * vfoLevel->load()));
-        channelData [i] = jlimit (-1.0f, 1.0f,
+        channelData [i] = juce::jlimit (-1.0f, 1.0f,
                                   mainOSC.processSample (0.0f) * gain * ( 1.0f - (lfoLevel->load() * lfoOSC.processSample (0.0f))));
     }
 
@@ -214,7 +214,7 @@ bool SignalGeneratorAudioProcessor::hasEditor() const
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
+juce::AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
 {
     // MAGIC GUI: return a default Plugin GUI
     //            If you saved a GUI before, it is loaded here from the BinaryResources in the optional arguments
@@ -223,7 +223,7 @@ AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
 }
 
 //==============================================================================
-void SignalGeneratorAudioProcessor::getStateInformation (MemoryBlock& destData)
+void SignalGeneratorAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
@@ -247,8 +247,8 @@ bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& l
 #else
     // This is the place where you check if the layout is supported.
     // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
-        && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+        && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
         return false;
 
     // This checks if the input layout matches the output layout
@@ -263,7 +263,7 @@ bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& l
 #endif
 
 //==============================================================================
-const String SignalGeneratorAudioProcessor::getName() const
+const juce::String SignalGeneratorAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
@@ -313,24 +313,24 @@ int SignalGeneratorAudioProcessor::getCurrentProgram()
 
 void SignalGeneratorAudioProcessor::setCurrentProgram (int index)
 {
-    ignoreUnused (index);
+    juce::ignoreUnused (index);
 }
 
-const String SignalGeneratorAudioProcessor::getProgramName (int index)
+const juce::String SignalGeneratorAudioProcessor::getProgramName (int index)
 {
-    ignoreUnused (index);
+    juce::ignoreUnused (index);
     return {};
 }
 
-void SignalGeneratorAudioProcessor::changeProgramName (int index, const String& newName)
+void SignalGeneratorAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
-    ignoreUnused (index);
-    ignoreUnused (newName);
+    juce::ignoreUnused (index);
+    juce::ignoreUnused (newName);
 }
 
 //==============================================================================
 // This creates new instances of the plugin..
-AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new SignalGeneratorAudioProcessor();
 }

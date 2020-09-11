@@ -12,47 +12,47 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class FoleysSynth : public Synthesiser
+class FoleysSynth : public juce::Synthesiser
 {
 public:
     static int  numOscillators;
 
-    static void addADSRParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
-    static void addOvertoneParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
-    static void addGainParameters (AudioProcessorValueTreeState::ParameterLayout& layout);
+    static void addADSRParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout);
+    static void addOvertoneParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout);
+    static void addGainParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout);
 
     FoleysSynth() = default;
 
-    class FoleysSound : public SynthesiserSound
+    class FoleysSound : public juce::SynthesiserSound
     {
     public:
-        FoleysSound (AudioProcessorValueTreeState& state);
+        FoleysSound (juce::AudioProcessorValueTreeState& state);
         bool appliesToNote (int) override { return true; }
         bool appliesToChannel (int) override { return true; }
 
-        ADSR::Parameters getADSR();
+        juce::ADSR::Parameters getADSR();
 
     private:
-        AudioProcessorValueTreeState& state;
-        AudioParameterFloat* attack  = nullptr;
-        AudioParameterFloat* decay   = nullptr;
-        AudioParameterFloat* sustain = nullptr;
-        AudioParameterFloat* release = nullptr;
-        AudioParameterFloat* gain    = nullptr;
+        juce::AudioProcessorValueTreeState& state;
+        juce::AudioParameterFloat* attack  = nullptr;
+        juce::AudioParameterFloat* decay   = nullptr;
+        juce::AudioParameterFloat* sustain = nullptr;
+        juce::AudioParameterFloat* release = nullptr;
+        juce::AudioParameterFloat* gain    = nullptr;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysSound)
     };
 
-    class FoleysVoice : public SynthesiserVoice
+    class FoleysVoice : public juce::SynthesiserVoice
     {
     public:
-        FoleysVoice (AudioProcessorValueTreeState& state);
+        FoleysVoice (juce::AudioProcessorValueTreeState& state);
 
-        bool canPlaySound (SynthesiserSound *) override;
+        bool canPlaySound (juce::SynthesiserSound *) override;
 
         void startNote (int midiNoteNumber,
                         float velocity,
-                        SynthesiserSound* sound,
+                        juce::SynthesiserSound* sound,
                         int currentPitchWheelPosition) override;
 
         void stopNote (float velocity, bool allowTailOff) override;
@@ -61,7 +61,7 @@ public:
 
         void controllerMoved (int controllerNumber, int newControllerValue) override;
 
-        void renderNextBlock (AudioBuffer<float>& outputBuffer,
+        void renderNextBlock (juce::AudioBuffer<float>& outputBuffer,
                               int startSample,
                               int numSamples) override;
 
@@ -74,9 +74,9 @@ public:
         public:
             BaseOscillator() = default;
 
-            dsp::ProcessorChain<dsp::Oscillator<float>, dsp::Gain<float>> osc;
-            AudioParameterFloat* gain   = nullptr;
-            AudioParameterFloat* detune = nullptr;
+            juce::dsp::ProcessorChain<juce::dsp::Oscillator<float>, juce::dsp::Gain<float>> osc;
+            juce::AudioParameterFloat* gain   = nullptr;
+            juce::AudioParameterFloat* detune = nullptr;
             double multiplier = 1.0;
 
         private:
@@ -93,10 +93,10 @@ public:
         double                 pitchWheelValue = 0.0;
         int                    maxPitchWheelSemitones = 12;
         const int              internalBufferSize = 64;
-        AudioBuffer<float>     oscillatorBuffer;
-        AudioBuffer<float>     voiceBuffer;
-        ADSR                   adsr;
-        AudioParameterFloat*   gainParameter = nullptr;
+        juce::AudioBuffer<float>     oscillatorBuffer;
+        juce::AudioBuffer<float>     voiceBuffer;
+        juce::ADSR                   adsr;
+        juce::AudioParameterFloat*   gainParameter = nullptr;
         float                  lastGain = 0.0;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysVoice)

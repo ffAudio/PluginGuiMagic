@@ -11,8 +11,8 @@
 #include "PluginProcessor.h"
 
 // Some nice example drawing
-class Lissajour   : public Component,
-                    private Timer
+class Lissajour   : public juce::Component,
+                    private juce::Timer
 {
 public:
     enum ColourIDs
@@ -26,9 +26,9 @@ public:
     Lissajour()
     {
         // make sure you define some default colour, otherwise the juce lookup will choke
-        setColour (backgroundColourId, Colours::black);
-        setColour (drawColourId, Colours::green);
-        setColour (fillColourId, Colours::green.withAlpha (0.5f));
+        setColour (backgroundColourId, juce::Colours::black);
+        setColour (drawColourId, juce::Colours::green);
+        setColour (fillColourId, juce::Colours::green.withAlpha (0.5f));
 
         startTimerHz (30);
     }
@@ -38,22 +38,22 @@ public:
         factor = f;
     }
 
-    void paint (Graphics& g) override
+    void paint (juce::Graphics& g) override
     {
         const float radius = std::min (getWidth(), getHeight()) * 0.4f;
         const auto  centre = getLocalBounds().getCentre().toFloat();
 
         g.fillAll (findColour (backgroundColourId));
-        Path p;
-        p.startNewSubPath (centre + Point<float>(0, std::sin (phase)) * radius);
-        for (float i = 0.1; i <= MathConstants<float>::twoPi; i += 0.01)
-            p.lineTo (centre + Point<float>(std::sin (i),
+        juce::Path p;
+        p.startNewSubPath (centre + juce::Point<float>(0, std::sin (phase)) * radius);
+        for (float i = 0.1; i <= juce::MathConstants<float>::twoPi; i += 0.01)
+            p.lineTo (centre + juce::Point<float>(std::sin (i),
                                             std::sin (std::fmod (i * factor + phase,
-                                                                 MathConstants<float>::twoPi))) * radius);
+                                                                 juce::MathConstants<float>::twoPi))) * radius);
         p.closeSubPath();
 
         g.setColour (findColour (drawColourId));
-        g.strokePath (p, PathStrokeType (2.0f));
+        g.strokePath (p, juce::PathStrokeType (2.0f));
 
         const auto fillColour = findColour (fillColourId);
         if (fillColour.isTransparent() == false)
@@ -67,8 +67,8 @@ private:
     void timerCallback() override
     {
         phase += 0.1;
-        if (phase >= MathConstants<float>::twoPi)
-            phase -= MathConstants<float>::twoPi;
+        if (phase >= juce::MathConstants<float>::twoPi)
+            phase -= juce::MathConstants<float>::twoPi;
 
         repaint();
     }
@@ -116,8 +116,8 @@ private:
 //==============================================================================
 
 // Silly example class that displays some members from your specific processor
-class StatisticsComponent : public Component,
-                            private Timer
+class StatisticsComponent : public juce::Component,
+                            private juce::Timer
 {
 public:
     StatisticsComponent (ExtendingExampleAudioProcessor& processorToUse)
@@ -126,16 +126,16 @@ public:
         startTimerHz (30);
     }
 
-    void paint (Graphics& g) override
+    void paint (juce::Graphics& g) override
     {
         // silly example: display current actual buffer size
         auto sampleRate = processor.statisticsSampleRate.load();
         auto samples    = processor.statisticsSamplesPerBlock.load();
 
-        g.fillAll (Colours::darkgrey);
-        g.setColour (Colours::white);
-        g.drawFittedText ("Samplerate: " + String (sampleRate) + "\n" +
-                          "Buffersize: " + String (samples), getLocalBounds(), Justification::centredLeft, 3);
+        g.fillAll (juce::Colours::darkgrey);
+        g.setColour (juce::Colours::white);
+        g.drawFittedText ("Samplerate: " + juce::String (sampleRate) + "\n" +
+                          "Buffersize: " + juce::String (samples), getLocalBounds(), juce::Justification::centredLeft, 3);
     }
 
 private:
@@ -182,12 +182,12 @@ private:
 
 ExtendingExampleAudioProcessor::ExtendingExampleAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
+     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
+                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
                       #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
+                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        )
 #endif
@@ -215,7 +215,7 @@ void ExtendingExampleAudioProcessor::releaseResources()
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool ExtendingExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool ExtendingExampleAudioProcessor::isBusesLayoutSupported (const juce::AudioProcessor::BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     ignoreUnused (layouts);
@@ -223,8 +223,8 @@ bool ExtendingExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& 
   #else
     // This is the place where you check if the layout is supported.
     // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
-     && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
         return false;
 
     // This checks if the input layout matches the output layout
@@ -238,9 +238,9 @@ bool ExtendingExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& 
 }
 #endif
 
-void ExtendingExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void ExtendingExampleAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    ScopedNoDenormals noDenormals;
+    juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
@@ -263,7 +263,7 @@ bool ExtendingExampleAudioProcessor::hasEditor() const
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
+juce::AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
 {
     // MAGIC GUI: we create our custom builder instance here, that will be available for all factories we add
     auto builder = std::make_unique<foleys::MagicGUIBuilder>(magicState);
@@ -276,7 +276,7 @@ AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
 }
 
 //==============================================================================
-void ExtendingExampleAudioProcessor::getStateInformation (MemoryBlock& destData)
+void ExtendingExampleAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     magicState.getStateInformation (destData);
 }
@@ -287,7 +287,7 @@ void ExtendingExampleAudioProcessor::setStateInformation (const void* data, int 
 }
 
 //==============================================================================
-const String ExtendingExampleAudioProcessor::getName() const
+const juce::String ExtendingExampleAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
@@ -339,18 +339,18 @@ void ExtendingExampleAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const String ExtendingExampleAudioProcessor::getProgramName (int index)
+const juce::String ExtendingExampleAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void ExtendingExampleAudioProcessor::changeProgramName (int index, const String& newName)
+void ExtendingExampleAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
 //==============================================================================
 // This creates new instances of the plugin..
-AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new ExtendingExampleAudioProcessor();
 }
