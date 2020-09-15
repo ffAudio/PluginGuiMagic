@@ -61,7 +61,7 @@ more features following (this is the reference implementation for new features).
 
 [examples/FoleysSynth](examples/FoleysSynth)
 
-An example additive synthisizer to show the MidiKeyboardComponent and how to 
+An example additive synthesizer to show the MidiKeyboardComponent and how to 
 create a nice GUI with PluginGuiMagic.
 
 ![FoleysSynth Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/FoleysSynth-screenshot.png)
@@ -86,8 +86,7 @@ To use PluginGuiMagic in commercial products, you should buy a license on our we
 
 To check the pricing and buy licenses please look at https://foleysfinest.com/developer/pluginguimagic
 
-License holders will get priority on bug reports and feature requests. There will also be additional
-exclusive content coming soon, like smoothed analysers, additional visualisations and more.
+License holders will get priority on bug reports and feature requests.
 
 Contributing
 ------------
