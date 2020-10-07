@@ -90,14 +90,14 @@ public:
 
         std::vector<std::unique_ptr<BaseOscillator>> oscillators;
 
-        double                 pitchWheelValue = 0.0;
-        int                    maxPitchWheelSemitones = 12;
-        const int              internalBufferSize = 64;
-        juce::AudioBuffer<float>     oscillatorBuffer;
-        juce::AudioBuffer<float>     voiceBuffer;
-        juce::ADSR                   adsr;
-        juce::AudioParameterFloat*   gainParameter = nullptr;
-        float                  lastGain = 0.0;
+        double                      pitchWheelValue = 0.0;
+        int                         maxPitchWheelSemitones = 12;
+        const int                   internalBufferSize = 64;
+        juce::AudioBuffer<float>    oscillatorBuffer;
+        juce::AudioBuffer<float>    voiceBuffer;
+        juce::ADSR                  adsr;
+        juce::AudioParameterFloat*  gainParameter = nullptr;
+        float                       lastGain = 0.0;
 
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FoleysVoice)
     };
