@@ -95,6 +95,15 @@ public:
         addAndMakeVisible (lissajour);
     }
 
+    std::vector<foleys::SettableProperty> getSettableProperties() const override
+    {
+        std::vector<foleys::SettableProperty> properties;
+
+        properties.push_back ({ configNode, "factor", foleys::SettableProperty::Number, 1.0f, {} });
+
+        return properties;
+    }
+
     // Override update() to set the values to your custom component
     void update() override
     {
