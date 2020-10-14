@@ -143,7 +143,7 @@
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
             lookAndFeel="FoleysFinest">
-        <View caption="Q1" class="group q1" tab-color="red">
+        <View caption="Q1" class="group q1" tab-color="red" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q1type" class="nomargin" combo-menu-background="80141521"
@@ -153,9 +153,10 @@
             <Slider class="small" caption="Quality" parameter="Q1quality"/>
             <Slider class="small" caption="Gain" parameter="Q1gain"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q1freq" flex-grow="3"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q1freq" flex-grow="3"
+                  slider-textbox=""/>
         </View>
-        <View caption="Q2" class="group q2" tab-color="green">
+        <View caption="Q2" class="group q2" tab-color="green" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q2active" max-width="40" text="" class="nomargin"/>
             <ComboBox parameter="Q2type" class="nomargin"/>
@@ -166,7 +167,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q2freq"/>
         </View>
-        <View caption="Q3" class="group q3" tab-color="orange">
+        <View caption="Q3" class="group q3" tab-color="orange" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q3active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q3type" class="nomargin"/>
@@ -177,7 +178,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q3freq"/>
         </View>
-        <View caption="Q4" class="group q4" tab-color="cyan">
+        <View caption="Q4" class="group q4" tab-color="cyan" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q4active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q4type" class="nomargin"/>
@@ -188,7 +189,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q4freq"/>
         </View>
-        <View caption="Q5" class="group q5" tab-color="blue">
+        <View caption="Q5" class="group q5" tab-color="blue" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q5active" text="" max-width="40" class="nomargin"/>
             <ComboBox parameter="Q5type" class="nomargin"/>
@@ -199,7 +200,8 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q5freq"/>
         </View>
-        <View caption="Q6" class="group q6" tab-color="yellow" lookAndFeel="FoleysFinest">
+        <View caption="Q6" class="group q6" tab-color="yellow" lookAndFeel="FoleysFinest"
+              background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q6active" text="" max-width="40" class="nomargin"
                           background-gradient="none"/>
@@ -211,7 +213,7 @@
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q6freq"/>
         </View>
-        <View caption="Globals" class="group gain" flex-direction="row">
+        <View caption="Globals" class="group gain" flex-direction="row" background-gradient="linear-gradient(0,ff414151, ff151521)">
           <View padding="3" border="0" background-color="80141521" background-gradient="none"
                 flex-direction="column">
             <View flex-direction="row" background-color="" background-gradient="">

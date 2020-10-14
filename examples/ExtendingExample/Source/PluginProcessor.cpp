@@ -132,6 +132,7 @@ public:
     StatisticsComponent (ExtendingExampleAudioProcessor& processorToUse)
       : processor (processorToUse)
     {
+        setOpaque (false);
         startTimerHz (30);
     }
 
@@ -141,7 +142,6 @@ public:
         auto sampleRate = processor.statisticsSampleRate.load();
         auto samples    = processor.statisticsSamplesPerBlock.load();
 
-        g.fillAll (juce::Colours::darkgrey);
         g.setColour (juce::Colours::white);
         g.drawFittedText ("Samplerate: " + juce::String (sampleRate) + "\n" +
                           "Buffersize: " + juce::String (samples), getLocalBounds(), juce::Justification::centredLeft, 3);
