@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" jucerVersion="5.4.7"
-              projectLineFeed="&#10;" companyName="Foleys Finest Audio" companyWebsite="https://foleysfinest.com"
+<JUCERPROJECT id="WYEC4E" name="EqualizerExample" projectType="audioplug" projectLineFeed="&#10;"
+              companyName="Foleys Finest Audio" companyWebsite="https://foleysfinest.com"
               bundleIdentifier="com.foleysfinest.equalizerexample" pluginManufacturerCode="FFAU"
-              pluginFormats="buildAU,buildAUv3,buildStandalone,buildVST3">
+              pluginFormats="buildAU,buildAUv3,buildStandalone,buildVST3" jucerFormatVersion="1">
   <MAINGROUP id="FaWUds" name="EqualizerExample">
     <GROUP id="{2FE48CA4-8183-CD45-E26D-AA245FA268D6}" name="Source">
       <FILE id="x4GqF2" name="PluginProcessor.cpp" compile="1" resource="0"
