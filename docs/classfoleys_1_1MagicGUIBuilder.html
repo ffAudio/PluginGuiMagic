@@ -167,18 +167,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a30e85ba29e7ff67e2a6d5479c013f574"><td class="memItemLeft" align="right" valign="top">juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a30e85ba29e7ff67e2a6d5479c013f574">getFactoryNames</a> () const</td></tr>
 <tr class="memdesc:a30e85ba29e7ff67e2a6d5479c013f574"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the names of all registered factories  <a href="classfoleys_1_1MagicGUIBuilder.html#a30e85ba29e7ff67e2a6d5479c013f574">More...</a><br /></td></tr>
 <tr class="separator:a30e85ba29e7ff67e2a6d5479c013f574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9999731229574d4f62efaf7fca050fe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a9999731229574d4f62efaf7fca050fe8">populatePropertiesMenu</a> (juce::ComboBox &amp;comboBox) const</td></tr>
-<tr class="memdesc:a9999731229574d4f62efaf7fca050fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the list of options.  <a href="classfoleys_1_1MagicGUIBuilder.html#a9999731229574d4f62efaf7fca050fe8">More...</a><br /></td></tr>
-<tr class="separator:a9999731229574d4f62efaf7fca050fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a362ca97f63cdd01a940d6b66ac3c008a"><td class="memItemLeft" align="right" valign="top">juce::PopupMenu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a362ca97f63cdd01a940d6b66ac3c008a">createParameterMenu</a> () const</td></tr>
-<tr class="separator:a362ca97f63cdd01a940d6b66ac3c008a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae13a9f708663611b3ba8df980d237d90"><td class="memItemLeft" align="right" valign="top">juce::PopupMenu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ae13a9f708663611b3ba8df980d237d90">createPropertiesMenu</a> () const</td></tr>
-<tr class="separator:ae13a9f708663611b3ba8df980d237d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad61896f480164d041d62b421083b41cb"><td class="memItemLeft" align="right" valign="top">juce::PopupMenu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ad61896f480164d041d62b421083b41cb">createTriggerMenu</a> () const</td></tr>
-<tr class="separator:ad61896f480164d041d62b421083b41cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dfdbfaf47c537111888faa00ed9ea93"><td class="memTemplParams" colspan="2">template&lt;typename ObjectType &gt; </td></tr>
-<tr class="memitem:a2dfdbfaf47c537111888faa00ed9ea93"><td class="memTemplItemLeft" align="right" valign="top">juce::PopupMenu&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a2dfdbfaf47c537111888faa00ed9ea93">createObjectMenu</a> () const</td></tr>
-<tr class="separator:a2dfdbfaf47c537111888faa00ed9ea93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfb1daba5339f819f5c2fe9cae33fc2"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1bfb1daba5339f819f5c2fe9cae33fc2">createChoicesMenuLambda</a> (juce::StringArray choices) const</td></tr>
+<tr class="separator:a1bfb1daba5339f819f5c2fe9cae33fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed217a4e68505455f1416aa2dcd2cd6b"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aed217a4e68505455f1416aa2dcd2cd6b">createParameterMenuLambda</a> () const</td></tr>
+<tr class="separator:aed217a4e68505455f1416aa2dcd2cd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a0628ad1e98e3f119d5a741e3c38e0"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a02a0628ad1e98e3f119d5a741e3c38e0">createPropertiesMenuLambda</a> () const</td></tr>
+<tr class="separator:a02a0628ad1e98e3f119d5a741e3c38e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c27aabc5b0a7cdc51ec817a65f0eb0c"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a8c27aabc5b0a7cdc51ec817a65f0eb0c">createTriggerMenuLambda</a> () const</td></tr>
+<tr class="separator:a8c27aabc5b0a7cdc51ec817a65f0eb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0978d7a8d803a3e50e6954e2195205"><td class="memTemplParams" colspan="2">template&lt;typename ObjectType &gt; </td></tr>
+<tr class="memitem:a7a0978d7a8d803a3e50e6954e2195205"><td class="memTemplItemLeft" align="right" valign="top">std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a7a0978d7a8d803a3e50e6954e2195205">createObjectsMenuLambda</a> () const</td></tr>
+<tr class="separator:a7a0978d7a8d803a3e50e6954e2195205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a58e3c8beb83b4c77b6792292a002b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a93a58e3c8beb83b4c77b6792292a002b">changeListenerCallback</a> (juce::ChangeBroadcaster *sender) override</td></tr>
 <tr class="separator:a93a58e3c8beb83b4c77b6792292a002b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a447b54434bb343271fa1c88bf2784bb4"><td class="memItemLeft" align="right" valign="top">juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a447b54434bb343271fa1c88bf2784bb4">getPropertyDefaultValue</a> (juce::Identifier property) const</td></tr>
@@ -438,7 +437,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIState.html#a43d2338e9064d2e6af1ede2a265ce476">MagicGUIState::createDefaultGUITree()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a2a06ca0ff5ac25ee8e29a7c8615ee1c4">MagicGUIBuilder::createGuiItem()</a>, and <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicGUIBuilder::updateStylesheet()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicGUIBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af31371b491e504e6052f49a7a1aaa86d">MagicGUIBuilder::createGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a68f776b7aa2b1d9a6877e9440017d9d6">MagicGUIBuilder::resetToDefaultGUI()</a>, and <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">MagicGUIBuilder::setConfigTree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicGUIBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af31371b491e504e6052f49a7a1aaa86d">MagicGUIBuilder::createGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a68f776b7aa2b1d9a6877e9440017d9d6">MagicGUIBuilder::resetToDefaultGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a7ac7ca96dc0e1237e8b93f6930a8e4a1">MagicGUIBuilder::setConfigTree()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a217d73fb7ed316701cfd568684172cdb">ToolBox::ToolBox()</a>.</p>
 
 </div>
 </div>
@@ -793,34 +792,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9999731229574d4f62efaf7fca050fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9999731229574d4f62efaf7fca050fe8">&#9670;&nbsp;</a></span>populatePropertiesMenu()</h2>
+<a id="a1bfb1daba5339f819f5c2fe9cae33fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bfb1daba5339f819f5c2fe9cae33fc2">&#9670;&nbsp;</a></span>createChoicesMenuLambda()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void populatePropertiesMenu </td>
+          <td class="memname">std::function&lt; void(juce::ComboBox &amp;)&gt; createChoicesMenuLambda </td>
           <td>(</td>
-          <td class="paramtype">juce::ComboBox &amp;&#160;</td>
-          <td class="paramname"><em>comboBox</em></td><td>)</td>
+          <td class="paramtype">juce::StringArray&#160;</td>
+          <td class="paramname"><em>choices</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the list of options. </p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>, and <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>.</p>
 
 </div>
 </div>
-<a id="a362ca97f63cdd01a940d6b66ac3c008a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a362ca97f63cdd01a940d6b66ac3c008a">&#9670;&nbsp;</a></span>createParameterMenu()</h2>
+<a id="aed217a4e68505455f1416aa2dcd2cd6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed217a4e68505455f1416aa2dcd2cd6b">&#9670;&nbsp;</a></span>createParameterMenuLambda()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::PopupMenu createParameterMenu </td>
+          <td class="memname">std::function&lt; void(juce::ComboBox &amp;)&gt; createParameterMenuLambda </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -834,14 +833,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae13a9f708663611b3ba8df980d237d90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae13a9f708663611b3ba8df980d237d90">&#9670;&nbsp;</a></span>createPropertiesMenu()</h2>
+<a id="a02a0628ad1e98e3f119d5a741e3c38e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a0628ad1e98e3f119d5a741e3c38e0">&#9670;&nbsp;</a></span>createPropertiesMenuLambda()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::PopupMenu createPropertiesMenu </td>
+          <td class="memname">std::function&lt; void(juce::ComboBox &amp;)&gt; createPropertiesMenuLambda </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -849,16 +848,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIState.html#a9999731229574d4f62efaf7fca050fe8">MagicGUIState::populatePropertiesMenu()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aecfdabb619d10906a9d753b84470bdb3">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">ToggleButtonItem::getSettableProperties()</a>, and <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>.</p>
+
 </div>
 </div>
-<a id="ad61896f480164d041d62b421083b41cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad61896f480164d041d62b421083b41cb">&#9670;&nbsp;</a></span>createTriggerMenu()</h2>
+<a id="a8c27aabc5b0a7cdc51ec817a65f0eb0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c27aabc5b0a7cdc51ec817a65f0eb0c">&#9670;&nbsp;</a></span>createTriggerMenuLambda()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::PopupMenu createTriggerMenu </td>
+          <td class="memname">std::function&lt; void(juce::ComboBox &amp;)&gt; createTriggerMenuLambda </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -872,14 +875,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2dfdbfaf47c537111888faa00ed9ea93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dfdbfaf47c537111888faa00ed9ea93">&#9670;&nbsp;</a></span>createObjectMenu()</h2>
+<a id="a7a0978d7a8d803a3e50e6954e2195205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0978d7a8d803a3e50e6954e2195205">&#9670;&nbsp;</a></span>createObjectsMenuLambda()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">juce::PopupMenu createObjectMenu </td>
+          <td class="memname">std::function&lt;void(juce::ComboBox&amp;)&gt; createObjectsMenuLambda </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -987,7 +990,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2020 00:11:53 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 16 2020 01:37:06 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

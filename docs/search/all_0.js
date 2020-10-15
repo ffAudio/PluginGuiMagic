@@ -11,9 +11,10 @@ var searchData=
   ['addpaletteentry_8',['addPaletteEntry',['../classfoleys_1_1Stylesheet.html#a46cdf168679abe39ec616aebd5006639',1,'foleys::Stylesheet']]],
   ['addtrigger_9',['addTrigger',['../classfoleys_1_1MagicGUIState.html#a10d7cebd842af92a5eb88efb88e4e4ef',1,'foleys::MagicGUIState']]],
   ['addtypeproperties_10',['addTypeProperties',['../classfoleys_1_1PropertiesEditor.html#afa46a04a441e51096c97fc73180a0b97',1,'foleys::PropertiesEditor']]],
-  ['atomicvalueattachment_11',['AtomicValueAttachment',['../classfoleys_1_1AtomicValueAttachment.html',1,'AtomicValueAttachment&lt; T &gt;'],['../classfoleys_1_1AtomicValueAttachment.html#a1bbbacdc50758f88226e83e954029257',1,'foleys::AtomicValueAttachment::AtomicValueAttachment()']]],
-  ['attachto_12',['attachTo',['../classfoleys_1_1MouseLambdas.html#adc3835402db972acb2262567b6d6c83a',1,'foleys::MouseLambdas']]],
-  ['attachtoparameter_13',['attachToParameter',['../classfoleys_1_1ParameterAttachment.html#accb0f3e885038b632a3cf659fbda4ad9',1,'foleys::ParameterAttachment']]],
-  ['attachtovalue_14',['attachToValue',['../classfoleys_1_1AtomicValueAttachment.html#a562ed0f7cce746c20cb14c04e39b71d4',1,'foleys::AtomicValueAttachment']]],
-  ['autoorientationslider_15',['AutoOrientationSlider',['../classfoleys_1_1AutoOrientationSlider.html',1,'AutoOrientationSlider'],['../classfoleys_1_1AutoOrientationSlider.html#a3737757bf2c65607198497c064f78dce',1,'foleys::AutoOrientationSlider::AutoOrientationSlider()']]]
+  ['angle_11',['angle',['../classfoleys_1_1GradientBackground.html#ab8ef1bf8a70cc07c6d55823c390a7e76',1,'foleys::GradientBackground']]],
+  ['atomicvalueattachment_12',['AtomicValueAttachment',['../classfoleys_1_1AtomicValueAttachment.html',1,'AtomicValueAttachment&lt; T &gt;'],['../classfoleys_1_1AtomicValueAttachment.html#a1bbbacdc50758f88226e83e954029257',1,'foleys::AtomicValueAttachment::AtomicValueAttachment()']]],
+  ['attachto_13',['attachTo',['../classfoleys_1_1MouseLambdas.html#adc3835402db972acb2262567b6d6c83a',1,'foleys::MouseLambdas']]],
+  ['attachtoparameter_14',['attachToParameter',['../classfoleys_1_1ParameterAttachment.html#accb0f3e885038b632a3cf659fbda4ad9',1,'foleys::ParameterAttachment']]],
+  ['attachtovalue_15',['attachToValue',['../classfoleys_1_1AtomicValueAttachment.html#a562ed0f7cce746c20cb14c04e39b71d4',1,'foleys::AtomicValueAttachment']]],
+  ['autoorientationslider_16',['AutoOrientationSlider',['../classfoleys_1_1AutoOrientationSlider.html',1,'AutoOrientationSlider'],['../classfoleys_1_1AutoOrientationSlider.html#a3737757bf2c65607198497c064f78dce',1,'foleys::AutoOrientationSlider::AutoOrientationSlider()']]]
 ];

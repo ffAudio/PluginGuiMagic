@@ -96,11 +96,9 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b">Text</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035">Number</a>, 
 <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb">Colour</a>, 
-<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a137f661cea6e4c35bebe01aba3b1d103">Justification</a>, 
+<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0884ca4af1f5df7de6604f540de37743">Toggle</a>, 
 <br />
-&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a0884ca4af1f5df7de6604f540de37743">Toggle</a>, 
-<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">Choice</a>, 
-<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a6b59cf161fe69fad3478f2aa7b98bf7f">Property</a>
+&#160;&#160;<a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">Choice</a>
 <br />
  }</td></tr>
 <tr class="separator:a7ff5a5c54f182b86d1cd993cf4512c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +113,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a8448759cd6a9859ce5056be8261b8d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a586885fbebf656fcf85ead6508943be5"><td class="memItemLeft" align="right" valign="top">const juce::var&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a586885fbebf656fcf85ead6508943be5">defaultValue</a></td></tr>
 <tr class="separator:a586885fbebf656fcf85ead6508943be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a152c09683ebd0a3dcb9a863528e32c17"><td class="memItemLeft" align="right" valign="top">const juce::PopupMenu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a152c09683ebd0a3dcb9a863528e32c17">menu</a></td></tr>
-<tr class="separator:a152c09683ebd0a3dcb9a863528e32c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2366a7467e02f34b687d54a3b843ef96"><td class="memItemLeft" align="right" valign="top">const std::function&lt; void(juce::ComboBox &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoleys_1_1SettableProperty.html#a2366a7467e02f34b687d54a3b843ef96">menuCreationLambda</a></td></tr>
+<tr class="separator:a2366a7467e02f34b687d54a3b843ef96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="structfoleys_1_1SettableProperty.html" title="A SettableProperty is a value that can be selected by the designer and will be set for the Component ...">SettableProperty</a> is a value that can be selected by the designer and will be set for the Component each time the ValueTree is loaded. </p>
@@ -136,10 +134,8 @@ Public Attributes</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a35d0dd9a40755601b657244976bfc14b"></a>Text&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035"></a>Number&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a0437200656625e66f489f24017ef4ddb"></a>Colour&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a137f661cea6e4c35bebe01aba3b1d103"></a>Justification&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a0884ca4af1f5df7de6604f540de37743"></a>Toggle&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6"></a>Choice&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7ff5a5c54f182b86d1cd993cf4512c87a6b59cf161fe69fad3478f2aa7b98bf7f"></a>Property&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -201,14 +197,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a152c09683ebd0a3dcb9a863528e32c17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a152c09683ebd0a3dcb9a863528e32c17">&#9670;&nbsp;</a></span>menu</h2>
+<a id="a2366a7467e02f34b687d54a3b843ef96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2366a7467e02f34b687d54a3b843ef96">&#9670;&nbsp;</a></span>menuCreationLambda</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const juce::PopupMenu menu</td>
+          <td class="memname">const std::function&lt;void(juce::ComboBox&amp;)&gt; menuCreationLambda</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,7 +217,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2020 00:11:53 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 16 2020 01:37:06 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

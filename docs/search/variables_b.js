@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_788',['type',['../structfoleys_1_1SettableProperty.html#a8448759cd6a9859ce5056be8261b8d69',1,'foleys::SettableProperty']]]
+  ['remove_829',['remove',['../classfoleys_1_1StylePropertyComponent.html#a5469c38701cf16f2998f8b47bf600905',1,'foleys::StylePropertyComponent']]]
 ];

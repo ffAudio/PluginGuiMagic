@@ -1,7 +1,8 @@
 <map id="StylePropertyComponent" name="StylePropertyComponent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,173,108"/>
-<area shape="rect" id="node2" href="$classfoleys_1_1StyleBoolPropertyComponent.html" title=" " alt="" coords="229,5,423,32"/>
-<area shape="rect" id="node3" href="$classfoleys_1_1StyleChoicePropertyComponent.html" title=" " alt="" coords="221,56,431,83"/>
-<area shape="rect" id="node4" href="$classfoleys_1_1StyleColourPropertyComponent.html" title=" " alt="" coords="223,107,429,133"/>
-<area shape="rect" id="node5" href="$classfoleys_1_1StyleTextPropertyComponent.html" title=" " alt="" coords="229,157,423,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,173,133"/>
+<area shape="rect" id="node2" href="$classfoleys_1_1StyleBoolPropertyComponent.html" title=" " alt="" coords="233,5,427,32"/>
+<area shape="rect" id="node3" href="$classfoleys_1_1StyleChoicePropertyComponent.html" title=" " alt="" coords="225,56,435,83"/>
+<area shape="rect" id="node4" href="$classfoleys_1_1StyleColourPropertyComponent.html" title=" " alt="" coords="227,107,433,133"/>
+<area shape="rect" id="node5" href="$classfoleys_1_1StyleGradientPropertyComponent.html" title=" " alt="" coords="221,157,439,184"/>
+<area shape="rect" id="node6" href="$classfoleys_1_1StyleTextPropertyComponent.html" title=" " alt="" coords="233,208,427,235"/>
 </map>

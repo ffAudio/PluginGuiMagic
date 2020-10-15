@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_803',['Number',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035',1,'foleys::SettableProperty']]]
+  ['outlinecolourid_848',['outlineColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094aad4597bfece2e01034c84614445e4364',1,'foleys::MagicLevelMeter']]]
 ];

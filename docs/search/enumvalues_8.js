@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['plotcolourid_805',['plotColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a7ad19ba09115dc9bdf288d631dad6699',1,'foleys::MagicPlotComponent']]],
-  ['plotfillcolourid_806',['plotFillColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a20c3379327fe323e6fd8d8e97008c0e0',1,'foleys::MagicPlotComponent']]],
-  ['plotinactivecolourid_807',['plotInactiveColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abbcfcec1c016f811e31fbd277cd8029a',1,'foleys::MagicPlotComponent']]],
-  ['plotinactivefillcolourid_808',['plotInactiveFillColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa8a901238b8d0a63c4391c033d948e7b',1,'foleys::MagicPlotComponent']]],
-  ['property_809',['Property',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a6b59cf161fe69fad3478f2aa7b98bf7f',1,'foleys::SettableProperty']]]
+  ['radial_853',['radial',['../classfoleys_1_1GradientBackground.html#a1d1cfd8ffb84e947f82999c682b666a7a6719904b86f1dd750e0eaa87b948ea98',1,'foleys::GradientBackground']]],
+  ['right_854',['right',['../classfoleys_1_1ToolBox.html#a6361123067709e7f87d3a84e6ef80ebcaf763d610923b0c4614e8ecd65212666a',1,'foleys::ToolBox']]]
 ];
