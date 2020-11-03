@@ -58,6 +58,10 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
         savePresetInternal();
     });
 
+    magicState.setApplicationSettingsFile (juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
+                                           .getChildFile (ProjectInfo::companyName)
+                                           .getChildFile (ProjectInfo::projectName + juce::String (".settings")));
+
     magicState.setPlayheadUpdateFrequency (30);
 
     FoleysSynth::FoleysSound::Ptr sound (new FoleysSynth::FoleysSound (treeState));
