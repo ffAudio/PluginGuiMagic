@@ -120,7 +120,7 @@ void FoleysSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // MAGIC GUI: send midi messages to the keyboard state
+    // MAGIC GUI: send midi messages to the keyboard state and MidiLearn
     magicState.processMidiBuffer (midiMessages, buffer.getNumSamples(), true);
 
     // MAGIC GUI: send playhead information to the GUI
