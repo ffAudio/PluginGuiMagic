@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="f2ElqE" name="APVTS_Tutorial" projectType="audioplug" jucerVersion="5.4.5"
-              projectLineFeed="&#10;">
+<JUCERPROJECT id="f2ElqE" name="APVTS_Tutorial" projectType="audioplug" projectLineFeed="&#10;"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="dXEChs" name="APVTS_Tutorial">
     <GROUP id="{74E99E7D-2C43-FC6C-1C67-E1435F31EF9C}" name="Source">
       <FILE id="w7Q1Wt" name="PluginProcessor.cpp" compile="1" resource="0"

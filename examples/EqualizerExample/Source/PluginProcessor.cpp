@@ -12,15 +12,15 @@
 
 namespace IDs
 {
-    static String paramOutput  { "output" };
-    static String paramType    { "type" };
-    static String paramFreq    { "freq" };
-    static String paramGain    { "gain" };
-    static String paramQuality { "quality" };
-    static String paramActive  { "active" };
+    static juce::String paramOutput  { "output" };
+    static juce::String paramType    { "type" };
+    static juce::String paramFreq    { "freq" };
+    static juce::String paramGain    { "gain" };
+    static juce::String paramQuality { "quality" };
+    static juce::String paramActive  { "active" };
 }
 
-StringArray filterNames =
+juce::StringArray filterNames =
 {
     NEEDS_TRANS ("No filter"),
     NEEDS_TRANS ("High pass"),
@@ -36,70 +36,70 @@ StringArray filterNames =
 
 static float maxLevel = 24.0f;
 
-std::unique_ptr<AudioProcessorParameterGroup> createParametersForFilter (const String& prefix,
-                                                                         const String& name,
-                                                                         EqualizerExampleAudioProcessor::FilterType type,
-                                                                         float frequency,
-                                                                         float gain    = 0.0f,
-                                                                         float quality = 1.0f,
-                                                                         bool  active  = true)
+std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (const juce::String& prefix,
+                                                                               const juce::String& name,
+                                                                               EqualizerExampleAudioProcessor::FilterType type,
+                                                                               float frequency,
+                                                                               float gain    = 0.0f,
+                                                                               float quality = 1.0f,
+                                                                               bool  active  = true)
 {
-    auto typeParameter = std::make_unique<AudioParameterChoice> (prefix + IDs::paramType,
-                                                                 name + ": " + TRANS ("Filter Type"),
-                                                                 filterNames,
-                                                                 type);
+    auto typeParameter = std::make_unique<juce::AudioParameterChoice> (prefix + IDs::paramType,
+                                                                       name + ": " + TRANS ("Filter Type"),
+                                                                       filterNames,
+                                                                       type);
 
-    auto actvParameter = std::make_unique<AudioParameterBool> (prefix + IDs::paramActive,
-                                                               name + ": " + TRANS ("Active"),
-                                                               active,
-                                                               String(),
-                                                               [](float value, int) {return value > 0.5f ? TRANS ("active") : TRANS ("bypassed");},
-                                                               [](String text) {return text == TRANS ("active");});
+    auto actvParameter = std::make_unique<juce::AudioParameterBool> (prefix + IDs::paramActive,
+                                                                     name + ": " + TRANS ("Active"),
+                                                                     active,
+                                                                     juce::String(),
+                                                                     [](float value, int) {return value > 0.5f ? TRANS ("active") : TRANS ("bypassed");},
+                                                                     [](juce::String text) {return text == TRANS ("active");});
 
-    auto freqParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramFreq,
-                                                                name + ": " + TRANS ("Frequency"),
-                                                                foleys::Conversions::makeLogarithmicRange<float>(20.0f, 20000.0f),
-                                                                frequency,
-                                                                String(),
-                                                                AudioProcessorParameter::genericParameter,
-                                                                [](float value, int) { return (value < 1000) ?
-                                                                    String (value, 0) + " Hz" :
-                                                                    String (value / 1000.0) + " kHz"; },
-                                                                [](String text) { return text.endsWith(" kHz") ?
-                                                                    text.getFloatValue() * 1000.0 :
-                                                                    text.getFloatValue(); });
+    auto freqParameter = std::make_unique<juce::AudioParameterFloat> (prefix + IDs::paramFreq,
+                                                                      name + ": " + TRANS ("Frequency"),
+                                                                      foleys::Conversions::makeLogarithmicRange<float>(20.0f, 20000.0f),
+                                                                      frequency,
+                                                                      juce::String(),
+                                                                      juce::AudioProcessorParameter::genericParameter,
+                                                                      [](float value, int) { return (value < 1000) ?
+                                                                        juce::String (value, 0) + " Hz" :
+                                                                        juce::String (value / 1000.0) + " kHz"; },
+                                                                      [](juce::String text) { return text.endsWith(" kHz") ?
+                                                                        text.getFloatValue() * 1000.0 :
+                                                                        text.getFloatValue(); });
 
-    auto qltyParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramQuality,
-                                                                name + ": " + TRANS ("Quality"),
-                                                                NormalisableRange<float> {0.1f, 10.0f, 0.1f, std::log (0.5f) / std::log (0.9f / 9.9f)},
-                                                                quality,
-                                                                String(),
-                                                                AudioProcessorParameter::genericParameter,
-                                                                [](float value, int) { return String (value, 1); },
-                                                                [](const String& text) { return text.getFloatValue(); });
+    auto qltyParameter = std::make_unique<juce::AudioParameterFloat> (prefix + IDs::paramQuality,
+                                                                      name + ": " + TRANS ("Quality"),
+                                                                      juce::NormalisableRange<float> {0.1f, 10.0f, 0.1f, std::log (0.5f) / std::log (0.9f / 9.9f)},
+                                                                      quality,
+                                                                      juce::String(),
+                                                                      juce::AudioProcessorParameter::genericParameter,
+                                                                      [](float value, int) { return juce::String (value, 1); },
+                                                                      [](const juce::String& text) { return text.getFloatValue(); });
 
-    auto gainParameter = std::make_unique<AudioParameterFloat> (prefix + IDs::paramGain,
-                                                                name + ": " + TRANS ("Gain"),
-                                                                NormalisableRange<float> {-maxLevel, maxLevel, 0.1f},
-                                                                gain,
-                                                                String(),
-                                                                AudioProcessorParameter::genericParameter,
-                                                                [](float value, int) {return String (value, 1) + " dB";},
-                                                                [](String text) {return text.getFloatValue();});
+    auto gainParameter = std::make_unique<juce::AudioParameterFloat> (prefix + IDs::paramGain,
+                                                                      name + ": " + TRANS ("Gain"),
+                                                                      juce::NormalisableRange<float> {-maxLevel, maxLevel, 0.1f},
+                                                                      gain,
+                                                                      juce::String(),
+                                                                      juce::AudioProcessorParameter::genericParameter,
+                                                                      [](float value, int) {return juce::String (value, 1) + " dB";},
+                                                                      [](juce::String text) {return text.getFloatValue();});
 
-    auto group = std::make_unique<AudioProcessorParameterGroup> ("band" + prefix, name, "|",
-                                                                 std::move (typeParameter),
-                                                                 std::move (actvParameter),
-                                                                 std::move (freqParameter),
-                                                                 std::move (qltyParameter),
-                                                                 std::move (gainParameter));
+    auto group = std::make_unique<juce::AudioProcessorParameterGroup> ("band" + prefix, name, "|",
+                                                                       std::move (typeParameter),
+                                                                       std::move (actvParameter),
+                                                                       std::move (freqParameter),
+                                                                       std::move (qltyParameter),
+                                                                       std::move (gainParameter));
 
     return group;
 }
 
-AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
-    std::vector<std::unique_ptr<AudioProcessorParameterGroup>> params;
+    std::vector<std::unique_ptr<juce::AudioProcessorParameterGroup>> params;
 
     params.push_back (createParametersForFilter ("Q1", NEEDS_TRANS ("Q1"), EqualizerExampleAudioProcessor::HighPass,     40.0f));
     params.push_back (createParametersForFilter ("Q2", NEEDS_TRANS ("Q2"), EqualizerExampleAudioProcessor::LowShelf,    250.0f));
@@ -108,20 +108,20 @@ AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
     params.push_back (createParametersForFilter ("Q5", NEEDS_TRANS ("Q5"), EqualizerExampleAudioProcessor::HighShelf,  5000.0f));
     params.push_back (createParametersForFilter ("Q6", NEEDS_TRANS ("Q6"), EqualizerExampleAudioProcessor::LowPass,   12000.0f));
 
-    auto param = std::make_unique<AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
-                                                        NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
-                                                        String(),
-                                                        AudioProcessorParameter::genericParameter,
-                                                        [](float value, int) {return String (Decibels::gainToDecibels(value), 1) + " dB";},
-                                                        [](String text) {return Decibels::decibelsToGain (text.getFloatValue());});
+    auto param = std::make_unique<juce::AudioParameterFloat> (IDs::paramOutput, TRANS ("Output"),
+                                                              juce::NormalisableRange<float> (0.0f, 2.0f, 0.01f), 1.0f,
+                                                              juce::String(),
+                                                              juce::AudioProcessorParameter::genericParameter,
+                                                              [](float value, int) {return juce::String (juce::Decibels::gainToDecibels(value), 1) + " dB";},
+                                                              [](juce::String text) {return juce::Decibels::decibelsToGain (text.getFloatValue());});
 
-    auto group = std::make_unique<AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
+    auto group = std::make_unique<juce::AudioProcessorParameterGroup> ("global", TRANS ("Globals"), "|", std::move (param));
     params.push_back (std::move (group));
 
     return { params.begin(), params.end() };
 }
 
-auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const String& plotID)
+auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const juce::String& plotID)
 {
     return [plot = magicState.getObjectWithType<foleys::MagicFilterPlot>(plotID)] (const EqualizerExampleAudioProcessor::FilterAttachment& a)
     {
@@ -139,9 +139,9 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
+                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
                       #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
+                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        ),
 #else
@@ -153,7 +153,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     // GUI MAGIC: add plots to be displayed in the GUI
     for (size_t i = 0; i < attachments.size(); ++i)
     {
-        auto name = "plot" + String (i + 1);
+        auto name = "plot" + juce::String (i + 1);
         magicState.createAndAddObject<foleys::MagicFilterPlot>(name);
         attachments.at (i)->postFilterUpdate = createPostUpdateLambda (magicState, name);
     }
@@ -170,7 +170,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     outputMeter = magicState.createAndAddObject<foleys::MagicLevelSource>("outputMeter");
 
     for (auto* parameter : getParameters())
-        if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
+        if (auto* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(parameter))
             treeState.addParameterListener (p->paramID, this);
 
     // MAGIC GUI: add properties to connect visibility to
@@ -184,7 +184,7 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
 {
     for (auto* parameter : getParameters())
-        if (auto* p = dynamic_cast<AudioProcessorParameterWithID*>(parameter))
+        if (auto* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(parameter))
             treeState.removeParameterListener (p->paramID, this);
 }
 
@@ -197,10 +197,10 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
     magicState.prepareToPlay (sampleRate, samplesPerBlock);
     outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
 
-    dsp::ProcessSpec spec;
+    juce::dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;
-    spec.maximumBlockSize = uint32 (samplesPerBlock);
-    spec.numChannels = uint32 (numChannels);
+    spec.maximumBlockSize = juce::uint32 (samplesPerBlock);
+    spec.numChannels = juce::uint32 (numChannels);
 
     filter.get<6>().setGainLinear (*treeState.getRawParameterValue (IDs::paramOutput));
 
@@ -233,9 +233,9 @@ bool EqualizerExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& 
 }
 #endif
 
-void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void EqualizerExampleAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
-    ScopedNoDenormals noDenormals;
+    juce::ScopedNoDenormals noDenormals;
     ignoreUnused (midiMessages);
 
     filter.setBypassed<0>(attachment1.isActive() == false);
@@ -251,8 +251,8 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
     if (inputAnalysing.get())
         inputAnalyser->pushSamples (buffer);
 
-    dsp::AudioBlock<float>              ioBuffer (buffer);
-    dsp::ProcessContextReplacing<float> context  (ioBuffer);
+    juce::dsp::AudioBlock<float>              ioBuffer (buffer);
+    juce::dsp::ProcessContextReplacing<float> context  (ioBuffer);
     filter.process (context);
 
     // GUI MAGIC: measure after processing
@@ -264,7 +264,7 @@ void EqualizerExampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 
 //==============================================================================
 
-EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (AudioProcessorValueTreeState& stateToUse, FilterBand& filterToControl, const String& prefixToUse, const CriticalSection& lock)
+EqualizerExampleAudioProcessor::FilterAttachment::FilterAttachment (juce::AudioProcessorValueTreeState& stateToUse, FilterBand& filterToControl, const juce::String& prefixToUse, const juce::CriticalSection& lock)
   : state               (stateToUse),
     filter              (filterToControl),
     prefix              (prefixToUse),
@@ -288,22 +288,22 @@ void EqualizerExampleAudioProcessor::FilterAttachment::updateFilter()
 
     switch (type)
     {
-        case NoFilter:    coefficients = new dsp::IIR::Coefficients<float> (1, 0, 1, 0); break;
-        case LowPass:     coefficients = dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality); break;
-        case LowPass1st:  coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency); break;
-        case LowShelf:    coefficients = dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
-        case BandPass:    coefficients = dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality); break;
-        case Notch:       coefficients = dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality); break;
-        case Peak:        coefficients = dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
-        case HighShelf:   coefficients = dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, Decibels::decibelsToGain (gain.load())); break;
-        case HighPass1st: coefficients = dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency); break;
-        case HighPass:    coefficients = dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality); break;
+        case NoFilter:    coefficients = new juce::dsp::IIR::Coefficients<float> (1, 0, 1, 0); break;
+        case LowPass:     coefficients = juce::dsp::IIR::Coefficients<float>::makeLowPass (sampleRate, frequency, quality); break;
+        case LowPass1st:  coefficients = juce::dsp::IIR::Coefficients<float>::makeFirstOrderLowPass (sampleRate, frequency); break;
+        case LowShelf:    coefficients = juce::dsp::IIR::Coefficients<float>::makeLowShelf (sampleRate, frequency, quality, juce::Decibels::decibelsToGain (gain.load())); break;
+        case BandPass:    coefficients = juce::dsp::IIR::Coefficients<float>::makeBandPass (sampleRate, frequency, quality); break;
+        case Notch:       coefficients = juce::dsp::IIR::Coefficients<float>::makeNotch (sampleRate, frequency, quality); break;
+        case Peak:        coefficients = juce::dsp::IIR::Coefficients<float>::makePeakFilter (sampleRate, frequency, quality, juce::Decibels::decibelsToGain (gain.load())); break;
+        case HighShelf:   coefficients = juce::dsp::IIR::Coefficients<float>::makeHighShelf (sampleRate, frequency, quality, juce::Decibels::decibelsToGain (gain.load())); break;
+        case HighPass1st: coefficients = juce::dsp::IIR::Coefficients<float>::makeFirstOrderHighPass (sampleRate, frequency); break;
+        case HighPass:    coefficients = juce::dsp::IIR::Coefficients<float>::makeHighPass (sampleRate, frequency, quality); break;
         case LastFilterID:
         default:          return;
     }
 
     {
-        ScopedLock processLock (callbackLock);
+        juce::ScopedLock processLock (callbackLock);
         *filter.state = *coefficients;
     }
 
@@ -320,7 +320,10 @@ void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sam
 //==============================================================================
 
 template<typename ValueType>
-EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (AudioProcessorValueTreeState& stateToUse, std::atomic<ValueType>& valueToUse, const String& paramToUse, std::function<void()> changedLambda)
+EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (juce::AudioProcessorValueTreeState& stateToUse,
+                                                                         std::atomic<ValueType>& valueToUse,
+                                                                         const juce::String& paramToUse,
+                                                                         std::function<void()> changedLambda)
   : state (stateToUse),
     value (valueToUse),
     paramID (paramToUse),
@@ -352,7 +355,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcesso
 }
 
 template<typename ValueType>
-void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const String&, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const juce::String&, float newValue)
 {
     value = newValue;
     if (onParameterChanged)
@@ -360,7 +363,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged 
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const String&, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const juce::String&, float newValue)
 {
     value = (newValue > 0.5f);
     if (onParameterChanged)
@@ -368,15 +371,15 @@ void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (cons
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const String&, float newValue)
+void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const juce::String&, float newValue)
 {
-    value = EqualizerExampleAudioProcessor::FilterType (roundToInt (newValue));
+    value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (newValue));
     if (onParameterChanged)
         onParameterChanged();
 }
 
 //==============================================================================
-void EqualizerExampleAudioProcessor::parameterChanged (const String&, float)
+void EqualizerExampleAudioProcessor::parameterChanged (const juce::String&, float)
 {
     triggerAsyncUpdate();
 }
@@ -397,14 +400,14 @@ bool EqualizerExampleAudioProcessor::hasEditor() const
     return true;
 }
 
-AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
+juce::AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
 {
     // MAGIC GUI: create the generated editor
     return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
 //==============================================================================
-void EqualizerExampleAudioProcessor::getStateInformation (MemoryBlock& destData)
+void EqualizerExampleAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
@@ -422,7 +425,7 @@ void EqualizerExampleAudioProcessor::setStateInformation (const void* data, int 
 }
 
 //==============================================================================
-const String EqualizerExampleAudioProcessor::getName() const
+const juce::String EqualizerExampleAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
@@ -474,18 +477,18 @@ void EqualizerExampleAudioProcessor::setCurrentProgram (int)
 {
 }
 
-const String EqualizerExampleAudioProcessor::getProgramName (int)
+const juce::String EqualizerExampleAudioProcessor::getProgramName (int)
 {
     return {};
 }
 
-void EqualizerExampleAudioProcessor::changeProgramName (int, const String&)
+void EqualizerExampleAudioProcessor::changeProgramName (int, const juce::String&)
 {
 }
 
 //==============================================================================
 // This creates new instances of the plugin..
-AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new EqualizerExampleAudioProcessor();
 }

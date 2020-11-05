@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="yiwLut" name="ExtendingExample" projectType="audioplug" projectLineFeed="&#10;"
-              jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="YlTe1F" name="ExtendingExample">
     <GROUP id="{792094DB-E732-2ADA-93CB-1F5D3139D8C3}" name="Source">
       <FILE id="FCpahK" name="PluginProcessor.cpp" compile="1" resource="0"

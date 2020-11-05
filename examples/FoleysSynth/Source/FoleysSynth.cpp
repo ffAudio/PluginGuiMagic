@@ -12,71 +12,71 @@
 
 namespace IDs
 {
-    static String paramAttack  { "attack" };
-    static String paramDecay   { "decay" };
-    static String paramSustain { "sustain" };
-    static String paramRelease { "release" };
-    static String paramGain    { "gain" };
+    static juce::String paramAttack  { "attack" };
+    static juce::String paramDecay   { "decay" };
+    static juce::String paramSustain { "sustain" };
+    static juce::String paramRelease { "release" };
+    static juce::String paramGain    { "gain" };
 }
 
 //==============================================================================
 
 int FoleysSynth::numOscillators = 8;
 
-void FoleysSynth::addADSRParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+void FoleysSynth::addADSRParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout)
 {
-    auto attack  = std::make_unique<AudioParameterFloat>(IDs::paramAttack,  "Attack",  NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
-    auto decay   = std::make_unique<AudioParameterFloat>(IDs::paramDecay,   "Decay",   NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
-    auto sustain = std::make_unique<AudioParameterFloat>(IDs::paramSustain, "Sustain", NormalisableRange<float> (0.0f,   1.0f, 0.01f), 1.0f);
-    auto release = std::make_unique<AudioParameterFloat>(IDs::paramRelease, "Release", NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto attack  = std::make_unique<juce::AudioParameterFloat>(IDs::paramAttack,  "Attack",  juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto decay   = std::make_unique<juce::AudioParameterFloat>(IDs::paramDecay,   "Decay",   juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto sustain = std::make_unique<juce::AudioParameterFloat>(IDs::paramSustain, "Sustain", juce::NormalisableRange<float> (0.0f,   1.0f, 0.01f), 1.0f);
+    auto release = std::make_unique<juce::AudioParameterFloat>(IDs::paramRelease, "Release", juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
 
-    auto group = std::make_unique<AudioProcessorParameterGroup>("adsr", "ADRS", "|",
-                                                                std::move (attack),
-                                                                std::move (decay),
-                                                                std::move (sustain),
-                                                                std::move (release));
+    auto group = std::make_unique<juce::AudioProcessorParameterGroup>("adsr", "ADRS", "|",
+                                                                      std::move (attack),
+                                                                      std::move (decay),
+                                                                      std::move (sustain),
+                                                                      std::move (release));
     layout.add (std::move (group));
 }
 
-void FoleysSynth::addOvertoneParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+void FoleysSynth::addOvertoneParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout)
 {
-    auto group = std::make_unique<AudioProcessorParameterGroup>("oscillators", "Oscillators", "|");
+    auto group = std::make_unique<juce::AudioProcessorParameterGroup>("oscillators", "Oscillators", "|");
     for (int i = 0; i < FoleysSynth::numOscillators; ++i)
     {
-        group->addChild (std::make_unique<AudioParameterFloat>("osc" + String (i), "Oscillator " + String (i), NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
-        group->addChild (std::make_unique<AudioParameterFloat>("detune" + String (i), "Detune " + String (i), NormalisableRange<float>(-0.5f, 0.5f, 0.01f), 0.0f));
+        group->addChild (std::make_unique<juce::AudioParameterFloat>("osc" + juce::String (i), "Oscillator " + juce::String (i), juce::NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
+        group->addChild (std::make_unique<juce::AudioParameterFloat>("detune" + juce::String (i), "Detune " + juce::String (i), juce::NormalisableRange<float>(-0.5f, 0.5f, 0.01f), 0.0f));
     }
 
     layout.add (std::move (group));
 }
 
-void FoleysSynth::addGainParameters (AudioProcessorValueTreeState::ParameterLayout& layout)
+void FoleysSynth::addGainParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout)
 {
-    auto gain  = std::make_unique<AudioParameterFloat>(IDs::paramGain,  "Gain",  NormalisableRange<float> (0.0f, 1.0f, 0.01f), 0.70f);
+    auto gain  = std::make_unique<juce::AudioParameterFloat>(IDs::paramGain,  "Gain",  juce::NormalisableRange<float> (0.0f, 1.0f, 0.01f), 0.70f);
 
-    layout.add (std::make_unique<AudioProcessorParameterGroup>("output", "Output", "|", std::move (gain)));
+    layout.add (std::make_unique<juce::AudioProcessorParameterGroup>("output", "Output", "|", std::move (gain)));
 }
 
 //==============================================================================
 
-FoleysSynth::FoleysSound::FoleysSound (AudioProcessorValueTreeState& stateToUse)
+FoleysSynth::FoleysSound::FoleysSound (juce::AudioProcessorValueTreeState& stateToUse)
   : state (stateToUse)
 {
-    attack = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramAttack));
+    attack = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramAttack));
     jassert (attack);
-    decay = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramDecay));
+    decay = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramDecay));
     jassert (decay);
-    sustain = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramSustain));
+    sustain = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramSustain));
     jassert (sustain);
-    release = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramRelease));
+    release = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramRelease));
     jassert (release);
-    gain = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramGain));
+    gain = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramGain));
     jassert (gain);
 }
 
-ADSR::Parameters FoleysSynth::FoleysSound::getADSR()
+juce::ADSR::Parameters FoleysSynth::FoleysSound::getADSR()
 {
-    ADSR::Parameters parameters;
+    juce::ADSR::Parameters parameters;
     parameters.attack  = attack->get();
     parameters.decay   = decay->get();
     parameters.sustain = sustain->get();
@@ -86,33 +86,33 @@ ADSR::Parameters FoleysSynth::FoleysSound::getADSR()
 
 //==============================================================================
 
-FoleysSynth::FoleysVoice::FoleysVoice (AudioProcessorValueTreeState& state)
+FoleysSynth::FoleysVoice::FoleysVoice (juce::AudioProcessorValueTreeState& state)
 {
     for (int i=0; i < FoleysSynth::numOscillators; ++i)
     {
         oscillators.push_back (std::make_unique<BaseOscillator>());
         auto& osc = oscillators.back();
-        osc->gain = dynamic_cast<AudioParameterFloat*>(state.getParameter ("osc" + String (i)));
-        osc->detune = dynamic_cast<AudioParameterFloat*>(state.getParameter ("detune" + String (i)));
+        osc->gain = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter ("osc" + juce::String (i)));
+        osc->detune = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter ("detune" + juce::String (i)));
         osc->osc.get<0>().initialise ([](auto arg){return std::sin (arg);}, 512);
         osc->multiplier = i + 1;
     }
 
-    gainParameter = dynamic_cast<AudioParameterFloat*>(state.getParameter (IDs::paramGain));
+    gainParameter = dynamic_cast<juce::AudioParameterFloat*>(state.getParameter (IDs::paramGain));
     jassert (gainParameter);
 
     oscillatorBuffer.setSize (1, internalBufferSize);
     voiceBuffer.setSize (1, internalBufferSize);
 }
 
-bool FoleysSynth::FoleysVoice::canPlaySound (SynthesiserSound* sound)
+bool FoleysSynth::FoleysVoice::canPlaySound (juce::SynthesiserSound* sound)
 {
     return dynamic_cast<FoleysSound*>(sound) != nullptr;
 }
 
 void FoleysSynth::FoleysVoice::startNote ([[maybe_unused]]int midiNoteNumber,
                                           [[maybe_unused]]float velocity,
-                                          SynthesiserSound* sound,
+                                          juce::SynthesiserSound* sound,
                                           int currentPitchWheelPosition)
 {
     if (auto* foleysSound = dynamic_cast<FoleysSound*>(sound))
@@ -149,7 +149,7 @@ void FoleysSynth::FoleysVoice::controllerMoved ([[maybe_unused]]int controllerNu
 {
 }
 
-void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer,
+void FoleysSynth::FoleysVoice::renderNextBlock (juce::AudioBuffer<float>& outputBuffer,
                                                 int startSample,
                                                 int numSamples)
 {
@@ -159,9 +159,9 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
     while (numSamples > 0)
     {
         auto left = std::min (numSamples, oscillatorBuffer.getNumSamples());
-        auto block = dsp::AudioBlock<float> (oscillatorBuffer).getSingleChannelBlock (0).getSubBlock (0, size_t (left));
+        auto block = juce::dsp::AudioBlock<float> (oscillatorBuffer).getSingleChannelBlock (0).getSubBlock (0, size_t (left));
 
-        dsp::ProcessContextReplacing<float> context (block);
+        juce::dsp::ProcessContextReplacing<float> context (block);
         voiceBuffer.clear();
         for (auto& osc : oscillators)
         {
@@ -192,9 +192,9 @@ void FoleysSynth::FoleysVoice::renderNextBlock (AudioBuffer<float>& outputBuffer
 
 void FoleysSynth::FoleysVoice::setCurrentPlaybackSampleRate (double newRate)
 {
-    SynthesiserVoice::setCurrentPlaybackSampleRate (newRate);
+    juce::SynthesiserVoice::setCurrentPlaybackSampleRate (newRate);
 
-    dsp::ProcessSpec spec;
+    juce::dsp::ProcessSpec spec;
     spec.sampleRate = newRate;
     spec.maximumBlockSize = juce::uint32 (internalBufferSize);
     spec.numChannels = 1;

@@ -1,15 +1,15 @@
 
 #pragma once
 
-class PresetListBox   : public ListBoxModel,
-                        public ChangeBroadcaster
+class PresetListBox   : public juce::ListBoxModel,
+                        public juce::ChangeBroadcaster
 {
 public:
-    PresetListBox (ValueTree presetsNode) : presets (presetsNode)
+    PresetListBox (juce::ValueTree presetsNode) : presets (presetsNode)
     {
     }
 
-    void setPresetsNode (ValueTree node)
+    void setPresetsNode (juce::ValueTree node)
     {
         presets = node;
     }
@@ -19,29 +19,29 @@ public:
         return presets.getNumChildren();
     }
 
-    void listBoxItemClicked (int rowNumber, const MouseEvent&) override
+    void listBoxItemClicked (int rowNumber, const juce::MouseEvent&) override
     {
         if (onSelectionChanged)
             onSelectionChanged (rowNumber);
     }
 
-    void paintListBoxItem (int rowNumber, Graphics &g, int width, int height, bool rowIsSelected) override
+    void paintListBoxItem (int rowNumber, juce::Graphics &g, int width, int height, bool rowIsSelected) override
     {
-        auto bounds = Rectangle<int> (0, 0, width, height);
+        auto bounds = juce::Rectangle<int> (0, 0, width, height);
         if (rowIsSelected)
         {
-            g.setColour (Colours::grey);
+            g.setColour (juce::Colours::grey);
             g.fillRect (bounds);
         }
 
-        g.setColour (Colours::silver);
-        g.drawFittedText (presets.getChild (rowNumber).getProperty ("name", "foo").toString(), bounds, Justification::centredLeft, 1);
+        g.setColour (juce::Colours::silver);
+        g.drawFittedText (presets.getChild (rowNumber).getProperty ("name", "foo").toString(), bounds, juce::Justification::centredLeft, 1);
     }
 
     std::function<void(int rowNumber)> onSelectionChanged;
 
 private:
-    ValueTree presets;
+    juce::ValueTree presets;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PresetListBox)
 };

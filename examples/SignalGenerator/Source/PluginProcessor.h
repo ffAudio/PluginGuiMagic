@@ -15,8 +15,8 @@
 //==============================================================================
 /**
 */
-class SignalGeneratorAudioProcessor  : public AudioProcessor,
-                                       private AudioProcessorValueTreeState::Listener
+class SignalGeneratorAudioProcessor  : public  juce::AudioProcessor,
+                                       private juce::AudioProcessorValueTreeState::Listener
 {
 public:
     enum WaveType
@@ -36,19 +36,19 @@ public:
     void releaseResources() override;
 
    #ifndef JucePlugin_PreferredChannelConfigurations
-    bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
+    bool isBusesLayoutSupported (const juce::AudioProcessor::BusesLayout& layouts) const override;
    #endif
 
-    void parameterChanged (const String& param, float value) override;
+    void parameterChanged (const juce::String& param, float value) override;
 
-    void processBlock (AudioBuffer<float>&, MidiBuffer&) override;
+    void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
-    AudioProcessorEditor* createEditor() override;
+    juce::AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override;
 
     //==============================================================================
-    const String getName() const override;
+    const juce::String getName() const override;
 
     bool acceptsMidi() const override;
     bool producesMidi() const override;
@@ -59,17 +59,17 @@ public:
     int getNumPrograms() override;
     int getCurrentProgram() override;
     void setCurrentProgram (int index) override;
-    const String getProgramName (int index) override;
-    void changeProgramName (int index, const String& newName) override;
+    const juce::String getProgramName (int index) override;
+    void changeProgramName (int index, const juce::String& newName) override;
 
     //==============================================================================
-    void getStateInformation (MemoryBlock& destData) override;
+    void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
     //==============================================================================
 
-    void setOscillator (dsp::Oscillator<float>& osc, WaveType type);
+    void setOscillator (juce::dsp::Oscillator<float>& osc, WaveType type);
 
     std::atomic<float>* frequency  = nullptr;
     std::atomic<float>* level      = nullptr;
@@ -80,11 +80,11 @@ private:
     std::atomic<float>* vfoFrequency  = nullptr;
     std::atomic<float>* vfoLevel      = nullptr;
 
-    dsp::Oscillator<float> mainOSC;
-    dsp::Oscillator<float> lfoOSC;
-    dsp::Oscillator<float> vfoOSC;
+    juce::dsp::Oscillator<float> mainOSC;
+    juce::dsp::Oscillator<float> lfoOSC;
+    juce::dsp::Oscillator<float> vfoOSC;
 
-    AudioProcessorValueTreeState treeState;
+    juce::AudioProcessorValueTreeState treeState;
 
     // MAGIC GUI: add this docking station for the GUI
     foleys::MagicProcessorState magicState { *this, treeState };
