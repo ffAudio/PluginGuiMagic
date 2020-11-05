@@ -108,6 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c64c7754b7155d7fadc05fd061f329f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structfoleys_1_1SettableProperty.html">SettableProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">getSettableProperties</a> () const override</td></tr>
 <tr class="memdesc:a7c64c7754b7155d7fadc05fd061f329f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to return each settable option the designer should be able to configure on your component.  <a href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">More...</a><br /></td></tr>
 <tr class="separator:a7c64c7754b7155d7fadc05fd061f329f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12d3643cc77a5cf484cd80eb8a8a2c3"><td class="memItemLeft" align="right" valign="top">juce::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1SliderItem.html#ac12d3643cc77a5cf484cd80eb8a8a2c3">getControlledParameterID</a> (juce::Point&lt; int &gt;) override</td></tr>
+<tr class="memdesc:ac12d3643cc77a5cf484cd80eb8a8a2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parameterID that is controlled from this component.  <a href="classfoleys_1_1SliderItem.html#ac12d3643cc77a5cf484cd80eb8a8a2c3">More...</a><br /></td></tr>
+<tr class="separator:ac12d3643cc77a5cf484cd80eb8a8a2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64886d23ebfdd75ae21930e09a14bba7"><td class="memItemLeft" align="right" valign="top">juce::Component *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1SliderItem.html#a64886d23ebfdd75ae21930e09a14bba7">getWrappedComponent</a> () override</td></tr>
 <tr class="memdesc:a64886d23ebfdd75ae21930e09a14bba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows accessing the Component inside that <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>.  <a href="classfoleys_1_1SliderItem.html#a64886d23ebfdd75ae21930e09a14bba7">More...</a><br /></td></tr>
 <tr class="separator:a64886d23ebfdd75ae21930e09a14bba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,6 +159,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b594ff40a2c4b2d1739f22b699666d1 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e59be9e76ef10c99b1dcf64797e9c2c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">juce::FlexItem &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a1e59be9e76ef10c99b1dcf64797e9c2c">getFlexItem</a> ()</td></tr>
 <tr class="separator:a1e59be9e76ef10c99b1dcf64797e9c2c inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e04c4abf194a70968ebbfdfcc7d4ca7 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a3e04c4abf194a70968ebbfdfcc7d4ca7">itemDragEnter</a> (const juce::DragAndDropTarget::SourceDetails &amp;details) override</td></tr>
+<tr class="separator:a3e04c4abf194a70968ebbfdfcc7d4ca7 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69395a6f7601c7a45b3dd6a4a3758de inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ae69395a6f7601c7a45b3dd6a4a3758de">itemDragExit</a> (const juce::DragAndDropTarget::SourceDetails &amp;details) override</td></tr>
+<tr class="separator:ae69395a6f7601c7a45b3dd6a4a3758de inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9086f21dd031681b1dffd1a903e3b740 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a9086f21dd031681b1dffd1a903e3b740">paintOverChildren</a> (juce::Graphics &amp;g) override</td></tr>
+<tr class="separator:a9086f21dd031681b1dffd1a903e3b740 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4de75057775ad6c9fd2479490542205 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ad4de75057775ad6c9fd2479490542205">isInterestedInDragSource</a> (const juce::DragAndDropTarget::SourceDetails &amp;dragSourceDetails) override</td></tr>
+<tr class="separator:ad4de75057775ad6c9fd2479490542205 inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b97bf79ff599263d5e6bc54c16d18a inherit pub_methods_classfoleys_1_1GuiItem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#ad2b97bf79ff599263d5e6bc54c16d18a">itemDropped</a> (const juce::DragAndDropTarget::SourceDetails &amp;dragSourceDetails) override</td></tr>
+<tr class="separator:ad2b97bf79ff599263d5e6bc54c16d18a inherit pub_methods_classfoleys_1_1GuiItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -249,7 +262,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classfoleys_1_1GuiItem.html#a99b02345a8a15d3c5ea2844a2253f510">GuiItem</a>.</p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIState.html#ad671eedcc6c3fce5a703eb4e1a956748">MagicGUIState::createAttachment()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaef237f655db41e906c13d14267512be">GuiItem::getMagicState()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aa2821e88d517d7076838d24dccc94107">SliderItem::pMaxValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ae988cdd6a20b2b97682063591c6e78eb">SliderItem::pMinValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a45c789b36d7ddf7dc2891c4659675b93">SliderItem::pSliderTextBox</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a0e8dd44fb495896b930ace3841b76d68">SliderItem::pSliderType</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aaf7923c316c694386e3d84856a8f5c44">SliderItem::pSliderTypes</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ab19f843055b7fcbf97c7f4e8f56f35c6">SliderItem::pTextBoxPositions</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808">SliderItem::pValue</a>, and <a class="el" href="classfoleys_1_1AutoOrientationSlider.html#afc45c6b558ada13e241d9d163ebafcd1">AutoOrientationSlider::setAutoOrientation()</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIState.html#a8831398aba08c08275e1ef6dead51860">MagicGUIState::createAttachment()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ac12d3643cc77a5cf484cd80eb8a8a2c3">SliderItem::getControlledParameterID()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaef237f655db41e906c13d14267512be">GuiItem::getMagicState()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aa2821e88d517d7076838d24dccc94107">SliderItem::pMaxValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ae988cdd6a20b2b97682063591c6e78eb">SliderItem::pMinValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a45c789b36d7ddf7dc2891c4659675b93">SliderItem::pSliderTextBox</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a0e8dd44fb495896b930ace3841b76d68">SliderItem::pSliderType</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aaf7923c316c694386e3d84856a8f5c44">SliderItem::pSliderTypes</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ab19f843055b7fcbf97c7f4e8f56f35c6">SliderItem::pTextBoxPositions</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808">SliderItem::pValue</a>, and <a class="el" href="classfoleys_1_1AutoOrientationSlider.html#afc45c6b558ada13e241d9d163ebafcd1">AutoOrientationSlider::setAutoOrientation()</a>.</p>
 
 </div>
 </div>
@@ -281,6 +294,41 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#ad48e716a38a013f59c0556fc66da381c">GuiItem</a>.</p>
 
 <p class="reference">References <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">SettableProperty::Choice</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1bfb1daba5339f819f5c2fe9cae33fc2">MagicGUIBuilder::createChoicesMenuLambda()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aed217a4e68505455f1416aa2dcd2cd6b">MagicGUIBuilder::createParameterMenuLambda()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a02a0628ad1e98e3f119d5a741e3c38e0">MagicGUIBuilder::createPropertiesMenuLambda()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035">SettableProperty::Number</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aa2821e88d517d7076838d24dccc94107">SliderItem::pMaxValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ae988cdd6a20b2b97682063591c6e78eb">SliderItem::pMinValue</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a45c789b36d7ddf7dc2891c4659675b93">SliderItem::pSliderTextBox</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a0e8dd44fb495896b930ace3841b76d68">SliderItem::pSliderType</a>, <a class="el" href="classfoleys_1_1SliderItem.html#aaf7923c316c694386e3d84856a8f5c44">SliderItem::pSliderTypes</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ab19f843055b7fcbf97c7f4e8f56f35c6">SliderItem::pTextBoxPositions</a>, and <a class="el" href="classfoleys_1_1SliderItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808">SliderItem::pValue</a>.</p>
+
+</div>
+</div>
+<a id="ac12d3643cc77a5cf484cd80eb8a8a2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12d3643cc77a5cf484cd80eb8a8a2c3">&#9670;&nbsp;</a></span>getControlledParameterID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">juce::String getControlledParameterID </td>
+          <td>(</td>
+          <td class="paramtype">juce::Point&lt; int &gt;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the parameterID that is controlled from this component. </p>
+<p>To allow multiple return values depending of the position where the drop arrived there is the drop position supplied. </p>
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#a6e3c32d72f35a3b449a4d8140e16fae0">GuiItem</a>.</p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1SliderItem.html#a44137bb65de2396875934e48a6ee5099">SliderItem::update()</a>.</p>
 
 </div>
 </div>
@@ -489,7 +537,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 16 2020 01:37:06 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2020 00:53:09 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

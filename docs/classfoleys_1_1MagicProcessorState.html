@@ -131,8 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d847b038adf1067e411cb48e098a42e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a6d847b038adf1067e411cb48e098a42e">setStateInformation</a> (const void *data, int sizeInBytes, juce::AudioProcessorEditor *editor=nullptr)</td></tr>
 <tr class="memdesc:a6d847b038adf1067e411cb48e098a42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method restores the plugin state using the AudioProcessorValueTreeState.  <a href="classfoleys_1_1MagicProcessorState.html#a6d847b038adf1067e411cb48e098a42e">More...</a><br /></td></tr>
 <tr class="separator:a6d847b038adf1067e411cb48e098a42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a264db76880224d3b3c980d0fe8e1bf0b"><td class="memItemLeft" align="right" valign="top">juce::AudioProcessorParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a264db76880224d3b3c980d0fe8e1bf0b">getParameter</a> (const juce::String &amp;paramID) override</td></tr>
-<tr class="separator:a264db76880224d3b3c980d0fe8e1bf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35355c3fae6312cc2769b6041f6a1abd"><td class="memItemLeft" align="right" valign="top">juce::RangedAudioParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a35355c3fae6312cc2769b6041f6a1abd">getParameter</a> (const juce::String &amp;paramID) override</td></tr>
+<tr class="separator:a35355c3fae6312cc2769b6041f6a1abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad87ab01c926ee04deac48be5fc33fbe"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; juce::AudioProcessorValueTreeState::SliderAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#aad87ab01c926ee04deac48be5fc33fbe">createAttachment</a> (const juce::String &amp;paramID, juce::Slider &amp;slider) override</td></tr>
 <tr class="separator:aad87ab01c926ee04deac48be5fc33fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176f5070c6c361f5406ebf12cea653f3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; juce::AudioProcessorValueTreeState::ComboBoxAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a176f5070c6c361f5406ebf12cea653f3">createAttachment</a> (const juce::String &amp;paramID, juce::ComboBox &amp;combobox) override</td></tr>
@@ -147,19 +147,23 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3b35835ba3c1e4c0d871dbabe36fa260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a176ff8a861d8279883696017c1b341"><td class="memItemLeft" align="right" valign="top">juce::AudioProcessorValueTreeState &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a0a176ff8a861d8279883696017c1b341">getValueTreeState</a> ()</td></tr>
 <tr class="separator:a0a176ff8a861d8279883696017c1b341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ab2e33f4cb255ecbc31ec191507d96b2e">processMidiBuffer</a> (juce::MidiBuffer &amp;buffer, int numSamples, bool injectIndirectEvents=true)</td></tr>
+<tr class="memdesc:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the midi data to the keyboard and to the MidiLearn mapper.  <a href="classfoleys_1_1MagicProcessorState.html#ab2e33f4cb255ecbc31ec191507d96b2e">More...</a><br /></td></tr>
+<tr class="separator:ab2e33f4cb255ecbc31ec191507d96b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ea4b0064f36a75ad098b14ab6e2df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#a76ea4b0064f36a75ad098b14ab6e2df1">mapMidiController</a> (int cc, const juce::String &amp;parameterID)</td></tr>
+<tr class="separator:a76ea4b0064f36a75ad098b14ab6e2df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37f68855f69461f3d0426cec936f9d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicProcessorState.html#ad37f68855f69461f3d0426cec936f9d2">getLastController</a> () const</td></tr>
+<tr class="separator:ad37f68855f69461f3d0426cec936f9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfoleys_1_1MagicGUIState"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfoleys_1_1MagicGUIState')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classfoleys_1_1MagicGUIState.html">MagicGUIState</a></td></tr>
 <tr class="memitem:a5287250a3095bdae5baf012a05b96872 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a5287250a3095bdae5baf012a05b96872">MagicGUIState</a> ()=default</td></tr>
 <tr class="separator:a5287250a3095bdae5baf012a05b96872 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd4aebf6dbd1e629908f6964fd137987 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#abd4aebf6dbd1e629908f6964fd137987">~MagicGUIState</a> ()</td></tr>
 <tr class="separator:abd4aebf6dbd1e629908f6964fd137987 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada4cb245e53579a4a00547e6a3ed759d inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual juce::AudioProcessorParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#ada4cb245e53579a4a00547e6a3ed759d">getParameter</a> ([[maybe_unused]]const juce::String &amp;paramID)</td></tr>
-<tr class="separator:ada4cb245e53579a4a00547e6a3ed759d inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad671eedcc6c3fce5a703eb4e1a956748 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; juce::AudioProcessorValueTreeState::SliderAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#ad671eedcc6c3fce5a703eb4e1a956748">createAttachment</a> ([[maybe_unused]]const juce::String &amp;paramID, juce::Slider &amp;)</td></tr>
-<tr class="separator:ad671eedcc6c3fce5a703eb4e1a956748 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21a83951fad36f72a42c7f2643dfda77 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; juce::AudioProcessorValueTreeState::ComboBoxAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a21a83951fad36f72a42c7f2643dfda77">createAttachment</a> ([[maybe_unused]]const juce::String &amp;paramID, juce::ComboBox &amp;)</td></tr>
-<tr class="separator:a21a83951fad36f72a42c7f2643dfda77 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e8a6532967b9e3e950d033b7a8bd9f inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; juce::AudioProcessorValueTreeState::ButtonAttachment &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#ae7e8a6532967b9e3e950d033b7a8bd9f">createAttachment</a> ([[maybe_unused]]const juce::String &amp;paramID, juce::Button &amp;)</td></tr>
-<tr class="separator:ae7e8a6532967b9e3e950d033b7a8bd9f inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6e3bb8f87c05b026d20cf313e2f887 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a5b6e3bb8f87c05b026d20cf313e2f887">setApplicationSettingsFile</a> (juce::File file)</td></tr>
+<tr class="memdesc:a5b6e3bb8f87c05b026d20cf313e2f887 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a file to save common settings for all instances.  <a href="classfoleys_1_1MagicGUIState.html#a5b6e3bb8f87c05b026d20cf313e2f887">More...</a><br /></td></tr>
+<tr class="separator:a5b6e3bb8f87c05b026d20cf313e2f887 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892789b884696b287003d2dd5f7b2cbb inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual juce::RangedAudioParameter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a892789b884696b287003d2dd5f7b2cbb">getParameter</a> ([[maybe_unused]]const juce::String &amp;paramID)</td></tr>
+<tr class="separator:a892789b884696b287003d2dd5f7b2cbb inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf84e3e2204fb339b51ede64bb64eeb3 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">virtual juce::ValueTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#adf84e3e2204fb339b51ede64bb64eeb3">createDefaultStylesheet</a> () const</td></tr>
 <tr class="memdesc:adf84e3e2204fb339b51ede64bb64eeb3 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this method to create a default <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a>, in case nothing was loaded.  <a href="classfoleys_1_1MagicGUIState.html#adf84e3e2204fb339b51ede64bb64eeb3">More...</a><br /></td></tr>
 <tr class="separator:adf84e3e2204fb339b51ede64bb64eeb3 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,9 +200,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a79eed67186a502d929e05a07f9a1b7d8 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a79eed67186a502d929e05a07f9a1b7d8">prepareToPlay</a> (double sampleRate, int samplesPerBlockExpected)</td></tr>
 <tr class="memdesc:a79eed67186a502d929e05a07f9a1b7d8 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this method in your prepareToPlay implementation, to allow th visualisers to be properly setup.  <a href="classfoleys_1_1MagicGUIState.html#a79eed67186a502d929e05a07f9a1b7d8">More...</a><br /></td></tr>
 <tr class="separator:a79eed67186a502d929e05a07f9a1b7d8 inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2e33f4cb255ecbc31ec191507d96b2e inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#ab2e33f4cb255ecbc31ec191507d96b2e">processMidiBuffer</a> (juce::MidiBuffer &amp;buffer, int numSamples, bool injectIndirectEvents=true)</td></tr>
-<tr class="memdesc:ab2e33f4cb255ecbc31ec191507d96b2e inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send the midi data to the keyboard.  <a href="classfoleys_1_1MagicGUIState.html#ab2e33f4cb255ecbc31ec191507d96b2e">More...</a><br /></td></tr>
-<tr class="separator:ab2e33f4cb255ecbc31ec191507d96b2e inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bd245bee69b3bb07aed948278a4453a inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIState.html#a6bd245bee69b3bb07aed948278a4453a">addBackgroundProcessing</a> (<a class="el" href="classfoleys_1_1MagicPlotSource.html">MagicPlotSource</a> *source)</td></tr>
 <tr class="memdesc:a6bd245bee69b3bb07aed948278a4453a inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers background processing.  <a href="classfoleys_1_1MagicGUIState.html#a6bd245bee69b3bb07aed948278a4453a">More...</a><br /></td></tr>
 <tr class="separator:a6bd245bee69b3bb07aed948278a4453a inherit pub_methods_classfoleys_1_1MagicGUIState"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,6 +237,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a <a class="el" href="classfoleys_1_1MagicProcessorState.html" title="The MagicProcessorState is a subclass of MagicGUIState, that adds AudioProcessor specific functionali...">MagicProcessorState</a> to let the generated GUI communicate with the processor and it's internals. </p>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MidiParameterMapper.html#af9b302459454b88a4a5784c58f5cf4f4">MidiParameterMapper::setAudioProcessorValueTreeState()</a>.</p>
 
 </div>
 </div>
@@ -499,8 +502,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a264db76880224d3b3c980d0fe8e1bf0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a264db76880224d3b3c980d0fe8e1bf0b">&#9670;&nbsp;</a></span>getParameter()</h2>
+<a id="a35355c3fae6312cc2769b6041f6a1abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35355c3fae6312cc2769b6041f6a1abd">&#9670;&nbsp;</a></span>getParameter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +512,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">juce::AudioProcessorParameter * getParameter </td>
+          <td class="memname">juce::RangedAudioParameter * getParameter </td>
           <td>(</td>
           <td class="paramtype">const juce::String &amp;&#160;</td>
           <td class="paramname"><em>paramID</em></td><td>)</td>
@@ -554,10 +557,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1MagicGUIState.html#a8831398aba08c08275e1ef6dead51860">MagicGUIState</a>.</p>
 
 </div>
 </div>
@@ -590,10 +595,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1MagicGUIState.html#ae8c8c84eb86b87a62cbae56d0fca3de8">MagicGUIState</a>.</p>
 
 </div>
 </div>
@@ -626,10 +633,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classfoleys_1_1MagicGUIState.html#adf0e5ad0480bd2f2936b56b0a208487e">MagicGUIState</a>.</p>
 
 </div>
 </div>
@@ -708,6 +717,99 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab2e33f4cb255ecbc31ec191507d96b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e33f4cb255ecbc31ec191507d96b2e">&#9670;&nbsp;</a></span>processMidiBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processMidiBuffer </td>
+          <td>(</td>
+          <td class="paramtype">juce::MidiBuffer &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numSamples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>injectIndirectEvents</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Send the midi data to the keyboard and to the MidiLearn mapper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>the midi buffer from processBlock </td></tr>
+    <tr><td class="paramname">numSamples</td><td>the number of samples in the corresponding audio buffer </td></tr>
+    <tr><td class="paramname">injectIndirectEvents</td><td>if true key presses from the GUI are added to the midi stream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIState.html#aa9f8e25ec48881caac26f790f357977f">MagicGUIState::getKeyboardState()</a>, and <a class="el" href="classfoleys_1_1MidiParameterMapper.html#a6ad650092782dbe8930630b0509c8d95">MidiParameterMapper::processMidiBuffer()</a>.</p>
+
+</div>
+</div>
+<a id="a76ea4b0064f36a75ad098b14ab6e2df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ea4b0064f36a75ad098b14ab6e2df1">&#9670;&nbsp;</a></span>mapMidiController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mapMidiController </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const juce::String &amp;&#160;</td>
+          <td class="paramname"><em>parameterID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad37f68855f69461f3d0426cec936f9d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37f68855f69461f3d0426cec936f9d2">&#9670;&nbsp;</a></span>getLastController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getLastController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MidiParameterMapper.html#ad37f68855f69461f3d0426cec936f9d2">MidiParameterMapper::getLastController()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__MagicProcessorState_8h.html">foleys_MagicProcessorState.h</a></li>
 <li><a class="el" href="foleys__MagicProcessorState_8cpp.html">foleys_MagicProcessorState.cpp</a></li>
@@ -715,7 +817,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 16 2020 01:37:06 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2020 00:53:09 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
