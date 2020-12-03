@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['remove_887',['remove',['../classfoleys_1_1StylePropertyComponent.html#a5469c38701cf16f2998f8b47bf600905',1,'foleys::StylePropertyComponent']]]
+  ['pcrosshair_892',['pCrosshair',['../classfoleys_1_1XYDraggerItem.html#a98d7b97d772fa542cf4d353384bf37a3',1,'foleys::XYDraggerItem']]],
+  ['pcrosshairtypes_893',['pCrosshairTypes',['../classfoleys_1_1XYDraggerItem.html#a172ac46a1b00db7c97e8d8f9338cabc1',1,'foleys::XYDraggerItem']]],
+  ['pdecay_894',['pDecay',['../classfoleys_1_1PlotItem.html#a5aa3a7ff0874eaf4571c680779345ea0',1,'foleys::PlotItem']]],
+  ['peditable_895',['pEditable',['../classfoleys_1_1LabelItem.html#a8b036bd980c8a87230ecd5eba2ccd96c',1,'foleys::LabelItem']]],
+  ['pfontsize_896',['pFontSize',['../classfoleys_1_1LabelItem.html#aafcab165ce1caa466def1301b70986b2',1,'foleys::LabelItem']]],
+  ['pjustification_897',['pJustification',['../classfoleys_1_1LabelItem.html#a984ab537ec3bcf6e21709fe72240eeea',1,'foleys::LabelItem']]],
+  ['pmaxvalue_898',['pMaxValue',['../classfoleys_1_1SliderItem.html#aa2821e88d517d7076838d24dccc94107',1,'foleys::SliderItem']]],
+  ['pminvalue_899',['pMinValue',['../classfoleys_1_1SliderItem.html#ae988cdd6a20b2b97682063591c6e78eb',1,'foleys::SliderItem']]],
+  ['ponclick_900',['pOnClick',['../classfoleys_1_1TextButtonItem.html#a51fca2011a3a6e8fd63968ae5f90c168',1,'foleys::TextButtonItem']]],
+  ['pradius_901',['pRadius',['../classfoleys_1_1XYDraggerItem.html#a435d935c69952ab5479fe8d6c5a93a64',1,'foleys::XYDraggerItem']]],
+  ['property_902',['property',['../classfoleys_1_1StylePropertyComponent.html#ad417a18038a464a5f4a1f0a19f100cfd',1,'foleys::StylePropertyComponent']]],
+  ['psensefactor_903',['pSenseFactor',['../classfoleys_1_1XYDraggerItem.html#ab2d7b6ccb807e300bf81a6f35e405f6e',1,'foleys::XYDraggerItem']]],
+  ['pslidertextbox_904',['pSliderTextBox',['../classfoleys_1_1SliderItem.html#a45c789b36d7ddf7dc2891c4659675b93',1,'foleys::SliderItem']]],
+  ['pslidertype_905',['pSliderType',['../classfoleys_1_1SliderItem.html#a0e8dd44fb495896b930ace3841b76d68',1,'foleys::SliderItem']]],
+  ['pslidertypes_906',['pSliderTypes',['../classfoleys_1_1SliderItem.html#aaf7923c316c694386e3d84856a8f5c44',1,'foleys::SliderItem']]],
+  ['ptext_907',['pText',['../classfoleys_1_1TextButtonItem.html#adb60b75a08ac91853e3273e40457450e',1,'foleys::TextButtonItem::pText()'],['../classfoleys_1_1ToggleButtonItem.html#adb60b75a08ac91853e3273e40457450e',1,'foleys::ToggleButtonItem::pText()'],['../classfoleys_1_1LabelItem.html#adb60b75a08ac91853e3273e40457450e',1,'foleys::LabelItem::pText()']]],
+  ['ptextboxpositions_908',['pTextBoxPositions',['../classfoleys_1_1SliderItem.html#ab19f843055b7fcbf97c7f4e8f56f35c6',1,'foleys::SliderItem']]],
+  ['pvalue_909',['pValue',['../classfoleys_1_1SliderItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808',1,'foleys::SliderItem::pValue()'],['../classfoleys_1_1ToggleButtonItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808',1,'foleys::ToggleButtonItem::pValue()'],['../classfoleys_1_1LabelItem.html#a85e5f5fc07a9dff4b8ef74294d3e5808',1,'foleys::LabelItem::pValue()']]]
 ];

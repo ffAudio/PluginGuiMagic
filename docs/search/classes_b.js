@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['xydragcomponent_492',['XYDragComponent',['../classfoleys_1_1XYDragComponent.html',1,'foleys']]],
-  ['xydraggeritem_493',['XYDraggerItem',['../classfoleys_1_1XYDraggerItem.html',1,'foleys']]]
+  ['textbuttonitem_502',['TextButtonItem',['../classfoleys_1_1TextButtonItem.html',1,'foleys']]],
+  ['togglebuttonitem_503',['ToggleButtonItem',['../classfoleys_1_1ToggleButtonItem.html',1,'foleys']]],
+  ['toolbox_504',['ToolBox',['../classfoleys_1_1ToolBox.html',1,'foleys']]]
 ];

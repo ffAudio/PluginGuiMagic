@@ -176,6 +176,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a98d7b97d772fa542cf4d353384bf37a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a172ac46a1b00db7c97e8d8f9338cabc1"><td class="memItemLeft" align="right" valign="top">static const juce::StringArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1XYDraggerItem.html#a172ac46a1b00db7c97e8d8f9338cabc1">pCrosshairTypes</a> { &quot;no-crosshair&quot;, &quot;vertical&quot;, &quot;horizontal&quot;, &quot;crosshair&quot; }</td></tr>
 <tr class="separator:a172ac46a1b00db7c97e8d8f9338cabc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435d935c69952ab5479fe8d6c5a93a64"><td class="memItemLeft" align="right" valign="top">static const juce::Identifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1XYDraggerItem.html#a435d935c69952ab5479fe8d6c5a93a64">pRadius</a> { &quot;xy-radius&quot; }</td></tr>
+<tr class="separator:a435d935c69952ab5479fe8d6c5a93a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d7b6ccb807e300bf81a6f35e405f6e"><td class="memItemLeft" align="right" valign="top">static const juce::Identifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1XYDraggerItem.html#ab2d7b6ccb807e300bf81a6f35e405f6e">pSenseFactor</a> { &quot;xy-sense-factor&quot; }</td></tr>
+<tr class="separator:ab2d7b6ccb807e300bf81a6f35e405f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -283,7 +287,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classfoleys_1_1GuiItem.html#ad48e716a38a013f59c0556fc66da381c">GuiItem</a>.</p>
 
-<p class="reference">References <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">SettableProperty::Choice</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1bfb1daba5339f819f5c2fe9cae33fc2">MagicGUIBuilder::createChoicesMenuLambda()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aed217a4e68505455f1416aa2dcd2cd6b">MagicGUIBuilder::createParameterMenuLambda()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a98d7b97d772fa542cf4d353384bf37a3">XYDraggerItem::pCrosshair</a>, and <a class="el" href="classfoleys_1_1XYDraggerItem.html#a172ac46a1b00db7c97e8d8f9338cabc1">XYDraggerItem::pCrosshairTypes</a>.</p>
+<p class="reference">References <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87a581ac54bc5dc6b014d868b3e214a92e6">SettableProperty::Choice</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1bfb1daba5339f819f5c2fe9cae33fc2">MagicGUIBuilder::createChoicesMenuLambda()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#aed217a4e68505455f1416aa2dcd2cd6b">MagicGUIBuilder::createParameterMenuLambda()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, <a class="el" href="structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035">SettableProperty::Number</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a98d7b97d772fa542cf4d353384bf37a3">XYDraggerItem::pCrosshair</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a172ac46a1b00db7c97e8d8f9338cabc1">XYDraggerItem::pCrosshairTypes</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a435d935c69952ab5479fe8d6c5a93a64">XYDraggerItem::pRadius</a>, and <a class="el" href="classfoleys_1_1XYDraggerItem.html#ab2d7b6ccb807e300bf81a6f35e405f6e">XYDraggerItem::pSenseFactor</a>.</p>
 
 </div>
 </div>
@@ -366,13 +370,61 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a435d935c69952ab5479fe8d6c5a93a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a435d935c69952ab5479fe8d6c5a93a64">&#9670;&nbsp;</a></span>pRadius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const juce::Identifier pRadius { &quot;xy-radius&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>.</p>
+
+</div>
+</div>
+<a id="ab2d7b6ccb807e300bf81a6f35e405f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d7b6ccb807e300bf81a6f35e405f6e">&#9670;&nbsp;</a></span>pSenseFactor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const juce::Identifier pSenseFactor { &quot;xy-sense-factor&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="foleys__MagicJUCEFactories_8cpp.html">foleys_MagicJUCEFactories.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2020 00:53:09 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 3 2020 18:32:55 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

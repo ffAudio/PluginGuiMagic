@@ -1,8 +1,19 @@
 var searchData=
 [
-  ['palette_474',['Palette',['../classfoleys_1_1Palette.html',1,'foleys']]],
-  ['parameterattachment_475',['ParameterAttachment',['../classfoleys_1_1ParameterAttachment.html',1,'foleys']]],
-  ['parameterattachment_3c_20float_20_3e_476',['ParameterAttachment&lt; float &gt;',['../classfoleys_1_1ParameterAttachment.html',1,'foleys']]],
-  ['plotitem_477',['PlotItem',['../classfoleys_1_1PlotItem.html',1,'foleys']]],
-  ['propertieseditor_478',['PropertiesEditor',['../classfoleys_1_1PropertiesEditor.html',1,'foleys']]]
+  ['magicanalyser_471',['MagicAnalyser',['../classfoleys_1_1MagicAnalyser.html',1,'foleys']]],
+  ['magicfilterplot_472',['MagicFilterPlot',['../classfoleys_1_1MagicFilterPlot.html',1,'foleys']]],
+  ['magicguibuilder_473',['MagicGUIBuilder',['../classfoleys_1_1MagicGUIBuilder.html',1,'foleys']]],
+  ['magicguistate_474',['MagicGUIState',['../classfoleys_1_1MagicGUIState.html',1,'foleys']]],
+  ['magiclevelmeter_475',['MagicLevelMeter',['../classfoleys_1_1MagicLevelMeter.html',1,'foleys']]],
+  ['magiclevelsource_476',['MagicLevelSource',['../classfoleys_1_1MagicLevelSource.html',1,'foleys']]],
+  ['magicoscilloscope_477',['MagicOscilloscope',['../classfoleys_1_1MagicOscilloscope.html',1,'foleys']]],
+  ['magicplotcomponent_478',['MagicPlotComponent',['../classfoleys_1_1MagicPlotComponent.html',1,'foleys']]],
+  ['magicplotsource_479',['MagicPlotSource',['../classfoleys_1_1MagicPlotSource.html',1,'foleys']]],
+  ['magicplugineditor_480',['MagicPluginEditor',['../classfoleys_1_1MagicPluginEditor.html',1,'foleys']]],
+  ['magicprocessorstate_481',['MagicProcessorState',['../classfoleys_1_1MagicProcessorState.html',1,'foleys']]],
+  ['midilearncomponent_482',['MidiLearnComponent',['../classfoleys_1_1MidiLearnComponent.html',1,'foleys']]],
+  ['midilearnitem_483',['MidiLearnItem',['../classfoleys_1_1MidiLearnItem.html',1,'foleys']]],
+  ['midiparametermapper_484',['MidiParameterMapper',['../classfoleys_1_1MidiParameterMapper.html',1,'foleys']]],
+  ['mouselambdas_485',['MouseLambdas',['../classfoleys_1_1MouseLambdas.html',1,'foleys']]],
+  ['multilistpropertycomponent_486',['MultiListPropertyComponent',['../classfoleys_1_1MultiListPropertyComponent.html',1,'foleys']]]
 ];
