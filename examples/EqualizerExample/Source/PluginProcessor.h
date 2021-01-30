@@ -165,7 +165,7 @@ private:
     foleys::AtomicValueAttachment<bool> outputAnalysing;
 
     // GUI MAGIC: define that as last member of your AudioProcessor
-    foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicProcessorState magicState { *this, treeState.state };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EqualizerExampleAudioProcessor)
 };

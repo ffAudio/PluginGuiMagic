@@ -69,7 +69,7 @@ private:
     juce::ValueTree  presetNode;
 
     // GUI MAGIC: define that as last member of your AudioProcessor
-    foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicProcessorState magicState { *this, treeState.state };
     foleys::MagicLevelSource*   outputMeter  = nullptr;
     foleys::MagicPlotSource*    oscilloscope = nullptr;
     foleys::MagicPlotSource*    analyser     = nullptr;

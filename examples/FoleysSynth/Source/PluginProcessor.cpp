@@ -46,7 +46,7 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
     analyser     = magicState.createAndAddObject<foleys::MagicAnalyser>("analyser");
     magicState.addBackgroundProcessing (analyser);
 
-    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
+    presetNode = magicState.getValueTree().getOrCreateChildWithName ("presets", nullptr);
 
     presetList = magicState.createAndAddObject<PresetListBox>("presets", presetNode);
     presetList->onSelectionChanged = [&](int number)
@@ -163,7 +163,7 @@ void FoleysSynthAudioProcessor::savePresetInternal()
 {
     juce::ValueTree preset { "Preset" };
     preset.setProperty ("name", "Preset " + juce::String (presetNode.getNumChildren() + 1), nullptr);
-    for (const auto& p : magicState.getValueTreeState().state)
+    for (const auto& p : magicState.getValueTree())
         if (p.getType().toString() == "PARAM")
             preset.appendChild (p.createCopy(), nullptr);
 
@@ -180,7 +180,7 @@ void FoleysSynthAudioProcessor::loadPresetInternal(int index)
         if (p.hasType ("PARAM"))
         {
             auto id = p.getProperty ("id", "unknownID").toString();
-            if (auto* parameter = dynamic_cast<juce::RangedAudioParameter*>(magicState.getValueTreeState().getParameter (id)))
+            if (auto* parameter = dynamic_cast<juce::RangedAudioParameter*>(magicState.getParameter (id)))
                 parameter->setValueNotifyingHost (parameter->convertTo0to1 (p.getProperty ("value")));
         }
     }
@@ -200,7 +200,7 @@ void FoleysSynthAudioProcessor::setStateInformation (const void* data, int sizeI
     //            You don't need to use that, but it also takes care of restoring the last editor size
     magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
 
-    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
+    presetNode = magicState.getValueTree().getOrCreateChildWithName ("presets", nullptr);
     presetList->setPresetsNode (presetNode);
 }
 

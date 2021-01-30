@@ -87,7 +87,7 @@ private:
     juce::AudioProcessorValueTreeState treeState;
 
     // MAGIC GUI: add this docking station for the GUI
-    foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicProcessorState magicState { *this, treeState.state };
 
     // MAGIC GUI: this is a shorthand where the samples to display are fed to
     foleys::MagicPlotSource*    oscilloscope = nullptr;

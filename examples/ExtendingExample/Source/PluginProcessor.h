@@ -64,7 +64,7 @@ private:
     juce::AudioProcessorValueTreeState treeState { *this, nullptr, "PARAMETERS", juce::AudioProcessorValueTreeState::ParameterLayout() };
 
     // MAGIC GUI: add a MagicPluginState as connection
-    foleys::MagicProcessorState magicState { *this, treeState };
+    foleys::MagicProcessorState magicState { *this, treeState.state };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ExtendingExampleAudioProcessor)
 };

@@ -105,7 +105,7 @@ private:
     std::atomic<float>* gainParameter  = nullptr;
 
     // Add an instance of MagicProcessorState to connect a MagicGuiEditor to it
-    foleys::MagicProcessorState magicState { *this, parameters };
+    foleys::MagicProcessorState magicState { *this, parameters.state };
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TutorialProcessor)
 };
