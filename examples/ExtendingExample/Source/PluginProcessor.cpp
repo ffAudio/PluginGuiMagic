@@ -189,24 +189,22 @@ private:
 
 //==============================================================================
 
-ExtendingExampleAudioProcessor::ExtendingExampleAudioProcessor()
-#ifndef JucePlugin_PreferredChannelConfigurations
-     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
-                     #endif
-                       )
-#endif
+ExtendingExampleAudioProcessor::ExtendingExampleAudioProcessor() : foleys::MagicProcessor()
 {
+    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
-ExtendingExampleAudioProcessor::~ExtendingExampleAudioProcessor()
-{
-}
+ExtendingExampleAudioProcessor::~ExtendingExampleAudioProcessor() {}
 
+//==============================================================================
+
+void ExtendingExampleAudioProcessor::initialiseBuilder (foleys::MagicGUIBuilder& builder)
+{
+    builder.registerJUCEFactories();
+
+    builder.registerFactory ("Lissajour", &LissajourItem::factory);
+    builder.registerFactory ("Statistics", &StatisticsComponentItem::factory);
+}
 
 //==============================================================================
 void ExtendingExampleAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
@@ -267,94 +265,14 @@ void ExtendingExampleAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
 }
 
 //==============================================================================
-bool ExtendingExampleAudioProcessor::hasEditor() const
-{
-    return true; // (change this to false if you choose to not supply an editor)
-}
-
-juce::AudioProcessorEditor* ExtendingExampleAudioProcessor::createEditor()
-{
-    // MAGIC GUI: we create our custom builder instance here, that will be available for all factories we add
-    auto builder = std::make_unique<foleys::MagicGUIBuilder>(magicState);
-    builder->registerJUCEFactories();
-
-    builder->registerFactory ("Lissajour", &LissajourItem::factory);
-    builder->registerFactory ("Statistics", &StatisticsComponentItem::factory);
-
-    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize, std::move (builder));
-}
-
-//==============================================================================
-void ExtendingExampleAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
-{
-    magicState.getStateInformation (destData);
-}
-
-void ExtendingExampleAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
-{
-    magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
-}
-
-//==============================================================================
 const juce::String ExtendingExampleAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool ExtendingExampleAudioProcessor::acceptsMidi() const
-{
-#if JucePlugin_WantsMidiInput
-    return true;
-#else
-    return false;
-#endif
-}
-
-bool ExtendingExampleAudioProcessor::producesMidi() const
-{
-#if JucePlugin_ProducesMidiOutput
-    return true;
-#else
-    return false;
-#endif
-}
-
-bool ExtendingExampleAudioProcessor::isMidiEffect() const
-{
-#if JucePlugin_IsMidiEffect
-    return true;
-#else
-    return false;
-#endif
-}
-
 double ExtendingExampleAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
-}
-
-int ExtendingExampleAudioProcessor::getNumPrograms()
-{
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-    // so this should be at least 1, even if you're not really implementing programs.
-}
-
-int ExtendingExampleAudioProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
-void ExtendingExampleAudioProcessor::setCurrentProgram (int index)
-{
-}
-
-const juce::String ExtendingExampleAudioProcessor::getProgramName (int index)
-{
-    return {};
-}
-
-void ExtendingExampleAudioProcessor::changeProgramName (int index, const juce::String& newName)
-{
 }
 
 //==============================================================================

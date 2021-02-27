@@ -136,7 +136,7 @@ auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const juce
 //==============================================================================
 EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
+     : MagicProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
                        .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
@@ -179,6 +179,8 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 
     inputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:input"));
     outputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:output"));
+
+    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -395,31 +397,11 @@ void EqualizerExampleAudioProcessor::handleAsyncUpdate()
 }
 
 //==============================================================================
-bool EqualizerExampleAudioProcessor::hasEditor() const
-{
-    return true;
-}
 
-juce::AudioProcessorEditor* EqualizerExampleAudioProcessor::createEditor()
-{
-    // MAGIC GUI: create the generated editor
-    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
-}
-
-//==============================================================================
-void EqualizerExampleAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void EqualizerExampleAudioProcessor::postSetStateInformation()
 {
     // MAGIC GUI: let the magicState conveniently handle save and restore the state.
     //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.getStateInformation (destData);
-}
-
-void EqualizerExampleAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
-{
-    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
-    //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
-
     inputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:input"));
     outputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:output"));
 }
@@ -430,60 +412,9 @@ const juce::String EqualizerExampleAudioProcessor::getName() const
     return JucePlugin_Name;
 }
 
-bool EqualizerExampleAudioProcessor::acceptsMidi() const
-{
-   #if JucePlugin_WantsMidiInput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool EqualizerExampleAudioProcessor::producesMidi() const
-{
-   #if JucePlugin_ProducesMidiOutput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool EqualizerExampleAudioProcessor::isMidiEffect() const
-{
-   #if JucePlugin_IsMidiEffect
-    return true;
-   #else
-    return false;
-   #endif
-}
-
 double EqualizerExampleAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
-}
-
-int EqualizerExampleAudioProcessor::getNumPrograms()
-{
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-                // so this should be at least 1, even if you're not really implementing programs.
-}
-
-int EqualizerExampleAudioProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
-void EqualizerExampleAudioProcessor::setCurrentProgram (int)
-{
-}
-
-const juce::String EqualizerExampleAudioProcessor::getProgramName (int)
-{
-    return {};
-}
-
-void EqualizerExampleAudioProcessor::changeProgramName (int, const juce::String&)
-{
 }
 
 //==============================================================================

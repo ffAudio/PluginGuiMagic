@@ -11,7 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
-class EqualizerExampleAudioProcessor  : public juce::AudioProcessor,
+class EqualizerExampleAudioProcessor  : public foleys::MagicProcessor,
                                         private juce::AudioProcessorValueTreeState::Listener,
                                         private juce::AsyncUpdater
 {
@@ -110,29 +110,14 @@ public:
     void parameterChanged (const juce::String& paramID, float newValue) override;
     void handleAsyncUpdate() override;
 
-    //==============================================================================
-    juce::AudioProcessorEditor* createEditor() override;
-    bool hasEditor() const override;
+    void postSetStateInformation() override;
 
     //==============================================================================
     const juce::String getName() const override;
 
-    bool acceptsMidi() const override;
-    bool producesMidi() const override;
-    bool isMidiEffect() const override;
     double getTailLengthSeconds() const override;
 
     //==============================================================================
-    int getNumPrograms() override;
-    int getCurrentProgram() override;
-    void setCurrentProgram (int index) override;
-    const juce::String getProgramName (int index) override;
-    void changeProgramName (int index, const juce::String& newName) override;
-
-    //==============================================================================
-    void getStateInformation (juce::MemoryBlock& destData) override;
-    void setStateInformation (const void* data, int sizeInBytes) override;
-
     static juce::StringArray filterNames;
 
 private:
@@ -163,9 +148,6 @@ private:
 
     foleys::AtomicValueAttachment<bool> inputAnalysing;
     foleys::AtomicValueAttachment<bool> outputAnalysing;
-
-    // GUI MAGIC: define that as last member of your AudioProcessor
-    foleys::MagicProcessorState magicState { *this, treeState.state };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (EqualizerExampleAudioProcessor)
 };
