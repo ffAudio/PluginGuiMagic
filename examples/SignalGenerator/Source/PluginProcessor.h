@@ -15,7 +15,7 @@
 //==============================================================================
 /**
 */
-class SignalGeneratorAudioProcessor  : public  juce::AudioProcessor,
+class SignalGeneratorAudioProcessor  : public  foleys::MagicProcessor,
                                        private juce::AudioProcessorValueTreeState::Listener
 {
 public:
@@ -44,27 +44,7 @@ public:
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
-    juce::AudioProcessorEditor* createEditor() override;
-    bool hasEditor() const override;
-
-    //==============================================================================
-    const juce::String getName() const override;
-
-    bool acceptsMidi() const override;
-    bool producesMidi() const override;
-    bool isMidiEffect() const override;
     double getTailLengthSeconds() const override;
-
-    //==============================================================================
-    int getNumPrograms() override;
-    int getCurrentProgram() override;
-    void setCurrentProgram (int index) override;
-    const juce::String getProgramName (int index) override;
-    void changeProgramName (int index, const juce::String& newName) override;
-
-    //==============================================================================
-    void getStateInformation (juce::MemoryBlock& destData) override;
-    void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
     //==============================================================================
@@ -85,9 +65,6 @@ private:
     juce::dsp::Oscillator<float> vfoOSC;
 
     juce::AudioProcessorValueTreeState treeState;
-
-    // MAGIC GUI: add this docking station for the GUI
-    foleys::MagicProcessorState magicState { *this, treeState.state };
 
     // MAGIC GUI: this is a shorthand where the samples to display are fed to
     foleys::MagicPlotSource*    oscilloscope = nullptr;

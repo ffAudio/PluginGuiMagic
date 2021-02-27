@@ -75,7 +75,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 //==============================================================================
 SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
+     : foleys::MagicProcessor (juce::AudioProcessor::BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
                       #if ! JucePlugin_IsSynth
                        .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
@@ -111,6 +111,8 @@ SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
     //            We keep a pointer to push samples into in processBlock().
     //            And we are only interested in channel 0
     oscilloscope = magicState.createAndAddObject<foleys::MagicOscilloscope>(IDs::oscilloscope, 0);
+
+    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
 SignalGeneratorAudioProcessor::~SignalGeneratorAudioProcessor()
@@ -209,35 +211,6 @@ void SignalGeneratorAudioProcessor::processBlock (juce::AudioBuffer<float>& buff
 }
 
 //==============================================================================
-bool SignalGeneratorAudioProcessor::hasEditor() const
-{
-    return true; // (change this to false if you choose to not supply an editor)
-}
-
-juce::AudioProcessorEditor* SignalGeneratorAudioProcessor::createEditor()
-{
-    // MAGIC GUI: return a default Plugin GUI
-    //            If you saved a GUI before, it is loaded here from the BinaryResources in the optional arguments
-    // return new foleys::MagicPluginEditor (magicState);
-    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
-}
-
-//==============================================================================
-void SignalGeneratorAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
-{
-    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
-    //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.getStateInformation (destData);
-}
-
-void SignalGeneratorAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
-{
-    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
-    //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
-}
-
-//==============================================================================
 #ifndef JucePlugin_PreferredChannelConfigurations
 bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
@@ -263,69 +236,9 @@ bool SignalGeneratorAudioProcessor::isBusesLayoutSupported (const BusesLayout& l
 #endif
 
 //==============================================================================
-const juce::String SignalGeneratorAudioProcessor::getName() const
-{
-    return JucePlugin_Name;
-}
-
-bool SignalGeneratorAudioProcessor::acceptsMidi() const
-{
-   #if JucePlugin_WantsMidiInput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool SignalGeneratorAudioProcessor::producesMidi() const
-{
-   #if JucePlugin_ProducesMidiOutput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool SignalGeneratorAudioProcessor::isMidiEffect() const
-{
-   #if JucePlugin_IsMidiEffect
-    return true;
-   #else
-    return false;
-   #endif
-}
-
 double SignalGeneratorAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
-}
-
-int SignalGeneratorAudioProcessor::getNumPrograms()
-{
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-                // so this should be at least 1, even if you're not really implementing programs.
-}
-
-int SignalGeneratorAudioProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
-void SignalGeneratorAudioProcessor::setCurrentProgram (int index)
-{
-    juce::ignoreUnused (index);
-}
-
-const juce::String SignalGeneratorAudioProcessor::getProgramName (int index)
-{
-    juce::ignoreUnused (index);
-    return {};
-}
-
-void SignalGeneratorAudioProcessor::changeProgramName (int index, const juce::String& newName)
-{
-    juce::ignoreUnused (index);
-    juce::ignoreUnused (newName);
 }
 
 //==============================================================================
