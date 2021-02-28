@@ -163,8 +163,6 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     // GUI MAGIC: add analyser plots
     inputAnalyser   = magicState.createAndAddObject<foleys::MagicAnalyser>("input");
     outputAnalyser  = magicState.createAndAddObject<foleys::MagicAnalyser>("output");
-    magicState.addBackgroundProcessing (inputAnalyser);
-    magicState.addBackgroundProcessing (outputAnalyser);
 
     // MAGIC GUI: add a meter at the output
     outputMeter = magicState.createAndAddObject<foleys::MagicLevelSource>("outputMeter");
