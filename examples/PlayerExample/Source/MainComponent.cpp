@@ -49,7 +49,7 @@ MainComponent::MainComponent()
     gainValue.addListener (this);
     gainValue.setValue (1.0);
 
-    magicBuilder.setConfigTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
     magicBuilder.createGUI (*this);
     updatePositionSlider();
 

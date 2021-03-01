@@ -7,7 +7,7 @@ The main features are:
 
 - Offer a default GUI from the audio processor parameters
 - Uses audio parameter groups for the layout
-- completely styleable via CSS-like structure
+- completely styleable via CSS-like structures
 - Arranging of layout via drag and drop
 - Out-of-the-box visualisers, including an FFT-Analyser and Oscilloscope
 - Extensible with your own Components
@@ -61,7 +61,7 @@ more features following (this is the reference implementation for new features).
 
 [examples/FoleysSynth](examples/FoleysSynth)
 
-An example additive synthesizer to show the MidiKeyboardComponent and how to 
+An example additive synthesiser to show the MidiKeyboardComponent and how to 
 create a nice GUI with PluginGuiMagic.
 
 ![FoleysSynth Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/FoleysSynth-screenshot.png)

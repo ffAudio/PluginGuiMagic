@@ -25,20 +25,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 //==============================================================================
 
 FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
-#ifndef JucePlugin_PreferredChannelConfigurations
-     : juce::AudioProcessor (juce::AudioProcessor::BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
-                     #endif
-                       ),
-#else
-    :
-#endif
-    treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
+  : treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
 {
+//    auto defaultGUI = magicState.createDefaultGUITree();
+//    magicState.setGuiValueTree (defaultGUI);
+    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+
     // MAGIC GUI: add a meter at the output
     outputMeter  = magicState.createAndAddObject<foleys::MagicLevelSource>("output");
     oscilloscope = magicState.createAndAddObject<foleys::MagicOscilloscope>("waveform");
@@ -46,9 +38,7 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
     analyser     = magicState.createAndAddObject<foleys::MagicAnalyser>("analyser");
     magicState.addBackgroundProcessing (analyser);
 
-    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
-
-    presetList = magicState.createAndAddObject<PresetListBox>("presets", presetNode);
+    presetList = magicState.createAndAddObject<PresetListBox>("presets");
     presetList->onSelectionChanged = [&](int number)
     {
         loadPresetInternal (number);
@@ -120,7 +110,7 @@ void FoleysSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // MAGIC GUI: send midi messages to the keyboard state
+    // MAGIC GUI: send midi messages to the keyboard state and MidiLearn
     magicState.processMidiBuffer (midiMessages, buffer.getNumSamples(), true);
 
     // MAGIC GUI: send playhead information to the GUI
@@ -147,124 +137,33 @@ void FoleysSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
 }
 
 //==============================================================================
-bool FoleysSynthAudioProcessor::hasEditor() const
-{
-    return true; // (change this to false if you choose to not supply an editor)
-}
-
-juce::AudioProcessorEditor* FoleysSynthAudioProcessor::createEditor()
-{
-    // MAGIC GUI: create the generated editor
-    return new foleys::MagicPluginEditor (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);
-}
-
-//==============================================================================
 void FoleysSynthAudioProcessor::savePresetInternal()
 {
+    presetNode = magicState.getSettings().getOrCreateChildWithName ("presets", nullptr);
+
     juce::ValueTree preset { "Preset" };
     preset.setProperty ("name", "Preset " + juce::String (presetNode.getNumChildren() + 1), nullptr);
-    for (const auto& p : magicState.getValueTreeState().state)
-        if (p.getType().toString() == "PARAM")
-            preset.appendChild (p.createCopy(), nullptr);
+
+    foleys::ParameterManager manager (*this);
+    manager.saveParameterValues (preset);
 
     presetNode.appendChild (preset, nullptr);
-
-    presetList->sendChangeMessage();
 }
 
 void FoleysSynthAudioProcessor::loadPresetInternal(int index)
 {
+    presetNode = magicState.getSettings().getOrCreateChildWithName ("presets", nullptr);
     auto preset = presetNode.getChild (index);
-    for (const auto& p : preset)
-    {
-        if (p.hasType ("PARAM"))
-        {
-            auto id = p.getProperty ("id", "unknownID").toString();
-            if (auto* parameter = dynamic_cast<juce::RangedAudioParameter*>(magicState.getValueTreeState().getParameter (id)))
-                parameter->setValueNotifyingHost (parameter->convertTo0to1 (p.getProperty ("value")));
-        }
-    }
+
+    foleys::ParameterManager manager (*this);
+    manager.loadParameterValues (preset);
 }
 
 //==============================================================================
-void FoleysSynthAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
-{
-    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
-    //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.getStateInformation (destData);
-}
-
-void FoleysSynthAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
-{
-    // MAGIC GUI: let the magicState conveniently handle save and restore the state.
-    //            You don't need to use that, but it also takes care of restoring the last editor size
-    magicState.setStateInformation (data, sizeInBytes, getActiveEditor());
-
-    presetNode = magicState.getValueTreeState().state.getOrCreateChildWithName ("presets", nullptr);
-    presetList->setPresetsNode (presetNode);
-}
-
-//==============================================================================
-const juce::String FoleysSynthAudioProcessor::getName() const
-{
-    return JucePlugin_Name;
-}
-
-bool FoleysSynthAudioProcessor::acceptsMidi() const
-{
-   #if JucePlugin_WantsMidiInput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool FoleysSynthAudioProcessor::producesMidi() const
-{
-   #if JucePlugin_ProducesMidiOutput
-    return true;
-   #else
-    return false;
-   #endif
-}
-
-bool FoleysSynthAudioProcessor::isMidiEffect() const
-{
-   #if JucePlugin_IsMidiEffect
-    return true;
-   #else
-    return false;
-   #endif
-}
 
 double FoleysSynthAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
-}
-
-int FoleysSynthAudioProcessor::getNumPrograms()
-{
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-                // so this should be at least 1, even if you're not really implementing programs.
-}
-
-int FoleysSynthAudioProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
-void FoleysSynthAudioProcessor::setCurrentProgram (int index)
-{
-    loadPresetInternal (index);
-}
-
-const juce::String FoleysSynthAudioProcessor::getProgramName (int)
-{
-    return {};
-}
-
-void FoleysSynthAudioProcessor::changeProgramName (int, const juce::String&)
-{
 }
 
 //==============================================================================

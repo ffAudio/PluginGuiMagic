@@ -18,7 +18,7 @@ class PresetListBox;
 //==============================================================================
 /**
 */
-class FoleysSynthAudioProcessor  : public juce::AudioProcessor
+class FoleysSynthAudioProcessor  : public foleys::MagicProcessor
 {
 public:
     //==============================================================================
@@ -35,31 +35,11 @@ public:
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
-    juce::AudioProcessorEditor* createEditor() override;
-    bool hasEditor() const override;
-
-    //==============================================================================
     void savePresetInternal();
     void loadPresetInternal(int index);
 
     //==============================================================================
-    void getStateInformation (juce::MemoryBlock& destData) override;
-    void setStateInformation (const void* data, int sizeInBytes) override;
-
-    //==============================================================================
-    const juce::String getName() const override;
-
-    bool acceptsMidi() const override;
-    bool producesMidi() const override;
-    bool isMidiEffect() const override;
     double getTailLengthSeconds() const override;
-
-    //==============================================================================
-    int getNumPrograms() override;
-    int getCurrentProgram() override;
-    void setCurrentProgram (int index) override;
-    const juce::String getProgramName (int index) override;
-    void changeProgramName (int index, const juce::String& newName) override;
 
 private:
     //==============================================================================
@@ -69,7 +49,6 @@ private:
     juce::ValueTree  presetNode;
 
     // GUI MAGIC: define that as last member of your AudioProcessor
-    foleys::MagicProcessorState magicState { *this, treeState };
     foleys::MagicLevelSource*   outputMeter  = nullptr;
     foleys::MagicPlotSource*    oscilloscope = nullptr;
     foleys::MagicPlotSource*    analyser     = nullptr;
