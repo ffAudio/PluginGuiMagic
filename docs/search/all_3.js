@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['decorator_70',['decorator',['../classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a',1,'foleys::GuiItem']]],
-  ['decorator_71',['Decorator',['../classfoleys_1_1Decorator.html#ade856a3db193b883335f2f5785d84f52',1,'foleys::Decorator::Decorator()'],['../classfoleys_1_1Decorator.html',1,'Decorator']]],
+  ['decorator_71',['Decorator',['../classfoleys_1_1Decorator.html',1,'Decorator'],['../classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a',1,'foleys::GuiItem::decorator()'],['../classfoleys_1_1Decorator.html#ade856a3db193b883335f2f5785d84f52',1,'foleys::Decorator::Decorator()']]],
   ['defaultvalue_72',['defaultValue',['../structfoleys_1_1SettableProperty.html#a586885fbebf656fcf85ead6508943be5',1,'foleys::SettableProperty']]],
   ['deleteclass_73',['deleteClass',['../classfoleys_1_1PropertiesEditor.html#a6c5628e41d97ab59fa2bda8550f1d28e',1,'foleys::PropertiesEditor']]],
   ['deletestyleclass_74',['deleteStyleClass',['../classfoleys_1_1Stylesheet.html#a39178d7e55dec7f8906f05501258116b',1,'foleys::Stylesheet']]],
