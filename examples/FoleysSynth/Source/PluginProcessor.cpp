@@ -29,7 +29,16 @@ FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
 {
 //    auto defaultGUI = magicState.createDefaultGUITree();
 //    magicState.setGuiValueTree (defaultGUI);
-    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+
+    auto file = juce::File::getSpecialLocation (juce::File::currentApplicationFile)
+        .getChildFile ("Contents")
+        .getChildFile ("Resources")
+        .getChildFile ("magic.xml");
+
+    if (file.existsAsFile())
+        magicState.setGuiValueTree (file);
+    else
+        magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 
     // MAGIC GUI: add a meter at the output
     outputMeter  = magicState.createAndAddObject<foleys::MagicLevelSource>("output");
