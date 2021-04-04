@@ -153,6 +153,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad4a41f9c5d88da6dc9c4fed533117b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa307049d295bd11b0494454fcdfc19cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aa307049d295bd11b0494454fcdfc19cb">isColourPaletteNode</a> (const juce::ValueTree &amp;node) const</td></tr>
 <tr class="separator:aa307049d295bd11b0494454fcdfc19cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14430b5ac78b02c5aa14dd1878eb8bf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#a14430b5ac78b02c5aa14dd1878eb8bf5">addListener</a> (juce::ValueTree::Listener *listener)</td></tr>
+<tr class="separator:a14430b5ac78b02c5aa14dd1878eb8bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed04b4b59f20ca60573cf140cba3f163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1Stylesheet.html#aed04b4b59f20ca60573cf140cba3f163">removeListener</a> (juce::ValueTree::Listener *listener)</td></tr>
+<tr class="separator:aed04b4b59f20ca60573cf140cba3f163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -487,7 +491,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Finds a background image for the given node. </p>
-<p>Note that this will only return anything useful, if you have added any actual images into the BinaryData and have enabled the FOLEYS_ENABLE_BINARY_DATA setting in the module page.</p>
+<p>Note that this will only return anything useful, if you have added any actual images into the <a class="el" href="namespaceBinaryData.html">BinaryData</a> and have enabled the FOLEYS_ENABLE_BINARY_DATA setting in the module page.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td>is the node in the GUI DOM </td></tr>
@@ -822,6 +826,46 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a14430b5ac78b02c5aa14dd1878eb8bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14430b5ac78b02c5aa14dd1878eb8bf5">&#9670;&nbsp;</a></span>addListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addListener </td>
+          <td>(</td>
+          <td class="paramtype">juce::ValueTree::Listener *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem::GuiItem()</a>.</p>
+
+</div>
+</div>
+<a id="aed04b4b59f20ca60573cf140cba3f163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed04b4b59f20ca60573cf140cba3f163">&#9670;&nbsp;</a></span>removeListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeListener </td>
+          <td>(</td>
+          <td class="paramtype">juce::ValueTree::Listener *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#a7d8bffd21ce776bc8c17aec4b4e887fc">GuiItem::~GuiItem()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="foleys__Stylesheet_8h.html">foleys_Stylesheet.h</a></li>
 <li><a class="el" href="foleys__Stylesheet_8cpp.html">foleys_Stylesheet.cpp</a></li>
@@ -829,7 +873,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 21 2021 00:20:43 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 4 2021 23:13:38 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

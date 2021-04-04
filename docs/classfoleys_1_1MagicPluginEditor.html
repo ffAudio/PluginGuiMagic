@@ -96,16 +96,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a187579f20217ccde96385c6ee2800d0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#a187579f20217ccde96385c6ee2800d0f">MagicPluginEditor</a> (<a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> &amp;processorState, std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &gt; builder={})</td></tr>
 <tr class="memdesc:a187579f20217ccde96385c6ee2800d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an AudioProcessorEditor populated from a <a class="el" href="classfoleys_1_1MagicGUIBuilder.html" title="The MagicGUIBuilder is responsible to recreate the GUI from a single ValueTree.">MagicGUIBuilder</a>.  <a href="classfoleys_1_1MagicPluginEditor.html#a187579f20217ccde96385c6ee2800d0f">More...</a><br /></td></tr>
 <tr class="separator:a187579f20217ccde96385c6ee2800d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae533d5acdd2c21cde92f192fbfba5773"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#ae533d5acdd2c21cde92f192fbfba5773">MagicPluginEditor</a> (<a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> &amp;processorState, const char *data, const int dataSize, std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &gt; builder={})</td></tr>
-<tr class="separator:ae533d5acdd2c21cde92f192fbfba5773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acedb3d202897c74efd49f839f3931603"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#acedb3d202897c74efd49f839f3931603">~MagicPluginEditor</a> () override</td></tr>
 <tr class="separator:acedb3d202897c74efd49f839f3931603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a967bc7bacdf2866bde3f5141166372a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#a967bc7bacdf2866bde3f5141166372a0">setConfigTree</a> (const juce::ValueTree &amp;gui)</td></tr>
 <tr class="memdesc:a967bc7bacdf2866bde3f5141166372a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a GUI from a previously stored ValueTree.  <a href="classfoleys_1_1MagicPluginEditor.html#a967bc7bacdf2866bde3f5141166372a0">More...</a><br /></td></tr>
 <tr class="separator:a967bc7bacdf2866bde3f5141166372a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e841446e19b81cbb0045d51e933275"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#af3e841446e19b81cbb0045d51e933275">setConfigTree</a> (const char *data, int dataSize)</td></tr>
-<tr class="memdesc:af3e841446e19b81cbb0045d51e933275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a GUI from a previously stored ValueTree.  <a href="classfoleys_1_1MagicPluginEditor.html#af3e841446e19b81cbb0045d51e933275">More...</a><br /></td></tr>
-<tr class="separator:af3e841446e19b81cbb0045d51e933275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ecf2713766f9e941a92c8ba3dcb744"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicPluginEditor.html#a65ecf2713766f9e941a92c8ba3dcb744">getGUIBuilder</a> ()</td></tr>
 <tr class="memdesc:a65ecf2713766f9e941a92c8ba3dcb744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grants access to the <a class="el" href="classfoleys_1_1MagicGUIBuilder.html" title="The MagicGUIBuilder is responsible to recreate the GUI from a single ValueTree.">MagicGUIBuilder</a>.  <a href="classfoleys_1_1MagicPluginEditor.html#a65ecf2713766f9e941a92c8ba3dcb744">More...</a><br /></td></tr>
 <tr class="separator:a65ecf2713766f9e941a92c8ba3dcb744"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,10 +111,10 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop. </p>
-<p>There is an XML representation, that can be baked into the project using the BinaryData of Projucer. </p>
+<p>There is an XML representation, that can be baked into the project using the <a class="el" href="namespaceBinaryData.html">BinaryData</a> of Projucer. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a187579f20217ccde96385c6ee2800d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a187579f20217ccde96385c6ee2800d0f">&#9670;&nbsp;</a></span>MagicPluginEditor() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a187579f20217ccde96385c6ee2800d0f">&#9670;&nbsp;</a></span>MagicPluginEditor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,45 +141,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Create an AudioProcessorEditor populated from a <a class="el" href="classfoleys_1_1MagicGUIBuilder.html" title="The MagicGUIBuilder is responsible to recreate the GUI from a single ValueTree.">MagicGUIBuilder</a>. </p>
 
-</div>
-</div>
-<a id="ae533d5acdd2c21cde92f192fbfba5773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae533d5acdd2c21cde92f192fbfba5773">&#9670;&nbsp;</a></span>MagicPluginEditor() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classfoleys_1_1MagicPluginEditor.html">MagicPluginEditor</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classfoleys_1_1MagicProcessorState.html">MagicProcessorState</a> &amp;&#160;</td>
-          <td class="paramname"><em>processorState</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>dataSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &gt;&#160;</td>
-          <td class="paramname"><em>builder</em> = <code>{}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIState.html#a6cb3176c3d5ab7d0d5059686bc1c6847">MagicGUIState::getGuiTree()</a>, <a class="el" href="classfoleys_1_1MagicGUIState.html#adbf8fefcecacc8a48f1b9e07e4383bff">MagicGUIState::getValueTree()</a>, and <a class="el" href="classfoleys_1_1MagicPluginEditor.html#a967bc7bacdf2866bde3f5141166372a0">MagicPluginEditor::setConfigTree()</a>.</p>
 
 </div>
 </div>
@@ -215,7 +172,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a967bc7bacdf2866bde3f5141166372a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a967bc7bacdf2866bde3f5141166372a0">&#9670;&nbsp;</a></span>setConfigTree() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a967bc7bacdf2866bde3f5141166372a0">&#9670;&nbsp;</a></span>setConfigTree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,48 +197,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIState.html#a09535b6aac7d63181ba61e4b0bbfaf23">MagicGUIState::setGuiValueTree()</a>.</p>
 
-</div>
-</div>
-<a id="af3e841446e19b81cbb0045d51e933275"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3e841446e19b81cbb0045d51e933275">&#9670;&nbsp;</a></span>setConfigTree() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setConfigTree </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dataSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Setup a GUI from a previously stored ValueTree. </p>
-<p>This is the usual way to deploy your finished GUI via the Projucer:</p>
-<div class="fragment"><div class="line">AudioProcessorEditor* MyAudioProcessor::createEditor()</div>
-<div class="line">{</div>
-<div class="line">    <span class="keyword">auto</span>* editor = <span class="keyword">new</span> <a class="code" href="classfoleys_1_1MagicPluginEditor.html">foleys::MagicPluginEditor</a> (magicState, BinaryData::magic_xml, BinaryData::magic_xmlSize);</div>
-<div class="line">    <span class="keywordflow">return</span> editor;</div>
-<div class="line">}</div>
-</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>points to the binary data of the XML file </td></tr>
-    <tr><td class="paramname">dataSize</td><td>the number of bytes </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicPluginEditor.html#a187579f20217ccde96385c6ee2800d0f">MagicPluginEditor::MagicPluginEditor()</a>.</p>
 
 </div>
 </div>
@@ -362,10 +278,9 @@ Public Member Functions</h2></td></tr>
 <li><a class="el" href="foleys__MagicPluginEditor_8cpp.html">foleys_MagicPluginEditor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassfoleys_1_1MagicPluginEditor_html"><div class="ttname"><a href="classfoleys_1_1MagicPluginEditor.html">foleys::MagicPluginEditor</a></div><div class="ttdoc">This is a generic AudioProcessorEditor, that is completely defined and styled by drag and drop.</div><div class="ttdef"><b>Definition:</b> foleys_MagicPluginEditor.h:49</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 21 2021 00:20:43 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 4 2021 23:13:38 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

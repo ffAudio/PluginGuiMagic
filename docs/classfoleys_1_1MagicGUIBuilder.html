@@ -122,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a620ec9b39cea3022359e9a104204466b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This selects the stylesheet node and sets it to the <a class="el" href="classfoleys_1_1Stylesheet.html" title="The Stylesheet class represents all style information.">Stylesheet</a>.  <a href="classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b">More...</a><br /></td></tr>
 <tr class="separator:a620ec9b39cea3022359e9a104204466b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f510563dafe287c64932a66ae663a46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1f510563dafe287c64932a66ae663a46">updateComponents</a> ()</td></tr>
-<tr class="memdesc:a1f510563dafe287c64932a66ae663a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates all components from the  tree.  <a href="classfoleys_1_1MagicGUIBuilder.html#a1f510563dafe287c64932a66ae663a46">More...</a><br /></td></tr>
+<tr class="memdesc:a1f510563dafe287c64932a66ae663a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates all components from the &lt;View&gt; tree.  <a href="classfoleys_1_1MagicGUIBuilder.html#a1f510563dafe287c64932a66ae663a46">More...</a><br /></td></tr>
 <tr class="separator:a1f510563dafe287c64932a66ae663a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">updateLayout</a> ()</td></tr>
 <tr class="memdesc:a1d6370ebf9c300d4b0bffe8b8a821731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalculates the layout of all components.  <a href="classfoleys_1_1MagicGUIBuilder.html#a1d6370ebf9c300d4b0bffe8b8a821731">More...</a><br /></td></tr>
@@ -298,7 +298,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Grant access to the stylesheet to look up visual and layout properties. </p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aecfdabb619d10906a9d753b84470bdb3">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a6eb3d15cc5e954c43be27fd57a4b7a01">Decorator::configure()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">PropertiesEditor::setNodeToEdit()</a>, <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a2c1f9b412ce610c990bc713301e82f8d">Decorator::updateColours()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1PropertiesEditor.html#aecfdabb619d10906a9d753b84470bdb3">PropertiesEditor::addDecoratorProperties()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a8c9fc92106221c88403d100b674839d1">PropertiesEditor::addNodeProperties()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a6eb3d15cc5e954c43be27fd57a4b7a01">Decorator::configure()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem::GuiItem()</a>, <a class="el" href="classfoleys_1_1StylePropertyComponent.html#a7d2fe983b82376b7157f41206a6b3c83">StylePropertyComponent::lookupValue()</a>, <a class="el" href="classfoleys_1_1PropertiesEditor.html#a62568851a6ae2477d649eb5098bd5e38">PropertiesEditor::setNodeToEdit()</a>, <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>, <a class="el" href="classfoleys_1_1Decorator.html#a2c1f9b412ce610c990bc713301e82f8d">Decorator::updateColours()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#a7d8bffd21ce776bc8c17aec4b4e887fc">GuiItem::~GuiItem()</a>.</p>
 
 </div>
 </div>
@@ -428,12 +428,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recreates all components from the  tree. </p>
+<p>Recreates all components from the &lt;View&gt; tree. </p>
 <p>If no div tree is found, createDefaultGUITree is called to give subclasses a chance to create a suitable default. </p>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a2a06ca0ff5ac25ee8e29a7c8615ee1c4">MagicGUIBuilder::createGuiItem()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a04f346e0b02c8b557985e738e54f97e7">MagicGUIBuilder::getGuiRootNode()</a>, and <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a620ec9b39cea3022359e9a104204466b">MagicGUIBuilder::updateStylesheet()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicGUIBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af31371b491e504e6052f49a7a1aaa86d">MagicGUIBuilder::createGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a68f776b7aa2b1d9a6877e9440017d9d6">MagicGUIBuilder::resetToDefaultGUI()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a217d73fb7ed316701cfd568684172cdb">ToolBox::ToolBox()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab56c8da24e699987007b1f5c6ed3a506">MagicGUIBuilder::clearGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#af31371b491e504e6052f49a7a1aaa86d">MagicGUIBuilder::createGUI()</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a68f776b7aa2b1d9a6877e9440017d9d6">MagicGUIBuilder::resetToDefaultGUI()</a>, <a class="el" href="classfoleys_1_1ToolBox.html#a3bc43348faee558ab0ed69ba8de12473">ToolBox::stateWasReloaded()</a>, and <a class="el" href="classfoleys_1_1ToolBox.html#a217d73fb7ed316701cfd568684172cdb">ToolBox::ToolBox()</a>.</p>
 
 </div>
 </div>
@@ -990,7 +990,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 21 2021 00:20:43 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 4 2021 23:13:38 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

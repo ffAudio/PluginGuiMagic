@@ -117,6 +117,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afcf6f2dd9b4083d1d56deb14d675e43c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem</a> (<a class="el" href="classfoleys_1_1MagicGUIBuilder.html">MagicGUIBuilder</a> &amp;builder, juce::ValueTree node)</td></tr>
 <tr class="separator:afcf6f2dd9b4083d1d56deb14d675e43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8bffd21ce776bc8c17aec4b4e887fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#a7d8bffd21ce776bc8c17aec4b4e887fc">~GuiItem</a> () override</td></tr>
+<tr class="separator:a7d8bffd21ce776bc8c17aec4b4e887fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af185d08727bd6532babf4d6ae784b7c5"><td class="memItemLeft" align="right" valign="top">virtual juce::Component *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfoleys_1_1GuiItem.html#af185d08727bd6532babf4d6ae784b7c5">getWrappedComponent</a> ()=0</td></tr>
 <tr class="memdesc:af185d08727bd6532babf4d6ae784b7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows accessing the Component inside that <a class="el" href="classfoleys_1_1GuiItem.html" title="The GuiItem class will draw borders and descriptions around widgets, if defined.">GuiItem</a>.  <a href="classfoleys_1_1GuiItem.html#af185d08727bd6532babf4d6ae784b7c5">More...</a><br /></td></tr>
 <tr class="separator:af185d08727bd6532babf4d6ae784b7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +242,34 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1Stylesheet.html#a14430b5ac78b02c5aa14dd1878eb8bf5">Stylesheet::addListener()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicGUIBuilder::getStylesheet()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>.</p>
+
+</div>
+</div>
+<a id="a7d8bffd21ce776bc8c17aec4b4e887fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8bffd21ce776bc8c17aec4b4e887fc">&#9670;&nbsp;</a></span>~GuiItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classfoleys_1_1GuiItem.html">GuiItem</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicGUIBuilder::getStylesheet()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, and <a class="el" href="classfoleys_1_1Stylesheet.html#aed04b4b59f20ca60573cf140cba3f163">Stylesheet::removeListener()</a>.</p>
 
 </div>
 </div>
@@ -305,6 +334,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classfoleys_1_1ListBoxItem.html#a44137bb65de2396875934e48a6ee5099">ListBoxItem</a>, <a class="el" href="classfoleys_1_1MidiLearnItem.html#a44137bb65de2396875934e48a6ee5099">MidiLearnItem</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a44137bb65de2396875934e48a6ee5099">LevelMeterItem</a>, <a class="el" href="classfoleys_1_1KeyboardItem.html#a44137bb65de2396875934e48a6ee5099">KeyboardItem</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a44137bb65de2396875934e48a6ee5099">XYDraggerItem</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a44137bb65de2396875934e48a6ee5099">PlotItem</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a44137bb65de2396875934e48a6ee5099">LabelItem</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a44137bb65de2396875934e48a6ee5099">ToggleButtonItem</a>, <a class="el" href="classfoleys_1_1TextButtonItem.html#a44137bb65de2396875934e48a6ee5099">TextButtonItem</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a44137bb65de2396875934e48a6ee5099">ComboBoxItem</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a44137bb65de2396875934e48a6ee5099">SliderItem</a>, and <a class="el" href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">Container</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
+
 </div>
 </div>
 <a id="ac8630179d869d110484e7bb5d1897e80"></a>
@@ -335,6 +366,8 @@ Protected Attributes</h2></td></tr>
 <p>Reimplemented in <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container</a>.</p>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3fd1264e9f7ab0a402841a81fdc2128c">GuiItem::colourTranslation</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a">GuiItem::decorator</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af185d08727bd6532babf4d6ae784b7c5">GuiItem::getWrappedComponent()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, and <a class="el" href="classfoleys_1_1Decorator.html#a2c1f9b412ce610c990bc713301e82f8d">Decorator::updateColours()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
 
 </div>
 </div>
@@ -536,7 +569,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reread properties from the config ValueTree. </p>
 
-<p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicGUIBuilder::getStylesheet()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>.</p>
+<p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a3c8c453d9c939917013c01fd2e09ab29">GuiItem::configNode</a>, <a class="el" href="classfoleys_1_1Decorator.html#a6eb3d15cc5e954c43be27fd57a4b7a01">Decorator::configure()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaf75fb1301a3b6af50a6217e60f09f1f">GuiItem::configureFlexBoxItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad6eb177e7a65553d6ee845b966cd4ced">GuiItem::configurePosition()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ab94a6ed08e37f209cb4ddf38b7fb708a">GuiItem::decorator</a>, <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#a9876511113ce98a8de09d3171ec08f90">MagicGUIBuilder::getStylesheet()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a99b02345a8a15d3c5ea2844a2253f510">GuiItem::update()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>.</p>
 
 </div>
 </div>
@@ -723,6 +756,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="classfoleys_1_1GuiItem.html#a44cf8e179ab02bb4a83b0a2e380d468a">GuiItem::flexItem</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
+
 </div>
 </div>
 <a id="ad6eb177e7a65553d6ee845b966cd4ced"></a>
@@ -742,6 +777,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="classfoleys_1_1MagicGUIBuilder.html#ab6fb1eec48bdac436d67f149ace49038">MagicGUIBuilder::getStyleProperty()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ad7c2bad28688c00046d2fc4e4d032047">GuiItem::magicBuilder</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1065,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#afcf053e8c92c17e8d216d8da48046f02">Container::configureFlexBox()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad6eb177e7a65553d6ee845b966cd4ced">GuiItem::configurePosition()</a>, <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaef237f655db41e906c13d14267512be">GuiItem::getMagicState()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ComboBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1TextButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">TextButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">ToggleButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a7c64c7754b7155d7fadc05fd061f329f">PlotItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a7c64c7754b7155d7fadc05fd061f329f">LevelMeterItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ListBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad2b97bf79ff599263d5e6bc54c16d18a">GuiItem::itemDropped()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a9086f21dd031681b1dffd1a903e3b740">GuiItem::paintOverChildren()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a44137bb65de2396875934e48a6ee5099">LabelItem::update()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#afcf053e8c92c17e8d216d8da48046f02">Container::configureFlexBox()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad6eb177e7a65553d6ee845b966cd4ced">GuiItem::configurePosition()</a>, <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaef237f655db41e906c13d14267512be">GuiItem::getMagicState()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ComboBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1TextButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">TextButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">ToggleButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a7c64c7754b7155d7fadc05fd061f329f">PlotItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a7c64c7754b7155d7fadc05fd061f329f">LevelMeterItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ListBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem::GuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad2b97bf79ff599263d5e6bc54c16d18a">GuiItem::itemDropped()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a9086f21dd031681b1dffd1a903e3b740">GuiItem::paintOverChildren()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a44137bb65de2396875934e48a6ee5099">LabelItem::update()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#a7d8bffd21ce776bc8c17aec4b4e887fc">GuiItem::~GuiItem()</a>.</p>
 
 </div>
 </div>
@@ -1052,7 +1089,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>, <a class="el" href="classfoleys_1_1Container.html#a28648133e368b451656e64459d9f719a">Container::findGuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a95da577b43bffa35ead141ec4ea434d5">GuiItem::findGuiItem()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ac12d3643cc77a5cf484cd80eb8a8a2c3">SliderItem::getControlledParameterID()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ComboBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1TextButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">TextButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">ToggleButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a7c64c7754b7155d7fadc05fd061f329f">PlotItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a7c64c7754b7155d7fadc05fd061f329f">LevelMeterItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ListBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem::GuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad2b97bf79ff599263d5e6bc54c16d18a">GuiItem::itemDropped()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a9086f21dd031681b1dffd1a903e3b740">GuiItem::paintOverChildren()</a>, <a class="el" href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">Container::update()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a44137bb65de2396875934e48a6ee5099">SliderItem::update()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a44137bb65de2396875934e48a6ee5099">ComboBoxItem::update()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a44137bb65de2396875934e48a6ee5099">LabelItem::update()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a44137bb65de2396875934e48a6ee5099">PlotItem::update()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a44137bb65de2396875934e48a6ee5099">XYDraggerItem::update()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a44137bb65de2396875934e48a6ee5099">LevelMeterItem::update()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a44137bb65de2396875934e48a6ee5099">ListBoxItem::update()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, and <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1Container.html#a452718cb63f74ce89fa38277e4b4028c">Container::createSubComponents()</a>, <a class="el" href="classfoleys_1_1Container.html#a28648133e368b451656e64459d9f719a">Container::findGuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a95da577b43bffa35ead141ec4ea434d5">GuiItem::findGuiItem()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#ac12d3643cc77a5cf484cd80eb8a8a2c3">SliderItem::getControlledParameterID()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#af991d47099426335ce00b00072524195">GuiItem::getProperty()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a7c64c7754b7155d7fadc05fd061f329f">SliderItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ComboBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1TextButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">TextButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ToggleButtonItem.html#a7c64c7754b7155d7fadc05fd061f329f">ToggleButtonItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a7c64c7754b7155d7fadc05fd061f329f">LabelItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a7c64c7754b7155d7fadc05fd061f329f">PlotItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a7c64c7754b7155d7fadc05fd061f329f">XYDraggerItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a7c64c7754b7155d7fadc05fd061f329f">LevelMeterItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a7c64c7754b7155d7fadc05fd061f329f">ListBoxItem::getSettableProperties()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#afcf6f2dd9b4083d1d56deb14d675e43c">GuiItem::GuiItem()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ad2b97bf79ff599263d5e6bc54c16d18a">GuiItem::itemDropped()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a9086f21dd031681b1dffd1a903e3b740">GuiItem::paintOverChildren()</a>, <a class="el" href="classfoleys_1_1Container.html#a44137bb65de2396875934e48a6ee5099">Container::update()</a>, <a class="el" href="classfoleys_1_1SliderItem.html#a44137bb65de2396875934e48a6ee5099">SliderItem::update()</a>, <a class="el" href="classfoleys_1_1ComboBoxItem.html#a44137bb65de2396875934e48a6ee5099">ComboBoxItem::update()</a>, <a class="el" href="classfoleys_1_1LabelItem.html#a44137bb65de2396875934e48a6ee5099">LabelItem::update()</a>, <a class="el" href="classfoleys_1_1PlotItem.html#a44137bb65de2396875934e48a6ee5099">PlotItem::update()</a>, <a class="el" href="classfoleys_1_1XYDraggerItem.html#a44137bb65de2396875934e48a6ee5099">XYDraggerItem::update()</a>, <a class="el" href="classfoleys_1_1LevelMeterItem.html#a44137bb65de2396875934e48a6ee5099">LevelMeterItem::update()</a>, <a class="el" href="classfoleys_1_1ListBoxItem.html#a44137bb65de2396875934e48a6ee5099">ListBoxItem::update()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1113,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#a5c76c970e216fac326c9b91f4805a4ff">GuiItem::getClientBounds()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaf631f77b35796b9ad189887c129d381">GuiItem::getTabCaption()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a1b594ff40a2c4b2d1739f22b699666d1">GuiItem::getTabColour()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aad86e5c3f4edcc1277aabaa4bb71e4b4">GuiItem::paint()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, and <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classfoleys_1_1GuiItem.html#a5c76c970e216fac326c9b91f4805a4ff">GuiItem::getClientBounds()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aaf631f77b35796b9ad189887c129d381">GuiItem::getTabCaption()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#a1b594ff40a2c4b2d1739f22b699666d1">GuiItem::getTabColour()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#aad86e5c3f4edcc1277aabaa4bb71e4b4">GuiItem::paint()</a>, <a class="el" href="classfoleys_1_1GuiItem.html#ac8630179d869d110484e7bb5d1897e80">GuiItem::updateColours()</a>, <a class="el" href="classfoleys_1_1Container.html#a4c90879c026e540093261a1a5bb330f9">Container::updateColours()</a>, and <a class="el" href="classfoleys_1_1GuiItem.html#ae7a3edb3ee73b494195850a7a0081ad1">GuiItem::updateInternal()</a>.</p>
 
 </div>
 </div>
@@ -1135,7 +1172,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 21 2021 00:20:43 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 4 2021 23:13:38 for foleys_gui_magic by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
