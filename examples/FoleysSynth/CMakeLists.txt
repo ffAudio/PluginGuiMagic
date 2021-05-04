@@ -48,6 +48,8 @@ juce_add_plugin(${project_name}
 
 juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
 
+juce_generate_juce_header (${project_name})
+
 juce_add_binary_data(${project_name}_data 
     SOURCES
     Resources/Logo.png
@@ -62,6 +64,7 @@ target_link_libraries(${project_name}
     PRIVATE
     ${project_sources}
     ${project_name}_data
+    foleys_gui_magic
     juce::juce_audio_basics
     juce::juce_audio_plugin_client
     juce::juce_audio_processors
