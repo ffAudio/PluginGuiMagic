@@ -10,7 +10,7 @@ juce_add_module(${CMAKE_CURRENT_LIST_DIR}/modules/foleys_gui_magic)
 
 
 # check which formats we want to build
-set(FORMATS "VST3")
+set(FORMATS "VST3" "Standalone")
 if (AAX_PATH)
     list(APPEND FORMATS "AAX")
     juce_set_aax_sdk_path(${AAX_PATH})
@@ -23,6 +23,13 @@ endif()
 
 if (APPLE)
     list(APPEND FORMATS "AU")
+endif()
+
+# setup the copying to the output folder
+if (APPLE)
+    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/MacOSX)
+elseif(WIN32)
+    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/VisualStudio2019)
 endif()
 
 add_subdirectory(examples/APVTS_Tutorial)

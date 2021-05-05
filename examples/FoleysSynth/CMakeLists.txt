@@ -11,34 +11,12 @@ set(${project_name}_sources
 
 project(${project_name} VERSION ${version})
 
-# if you want to build this directly activate this block
-#
-# set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/../../JUCE)
-# add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
-# juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
-#
-# check which formats we want to build
-# set(FORMATS "VST3")
-# if (AAX_PATH)
-#     list(APPEND FORMATS "AAX")
-#     juce_set_aax_sdk_path(${AAX_PATH})
-# endif()
-#
-# if (VST2_PATH)
-#     list(APPEND FORMATS "VST2")
-#     juce_set_vst2_sdk_path(${VST2_PATH})
-# endif()
-#
-# if (APPLE)
-#     list(APPEND FORMATS "AU")
-# endif()
-
 # add the plugin targets
 juce_add_plugin(${project_name}
                 VERSION "${version}"
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
-                PLUGIN_CODE "Fsyn"
+                PLUGIN_CODE "PgmS"
                 FORMATS ${FORMATS}
                 VST3_CATEGORIES "Instrument" "Synth"
                 AAX_CATEGORY "AAX_ePlugInCategory_Instrument"
@@ -46,10 +24,8 @@ juce_add_plugin(${project_name}
                 COMPANY_WEBSITE "https://foleysfinest.com"
                 COMPANY_EMAIL "info@foleysfinest.com"
                 BUNDLE_ID "com.foleysfinest.FoleysSynth"
-                PLUGIN_NAME "FoleysSynth"
-                PRODUCT_NAME "FoleysSynth")
-
-#juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
+                PLUGIN_NAME "PGM-FoleysSynth"
+                PRODUCT_NAME "PGM-FoleysSynth")
 
 juce_generate_juce_header (${project_name})
 
@@ -85,13 +61,6 @@ target_compile_definitions(${project_name}
     IS_SYNTH=1
     JUCE_VST3_CAN_REPLACE_VST2=0
     JUCE_WEB_BROWSER=0)
-
-# setup the copying to the output folder
-if (APPLE)
-    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/MacOSX)
-elseif(WIN32)
-    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/VisualStudio2019)
-endif()
 
 foreach(FORMAT ${FORMATS})
     get_target_property(ARTEFACTS_DIR ${project_name}_${FORMAT} LIBRARY_OUTPUT_DIRECTORY)

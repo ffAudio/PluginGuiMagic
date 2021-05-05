@@ -29,7 +29,7 @@ public:
 
     //==============================================================================
     SignalGeneratorAudioProcessor();
-    ~SignalGeneratorAudioProcessor();
+    ~SignalGeneratorAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
