@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.13.0)
 
 set (version 1.3.2)
 
+project(PluginGuiMagic VERSION ${version})
+
 # Configure JUCE sources
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 set(JUCE_ENABLE_MODULE_SOURCE_GROUPS ON)
