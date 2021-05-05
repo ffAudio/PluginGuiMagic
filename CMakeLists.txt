@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.13.0)
 
 set (version 1.3.2)
 
+# Configure JUCE sources
+set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+set(JUCE_ENABLE_MODULE_SOURCE_GROUPS ON)
+option(JUCE_ENABLE_MODULE_SOURCE_GROUPS "Enable Module Source Groups" ON)
+
 set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/JUCE)
 add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
 
