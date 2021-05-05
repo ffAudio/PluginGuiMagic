@@ -6,33 +6,36 @@ set(${project_name}_sources
     Source/PluginProcessor.cpp
     Source/PluginProcessor.h)
 
-project(${project_name} VERSION 1.1.0)
+project(${project_name} VERSION ${version})
 
-set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/../../JUCE)
-add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
-
+# if you want to build this directly activate this block
+#
+# set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/../../JUCE)
+# add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
+# juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
+#
 # check which formats we want to build
-set(FORMATS "VST3")
-if (AAX_PATH)
-    list(APPEND FORMATS "AAX")
-    juce_set_aax_sdk_path(${AAX_PATH})
-endif()
-
-if (VST2_PATH)
-    list(APPEND FORMATS "VST2")
-    juce_set_vst2_sdk_path(${VST2_PATH})
-endif()
-
-if (APPLE)
-    list(APPEND FORMATS "AU")
-endif()
+# set(FORMATS "VST3")
+# if (AAX_PATH)
+#     list(APPEND FORMATS "AAX")
+#     juce_set_aax_sdk_path(${AAX_PATH})
+# endif()
+#
+# if (VST2_PATH)
+#     list(APPEND FORMATS "VST2")
+#     juce_set_vst2_sdk_path(${VST2_PATH})
+# endif()
+#
+# if (APPLE)
+#     list(APPEND FORMATS "AU")
+# endif()
 
 # add the plugin targets
 juce_add_plugin(${project_name}
-                VERSION "1.1.0"
+                VERSION "${version}"
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
-                PLUGIN_CODE "Wyec"
+                PLUGIN_CODE "PgmQ"
                 FORMATS ${FORMATS}
                 VST3_CATEGORIES "Fx" "Analyser" "EQ"
                 AAX_CATEGORY "AAX_ePlugInCategory_EQ"
@@ -40,10 +43,9 @@ juce_add_plugin(${project_name}
                 COMPANY_WEBSITE "https://foleysfinest.com"
                 COMPANY_EMAIL "info@foleysfinest.com"
                 BUNDLE_ID "com.foleysfinest.EqualizerExample"
-                PLUGIN_NAME "EqualizerExample"
-                PRODUCT_NAME "EqualizerExample")
+                PLUGIN_NAME "PGM-Equalizer"
+                PRODUCT_NAME "PGM-Equalizer")
 
-juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
 
 juce_generate_juce_header (${project_name})
 

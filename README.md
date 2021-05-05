@@ -14,6 +14,8 @@ The main features are:
 
 ![EqualizerExample Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/EqualizerExample-screenshot.png)
 
+[![CMake](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml/badge.svg)](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml)
+
 Pre-requisites
 -------------
 
