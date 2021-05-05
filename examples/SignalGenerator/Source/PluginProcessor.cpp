@@ -198,7 +198,7 @@ void SignalGeneratorAudioProcessor::processBlock (juce::AudioBuffer<float>& buff
     auto* channelData = buffer.getWritePointer (0);
     for (int i = 0; i < buffer.getNumSamples(); ++i)
     {
-        mainOSC.setFrequency (frequency->load() * (1.0 + vfoOSC.processSample (0.0f) * vfoLevel->load()));
+        mainOSC.setFrequency (frequency->load() * (1.0f + vfoOSC.processSample (0.0f) * vfoLevel->load()));
         channelData [i] = juce::jlimit (-1.0f, 1.0f,
                                   mainOSC.processSample (0.0f) * gain * ( 1.0f - (lfoLevel->load() * lfoOSC.processSample (0.0f))));
     }

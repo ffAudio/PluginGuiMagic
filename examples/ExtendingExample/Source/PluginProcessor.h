@@ -20,7 +20,7 @@ class ExtendingExampleAudioProcessor  : public foleys::MagicProcessor
 public:
     //==============================================================================
     ExtendingExampleAudioProcessor();
-    ~ExtendingExampleAudioProcessor();
+    ~ExtendingExampleAudioProcessor() override;
 
     //==============================================================================
     void initialiseBuilder (foleys::MagicGUIBuilder& builder) override;

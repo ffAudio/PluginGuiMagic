@@ -8,29 +8,6 @@ set(${project_name}_sources
 
 project(${project_name} VERSION ${version})
 
-# if you want to build this directly activate this block
-#
-# set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/../../JUCE)
-# add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
-# juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
-
-
-# check which formats we want to build
-# set(FORMATS "VST3")
-# if (AAX_PATH)
-#     list(APPEND FORMATS "AAX")
-#     juce_set_aax_sdk_path(${AAX_PATH})
-# endif()
-#
-# if (VST2_PATH)
-#     list(APPEND FORMATS "VST2")
-#     juce_set_vst2_sdk_path(${VST2_PATH})
-# endif()
-#
-# if (APPLE)
-#     list(APPEND FORMATS "AU")
-# endif()
-
 # add the plugin targets
 juce_add_plugin(${project_name}
                 VERSION "${version}"
@@ -80,13 +57,6 @@ target_compile_definitions(${project_name}
     PUBLIC 
     JUCE_VST3_CAN_REPLACE_VST2=0
     JUCE_WEB_BROWSER=0)
-
-# setup the copying to the output folder
-if (APPLE)
-    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/MacOSX)
-elseif(WIN32)
-    set(COPY_FOLDER ${CMAKE_SOURCE_DIR}/Builds/VisualStudio2019)
-endif()
 
 foreach(FORMAT ${FORMATS})
     get_target_property(ARTEFACTS_DIR ${project_name}_${FORMAT} LIBRARY_OUTPUT_DIRECTORY)
