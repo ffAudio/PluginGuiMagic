@@ -1,13 +1,10 @@
 cmake_minimum_required(VERSION 3.13.0)
 
-set(project_name "FoleysSynth")
+set(project_name "ExtendingExample")
 
 set(${project_name}_sources
-    Source/FoleysSynth.cpp
-    Source/FoleysSynth.h
     Source/PluginProcessor.cpp
-    Source/PluginProcessor.h
-    Source/PresetListBox)
+    Source/PluginProcessor.h)
 
 project(${project_name} VERSION ${version})
 
@@ -38,25 +35,23 @@ juce_add_plugin(${project_name}
                 VERSION "${version}"
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
-                PLUGIN_CODE "Fsyn"
+                PLUGIN_CODE "PgmX"
                 FORMATS ${FORMATS}
-                VST3_CATEGORIES "Instrument" "Synth"
-                AAX_CATEGORY "AAX_ePlugInCategory_Instrument"
-                AU_MAIN_TYPE "kAudioUnitType_MusicDevice"
+                VST3_CATEGORIES "Fx"
+                AAX_CATEGORY "AAX_ePlugInCategory_EQ"
+                AU_MAIN_TYPE "kAudioUnitType_Effect"
                 COMPANY_WEBSITE "https://foleysfinest.com"
                 COMPANY_EMAIL "info@foleysfinest.com"
-                BUNDLE_ID "com.foleysfinest.FoleysSynth"
-                PLUGIN_NAME "FoleysSynth"
-                PRODUCT_NAME "FoleysSynth")
+                BUNDLE_ID "com.foleysfinest.EqualizerExample"
+                PLUGIN_NAME "PGM-Extending"
+                PRODUCT_NAME "PGM-Extending")
 
-#juce_add_module(${CMAKE_CURRENT_LIST_DIR}/../../modules/foleys_gui_magic)
 
 juce_generate_juce_header (${project_name})
 
 juce_add_binary_data(${project_name}_data 
     SOURCES
-    Resources/Logo.png
-    Resources/magic.xml)
+    Source/magic.xml)
 
 target_sources(${project_name}
     PRIVATE
@@ -82,7 +77,6 @@ target_link_libraries(${project_name}
 
 target_compile_definitions(${project_name}
     PUBLIC 
-    IS_SYNTH=1
     JUCE_VST3_CAN_REPLACE_VST2=0
     JUCE_WEB_BROWSER=0)
 
