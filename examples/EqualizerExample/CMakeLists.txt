@@ -32,11 +32,11 @@ juce_add_plugin(${project_name}
                 VERSION "1.1.0"
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
-                PLUGIN_CODE "FqOS"
+                PLUGIN_CODE "Wyec"
                 FORMATS ${FORMATS}
                 VST3_CATEGORIES "Fx" "Analyser" "EQ"
                 AAX_CATEGORY "AAX_ePlugInCategory_EQ"
-                AU_MAIN_TYPE "kAudioUnitType_Effects"
+                AU_MAIN_TYPE "kAudioUnitType_Effect"
                 COMPANY_WEBSITE "https://foleysfinest.com"
                 COMPANY_EMAIL "info@foleysfinest.com"
                 BUNDLE_ID "com.foleysfinest.EqualizerExample"
