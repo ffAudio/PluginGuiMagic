@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="f2ElqE" name="APVTS_Tutorial" projectType="audioplug" projectLineFeed="&#10;"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
-  <MAINGROUP id="dXEChs" name="APVTS_Tutorial">
+<JUCERPROJECT id="f2ElqE" name="PGM-APVTS-Tutorial" projectType="audioplug"
+              projectLineFeed="&#10;" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
+              version="1.3.2" pluginManufacturerCode="FFAU" pluginCode="PgmV"
+              pluginManufacturer="Foleys Finest Audio" aaxIdentifier="com.foleysfinest.pgmApvtsTutorial"
+              companyWebsite="https://foleysfinest.com" companyEmail="info@foleysfinest.com"
+              companyName="Foleys Finest Audio" pluginName="PGM-APVTS-Tutorial"
+              pluginDesc="PGM-APVTS-Tutorial">
+  <MAINGROUP id="dXEChs" name="PGM-APVTS-Tutorial">
     <GROUP id="{74E99E7D-2C43-FC6C-1C67-E1435F31EF9C}" name="Source">
       <FILE id="w7Q1Wt" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

@@ -46,7 +46,7 @@ public:
         g.fillAll (findColour (backgroundColourId));
         juce::Path p;
         p.startNewSubPath (centre + juce::Point<float>(0, std::sin (phase)) * radius);
-        for (float i = 0.1; i <= juce::MathConstants<float>::twoPi; i += 0.01)
+        for (auto i = 0.1f; i <= juce::MathConstants<float>::twoPi; i += 0.01f)
             p.lineTo (centre + juce::Point<float>(std::sin (i),
                                             std::sin (std::fmod (i * factor + phase,
                                                                  juce::MathConstants<float>::twoPi))) * radius);
@@ -66,7 +66,7 @@ public:
 private:
     void timerCallback() override
     {
-        phase += 0.1;
+        phase += 0.1f;
         if (phase >= juce::MathConstants<float>::twoPi)
             phase -= juce::MathConstants<float>::twoPi;
 
@@ -209,16 +209,13 @@ void ExtendingExampleAudioProcessor::initialiseBuilder (foleys::MagicGUIBuilder&
 //==============================================================================
 void ExtendingExampleAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    juce::ignoreUnused (samplesPerBlock);
 
     statisticsSampleRate.store (sampleRate);
 }
 
 void ExtendingExampleAudioProcessor::releaseResources()
 {
-    // When playback stops, you can use this as an opportunity to free up any
-    // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -247,6 +244,8 @@ bool ExtendingExampleAudioProcessor::isBusesLayoutSupported (const juce::AudioPr
 
 void ExtendingExampleAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
+    juce::ignoreUnused (midiMessages);
+
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
