@@ -17,6 +17,8 @@ juce_add_plugin(${project_name}
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
                 PLUGIN_CODE "PgmS"
+                IS_SYNTH yes
+                NEEDS_MIDI_INPUT yes
                 FORMATS ${FORMATS}
                 VST3_CATEGORIES "Instrument" "Synth"
                 AAX_CATEGORY "AAX_ePlugInCategory_Instrument"

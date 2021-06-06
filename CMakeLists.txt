@@ -15,6 +15,7 @@ add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
 # add foleys_gui_magic to juce. You need to list it in `target_link_libraries` too
 juce_add_module(${CMAKE_CURRENT_LIST_DIR}/modules/foleys_gui_magic)
 
+set_property(GLOBAL PROPERTY JUCE_COPY_PLUGIN_AFTER_BUILD TRUE)
 
 # check which formats we want to build
 set(FORMATS "VST3" "Standalone")

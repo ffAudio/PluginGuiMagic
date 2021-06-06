@@ -14,13 +14,14 @@ juce_add_plugin(${project_name}
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
                 PLUGIN_CODE "PgmG"
+                IS_SYNTH yes
                 FORMATS ${FORMATS}
                 VST3_CATEGORIES "Fx" "Analyser" "EQ"
                 AAX_CATEGORY "AAX_ePlugInCategory_SWGenerators"
                 AU_MAIN_TYPE "kAudioUnitType_Generator"
                 COMPANY_WEBSITE "https://foleysfinest.com"
                 COMPANY_EMAIL "info@foleysfinest.com"
-                BUNDLE_ID "com.foleysfinest.EqualizerExample"
+                BUNDLE_ID "com.foleysfinest.SignalGenerator"
                 PLUGIN_NAME "PGM-SignalGenerator"
                 PRODUCT_NAME "PGM-SignalGenerator")
 
