@@ -74,18 +74,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
 //==============================================================================
 SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
-#ifndef JucePlugin_PreferredChannelConfigurations
      : foleys::MagicProcessor (juce::AudioProcessor::BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
-                     #endif
-                       ),
-#else
-    :
-#endif
+                               .withOutput ("Output", juce::AudioChannelSet::stereo(), true)),
     treeState (*this, nullptr, "PARAMETERS", createParameterLayout())
 {
     frequency = treeState.getRawParameterValue (IDs::mainFreq);

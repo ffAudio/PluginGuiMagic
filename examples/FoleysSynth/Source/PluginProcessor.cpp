@@ -25,7 +25,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 //==============================================================================
 
 FoleysSynthAudioProcessor::FoleysSynthAudioProcessor()
-  : treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
+  : foleys::MagicProcessor (juce::AudioProcessor::BusesProperties()
+                            .withOutput ("Output", juce::AudioChannelSet::stereo(), true)),
+    treeState (*this, nullptr, ProjectInfo::projectName, createParameterLayout())
 {
 //    auto defaultGUI = magicState.createDefaultGUITree();
 //    magicState.setGuiValueTree (defaultGUI);
