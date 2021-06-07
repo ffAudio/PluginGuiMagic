@@ -89,29 +89,12 @@ void FoleysSynthAudioProcessor::releaseResources()
     // spare memory, etc.
 }
 
-#ifndef JucePlugin_PreferredChannelConfigurations
 bool FoleysSynthAudioProcessor::isBusesLayoutSupported (const juce::AudioProcessor::BusesLayout& layouts) const
 {
-  #if JucePlugin_IsMidiEffect
-    ignoreUnused (layouts);
-    return true;
-  #else
-    // This is the place where you check if the layout is supported.
-    // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
-     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
-        return false;
-
-    // This checks if the input layout matches the output layout
-   #if ! JucePlugin_IsSynth
-    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
-        return false;
-   #endif
-
-    return true;
-  #endif
+    // This synth only supports mono or stereo.
+    return (layouts.getMainOutputChannelSet() == juce::AudioChannelSet::mono()
+            || layouts.getMainOutputChannelSet() == juce::AudioChannelSet::stereo());
 }
-#endif
 
 void FoleysSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
