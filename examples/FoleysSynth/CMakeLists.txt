@@ -62,6 +62,7 @@ target_compile_definitions(${project_name}
     PUBLIC 
     IS_SYNTH=1
     # switch the following off in the product to hide editor
+    FOLEYS_ENABLE_BINARY_DATA=1
     FOLEYS_SHOW_GUI_EDITOR_PALLETTE=1
     FOLEYS_SAVE_EDITED_GUI_IN_PLUGIN_STATE=0
     JUCE_VST3_CAN_REPLACE_VST2=0
