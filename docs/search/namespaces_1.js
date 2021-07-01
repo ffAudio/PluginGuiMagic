@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['editorcolours_550',['EditorColours',['../namespaceEditorColours.html',1,'']]]
+  ['editorcolours_776',['EditorColours',['../namespaceEditorColours.html',1,'']]]
 ];
