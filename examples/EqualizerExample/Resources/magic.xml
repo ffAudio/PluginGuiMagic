@@ -104,8 +104,9 @@
       </Palettes>
     </Style>
   </Styles>
-  <View id="root" resizable="1" resize-corner="1">
-    <View id="main" visibility="analyser:foo">
+  <View id="root" resizable="1" resize-corner="1" min-width="400" min-height="400"
+        margin="0">
+    <View id="main" visibility="analyser:foo" radius="0">
       <View id="frame" class="plot-view" background-gradient="linear-gradient(0,0% ff5e5f6f,100% ff030303)">
         <View display="flexbox" flex-direction="column" background-color="00000000"
               class="nomargin" flex-justify-content="" flex-align-self="">
@@ -142,7 +143,7 @@
                          parameter-right-click="Q6type" right-click="Q6type"/>
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
-            lookAndFeel="FoleysFinest">
+            lookAndFeel="FoleysFinest" radius="0">
         <View caption="Q1" class="group q1" tab-color="red" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>

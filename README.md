@@ -14,6 +14,8 @@ The main features are:
 
 ![EqualizerExample Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/EqualizerExample-screenshot.png)
 
+[![CMake](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml/badge.svg)](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml)
+
 Pre-requisites
 -------------
 
@@ -21,14 +23,13 @@ This editor works for JUCE GUIs. Best use the JUCE project templates
 generated with Projucer, although it is no different from integrating
 any other JUCE module.
 
-To automatically connect parameters to the GUI, use the AudioProcessorValueTreeState
-in your AudioProcessor. 
+The PluginGuiMagic can connect to any juce::AudioProcessorParameter, the
+AudioProcessorValueTreeState is no longer a requirement.
 
 To add the GUI, add the foleys_gui_magic as submodule in the Projucer
 to the project. To learn how to integrate the MagicPluginEditor, have
 a look in the examples folder, the SignalGenerator example is a good starting
 point.
-
 
 Examples
 --------

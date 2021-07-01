@@ -110,11 +110,13 @@ bool FoleysSynth::FoleysVoice::canPlaySound (juce::SynthesiserSound* sound)
     return dynamic_cast<FoleysSound*>(sound) != nullptr;
 }
 
-void FoleysSynth::FoleysVoice::startNote ([[maybe_unused]]int midiNoteNumber,
-                                          [[maybe_unused]]float velocity,
+void FoleysSynth::FoleysVoice::startNote (int midiNoteNumber,
+                                          float velocity,
                                           juce::SynthesiserSound* sound,
                                           int currentPitchWheelPosition)
 {
+    juce::ignoreUnused (midiNoteNumber, velocity);
+
     if (auto* foleysSound = dynamic_cast<FoleysSound*>(sound))
         adsr.setParameters (foleysSound->getADSR());
 
@@ -126,9 +128,11 @@ void FoleysSynth::FoleysVoice::startNote ([[maybe_unused]]int midiNoteNumber,
         updateFrequency (*osc, true);
 }
 
-void FoleysSynth::FoleysVoice::stopNote ([[maybe_unused]]float velocity,
+void FoleysSynth::FoleysVoice::stopNote (float velocity,
                                          bool allowTailOff)
 {
+    juce::ignoreUnused (velocity);
+
     if (allowTailOff)
     {
         adsr.noteOff();
@@ -145,8 +149,9 @@ void FoleysSynth::FoleysVoice::pitchWheelMoved (int newPitchWheelValue)
     pitchWheelValue = getDetuneFromPitchWheel (newPitchWheelValue);
 }
 
-void FoleysSynth::FoleysVoice::controllerMoved ([[maybe_unused]]int controllerNumber, [[maybe_unused]]int newControllerValue)
+void FoleysSynth::FoleysVoice::controllerMoved (int controllerNumber, int newControllerValue)
 {
+    juce::ignoreUnused (controllerNumber, newControllerValue);
 }
 
 void FoleysSynth::FoleysVoice::renderNextBlock (juce::AudioBuffer<float>& outputBuffer,

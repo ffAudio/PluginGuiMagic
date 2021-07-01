@@ -12,38 +12,26 @@ outgoing Signal.
 Setup
 -----
 
-The setup is a standard JUCE Audio Plugin project. It is assumed, 
-that you use the AudioProcessorValueTreeState to manage your parameters,
-since the GUI MAGIC uses the Attachment classes to synchronise the
-GUI Components.
+The setup is a standard JUCE Audio Plugin project.
 
 Add the module foleys_gui_magic to the project. It has a dependency
 to the juce::dsp module to create FFT and FrequencyResponce curves.
 
-The Generate AudioProcessorEditor class is removed (don't forget the 
-include ;-) ).
+Instead of juce::AudioProcessor inherit from foleys::MagicProcessor.
 
-As a member add an instance of MagicProcessorState like this:
+Remove the following methods (from the declaration and the implementation
+a.k.a from the .h and .cpp file:
+- bool hasEditor() const
+- juce::AudioProcessorEditor* createEditor()
+- void setStateInformation (const char*, int)
+- void getStateInformation (juce::MemoryBlock&)
 
-```
-foleys::MagicProcessorState magicState { *this, treeState };
-```
-
-And in your createEditor() return an instance of MagicPluginEditor:
-
-```
-return new foleys::MagicPluginEditor (magicState);
-```
-
-This will already show a default editor populated from the generic
-AudioProcessor::getParameterTree() method (yes, it supports
-AudioParameterGroups!).
 
 
 Add the oscilloscope
 --------------------
 
-There are different kiinds of visualisers, one is driven by
+There are different kinds of visualisers, one is driven by
 MagicPlotSource. You can inherit that class to provide your
 own individual plot types.
 
