@@ -1,15 +1,13 @@
 cmake_minimum_required(VERSION 3.13.0)
 
-set(project_name "ExtendingExample")
+project("ExtendingExample" VERSION ${version})
 
-set(${project_name}_sources
+set(${PROJECT_NAME}_sources
     Source/PluginProcessor.cpp
     Source/PluginProcessor.h)
 
-project(${project_name} VERSION ${version})
-
 # add the plugin targets
-juce_add_plugin(${project_name}
+juce_add_plugin(${PROJECT_NAME}
                 VERSION "${version}"
                 COMPANY_NAME "Foleys Finest Audio"
                 PLUGIN_MANUFACTURER_CODE "FFAU"
@@ -25,21 +23,21 @@ juce_add_plugin(${project_name}
                 PRODUCT_NAME "PGM-Extending")
 
 
-juce_generate_juce_header (${project_name})
+juce_generate_juce_header (${PROJECT_NAME})
 
-juce_add_binary_data(${project_name}_data 
+juce_add_binary_data(${PROJECT_NAME}_data
     SOURCES
     Source/magic.xml)
 
-target_sources(${project_name}
+target_sources(${PROJECT_NAME}
     PRIVATE
-    ${${project_name}_sources})
+    ${${PROJECT_NAME}_sources})
 
 # add required flags
-target_link_libraries(${project_name} 
+target_link_libraries(${PROJECT_NAME}
     PRIVATE
     ${project_sources}
-    ${project_name}_data
+    ${PROJECT_NAME}_data
     foleys_gui_magic
     juce::juce_audio_basics
     juce::juce_audio_plugin_client
@@ -53,7 +51,7 @@ target_link_libraries(${project_name}
     juce::juce_recommended_config_flags 
     juce::juce_recommended_lto_flags)
 
-target_compile_definitions(${project_name}
+target_compile_definitions(${PROJECT_NAME}
     PUBLIC 
     # switch the following off in the product to hide editor
     FOLEYS_SHOW_GUI_EDITOR_PALLETTE=1
@@ -62,6 +60,6 @@ target_compile_definitions(${project_name}
     JUCE_WEB_BROWSER=0)
 
 foreach(FORMAT ${FORMATS})
-    get_target_property(ARTEFACTS_DIR ${project_name}_${FORMAT} LIBRARY_OUTPUT_DIRECTORY)
-    add_custom_command(TARGET ${project_name}_${FORMAT} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${ARTEFACTS_DIR} ${COPY_FOLDER})
+    get_target_property(ARTEFACTS_DIR ${PROJECT_NAME}_${FORMAT} LIBRARY_OUTPUT_DIRECTORY)
+    add_custom_command(TARGET ${PROJECT_NAME}_${FORMAT} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${ARTEFACTS_DIR} ${COPY_FOLDER})
 endforeach()
