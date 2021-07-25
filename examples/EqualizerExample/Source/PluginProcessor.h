@@ -110,6 +110,11 @@ public:
     void parameterChanged (const juce::String& paramID, float newValue) override;
     void handleAsyncUpdate() override;
 
+    /**
+     In this override you create the GUI ValueTree either using the default or loading from the BinaryData::magic_xml
+     */
+    juce::ValueTree createGuiValueTree() override;
+
     void postSetStateInformation() override;
 
     //==============================================================================

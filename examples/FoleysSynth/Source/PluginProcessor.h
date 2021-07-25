@@ -35,6 +35,8 @@ public:
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     //==============================================================================
+
+    //==============================================================================
     void savePresetInternal();
     void loadPresetInternal(int index);
 

@@ -78,6 +78,8 @@ SignalGeneratorAudioProcessor::SignalGeneratorAudioProcessor()
                                .withOutput ("Output", juce::AudioChannelSet::stereo(), true)),
     treeState (*this, nullptr, "PARAMETERS", createParameterLayout())
 {
+    FOLEYS_SET_SOURCE_PATH (__FILE__);
+
     frequency = treeState.getRawParameterValue (IDs::mainFreq);
     jassert (frequency != nullptr);
     level = treeState.getRawParameterValue (IDs::mainLevel);

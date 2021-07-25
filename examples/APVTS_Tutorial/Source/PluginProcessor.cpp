@@ -28,6 +28,8 @@ public:
                                                     false)              // default value
     })
     {
+        FOLEYS_SET_SOURCE_PATH (__FILE__);
+
         phaseParameter = parameters.getRawParameterValue ("invertPhase");
         gainParameter  = parameters.getRawParameterValue ("gain");
     }

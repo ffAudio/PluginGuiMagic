@@ -191,6 +191,8 @@ private:
 
 ExtendingExampleAudioProcessor::ExtendingExampleAudioProcessor() : foleys::MagicProcessor()
 {
+    FOLEYS_SET_SOURCE_PATH (__FILE__);
+
     magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 

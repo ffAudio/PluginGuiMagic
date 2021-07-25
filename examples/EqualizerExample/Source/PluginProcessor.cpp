@@ -150,6 +150,8 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
     treeState (*this, nullptr, JucePlugin_Name, createParameterLayout()),
     gainAttachment (treeState, gain, IDs::paramOutput)
 {
+    FOLEYS_SET_SOURCE_PATH (__FILE__);
+    
     // GUI MAGIC: add plots to be displayed in the GUI
     for (size_t i = 0; i < attachments.size(); ++i)
     {
@@ -177,8 +179,6 @@ EqualizerExampleAudioProcessor::EqualizerExampleAudioProcessor()
 
     inputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:input"));
     outputAnalysing.attachToValue (magicState.getPropertyAsValue ("analyser:output"));
-
-    magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);
 }
 
 EqualizerExampleAudioProcessor::~EqualizerExampleAudioProcessor()
@@ -395,6 +395,12 @@ void EqualizerExampleAudioProcessor::handleAsyncUpdate()
 }
 
 //==============================================================================
+
+juce::ValueTree EqualizerExampleAudioProcessor::createGuiValueTree()
+{
+    juce::String text (BinaryData::magic_xml, BinaryData::magic_xmlSize);
+    return juce::ValueTree::fromXml (text);
+}
 
 void EqualizerExampleAudioProcessor::postSetStateInformation()
 {
