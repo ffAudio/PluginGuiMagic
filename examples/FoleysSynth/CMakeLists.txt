@@ -7,7 +7,7 @@ set(${PROJECT_NAME}_sources
     Source/FoleysSynth.h
     Source/PluginProcessor.cpp
     Source/PluginProcessor.h
-    Source/PresetListBox)
+    Source/PresetListBox.h)
 
 # add the plugin targets
 juce_add_plugin(${PROJECT_NAME}

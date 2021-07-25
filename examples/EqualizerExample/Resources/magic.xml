@@ -105,15 +105,16 @@
     </Style>
   </Styles>
   <View id="root" resizable="1" resize-corner="1" min-width="400" min-height="400"
-        margin="0">
+        margin="0" tooltip-text="silver" tooltip-background="FF210444"
+        tooltip-outline="FF9581AD">
     <View id="main" visibility="analyser:foo" radius="0">
       <View id="frame" class="plot-view" background-gradient="linear-gradient(0,0% ff5e5f6f,100% ff030303)">
         <View display="flexbox" flex-direction="column" background-color="00000000"
               class="nomargin" flex-justify-content="" flex-align-self="">
           <ToggleButton text="Input" value="analyser:input" flex-align-self="auto" max-height="40"
-                        class="input"/>
+                        class="input" tooltip="Show input analyser"/>
           <ToggleButton text="Output" value="analyser:output" flex-align-self="auto"
-                        max-height="40" class="output"/>
+                        max-height="40" class="output" tooltip="Show output analyser"/>
         </View>
         <Plot source="plot1" class="nomargin q1" plot-fill-color="30FF0000"/>
         <Plot source="plot2" class="nomargin q2" plot-fill-color="3000FF00"/>
@@ -130,89 +131,94 @@
         <Plot source="output" class="nomargin output" visibility="analyser:output"
               plot-color="FF0E23DF"/>
         <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"
-                         parameter-right-click="Q1type" right-click="Q1type"/>
+                         parameter-right-click="Q1type" right-click="Q1type" tooltip="Drag Q1 frequency and gain"/>
         <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"
-                         parameter-right-click="Q2type" right-click="Q2type"/>
+                         parameter-right-click="Q2type" right-click="Q2type" tooltip="Drag Q2 frequency and gain"/>
         <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"
-                         parameter-right-click="Q3type" right-click="Q3type"/>
+                         parameter-right-click="Q3type" right-click="Q3type" tooltip="Drag Q3 frequency and gain"/>
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"
-                         parameter-right-click="Q4type" right-click="Q4type"/>
+                         parameter-right-click="Q4type" right-click="Q4type" tooltip="Drag Q4 frequency and gain"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"
-                         parameter-right-click="Q5type" right-click="Q5type"/>
+                         parameter-right-click="Q5type" right-click="Q5type" tooltip="Drag Q5 frequency and gain"/>
         <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"
-                         parameter-right-click="Q6type" right-click="Q6type"/>
+                         parameter-right-click="Q6type" right-click="Q6type" tooltip="Drag Q6 frequency and gain"/>
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
             lookAndFeel="FoleysFinest" radius="0">
         <View caption="Q1" class="group q1" tab-color="red" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"/>
+            <ToggleButton parameter="Q1active" text="" max-width="40" class="nomargin"
+                          tooltip="Toggle Q1"/>
             <ComboBox parameter="Q1type" class="nomargin" combo-menu-background="80141521"
-                      combo-menu-text="silver"/>
+                      combo-menu-text="silver" tooltip="Select filter type for Q1"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q1quality"/>
-            <Slider class="small" caption="Gain" parameter="Q1gain"/>
+            <Slider class="small" caption="Quality" parameter="Q1quality" tooltip="Select the steepness for Q1"/>
+            <Slider class="small" caption="Gain" parameter="Q1gain" tooltip="Select the gain for Q1"/>
           </View>
           <Slider class="frequency" caption="Frequency" parameter="Q1freq" flex-grow="3"
-                  slider-textbox=""/>
+                  slider-textbox="" tooltip="Select the frequency for Q1"/>
         </View>
         <View caption="Q2" class="group q2" tab-color="green" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton parameter="Q2active" max-width="40" text="" class="nomargin"/>
-            <ComboBox parameter="Q2type" class="nomargin"/>
+            <ToggleButton parameter="Q2active" max-width="40" text="" class="nomargin"
+                          tooltip="Toggle Q2"/>
+            <ComboBox parameter="Q2type" class="nomargin" tooltip="Select filter type for Q2"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q2quality"/>
-            <Slider class="small" caption="Gain" parameter="Q2gain"/>
+            <Slider class="small" caption="Quality" parameter="Q2quality" tooltip="Select the steepness for Q2"/>
+            <Slider class="small" caption="Gain" parameter="Q2gain" tooltip="Select the gain for Q2"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q2freq"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q2freq" tooltip="Select the frequency for Q2"/>
         </View>
         <View caption="Q3" class="group q3" tab-color="orange" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton parameter="Q3active" text="" max-width="40" class="nomargin"/>
-            <ComboBox parameter="Q3type" class="nomargin"/>
+            <ToggleButton parameter="Q3active" text="" max-width="40" class="nomargin"
+                          tooltip="Toggle Q3"/>
+            <ComboBox parameter="Q3type" class="nomargin" tooltip="Select filter type for Q3"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q3quality"/>
-            <Slider class="small" caption="Gain" parameter="Q3gain"/>
+            <Slider class="small" caption="Quality" parameter="Q3quality" tooltip="Select the steepness for Q3"/>
+            <Slider class="small" caption="Gain" parameter="Q3gain" tooltip="Select the gain for Q3"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q3freq"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q3freq" tooltip="Select the frequency for Q3"/>
         </View>
         <View caption="Q4" class="group q4" tab-color="cyan" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton parameter="Q4active" text="" max-width="40" class="nomargin"/>
-            <ComboBox parameter="Q4type" class="nomargin"/>
+            <ToggleButton parameter="Q4active" text="" max-width="40" class="nomargin"
+                          tooltip="Toggle Q4"/>
+            <ComboBox parameter="Q4type" class="nomargin" tooltip="Select filter type for Q4"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q4quality"/>
-            <Slider class="small" caption="Gain" parameter="Q4gain"/>
+            <Slider class="small" caption="Quality" parameter="Q4quality" tooltip="Select the steepness for Q4"/>
+            <Slider class="small" caption="Gain" parameter="Q4gain" tooltip="Select the gain for Q4"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q4freq"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q4freq" tooltip="Select the frequency for Q4"/>
         </View>
         <View caption="Q5" class="group q5" tab-color="blue" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
-            <ToggleButton parameter="Q5active" text="" max-width="40" class="nomargin"/>
-            <ComboBox parameter="Q5type" class="nomargin"/>
+            <ToggleButton parameter="Q5active" text="" max-width="40" class="nomargin"
+                          tooltip="Toggle Q5"/>
+            <ComboBox parameter="Q5type" class="nomargin" tooltip="Select filter type for Q5"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q5quality"/>
-            <Slider class="small" caption="Gain" parameter="Q5gain"/>
+            <Slider class="small" caption="Quality" parameter="Q5quality" tooltip="Select the steepness for Q5"/>
+            <Slider class="small" caption="Gain" parameter="Q5gain" tooltip="Select the gain for Q5"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q5freq"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q5freq" tooltip="Select the frequency for Q5"/>
         </View>
         <View caption="Q6" class="group q6" tab-color="yellow" lookAndFeel="FoleysFinest"
               background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View class="" id="horizontal" max-height="40" flex-grow="1">
             <ToggleButton parameter="Q6active" text="" max-width="40" class="nomargin"
-                          background-gradient="none"/>
-            <ComboBox parameter="Q6type" class="nomargin"/>
+                          background-gradient="none" tooltip="Toggle Q6"/>
+            <ComboBox parameter="Q6type" class="nomargin" tooltip="Select filter type for Q6"/>
           </View>
           <View id="horizontal">
-            <Slider class="small" caption="Quality" parameter="Q6quality"/>
-            <Slider class="small" caption="Gain" parameter="Q6gain"/>
+            <Slider class="small" caption="Quality" parameter="Q6quality" tooltip="Select the steepness for Q6"/>
+            <Slider class="small" caption="Gain" parameter="Q6gain" tooltip="Select the gain for Q6"/>
           </View>
-          <Slider class="frequency" caption="Frequency" parameter="Q6freq"/>
+          <Slider class="frequency" caption="Frequency" parameter="Q6freq" tooltip="Select the frequency for Q6"/>
         </View>
         <View caption="Globals" class="group gain" flex-direction="row" background-gradient="linear-gradient(0,0% ff2e2e4b,100% ff161622)">
           <View padding="3" border="0" background-color="80141521" background-gradient="none"
@@ -220,12 +226,13 @@
             <View flex-direction="row" background-color="" background-gradient="">
               <Slider caption="Output" parameter="output" padding="3" background-color="00000000"
                       slider-type="rotary" slider-textbox="textbox-below" lookAndFeel="Skeuomorphic"
-                      slider-text="FFFFFFFF" slider-text-outline="ff414151"/>
+                      slider-text="FFFFFFFF" slider-text-outline="ff414151" tooltip="Control main output gain"/>
               <Meter source="outputMeter" flex-grow="0.5" outline-color="00000000"
                      background-gradient="" background-color="" bar-background-color="ff141521"
-                     class="nomargin"/>
+                     class="nomargin" tooltip="Output level"/>
             </View>
-            <View class="logo" background-gradient="none" margin="0" background-color="00000000"/>
+            <View class="logo" background-gradient="none" margin="0" background-color="00000000"
+                  tooltip="visit https://foleysfinest.com"/>
           </View>
         </View>
       </View>
