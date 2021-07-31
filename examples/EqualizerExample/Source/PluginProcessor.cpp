@@ -195,7 +195,7 @@ void EqualizerExampleAudioProcessor::prepareToPlay (double sampleRate, int sampl
 
     // GUI MAGIC: call this to set up the visualisers
     magicState.prepareToPlay (sampleRate, samplesPerBlock);
-    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
+    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500);
 
     juce::dsp::ProcessSpec spec;
     spec.sampleRate = sampleRate;

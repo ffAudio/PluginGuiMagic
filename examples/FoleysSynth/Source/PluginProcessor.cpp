@@ -79,7 +79,7 @@ void FoleysSynthAudioProcessor::prepareToPlay (double sampleRate, int blockSize)
     synthesiser.setCurrentPlaybackSampleRate (sampleRate);
 
     // MAGIC GUI: setup the output meter
-    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500, 200);
+    outputMeter->setupSource (getTotalNumOutputChannels(), sampleRate, 500);
     oscilloscope->prepareToPlay (sampleRate, blockSize);
     analyser->prepareToPlay (sampleRate, blockSize);
 }
