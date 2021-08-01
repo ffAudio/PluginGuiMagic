@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['settableproperty_759',['SettableProperty',['../structfoleys_1_1SettableProperty.html',1,'foleys']]],
-  ['skeuomorphic_760',['Skeuomorphic',['../classfoleys_1_1Skeuomorphic.html',1,'foleys']]],
-  ['slideritem_761',['SliderItem',['../classfoleys_1_1SliderItem.html',1,'foleys']]],
-  ['styleboolpropertycomponent_762',['StyleBoolPropertyComponent',['../classfoleys_1_1StyleBoolPropertyComponent.html',1,'foleys']]],
-  ['stylechoicepropertycomponent_763',['StyleChoicePropertyComponent',['../classfoleys_1_1StyleChoicePropertyComponent.html',1,'foleys']]],
-  ['stylecolourpropertycomponent_764',['StyleColourPropertyComponent',['../classfoleys_1_1StyleColourPropertyComponent.html',1,'foleys']]],
-  ['stylegradientpropertycomponent_765',['StyleGradientPropertyComponent',['../classfoleys_1_1StyleGradientPropertyComponent.html',1,'foleys']]],
-  ['stylepropertycomponent_766',['StylePropertyComponent',['../classfoleys_1_1StylePropertyComponent.html',1,'foleys']]],
-  ['stylesheet_767',['Stylesheet',['../classfoleys_1_1Stylesheet.html',1,'foleys']]],
-  ['styletextpropertycomponent_768',['StyleTextPropertyComponent',['../classfoleys_1_1StyleTextPropertyComponent.html',1,'foleys']]]
+  ['palette_769',['Palette',['../classfoleys_1_1Palette.html',1,'foleys']]],
+  ['parameterattachment_770',['ParameterAttachment',['../classfoleys_1_1ParameterAttachment.html',1,'foleys']]],
+  ['parameterattachment_3c_20float_20_3e_771',['ParameterAttachment&lt; float &gt;',['../classfoleys_1_1ParameterAttachment.html',1,'foleys']]],
+  ['parametermanager_772',['ParameterManager',['../classfoleys_1_1ParameterManager.html',1,'foleys']]],
+  ['plotitem_773',['PlotItem',['../classfoleys_1_1PlotItem.html',1,'foleys']]],
+  ['propertieseditor_774',['PropertiesEditor',['../classfoleys_1_1PropertiesEditor.html',1,'foleys']]]
 ];
