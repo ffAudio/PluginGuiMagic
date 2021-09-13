@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13.0)
 
-set (version 1.3.2)
+set (version 1.3.5)
 
 project(PluginGuiMagic VERSION ${version})
 
