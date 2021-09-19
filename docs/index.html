@@ -78,7 +78,7 @@ $(function() {
 <div class="title">foleys_gui_magic </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__Volumes_Shared_Developer_Foleys_PluginGuiMagic_modules_foleys_gui_magic_README"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__Users_daniel_Developer_Foleys_PluginGuiMagic_modules_foleys_gui_magic_README"></a></p>
 <p>This module allows to create GUIs without any coding. It is created with a DOM model that provides a hierarchical information, and a CSS cascading stylesheet to define rules for the appearance of the GUI.</p>
 <p>There is a drag and drop editor to add GUI elements, and to connect to parameters of your AudioProcessor. Also an editor in the style of FireBug to investigate the individual properties, and how they were obtained/calculated.</p>
 <h1>Support </h1>
@@ -111,6 +111,15 @@ $(function() {
 </div><!-- fragment --><p>In your editor, drag a <code>Plot</code> component into the UI and select the name you supplied as <code>source</code>, in this case "input".</p>
 <h1>Saving and restoring the plugin </h1>
 <p>The <code><a class="el" href="classfoleys_1_1MagicProcessor.html" title="This is a convenience class to create a plugin using PluginGuiMagic.">foleys::MagicProcessor</a></code> takes care of saving and restoring the parameters and properties. You can add your own values to the ValueTree in the <code>magicState</code>. There is a callback after restoring that you can override, in case you need to do some additional action.</p>
+<p>Additionally to saving the values in the plugin state you can have settings across all instances of your plugin. To use that you need to setup the path to a file. After that the settings are synchronised in the settings of the magicState: </p><div class="fragment"><div class="line">// in constructor</div>
+<div class="line">magicState.setApplicationSettingsFile (juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)</div>
+<div class="line">                                       .getChildFile (ProjectInfo::companyName)</div>
+<div class="line">                                       .getChildFile (ProjectInfo::projectName + juce::String (&quot;.settings&quot;)));</div>
+<div class="line"> </div>
+<div class="line">// use it like</div>
+<div class="line">presetNode = magicState.getSettings().getOrCreateChildWithName (&quot;presets&quot;, nullptr);</div>
+<div class="line">presetNode.setProperty (&quot;foo&quot;, 100, nullptr);</div>
+</div><!-- fragment --><p>Other than the juce::ApplicationSettings this is not a flat list but can deal with hierarchical data in form of ValueTrees. PluginGuiMagic will deal with interprocess safety and update if the file has changed.</p>
 <h1>Bake in the xml </h1>
 <p>To bake in the GUI save the XML from the PGM panel and add it to the BinaryResources via Projucer. In the constructor you set the XML file: </p><div class="fragment"><div class="line">magicState.setGuiValueTree (BinaryData::magic_xml, BinaryData::magic_xmlSize);</div>
 </div><!-- fragment --><h1>Removing the WYSWYG editor </h1>
@@ -145,7 +154,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 1 2021 17:17:27 for foleys_gui_magic by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Sun Sep 19 2021 22:29:50 for foleys_gui_magic by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

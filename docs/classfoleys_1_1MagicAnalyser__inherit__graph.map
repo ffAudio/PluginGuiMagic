@@ -1,4 +1,4 @@
 <map id="MagicAnalyser" name="MagicAnalyser">
-<area shape="rect" id="node1" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="12,80,121,107"/>
-<area shape="rect" id="node2" href="$classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node1" title="This will plot the magnitudes of the frequencies in a signal." alt="" coords="12,80,120,107"/>
+<area shape="rect" id="node2" href="$classfoleys_1_1MagicPlotSource.html" title="The MagicPlotSources act as an interface, so the GUI can visualise an arbitrary plot of data." alt="" coords="5,5,127,32"/>
 </map>
