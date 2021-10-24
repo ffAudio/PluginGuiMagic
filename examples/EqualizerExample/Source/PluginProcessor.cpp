@@ -66,7 +66,7 @@ std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (c
                                                                         juce::String (value, 0) + " Hz" :
                                                                         juce::String (value / 1000.0) + " kHz"; },
                                                                       [](juce::String text) { return text.endsWith(" kHz") ?
-                                                                        text.getFloatValue() * 1000.0 :
+                                                                        text.getFloatValue() * 1000.0f :
                                                                         text.getFloatValue(); });
 
     auto qltyParameter = std::make_unique<juce::AudioParameterFloat> (prefix + IDs::paramQuality,
