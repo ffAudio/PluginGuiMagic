@@ -97,11 +97,11 @@ public:
 
     std::vector<foleys::SettableProperty> getSettableProperties() const override
     {
-        std::vector<foleys::SettableProperty> properties;
+        std::vector<foleys::SettableProperty> newProperties;
 
-        properties.push_back ({ configNode, "factor", foleys::SettableProperty::Number, 1.0f, {} });
+        newProperties.push_back ({ configNode, "factor", foleys::SettableProperty::Number, 1.0f, {} });
 
-        return properties;
+        return newProperties;
     }
 
     // Override update() to set the values to your custom component
