@@ -15,6 +15,7 @@ add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
 juce_add_module(${CMAKE_CURRENT_LIST_DIR}/modules/foleys_gui_magic)
 
 set_property(GLOBAL PROPERTY JUCE_COPY_PLUGIN_AFTER_BUILD TRUE)
+set (CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE INTERNAL "")
 
 # check which formats we want to build
 set(FORMATS "VST3" "Standalone")
