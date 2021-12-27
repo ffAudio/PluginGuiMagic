@@ -11,6 +11,26 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 //==============================================================================
+
+template<typename ValueType>
+class AttachedValue : private juce::AudioProcessorValueTreeState::Listener
+{
+public:
+    AttachedValue (juce::AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const juce::String& paramID, std::function<void()> changedLambda=nullptr);
+    ~AttachedValue() override;
+    void parameterChanged (const juce::String& parameterID, float newValue) override;
+private:
+    void initialUpdate();
+
+    juce::AudioProcessorValueTreeState& state;
+    std::atomic<ValueType>& value;
+    juce::String paramID;
+    std::function<void()> onParameterChanged;
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
+};
+
+//==============================================================================
+
 class EqualizerExampleAudioProcessor  : public foleys::MagicProcessor,
                                         private juce::AudioProcessorValueTreeState::Listener,
                                         private juce::AsyncUpdater
@@ -48,25 +68,6 @@ public:
    #endif
 
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
-
-    //==============================================================================
-
-    template<typename ValueType>
-    class AttachedValue : private juce::AudioProcessorValueTreeState::Listener
-    {
-    public:
-        AttachedValue (juce::AudioProcessorValueTreeState& state, std::atomic<ValueType>& value, const juce::String& paramID, std::function<void()> changedLambda=nullptr);
-        ~AttachedValue() override;
-        void parameterChanged (const juce::String& parameterID, float newValue) override;
-    private:
-        void initialUpdate();
-
-        juce::AudioProcessorValueTreeState& state;
-        std::atomic<ValueType>& value;
-        juce::String paramID;
-        std::function<void()> onParameterChanged;
-        JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AttachedValue)
-    };
 
     //==============================================================================
 

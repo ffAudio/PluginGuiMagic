@@ -66,7 +66,7 @@ std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (c
                                                                         juce::String (value, 0) + " Hz" :
                                                                         juce::String (value / 1000.0) + " kHz"; },
                                                                       [](juce::String text) { return text.endsWith(" kHz") ?
-                                                                        text.getFloatValue() * 1000.0 :
+                                                                        text.getFloatValue() * 1000.0f :
                                                                         text.getFloatValue(); });
 
     auto qltyParameter = std::make_unique<juce::AudioParameterFloat> (prefix + IDs::paramQuality,
@@ -320,7 +320,7 @@ void EqualizerExampleAudioProcessor::FilterAttachment::setSampleRate (double sam
 //==============================================================================
 
 template<typename ValueType>
-EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (juce::AudioProcessorValueTreeState& stateToUse,
+AttachedValue<ValueType>::AttachedValue (juce::AudioProcessorValueTreeState& stateToUse,
                                                                          std::atomic<ValueType>& valueToUse,
                                                                          const juce::String& paramToUse,
                                                                          std::function<void()> changedLambda)
@@ -337,25 +337,25 @@ EqualizerExampleAudioProcessor::AttachedValue<ValueType>::AttachedValue (juce::A
 }
 
 template<typename ValueType>
-EqualizerExampleAudioProcessor::AttachedValue<ValueType>::~AttachedValue()
+AttachedValue<ValueType>::~AttachedValue()
 {
     state.removeParameterListener (paramID, this);
 }
 
 template<typename ValueType>
-void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::initialUpdate()
+void AttachedValue<ValueType>::initialUpdate()
 {
     value = ValueType (*state.getRawParameterValue (paramID));
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::initialUpdate()
+void AttachedValue<EqualizerExampleAudioProcessor::FilterType>::initialUpdate()
 {
     value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (state.getRawParameterValue (paramID)->load()));
 }
 
 template<typename ValueType>
-void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged (const juce::String&, float newValue)
+void AttachedValue<ValueType>::parameterChanged (const juce::String&, float newValue)
 {
     value = newValue;
     if (onParameterChanged)
@@ -363,7 +363,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<ValueType>::parameterChanged 
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (const juce::String&, float newValue)
+void AttachedValue<bool>::parameterChanged (const juce::String&, float newValue)
 {
     value = (newValue > 0.5f);
     if (onParameterChanged)
@@ -371,7 +371,7 @@ void EqualizerExampleAudioProcessor::AttachedValue<bool>::parameterChanged (cons
 }
 
 template<>
-void EqualizerExampleAudioProcessor::AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const juce::String&, float newValue)
+void AttachedValue<EqualizerExampleAudioProcessor::FilterType>::parameterChanged (const juce::String&, float newValue)
 {
     value = EqualizerExampleAudioProcessor::FilterType (juce::roundToInt (newValue));
     if (onParameterChanged)

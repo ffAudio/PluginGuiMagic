@@ -1,7 +1,6 @@
 PluginGuiMagic - by Foleys Finest Audio
 =======================================
 
-
 Plugin GUI Magic is a live editor for JUCE GUIs, focussed on Audio Plugins.
 The main features are:
 
@@ -14,7 +13,8 @@ The main features are:
 
 ![EqualizerExample Screenshot](https://raw.githubusercontent.com/ffAudio/PluginGuiMagic/master/screenshots/EqualizerExample-screenshot.png)
 
-[![CMake](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml/badge.svg)](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml)
+main branch: [![CMake](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml/badge.svg?branch=main)](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml) develop branch: [![CMake](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml/badge.svg?branch=develop)](https://github.com/ffAudio/PluginGuiMagic/actions/workflows/workflow.yml)
+
 
 Pre-requisites
 -------------
