@@ -1,16 +1,17 @@
 <map id="GuiItem" name="GuiItem">
-<area shape="rect" id="node1" title="The GuiItem class will draw borders and descriptions around widgets, if defined." alt="" coords="5,284,73,311"/>
+<area shape="rect" id="node1" title="The GuiItem class will draw borders and descriptions around widgets, if defined." alt="" coords="5,309,73,336"/>
 <area shape="rect" id="node2" href="$classfoleys_1_1ComboBoxItem.html" title=" " alt="" coords="127,5,240,32"/>
 <area shape="rect" id="node3" href="$classfoleys_1_1Container.html" title="The Container is a GuiItem, that can hold multiple Components." alt="" coords="144,56,223,83"/>
-<area shape="rect" id="node5" href="$classfoleys_1_1KeyboardItem.html" title=" " alt="" coords="132,107,235,133"/>
-<area shape="rect" id="node6" href="$classfoleys_1_1LabelItem.html" title=" " alt="" coords="144,157,223,184"/>
-<area shape="rect" id="node7" href="$classfoleys_1_1LevelMeterItem.html" title=" " alt="" coords="127,208,239,235"/>
-<area shape="rect" id="node8" href="$classfoleys_1_1ListBoxItem.html" title=" " alt="" coords="137,259,229,285"/>
-<area shape="rect" id="node9" href="$classfoleys_1_1MidiLearnItem.html" title=" " alt="" coords="131,309,235,336"/>
-<area shape="rect" id="node10" href="$classfoleys_1_1PlotItem.html" title=" " alt="" coords="148,360,219,387"/>
-<area shape="rect" id="node11" href="$classfoleys_1_1SliderItem.html" title=" " alt="" coords="143,411,224,437"/>
-<area shape="rect" id="node12" href="$classfoleys_1_1TextButtonItem.html" title=" " alt="" coords="128,461,239,488"/>
-<area shape="rect" id="node13" href="$classfoleys_1_1ToggleButtonItem.html" title=" " alt="" coords="121,512,245,539"/>
-<area shape="rect" id="node14" href="$classfoleys_1_1XYDraggerItem.html" title=" " alt="" coords="127,563,239,589"/>
+<area shape="rect" id="node5" href="$classfoleys_1_1DrumpadItem.html" title=" " alt="" coords="133,107,234,133"/>
+<area shape="rect" id="node6" href="$classfoleys_1_1KeyboardItem.html" title=" " alt="" coords="132,157,235,184"/>
+<area shape="rect" id="node7" href="$classfoleys_1_1LabelItem.html" title=" " alt="" coords="144,208,223,235"/>
+<area shape="rect" id="node8" href="$classfoleys_1_1LevelMeterItem.html" title=" " alt="" coords="127,259,239,285"/>
+<area shape="rect" id="node9" href="$classfoleys_1_1ListBoxItem.html" title=" " alt="" coords="137,309,229,336"/>
+<area shape="rect" id="node10" href="$classfoleys_1_1MidiLearnItem.html" title=" " alt="" coords="131,360,235,387"/>
+<area shape="rect" id="node11" href="$classfoleys_1_1PlotItem.html" title=" " alt="" coords="148,411,219,437"/>
+<area shape="rect" id="node12" href="$classfoleys_1_1SliderItem.html" title=" " alt="" coords="143,461,224,488"/>
+<area shape="rect" id="node13" href="$classfoleys_1_1TextButtonItem.html" title=" " alt="" coords="128,512,239,539"/>
+<area shape="rect" id="node14" href="$classfoleys_1_1ToggleButtonItem.html" title=" " alt="" coords="121,563,245,589"/>
+<area shape="rect" id="node15" href="$classfoleys_1_1XYDraggerItem.html" title=" " alt="" coords="127,613,239,640"/>
 <area shape="rect" id="node4" href="$classfoleys_1_1RootItem.html" title=" " alt="" coords="293,56,369,83"/>
 </map>

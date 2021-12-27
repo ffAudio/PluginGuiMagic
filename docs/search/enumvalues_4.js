@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['left_1437',['left',['../classfoleys_1_1ToolBox.html#a6361123067709e7f87d3a84e6ef80ebcab0ac36b187aa60c167ffcead3d5a03c0',1,'foleys::ToolBox']]],
-  ['linear_1438',['linear',['../classfoleys_1_1GradientBackground.html#a1d1cfd8ffb84e947f82999c682b666a7a4cfc14cb896a2f4e003dd5eb5adef579',1,'foleys::GradientBackground']]]
+  ['gradient_1499',['Gradient',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87aadd31e0ae0bc3c65905fdbb5b2c2633d',1,'foleys::SettableProperty']]]
 ];

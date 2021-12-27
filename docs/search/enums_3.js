@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_1427',['Type',['../classfoleys_1_1GradientBackground.html#a1d1cfd8ffb84e947f82999c682b666a7',1,'foleys::GradientBackground']]]
+  ['scrollmode_1487',['ScrollMode',['../namespacefoleys.html#afbf2671bc621e016b1025caf5d110020',1,'foleys']]]
 ];

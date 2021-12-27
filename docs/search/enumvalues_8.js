@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['radial_1448',['radial',['../classfoleys_1_1GradientBackground.html#a1d1cfd8ffb84e947f82999c682b666a7a6719904b86f1dd750e0eaa87b948ea98',1,'foleys::GradientBackground']]],
-  ['right_1449',['right',['../classfoleys_1_1ToolBox.html#a6361123067709e7f87d3a84e6ef80ebcaf763d610923b0c4614e8ecd65212666a',1,'foleys::ToolBox']]]
+  ['paddownfill_1507',['padDownFill',['../classfoleys_1_1MidiDrumpadComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a58a733403b145461b2ca20b319a1f2e0',1,'foleys::MidiDrumpadComponent']]],
+  ['paddownoutline_1508',['padDownOutline',['../classfoleys_1_1MidiDrumpadComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a20041802d4d2f50a677ea98bc648a97d',1,'foleys::MidiDrumpadComponent']]],
+  ['padfill_1509',['padFill',['../classfoleys_1_1MidiDrumpadComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094acecbcc97b14547bf077ace93c2cb4152',1,'foleys::MidiDrumpadComponent']]],
+  ['padoutline_1510',['padOutline',['../classfoleys_1_1MidiDrumpadComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a944da152e2508c18ea68bd911e6091d5',1,'foleys::MidiDrumpadComponent']]],
+  ['paletteedit_1511',['PaletteEdit',['../namespacefoleys.html#a894ef4256819f3a7689ebb458d448577a1255b020675b873d6a92f30727b5c8be',1,'foleys']]],
+  ['plotcolourid_1512',['plotColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a7ad19ba09115dc9bdf288d631dad6699',1,'foleys::MagicPlotComponent']]],
+  ['plotfillcolourid_1513',['plotFillColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094a20c3379327fe323e6fd8d8e97008c0e0',1,'foleys::MagicPlotComponent']]],
+  ['plotinactivecolourid_1514',['plotInactiveColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094abbcfcec1c016f811e31fbd277cd8029a',1,'foleys::MagicPlotComponent']]],
+  ['plotinactivefillcolourid_1515',['plotInactiveFillColourId',['../classfoleys_1_1MagicPlotComponent.html#a4dde7f9621b7b13ca0f47b0b5b08f094aa8a901238b8d0a63c4391c033d948e7b',1,'foleys::MagicPlotComponent']]]
 ];
