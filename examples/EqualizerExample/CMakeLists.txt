@@ -23,13 +23,12 @@ juce_add_plugin(${PROJECT_NAME}
                 PLUGIN_NAME "PGM-Equalizer"
                 PRODUCT_NAME "PGM-Equalizer")
 
-
-juce_generate_juce_header (${PROJECT_NAME})
-
 juce_add_binary_data(${PROJECT_NAME}_data
     SOURCES
     Resources/Logo.png
     Resources/magic.xml)
+
+juce_generate_juce_header (${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
     PRIVATE
