@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['onmousedoubleclick_523',['onMouseDoubleClick',['../classfoleys_1_1MouseLambdas.html#a60b8074fd5da304ba9404fccd1f025b2',1,'foleys::MouseLambdas']]],
-  ['onmousedown_524',['onMouseDown',['../classfoleys_1_1MouseLambdas.html#af2d166b2dbd5377506da5a47c8b9a4f1',1,'foleys::MouseLambdas']]],
-  ['onmouseup_525',['onMouseUp',['../classfoleys_1_1MouseLambdas.html#abfcb8477f3535f9ab393ae24cb93a096',1,'foleys::MouseLambdas']]],
-  ['onparameterchanged_526',['onParameterChanged',['../classfoleys_1_1ParameterAttachment.html#a2d539ac35abf9fc0035fbd5f27de7a94',1,'foleys::ParameterAttachment']]],
-  ['onparameterchangedasync_527',['onParameterChangedAsync',['../classfoleys_1_1ParameterAttachment.html#a82321d600ba46899614dbae5d0df39a0',1,'foleys::ParameterAttachment']]],
-  ['originalfilenames_528',['originalFilenames',['../namespaceBinaryData.html#aaf9b98cebe346e4462af4d3a281a2692',1,'BinaryData']]],
-  ['outlinecolourid_529',['outlineColourId',['../classfoleys_1_1MagicLevelMeter.html#a4dde7f9621b7b13ca0f47b0b5b08f094aad4597bfece2e01034c84614445e4364',1,'foleys::MagicLevelMeter']]]
+  ['name_418',['name',['../structfoleys_1_1SettableProperty.html#a6b9e3d5246e6cb71fa29bdcd10b75336',1,'foleys::SettableProperty']]],
+  ['namedresourcelist_419',['namedResourceList',['../namespaceBinaryData.html#ad7e35b1143cce990aaae0c3ab4880430',1,'BinaryData::namedResourceList()'],['../namespaceBinaryDataFallbacks.html#a3851be9f261aff8eded5f5758e97214a',1,'BinaryDataFallbacks::namedResourceList()']]],
+  ['namedresourcelistsize_420',['namedResourceListSize',['../namespaceBinaryData.html#ac34339567e2726c8cfb931690d16f13f',1,'BinaryData::namedResourceListSize()'],['../namespaceBinaryDataFallbacks.html#ac34339567e2726c8cfb931690d16f13f',1,'BinaryDataFallbacks::namedResourceListSize()']]],
+  ['needsupdate_421',['needsUpdate',['../classfoleys_1_1MagicPlotComponent.html#aa0ea374c75eabd2f592dc4e6c3304c6b',1,'foleys::MagicPlotComponent']]],
+  ['node_422',['node',['../classfoleys_1_1StylePropertyComponent.html#adb83a582ca7714adbe80c137cbe51bd8',1,'foleys::StylePropertyComponent::node()'],['../structfoleys_1_1SettableProperty.html#afdf2d81eff053ac6bf704b137f3bd107',1,'foleys::SettableProperty::node()']]],
+  ['nodeedit_423',['NodeEdit',['../namespacefoleys.html#a894ef4256819f3a7689ebb458d448577a677c2e3eca99ec427e7f3ba4f475dcc5',1,'foleys']]],
+  ['nodeid_424',['nodeId',['../classfoleys_1_1ParameterManager.html#a6d47dfbb23cbd6ec5b2423bf20d1616d',1,'foleys::ParameterManager']]],
+  ['nodename_425',['nodeName',['../classfoleys_1_1ParameterManager.html#a38d32ff55d7c472721b60d9ececeacb3',1,'foleys::ParameterManager']]],
+  ['nodevalue_426',['nodeValue',['../classfoleys_1_1ParameterManager.html#a12bddc1bbc7ade997c22404d6d6fcecd',1,'foleys::ParameterManager']]],
+  ['none_427',['none',['../classfoleys_1_1GradientBackground.html#a1d1cfd8ffb84e947f82999c682b666a7ab7e4e0120a041dbe6528b050c04269e0',1,'foleys::GradientBackground']]],
+  ['noscroll_428',['NoScroll',['../namespacefoleys.html#afbf2671bc621e016b1025caf5d110020ae262cd3fd8f3fc7bfd09e58553a81ae7',1,'foleys']]],
+  ['number_429',['Number',['../structfoleys_1_1SettableProperty.html#a7ff5a5c54f182b86d1cd993cf4512c87afa620f80ceb585b771a878cc135c4035',1,'foleys::SettableProperty']]]
 ];

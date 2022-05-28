@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2ed_1050',['Main.d',['../Main_8d.html',1,'']]],
-  ['readme_2emd_1051',['README.md',['../modules_2foleys__gui__magic_2README_8md.html',1,'']]]
+  ['readme_2emd_841',['README.md',['../modules_2foleys__gui__magic_2README_8md.html',1,'']]]
 ];

@@ -22,12 +22,11 @@ juce_add_plugin(${PROJECT_NAME}
                 PLUGIN_NAME "PGM-Extending"
                 PRODUCT_NAME "PGM-Extending")
 
-
-juce_generate_juce_header (${PROJECT_NAME})
-
 juce_add_binary_data(${PROJECT_NAME}_data
     SOURCES
     Source/magic.xml)
+
+juce_generate_juce_header (${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
     PRIVATE

@@ -4,4 +4,5 @@
 **/JuceLibraryCode
 **/!JuceLibraryCode/AppData.h
 **/!JuceLibraryCode/BinaryData.*
-
+cmake-build-debug
+**/.idea
