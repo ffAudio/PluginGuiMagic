@@ -25,10 +25,10 @@ int FoleysSynth::numOscillators = 8;
 
 void FoleysSynth::addADSRParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout)
 {
-    auto attack  = std::make_unique<juce::AudioParameterFloat>(IDs::paramAttack,  "Attack",  juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
-    auto decay   = std::make_unique<juce::AudioParameterFloat>(IDs::paramDecay,   "Decay",   juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
-    auto sustain = std::make_unique<juce::AudioParameterFloat>(IDs::paramSustain, "Sustain", juce::NormalisableRange<float> (0.0f,   1.0f, 0.01f), 1.0f);
-    auto release = std::make_unique<juce::AudioParameterFloat>(IDs::paramRelease, "Release", juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto attack  = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::paramAttack, 1),  "Attack",  juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto decay   = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::paramDecay, 1),   "Decay",   juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
+    auto sustain = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::paramSustain, 1), "Sustain", juce::NormalisableRange<float> (0.0f,   1.0f, 0.01f), 1.0f);
+    auto release = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::paramRelease, 1), "Release", juce::NormalisableRange<float> (0.001f, 0.5f, 0.01f), 0.10f);
 
     auto group = std::make_unique<juce::AudioProcessorParameterGroup>("adsr", "ADRS", "|",
                                                                       std::move (attack),
@@ -43,8 +43,8 @@ void FoleysSynth::addOvertoneParameters (juce::AudioProcessorValueTreeState::Par
     auto group = std::make_unique<juce::AudioProcessorParameterGroup>("oscillators", "Oscillators", "|");
     for (int i = 0; i < FoleysSynth::numOscillators; ++i)
     {
-        group->addChild (std::make_unique<juce::AudioParameterFloat>("osc" + juce::String (i), "Oscillator " + juce::String (i), juce::NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
-        group->addChild (std::make_unique<juce::AudioParameterFloat>("detune" + juce::String (i), "Detune " + juce::String (i), juce::NormalisableRange<float>(-0.5f, 0.5f, 0.01f), 0.0f));
+        group->addChild (std::make_unique<juce::AudioParameterFloat>(juce::ParameterID ("osc" + juce::String (i), 1), "Oscillator " + juce::String (i), juce::NormalisableRange<float>(0.0f, 1.0f, 0.01f), 0.0f));
+        group->addChild (std::make_unique<juce::AudioParameterFloat>(juce::ParameterID ("detune" + juce::String (i), 1), "Detune " + juce::String (i), juce::NormalisableRange<float>(-0.5f, 0.5f, 0.01f), 0.0f));
     }
 
     layout.add (std::move (group));
@@ -52,7 +52,7 @@ void FoleysSynth::addOvertoneParameters (juce::AudioProcessorValueTreeState::Par
 
 void FoleysSynth::addGainParameters (juce::AudioProcessorValueTreeState::ParameterLayout& layout)
 {
-    auto gain  = std::make_unique<juce::AudioParameterFloat>(IDs::paramGain,  "Gain",  juce::NormalisableRange<float> (0.0f, 1.0f, 0.01f), 0.70f);
+    auto gain  = std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::paramGain, 1),  "Gain",  juce::NormalisableRange<float> (0.0f, 1.0f, 0.01f), 0.70f);
 
     layout.add (std::make_unique<juce::AudioProcessorParameterGroup>("output", "Output", "|", std::move (gain)));
 }

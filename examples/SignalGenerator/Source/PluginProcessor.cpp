@@ -51,19 +51,19 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
     auto generator = std::make_unique<juce::AudioProcessorParameterGroup>("Generator", TRANS ("Generator"), "|");
-    generator->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::mainType, "Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 1),
-                         std::make_unique<juce::AudioParameterFloat>(IDs::mainFreq, "Frequency", freqRange, 440.0f),
-                         std::make_unique<juce::AudioParameterFloat>(IDs::mainLevel, "Level", juce::NormalisableRange<float>(-100.0f, 0.0f, 1.0f), -6.0f));
+    generator->addChild (std::make_unique<juce::AudioParameterChoice>(juce::ParameterID (IDs::mainType, 1), "Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 1),
+                         std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::mainFreq, 1), "Frequency", freqRange, 440.0f),
+                         std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::mainLevel, 1), "Level", juce::NormalisableRange<float>(-100.0f, 0.0f, 1.0f), -6.0f));
 
     auto lfo = std::make_unique<juce::AudioProcessorParameterGroup>("lfo", TRANS ("LFO"), "|");
-    lfo->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::lfoType, "LFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
-                   std::make_unique<juce::AudioParameterFloat>(IDs::lfoFreq, "Frequency", juce::NormalisableRange<float>(0.25f, 10.0f), 2.0f),
-                         std::make_unique<juce::AudioParameterFloat>(IDs::lfoLevel, "Level", juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f));
+    lfo->addChild (std::make_unique<juce::AudioParameterChoice>(juce::ParameterID (IDs::lfoType, 1), "LFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
+                   std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::lfoFreq, 1), "Frequency", juce::NormalisableRange<float>(0.25f, 10.0f), 2.0f),
+                         std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::lfoLevel, 1), "Level", juce::NormalisableRange<float>(0.0f, 1.0f), 0.0f));
 
     auto vfo = std::make_unique<juce::AudioProcessorParameterGroup>("vfo", TRANS ("VFO"), "|");
-    vfo->addChild (std::make_unique<juce::AudioParameterChoice>(IDs::vfoType, "VFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
-                   std::make_unique<juce::AudioParameterFloat>(IDs::vfoFreq, "Frequency", juce::NormalisableRange<float>(0.5f, 10.0f), 2.0f),
-                   std::make_unique<juce::AudioParameterFloat>(IDs::vfoLevel, "Level", juce::NormalisableRange<float>(0.0f, 1.0), 0.0f));
+    vfo->addChild (std::make_unique<juce::AudioParameterChoice>(juce::ParameterID (IDs::vfoType, 1), "VFO-Type", juce::StringArray ("None", "Sine", "Triangle", "Square"), 0),
+                   std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::vfoFreq, 1), "Frequency", juce::NormalisableRange<float>(0.5f, 10.0f), 2.0f),
+                   std::make_unique<juce::AudioParameterFloat>(juce::ParameterID (IDs::vfoLevel, 1), "Level", juce::NormalisableRange<float>(0.0f, 1.0), 0.0f));
 
     layout.add (std::move (generator),
                 std::move (lfo),
