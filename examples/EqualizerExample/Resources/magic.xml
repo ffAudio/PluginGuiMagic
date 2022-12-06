@@ -131,17 +131,23 @@
         <Plot source="output" class="nomargin output" visibility="analyser:output"
               plot-color="FF0E23DF"/>
         <XYDragComponent class="nomargin q1" parameter-x="Q1freq" parameter-y="Q1gain"
-                         parameter-right-click="Q1type" right-click="Q1type" tooltip="Drag Q1 frequency and gain"/>
+                         parameter-right-click="Q1type" right-click="Q1type" tooltip="Drag Q1 frequency and gain"
+                         wheel-parameter="Q1quality"/>
         <XYDragComponent class="nomargin q2" parameter-x="Q2freq" parameter-y="Q2gain"
-                         parameter-right-click="Q2type" right-click="Q2type" tooltip="Drag Q2 frequency and gain"/>
+                         parameter-right-click="Q2type" right-click="Q2type" tooltip="Drag Q2 frequency and gain"
+                         wheel-parameter="Q2quality"/>
         <XYDragComponent class="nomargin q3" parameter-x="Q3freq" parameter-y="Q3gain"
-                         parameter-right-click="Q3type" right-click="Q3type" tooltip="Drag Q3 frequency and gain"/>
+                         parameter-right-click="Q3type" right-click="Q3type" tooltip="Drag Q3 frequency and gain"
+                         wheel-parameter="Q3quality"/>
         <XYDragComponent class="nomargin q4" parameter-x="Q4freq" parameter-y="Q4gain"
-                         parameter-right-click="Q4type" right-click="Q4type" tooltip="Drag Q4 frequency and gain"/>
+                         parameter-right-click="Q4type" right-click="Q4type" tooltip="Drag Q4 frequency and gain"
+                         wheel-parameter="Q4quality"/>
         <XYDragComponent class="nomargin q5" parameter-x="Q5freq" parameter-y="Q5gain"
-                         parameter-right-click="Q5type" right-click="Q5type" tooltip="Drag Q5 frequency and gain"/>
+                         parameter-right-click="Q5type" right-click="Q5type" tooltip="Drag Q5 frequency and gain"
+                         wheel-parameter="Q5quality"/>
         <XYDragComponent class="nomargin q6" parameter-x="Q6freq" parameter-y="Q6gain"
-                         parameter-right-click="Q6type" right-click="Q6type" tooltip="Drag Q6 frequency and gain"/>
+                         parameter-right-click="Q6type" right-click="Q6type" tooltip="Drag Q6 frequency and gain"
+                         wheel-parameter="Q6quality"/>
       </View>
       <View id="nomargin" background-color="ff343541" class="collapse hidden"
             lookAndFeel="FoleysFinest" radius="0">
