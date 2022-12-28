@@ -27,7 +27,7 @@ namespace IDs
     static juce::Identifier oscilloscope { "oscilloscope" };
 }
 
-juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     auto freqRange = juce::NormalisableRange<float> {20.0f, 20000.0f,
         [](float start, float end, float normalised)

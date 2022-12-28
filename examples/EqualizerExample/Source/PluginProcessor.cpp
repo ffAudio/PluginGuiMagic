@@ -36,13 +36,13 @@ juce::StringArray filterNames =
 
 static float maxLevel = 24.0f;
 
-std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (const juce::String& prefix,
-                                                                               const juce::String& name,
-                                                                               EqualizerExampleAudioProcessor::FilterType type,
-                                                                               float frequency,
-                                                                               float gain    = 0.0f,
-                                                                               float quality = 1.0f,
-                                                                               bool  active  = true)
+static std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (const juce::String& prefix,
+                                                                                      const juce::String& name,
+                                                                                      EqualizerExampleAudioProcessor::FilterType type,
+                                                                                      float frequency,
+                                                                                      float gain    = 0.0f,
+                                                                                      float quality = 1.0f,
+                                                                                      bool  active  = true)
 {
     auto typeParameter = std::make_unique<juce::AudioParameterChoice> (juce::ParameterID (prefix + IDs::paramType, 1),
                                                                        name + ": " + TRANS ("Filter Type"),
@@ -97,7 +97,7 @@ std::unique_ptr<juce::AudioProcessorParameterGroup> createParametersForFilter (c
     return group;
 }
 
-juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     std::vector<std::unique_ptr<juce::AudioProcessorParameterGroup>> params;
 
@@ -122,7 +122,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
     return { params.begin(), params.end() };
 }
 
-auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const juce::String& plotID)
+static auto createPostUpdateLambda (foleys::MagicProcessorState& magicState, const juce::String& plotID)
 {
     return [plot = magicState.getObjectWithType<foleys::MagicFilterPlot>(plotID)] (const EqualizerExampleAudioProcessor::FilterAttachment& a)
     {

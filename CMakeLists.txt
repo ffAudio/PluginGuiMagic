@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13.0)
 
-set (version 1.3.5)
+set (version 1.3.9)
 
 project(PluginGuiMagic VERSION ${version})
 
@@ -9,7 +9,7 @@ option(JUCE_ENABLE_MODULE_SOURCE_GROUPS "Enable Module Source Groups" ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 set (subprojectPath ${CMAKE_CURRENT_LIST_DIR}/JUCE)
-add_subdirectory (${subprojectPath} ${CMAKE_CURRENT_LIST_DIR}/build/juce)
+add_subdirectory (${subprojectPath} ${CMAKE_BINARY_DIR}/juce)
 
 # add foleys_gui_magic to juce. You need to list it in `target_link_libraries` too
 juce_add_module(${CMAKE_CURRENT_LIST_DIR}/modules/foleys_gui_magic)
