@@ -1,6 +1,13 @@
 PluginGuiMagic - by Foleys Finest Audio
 =======================================
 
+NOTE: the examples of this repository are now part of the [foleys_gui_magic](https://github.com/ffAudio/foleys_gui_magic/) repository.
+Please clone that repository instead if you didn't do that already.
+
+This repository is now obsolete and will no longer be maintained.
+
+__old content below__
+
 Plugin GUI Magic is a live editor for JUCE GUIs, focussed on Audio Plugins.
 The main features are:
 
